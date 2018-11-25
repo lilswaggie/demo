@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>故障管理-网络故障-国内网络</title>
+    <script src="../../lib/jquery-1.12.4.min.js"></script>
+    <script src="../../lib/echarts4/echarts.js"></script>
+    <script src="../../geodata/china.js"></script>
+    <script src="../../inspur/GeoUtils.js"></script>
+
+    <style>
+        *{padding:0px;margin:0px;}
+        .container{
+            width:800px;
+            height:800px;
+            position: relative;
+        }
+        .legend{
+            width:200px;
+            height:200px;
+            border-radius: 5px;
+            border:1px solid #C9D0DB;
+            position: absolute;
+            bottom: 5px;
+            left:5px;
+        }
+        h3{
+            color:#72758C;
+            text-align: center;
+            padding:7px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        .legend ul{
+            list-style: none;
+        }
+        .legend ul li{
+            text-align: center;
+            height:25px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="e_map" style="width:100%;height:100%;"></div>
+        <div class="legend">
+            <h3>图例</h3>
+            <div>
+                <ul>
+                    <li>正常设备</li>
+                    <li>故障设备</li>
+                    <li>高亮设备</li>
+                    <li>正常光缆</li>
+                    <li>故障光缆</li>
+                    <li>高亮光缆</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<script>
+    $(function () {
+        var lineNormalStyle = {color:'blue',width:3};               //定义故障线样式
+        var lineDefaultStyle = {color:'red',width:3};               //定义正常线样式
+        var lineHightStyle = {color:'#32DA47',width:3};                    //定义高亮样式
+
+        var deviceNormalSymbol = 'image://http://localhost:63342/SOTN/images/0.png';
+        var deviceDefaultSymbol = 'image://http://localhost:63342/SOTN/images/ceshi.png';
+        var deviceHightSymbol = 'image://http://localhost:63342/SOTN/images/ceshi2.png';
+
+        var datas = [
+            {coords:[[116.4551,40.2539],[121.4648,31.2891]],lineStyle:lineNormalStyle},
+            {coords:[[116.4551,40.2539],[113.5107,23.2196]],lineStyle:lineNormalStyle},
+            {coords:[[116.4551,40.2539],[122.2229,39.4409]],lineStyle:lineDefaultStyle}
+        ];
+        var deviceDatas = [
+            {
+                id:'1',
+                symbol:deviceNormalSymbol,
+                value:[121.4648,31.2891,90]
+            },
+            {
+                id:'2',
+                symbol:deviceDefaultSymbol,
+                value:[108.479, 23.1152,90]
+            },
+            {
+                id:'3',
+                symbol:deviceDefaultSymbol,
+                value:[125.8154,44.2584,90]
+            }
+        ];
+        var BJData = [
+            [{name:'北京'}, {name:'上海',value:95}],
+            [{name:'北京'}, {name:'广州',value:90}],
+            [{name:'北京'}, {name:'大连',value:80}],
+            [{name:'北京'}, {name:'南宁',value:70}],
+            [{name:'北京'}, {name:'南昌',value:60}],
+            [{name:'北京'}, {name:'拉萨',value:50}],
+            [{name:'北京'}, {name:'长春',value:40}],
+            [{name:'北京'}, {name:'包头',value:30}],
+            [{name:'北京'}, {name:'重庆',value:20}],
+            [{name:'北京'}, {name:'常州',value:10}]
+        ];
+        var ss = BJData.map(function (dataItem) {
+            return {
+                symbol:'image://http://localhost:63342/SOTN/images/ceshi.png',
+                //name: dataItem[1].name,
+                value:$("body").GeoUtils('getGeoCoordMapDatas')[dataItem[1].name].concat(90)
+            };
+        });
+        console.error('convertData..',$("body").GeoUtils('convertData',BJData));
+        var chart = echarts.init(document.getElementById('e_map'));
+        chart.setOption({
+            geo:{
+                map:'china',
+                silent:false,
+                itemStyle:{
+                    areaColor:'#fff'
+                },
+                emphasis:{
+                    itemStyle:{
+                        areaColor:'#fff'
+                    }
+                }
+            },
+            series: [{
+                name:'devices',
+                //type: 'effectScatter',
+                type:'scatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                },
+                symbolSize: function (val) {
+                    return val[2] / 4;
+                },
+                itemStyle: {
+                    normal: {
+                        color: 'red'
+                    }
+                },
+                data:deviceDatas
+                /*data: BJData.map(function (dataItem) {
+                    return {
+                        symbol:'image://http://localhost:63342/SOTN/images/ceshi.png',
+                        //name: dataItem[1].name,
+                        value:$("body").GeoUtils('getGeoCoordMapDatas')[dataItem[1].name].concat(90)
+                    };
+                })*/
+
+            },{
+                name:'lines',
+                type:'lines',
+                coordinateSystem:'geo',
+                lineStyle:{
+                    color:'red',
+                    width:2
+                },
+                //data:$("body").GeoUtils('convertData',BJData)
+                data:[
+                    {coords:[[116.4551,40.2539],[121.4648,31.2891]],lineStyle:lineNormalStyle},
+                    {coords:[[116.4551,40.2539],[113.5107,23.2196]],lineStyle:lineNormalStyle},
+                    {coords:[[116.4551,40.2539],[122.2229,39.4409]],lineStyle:lineDefaultStyle}
+                ]
+            }]
+        });
+        chart.on('click',function(params){
+            if(params && params.seriesName){
+                switch (params.seriesName){
+                    case 'devices':
+                        handlerDevice(params);break;
+                    case 'lines':
+                        handlerLine(params);break;
+                    default:
+                        reset(params);
+                }
+            }else{
+                reset(params)
+            }
+        });
+
+        //处理设备
+        function handlerDevice(params){
+            console.error('设备单击,',deviceDatas);
+            var _datas = $.extend(true,[],deviceDatas);
+            $.each(_datas,function (index,item) {
+                console.error('deviceItem',item);
+                if(params.data.id == item.id){
+                    item.symbol = deviceHightSymbol;
+                }
+            });
+            console.error('整改后_datas...',_datas);
+            var options = chart.getOption();
+            var old_datas = options.series;
+            $.each(old_datas,function(o_i,o_item){
+               if(o_item.name == 'devices'){
+                    o_item.data = _datas;
+               }
+            });
+            chart.setOption(options);
+        }
+
+        //处理光缆
+        function handlerLine(params){
+            var _datas = $.extend(true,[],datas);
+            $.each(_datas,function(index,item){
+                if(params.dataIndex == index){
+                    item.lineStyle = lineHightStyle;
+                }
+            });
+
+            var options = chart.getOption();
+            var old_datas = options.series;
+            $.each(old_datas,function(o_i,o_item){
+                if(o_item.name == 'lines'){
+                    o_item.data = _datas;
+                }
+            });
+            chart.setOption(options);
+        }
+        function reset(params) {
+            var options = chart.getOption();
+            var old_datas = options.series;
+            $.each(old_datas,function(o_i,o_item){
+                if(o_item.name == 'lines'){
+                    o_item.data = datas;
+                }
+                if(o_item.name == 'devices'){
+                    o_item.data = deviceDatas;
+                }
+            });
+            chart.setOption(options);
+        }
+
+
+    });
+</script>
+</body>
+</html>
