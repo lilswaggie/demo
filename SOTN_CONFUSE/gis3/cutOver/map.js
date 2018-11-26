@@ -1,0 +1,1 @@
+require(["./MapManager.js"],function(a){if(!Global.mapGlobal){Global.mapGlobal={}}Global.mapGlobal.clickGraphic={};Global.mapGlobal.clickGraphic.gra=null;Global.mapGlobal.clickGraphic.sym=null;Global.mapGlobal.instance={};Global.mapGlobal.instance.mapManager=new a()});

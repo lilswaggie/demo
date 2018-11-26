@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:white;">
+<head >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ECharts">
+    <title>ECharts · Example</title>
+
+    <link rel="shortcut icon" href="asset/ico/favicon.png">
+
+    <link href="asset/css/font-awesome.min.css" rel="stylesheet">
+    <link href="asset/css/bootstrap.css" rel="stylesheet">
+    <link href="asset/css/carousel.css" rel="stylesheet">
+    <link href="asset/css/echartsHome.css" rel="stylesheet">
+    <link href="asset/css/codemirror.css" rel="stylesheet">
+    <link href="asset/css/monokai.css" rel="stylesheet">
+
+    
+<style type="text/css">
+			
+			ol{
+				counter-reset: li;
+				list-style: none;
+				*list-style: decimal;
+				font: 15px 'trebuchet MS', 'lucida sans';
+				padding: 0;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255,255,255,.5);
+			}
+
+			ol ol{
+				margin: 0 0 0 2em;
+			}
+
+			
+
+			.rectangle-list div{
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #F0F0F0;
+				color: #444;
+				text-decoration: none;
+				-webkit-transition: all .3s ease-out;
+				-moz-transition: all .3s ease-out;
+				-ms-transition: all .3s ease-out;
+				-o-transition: all .3s ease-out;
+				transition: all .3s ease-out;	
+			}
+
+			.rectangle-list div:hover{
+				background: #eee;
+			}	
+
+			.rectangle-list div:before{
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;	
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #FE0902; --序号背景色
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list div:after{
+				position: absolute;	
+				content: '';
+				border: .5em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.5em;
+				-webkit-transition: all .3s ease-out;
+				-moz-transition: all .3s ease-out;
+				-ms-transition: all .3s ease-out;
+				-o-transition: all .3s ease-out;
+				transition: all .3s ease-out;				
+			}
+
+			.rectangle-list div:hover:after{
+				left: -.5em;
+				border-left-color: #FE0902;				
+			}
+		
+		</style>
+	</head>
+
+	<body>
+		<div class="row-fluid" style="height:600px;position:relative;">
+			<div id="mapContainer"  
+							style="position: absolute; height: 100%; width: 90%; background-color: transparent; cursor: default;text-align:left">
+					&nbsp;无相关数据
+			</div>
+			<div id="pieChart" style="position:relative;z-index:1;height:100%;padding-right:0.5em;width:30%;float:right">
+				<ol class="rectangle-list">
+					<li>
+					 	<div>
+					 		克拉玛依:1.1.1.1(626)
+						</div>
+					</li>
+					<li>
+						<div>
+							乌鲁木齐:22.2.2.2(855)								
+					 	</div>
+					</li>
+					<li>
+						<div>						 
+							库尔勒:3.3.3.3(755)
+						</div>
+					</li>
+					<li>
+					 	<div>
+							天山:4.4.4.4(755)
+					 	</div>
+					</li>				 
+				</ol>
+			</div>
+		</div>
+	</body>
+
+
+<!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/echartsHome.js" type="text/javascript"></script>
+    <script src="asset/js/bootstrap.min.js"></script>	
+    <script src="asset/js/codemirror.js"></script>
+    <script src="asset/js/javascript.js"></script>
+	<script src="asset/js/echartsConfig.js"></script>
+
+	<script src="www/js/echarts.js"></script>
+	<script src="www/js/chart/geoCoord.js"></script>
+	<script type="text/javascript">
+		var option;
+		var maxRange = 1000;
+		$(function(){
+			option = {
+				title : {
+					text: '新疆',
+					x:'center'
+				},
+				tooltip : {
+					trigger: 'item',
+					formatter:function(param){//提示信息格式化
+						return "<b>"+param.data.name+"</b><br/>数量："+param.data.value;
+					}
+				},
+				legend: {
+					orient: 'vertical',//图例位置
+					x:'left',
+					data:['']//图例文本信息
+				},
+				dataRange: {
+					min : 0,//值域控件最小值
+					max : maxRange,//值域控件最大值
+					calculable : true,//默认为false,设置为true时值域显示为线性渐变
+					precision:0,//小数精度，默认为0
+					color: ['red', 'orange', 'yellow','#FFFCEC']//值域颜色，最少两个
+				},
+				toolbox: {//图表工具
+					show : true,	//是否展示
+					//布局方式，默认为水平布局，水平(vertical)|垂直(horizontal)
+					orient : 'horizontal',
+					//横向位置，可选为：'center' | 'left' | 'right' | {number}(x坐标，单位px)
+					x: 'left',
+					//纵向位置可选为：'top' | 'bottom' | 'center' | {number}(y坐标，单位px) 
+					y: 'top',
+					feature : {
+						mark : {show: true},	//辅助线
+						dataView : {show: false, readOnly: false},	//数据视图
+						restore : {show: true},	//还原
+						saveAsImage : {show: true}	//保存为图片
+					}
+				},
+				series : [
+					{
+						name: 'pm2.5',
+						type: 'map',
+						mapType: '新疆',	//地图类型 china:中国；continent:世界
+						hoverable: true,	//鼠标经过时，是否高亮显示
+						roam:true,
+						data : [ //区域编码是乱写的^_^,为了演示除name和value之外的属性如何取值;
+						    {name: '巴音郭楞蒙古自治州',value: 623,areaCode:11111},
+						    //{name: '和田地区',value: 425,areaCode:11112},
+							{name: '哈密地区',value: 78,areaCode:11113},
+							{name: '阿克苏地区',value: 384,areaCode:11114},
+							{name: '阿勒泰地区',value:342,areaCode:11115},
+							{name: '喀什地区',value: 109,areaCode:11116},
+							//{name: '塔城地区',value: 526,areaCode:11117},
+							{name: '昌吉回族自治州',value: 271,areaCode:11118},
+							{name: '克孜勒苏柯尔克孜自治州',value: 98,areaCode:11119},
+							{name: '吐鲁番地区',value:120,areaCode:11110},
+							//{name: '伊犁哈萨克自治州',value: 451,areaCode:11120},
+							{name: '博尔塔拉蒙古自治州',value: 239,areaCode:11121},
+							{name: '乌鲁木齐市',value: 740,areaCode:11122},
+							{name: '克拉玛依市',value: 122,areaCode:11123},
+						    //{name: '阿拉尔市',value: 432,areaCode:11124},
+							{name: '图木舒克市',value: 170,areaCode:11125},
+							//{name: '五家渠市',value: 250,areaCode:11126},
+							//{name: '石河子市',value:193,areaCode:11127},
+							{name: '那曲地区',value:127,areaCode:11128}
+						],
+						itemStyle:{
+							normal:{
+								borderColor:'#A1DFF2',	//地图边界线颜色
+								borderWidth:1,	//边界线宽度
+								areaStyle:{
+									color:'white'
+								},
+								label:{
+									show:true
+								}
+							}
+						},
+						geoCoord: geoCoord	//地区经纬度
+					},
+					{//坐标标注
+						type: 'map',
+						mapType: '新疆',
+						data : [],
+						markPoint : {
+							// 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+							symbolSize: 5,      
+							itemStyle: {
+								normal: {	//地图内图形的默认样式和强调样式（悬浮时样式）
+									borderColor: 'orange',
+									borderWidth: 1,            // 标注边线线宽，单位px，默认为1
+									label: {
+										show: false
+									}
+								},
+								emphasis: {	//地图内图形的强调样式（悬浮时样式）
+									borderColor: '#1e90ff',
+									borderWidth: 5,
+									label: {
+										show: false
+									}
+								}
+							},
+							data : [
+									{name: "克拉玛依", value: 626,ipAddress:'1.1.1.1'},
+									{name: "乌鲁木齐", value: 855,ipAddress:'22.2.2.2'},							 
+									{name: "库尔勒", value: 755,ipAddress:'3.3.3.3'},
+									{name: "天山", value: 755,ipAddress:'4.4.4.4'}
+								]
+							}
+					},
+					{//向外发散光圈
+						name: 'Top5',
+						type: 'map',
+						mapType: '新疆',
+						data:[],
+						markPoint : {
+							symbol:'emptyCircle',
+							symbolSize : function (v){
+								//光圈大小,v代表节点的value值,可改为return 10+v*10/maxRange;
+								return 10+v/100	
+							},
+							effect : {
+								show: true,
+								shadowBlur : 0
+							},
+							itemStyle:{
+								normal:{
+									label:{show:false	}
+								}
+							},
+							tooltip:{//注：此处的tooltip必须放在data参数上面，才能生效
+								formatter:function (param){
+									return "<b>"+param.data.name+"</b><br/>IP地址："+param.data.ipAddress+"("+param.data.value+")";
+								}
+							},
+							data : [
+									{name: "克拉玛依", value: 626,ipAddress:'1.1.1.1'},
+									{name: "乌鲁木齐", value: 855,ipAddress:'22.2.2.2'},							 
+									{name: "库尔勒", value: 755,ipAddress:'3.3.3.3'},
+									{name: "天山", value: 755,ipAddress:'4.4.4.4'}
+								]
+							}
+					}
+				]
+			};	
+			require.config({
+				paths: {
+					echarts: 'www/js'
+				}
+			});
+			require(
+				[
+					'echarts',
+					'echarts/chart/map'
+				],
+				DrawEChart
+			);
+		});
+                    
+		//回调函数 渲染ECharts图表
+		function DrawEChart(ec) {
+
+		var chartContainer = document.getElementById("mapContainer");
+
+			//加载图表
+
+			var myChart = ec.init(chartContainer);
+			myChart.on(echartsConfig.EVENT.CLICK,echartsClick);//设置单击事件
+			myChart.setOption(option);
+
+		}
+
+		function echartsClick(param){
+			if(param.data.areaCode!=undefined){
+				alert(param.data.name+":"+param.data.areaCode);
+			}
+		}
+
+
+	</script>
+</html>

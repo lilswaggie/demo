@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.min.js"></script>
+    <script src="lib/clipboard/clipboard.js"></script>
+</head>
+<body>
+
+
+
+<script>
+   // 处理echarts国际点数据和国际线数据
+    $(function () {
+        //处理线数据
+        var datas = [
+            {coords:[[-4636706.451,4400693.0874],[-12769632.4827,6942562.9541]]},
+            {coords:[[-3222947.2055,3986664.2886],[-5623711.8972,6679188.6169]]},
+            {coords:[[-4009041.829,3750835.9015],[-13885573.0966,5143771.6414]]},
+            {coords:[[-5207043.9438,4382870.0407],[-12247147.3703,2778795.8423]]},
+            {coords:[[-6151665.4162,4240285.6675],[-15437472.7206,2190635.3028]]},
+            {coords:[[-3121747.4858,3260018.1018],[-13280884.076,1780705.2299]]},
+            {coords:[[-3442562.3255,2921380.2155],[-10785657.545,889552.8974]]},
+            {coords:[[-3299977.9523,3117433.7286],[-4725821.6842,1709413.0433]]},
+            {coords:[[-3026423.5496,3095757.0486],[-4237660.8999,1310926.0346]]},
+            {coords:[[-3439937.769072967,2466243.843664779],[-3503464.7674,136459.1119]]},
+            {coords:[[-4030722.8649,3028318.4954],[-626520.9548,-625406.0678]]},
+            {coords:[[-3747010.2878,4156984.7904],[799322.7771,6129528.6124]]},
+            {coords:[[-3353962.9761,3803242.2098],[5425810.0122,7272894.2717]]},
+            {coords:[[-5082282.6172,3527363.8015],[8724174.7613,6118466.6095]]},
+            {coords:[[-3917330.7896,4130781.6362],[9350864.0636,4139447.7601]]},
+            {coords:[[-4315891.6113,3937293.8745],[10439324.4308,2688167.2705]]},
+            {coords:[[-3563588.209,4156984.7904],[14892116.842,-940033.9535]]}
+        ];
+
+        var lines = [];
+        datas.map(function(line,index){
+            var pp = line.coords;
+            var p1 = pp[0];
+            var p2 = pp[1];
+
+            var line = {
+                "oid":index,
+                "oname":"测试",
+                "a_oid":index,
+                "a_oname":"北京",
+                "a_longitude":p1[0],
+                "a_lantitude":p1[1],
+                "z_oid":index,
+                "z_oname":"山东",
+                "z_longitude":p2[0],
+                "z_lantitude":p2[1],
+                "aggr":[
+                    {
+                        "oid":"专线 ID",
+                        "oname":"专线名称",
+                        "a_nename":"A端网元名称",
+                        "z_nename":"Z端网元名称",
+                        "a_portname":"A端端口名称",
+                        "z_portname":"Z端端口名称"
+                    }
+                ]
+            }
+            lines.push(line);
+        });
+        console.error('lines',JSON.stringify(lines));
+
+
+        //处理点数据
+        /*var deviceDatas = [
+        {
+            id:'1',
+            //symbol:deviceNormalSymbol,
+            value:[-3439937.7690729671, 2466243.8436647789,60]
+        },
+        {
+            id:'3',
+            //:deviceDefaultSymbol,
+            value:[5425810.01220000,7272894.27170000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[8724174.76130000,6118466.60950000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[9350864.06360000,4139447.76010000,60]
+        },
+        {
+            id:'3',
+           // symbol:deviceDefaultSymbol,
+            value:[11692703.03540000,4007513.17010000,60]
+        },{
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[10439324.43080000,2688167.27050000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[14892116.84200000,-940033.95350000,60]
+        },{
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-973017.60100000,-2853085.50790000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-13885573.09660000,5143771.64140000,60]
+        },{
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-12769632.48270000,6942562.95410000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-5623711.89720000,6679188.61690000,60]
+        },{
+            id:'3',
+                //symbol:deviceDefaultSymbol,
+            value:[-3503464.76740000,136459.11190000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-9980946.98880000,-2277602.492200000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-11017357.15150000,4311577.85410000,60]
+        },{
+            id:'3',
+                //symbol:deviceDefaultSymbol,
+            value:[-8789476.32030000,4454162.22730000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-7648801.33470000,5380960.65310000,60]
+        },{
+            id:'3',
+                //symbol:deviceDefaultSymbol,
+            value:[799322.77710000,6129528.61240000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-626520.95480000,-625406.06780000,60]
+        },{
+            id:'3',
+                //symbol:deviceDefaultSymbol,
+            value:[-4725821.68420000,1709413.04330000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-4237660.89990000,1310926.03460000,60]
+        },{
+            id:'3',
+                //symbol:deviceDefaultSymbol,
+            value:[-15437472.72060000,2190635.30280000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-12247147.37030000,2778795.84230000,60]
+        },{
+            id:'3',
+                //symbol:deviceDefaultSymbol,
+            value:[-13280884.07600000,1780705.22990000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-10785657.54500000,889552.89740000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-2515763.89970000,4774977.06700000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-6151665.41620000,4240285.66750000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-4636706.45100000,4400693.08740000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-5207043.94380000,4382870.04070000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-5082282.61720000,3527363.80150000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-4618883.40430000,3545186.84820000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-4030722.86490000,3028318.49540000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3442562.32550000,2921380.21550000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3299977.95230000,3117433.72860000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3121747.48580000,3260018.10180000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-4315891.61130000,3937293.87450000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3026423.54960000,3095757.04860000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3917330.78960000,4130781.63620000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3747010.28780000,4156984.79040000,60]
+        },
+        {
+            id:'3',
+             //symbol:deviceDefaultSymbol,
+            value:[-3563588.20900000,4156984.79040000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3681502.40250000,3999765.86570000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3222947.20550000,3986664.28860000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-3353962.97610000,3803242.20980000,60]
+        },
+        {
+            id:'3',
+            //symbol:deviceDefaultSymbol,
+            value:[-4009041.82900000,3750835.90150000,60]
+        }
+    ];
+        var nodes = [];
+        deviceDatas.map(function(device,index){
+            var p = device.value;
+            var node = {
+                oid:device.id,
+                oname:'测试',
+                longitude:p[0],
+                lantitude:p[1],
+                aggr:[
+                    {
+                        "oid":"网元ID",
+                        "oname":"网元名称"
+                    }
+                ]
+            }
+            nodes.push(node);
+        });
+        console.error('nodes',JSON.stringify(nodes));*/
+
+    })
+   /*
+    处理arcgis制造线数据
+    $(function () {
+        var drawingPoint = [3610102010144,3310102010145,3310102010164,3310102010156,3310102010157,3310102010158
+        ]
+        //点的id
+        var lines = [];
+        $.get('http://localhost:63342/SOTN/demo.json',function(datas){
+            if(datas ){
+               var points = datas;
+                for(var i = 0; i < drawingPoint.length; i++){
+                    if(i+1 < drawingPoint.length){
+                        var p_a = getPointById(drawingPoint[i],points);
+                        var p_z = getPointById(drawingPoint[i+1],points);
+                        var line = {
+                            oid:p_a.oid+'-'+p_z.oid,
+                            oname:p_a.oname+'-'+p_z.oname,
+                            a_oid:p_a.oid,
+                            a_oname:p_a.oname,
+                            a_longitude:p_a.longitude,
+                            a_lantitude:p_a.lantitude,
+                            z_oid:p_z.oid,
+                            z_oname:p_z.oname,
+                            z_longitude:p_z.longitude,
+                            z_lantitude:p_z.lantitude,
+                            aggr:[{
+                                "oid": "123",
+                                "oname": "N-开封市宋城路-OA-80x100G-1",
+                                "a_nename": "A端网元名称",
+                                "z_nename": "Z端网元名称",
+                                "a_portname": "A端端口名称",
+                                "z_portname": "Z端端口名称"
+                            }]
+                        };
+                        lines.push(line);
+                    }
+
+                }
+                console.log('lines',JSON.stringify(lines))
+            }
+        });
+
+        function getPointById(id,points){
+            var p ;
+            points.map(function(point,index){
+                if(point.oid == id){
+                   p = point;
+                }
+            });
+            return p;
+        }
+
+    });*/
+
+ </script>
+</body>
+</html>

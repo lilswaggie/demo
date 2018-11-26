@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>业务故障-政企业务</title>
+    <script src="../../lib/jquery-1.12.4.min.js"></script>
+    <script src="../../lib/echarts4/echarts.js"></script>
+    <script src="../../geodata/china.js"></script>
+    <script src="../../inspur/GeoUtils.js"></script>
+</head>
+<body>
+    <div id="g_map" style="width:100%;height:800px;"></div>
+    <script>
+        $(function(){
+            var BJData = [
+                [{name:'北京'}, {name:'上海',value:95}],
+                [{name:'北京'}, {name:'广州',value:90}],
+                [{name:'北京'}, {name:'大连',value:80}],
+                [{name:'北京'}, {name:'南宁',value:70}],
+                [{name:'北京'}, {name:'南昌',value:60}],
+                [{name:'北京'}, {name:'拉萨',value:50}],
+                [{name:'北京'}, {name:'长春',value:40}],
+                [{name:'北京'}, {name:'包头',value:30}],
+                [{name:'北京'}, {name:'重庆',value:20}],
+                [{name:'北京'}, {name:'常州',value:10}]
+            ];
+
+            var SHData = [
+                [{name:'上海'},{name:'包头',value:95}],
+                [{name:'上海'},{name:'昆明',value:90}],
+                [{name:'上海'},{name:'广州',value:80}],
+                [{name:'上海'},{name:'郑州',value:70}],
+                [{name:'上海'},{name:'长春',value:60}],
+                [{name:'上海'},{name:'重庆',value:50}],
+                [{name:'上海'},{name:'长沙',value:40}],
+                [{name:'上海'},{name:'北京',value:30}],
+                [{name:'上海'},{name:'丹东',value:20}],
+                [{name:'上海'},{name:'大连',value:10}]
+            ];
+
+            var GZData = [
+                [{name:'广州'},{name:'福州',value:95}],
+                [{name:'广州'},{name:'太原',value:90}],
+                [{name:'广州'},{name:'长春',value:80}],
+                [{name:'广州'},{name:'重庆',value:70}],
+                [{name:'广州'},{name:'西安',value:60}],
+                [{name:'广州'},{name:'成都',value:50}],
+                [{name:'广州'},{name:'常州',value:40}],
+                [{name:'广州'},{name:'北京',value:30}],
+                [{name:'广州'},{name:'北海',value:20}],
+                [{name:'广州'},{name:'海口',value:10}]
+            ];
+
+
+            var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
+           
+            var color = ['#a6c84c', '#ffa022', '#46bee9'];
+            console.error('bjdatas:',$("body").GeoUtils('convertData',BJData));
+            var series = [];
+            [['北京', BJData], ['上海', SHData], ['广州', GZData]].forEach(function (item, i) {
+                series.push(
+               /* {
+                    name: item[0] + ' Top10',
+                    type: 'lines',
+                    zlevel: 1,
+                    effect: {
+                        show: true,
+                        period: 6,
+                        trailLength: 0.7,
+                        color: '#49BD35',
+                        symbolSize: 3
+                    },
+                    lineStyle: {
+                        normal: {
+                            color: color[i],
+                            width: 0,
+                            curveness: 0.2
+                        }
+                    },
+                    data:$("body").GeoUtils('convertData',item[1])
+                },*/
+                {
+                    name: item[0] + ' Top10',
+                    type: 'lines',
+                    zlevel: 2,
+                    symbol: ['none', 'arrow'],
+                    symbolSize: 10,
+                    /*effect: {
+                        show: true,
+                        period: 6,
+                        trailLength: 0,
+                        symbol: planePath,
+                        symbolSize: 15
+                    },*/
+                    lineStyle: {
+                        normal: {
+                            color: color[i],
+                            width: 1,
+                            opacity: 0.6,
+                            curveness: 0.2
+                        }
+                    },
+                    emphasis:{
+                        lineStyle:{
+                            color:'red',
+                            width:1,
+                            type:'solid'
+                        },
+                        label:{
+                            position:'middle',
+                            show:true,
+                            formatter:'测试'
+                        }
+                    },
+                    label:{
+                        show:true,
+                        position:'middle',
+                    },
+                    //data: convertData(item[1])
+                    data:$("body").GeoUtils('convertData',item[1])
+                },
+                {
+                    name: item[0] + ' Top10',
+                    type: 'effectScatter',
+                    coordinateSystem: 'geo',
+                    zlevel: 2,
+                    rippleEffect: {
+                        brushType: 'stroke'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'right',
+                            formatter: '{b}'
+                        }
+                    },
+                    symbolSize: function (val) {
+                        return val[2] / 8;
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: color[i]
+                        }
+                    },
+                    data: item[1].map(function (dataItem) {
+                        return {
+                            name: dataItem[1].name,
+                            value:$("body").GeoUtils('getGeoCoordMapDatas')[dataItem[1].name].concat([dataItem[1].value])
+                            //value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
+                        };
+                    })
+                });
+            });
+
+            var chart = echarts.init(document.getElementById('g_map'));
+            chart.setOption({
+                //center: [115.97, 29.71],
+                geo:{
+                    map:'china',
+                    itemStyle:{
+                        borderColor:'#56AAF5',
+                        borderWidth:2,
+                        areaColor:'#F9FBFF'
+                    },
+                    emphasis:{
+                        itemStyle:{
+                            areaColor:'#F9FBFF'
+                        }
+                    }
+                },
+                series:[]
+            });
+            var points = {
+                type:'effectScatter',
+                coordinateSystem:'geo',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                },
+                symbolSize: function (val) {
+                    return val[2] / 8;
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#FDC400'
+                    }
+                },
+                data:[]
+            };
+            var lines = {
+                type: 'lines',
+                symbol: ['none', 'arrow'],
+                symbolSize: 10,
+                effect: {
+                        show: true,
+                        period: 6,
+                        trailLength: 0,
+                        symbol: planePath,
+                        symbolSize: 15
+                },
+                lineStyle: {
+                    normal: {
+                        color: 'red',
+                        width: 1,
+                        //opacity: 0.6,
+                        curveness: 0.2
+                    }
+                },
+                emphasis:{
+                    lineStyle:{
+                        color:'red',
+                        width:1,
+                        type:'solid'
+                    },
+                    label:{
+                        position:'middle',
+                        show:true,
+                        formatter:'测试'
+                    }
+                },
+                label:{
+                        show:true,
+                        position:'middle',
+                },
+                data:[]
+            }
+            $.get('https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',function(datas){
+                console.error('datas',datas);
+                
+                if(datas && datas.nodes){
+                    //处理点数据：闪烁
+                    var ps = [];
+                    datas.nodes.map(function(nodeItem,nodeIndex){
+                        console.error('nodeItem',nodeItem);
+                        var point = {
+                            name:nodeItem.oname,
+                            value:[nodeItem.longitude,nodeItem.lantitude].concat(30)
+                        }
+                        ps.push(point);
+                    });
+                    //处理线
+                    var ls = [];
+                    datas.edges.map(function(edgeItem,edgeIndex){
+                        var line = {
+                            oname:edgeItem.oname,
+                            coords:[[edgeItem.a_longitude,edgeItem.a_lantitude],[edgeItem.z_longitude,edgeItem.z_lantitude]]
+                        }
+                        ls.push(line);
+                    });
+                    points.data = ps;
+                    lines.data = ls;
+
+                    var options = chart.getOption();
+                    options.series.push(points);
+                    options.series.push(lines);
+
+                    chart.setOption(options);
+                }
+            });
+            
+
+            chart.on('click',function(params){
+                console.error('options',chart.getOption());
+                //var old_opt = chart.getOption();
+                /*if(params.seriesType && params.seriesType == 'lines'){
+                    console.error('params',params);
+                    console.error('series',chart.getOption().series);
+                    var opt = chart.getOption();
+                    opt.series.push({
+                        name: ' Top10',
+                        type: 'lines',
+                        zlevel: 1,
+                        effect: {
+                            show: true,
+                            period: 6,
+                            trailLength: 0.7,
+                            color: '#49BD35',
+                            symbolSize: 3
+                        },
+                        lineStyle: {
+                            normal: {
+                                color: color[0],
+                                width: 0,
+                                curveness: 0.2
+                            }
+                        },
+                        data:$("body").GeoUtils('convertData',BJData)
+                    });
+                    chart.setOption(opt);
+                }else{
+                    //chart.setOption(old_opt);
+                }*/
+            });
+            
+        });
+    </script>
+</body>
+</html>

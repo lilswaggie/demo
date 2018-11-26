@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>世界地图</title>
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+    <script src="../lib/echarts4/echarts.js"></script>
+    <script src="../inspur/GeoUtils.js"></script>
+</head>
+<body>
+    <div id="worldMap" style="width:1200px;height:800px;"></div>
+<script>
+    $(function () {
+        $.get('../geodata/world.json',function(mapJson){
+            console.error('mapJson',mapJson);
+            var data = [];
+            $.each(mapJson.features,function(index,item){
+                var row = {};
+                //row.name = item.properties.NAME;
+                //row.lon = item.CP[0];
+                //row.lat = item.CP[1];
+                //data.push(row);
+                data.push("1");
+            });
+            echarts.registerMap('world',mapJson);
+            var e_map = echarts.init(document.getElementById("worldMap"));
+            var BJData = [
+                [{name:'北京'}, {name:'上海',value:95}],
+                [{name:'北京'}, {name:'广州',value:90}],
+                [{name:'北京'}, {name:'大连',value:80}],
+                [{name:'北京'}, {name:'南宁',value:70}],
+                [{name:'北京'}, {name:'南昌',value:60}],
+                [{name:'北京'}, {name:'拉萨',value:50}],
+                [{name:'北京'}, {name:'长春',value:40}],
+                [{name:'北京'}, {name:'包头',value:30}],
+                [{name:'北京'}, {name:'重庆',value:20}],
+                [{name:'北京'}, {name:'常州',value:10}]
+            ];
+            var options = {
+                geo:{
+                    map:'world',
+                    zoom:1.2,
+                    silent:false
+
+                },
+                series:[
+                    {
+                        name:  ' Top10',
+                        type: 'lines',
+                        coordinateSystem:'geo',
+                        zlevel: 2,
+                        symbol: ['none', 'arrow'],
+                        symbolSize: 10,
+                        /*effect: {
+                         show: true,
+                         period: 6,
+                         trailLength: 0,
+                         symbol: planePath,
+                         symbolSize: 15
+                         },*/
+                        lineStyle: {
+                            normal: {
+                                color: '#a6c84c',
+                                width: 1,
+                                opacity: 0.6,
+                                curveness: 0.2
+                            }
+                        },
+                        emphasis:{
+                            lineStyle:{
+                                color:'red',
+                                width:1,
+                                type:'solid'
+                            },
+                            label:{
+                                position:'middle',
+                                show:true,
+                                formatter:'测试'
+                            }
+                        },
+                        label:{
+                            show:true,
+                            position:'middle',
+                        },
+                        //data: convertData(item[1])
+                        data:$("body").GeoUtils('convertData',BJData)
+                    }
+                ]
+                //tooltip:$.fn.mainWin.defaults.mapToolTip,
+                /*series:[
+
+                    {
+                        type: 'map',
+                        silent:false,
+                        map: 'world' ,//要和echarts.registerMap（）中第一个参数一致
+                        scaleLimit: { min: 0.8, max: 1.9 },//缩放
+                        mapLocation:{
+                            y:60
+                        },
+                        itemStyle:{
+                            normal:{
+                                areaColor:'#DADADA',
+                                borderColor:'#04FEFF',	//地图边界线颜色
+                                borderWidth:1,	//边界线宽度
+                                label:{
+                                    show:true,
+                                    textStyle:{
+                                        color:'#fff'
+                                    }
+                                }
+
+                            },
+                            emphasis: {	//地图内图形的强调样式（悬浮时样式）
+                                borderColor: '#f5ff3a',
+                                areaColor:'#58D3FF',
+                                borderWidth: 1,
+                                areaStyle:{
+                                    color:'red' //区域颜色
+                                },
+                                label: {
+                                    show: true,
+                                    textStyle:{
+                                        color:'#fff'
+                                    }
+                                }
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true
+                            },
+                            emphasis: {
+                                show: true
+                            }
+                        },
+                        data:data
+                    }
+
+                ]*/
+            };
+            e_map.setOption(options);
+        });
+    });
+</script>
+</body>
+</html>
