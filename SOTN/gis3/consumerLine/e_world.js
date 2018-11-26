@@ -13,10 +13,6 @@
                 var data = [];
                 $.each(mapJson.features,function(index,item){
                     var row = {};
-                    //row.name = item.properties.NAME;
-                    //row.lon = item.CP[0];
-                    //row.lat = item.CP[1];
-                    //data.push(row);
                     data.push("1");
                 });
                 echarts.registerMap('world',mapJson);
@@ -24,10 +20,11 @@
                     backgroundColor: '#BEDBF9',
                     geo: $("body").GeoUtils('getWorldMapInstance'),
                     series:[/*{
-                        center:[145.3893,0.0516],
+                        //center:[145.3893,0.0516],
                         type:'map',
-                        zoom:0.3,
+                        //zoom:0.3,
                         roam:false,
+                        show:false,
                         map:'china'
                     }*/]
                 });

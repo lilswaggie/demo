@@ -6,6 +6,63 @@
         if(typeof options == 'string') return $.fn.GeoUtils.methods[options](param);
     }
     $.fn.GeoUtils.methods = {
+        /**
+         * 获取3d地球实例
+         * @param param {chinaChart:''}
+         * @returns {{globe: {show: boolean, viewControl: {targetCoord: [number,number], autoRotateSpeed: number, distance: number, autoRotate: boolean}, baseTexture: string, displacementScale: number, shading: string, environment: string, postEffect: {enable: boolean}, layers: [*]}, series: Array}}
+         */
+        get3dMapInstance:function(param){
+            var geo = {
+                backgroundColor: '#000',
+                globe: {
+                    /*  viewControl:{
+                     rotateSensitivity:0, //鼠标旋转灵敏度
+                     zoomSensitivity:0,//鼠标缩放灵敏度
+                     autoRotate:true,//地球是否自传
+                     autoRotateAfterStill:0.001,//鼠标停止后多久恢复旋转(为0时暂停后不恢复旋转)
+                     //alpha:160,//视角绕 x 轴，即上下旋转的角度
+                     //beta:-20,//视角绕 y 轴，即左右旋转的角度。
+                     targetCoord: [116.46, 39.92]//定位到哪里
+                     },*/
+                    //baseColor:'#fff',
+                    show:true,
+                    viewControl:{
+                        targetCoord: [116.46, 39.92],
+                        autoRotateSpeed: 5,
+                        distance: 200,
+                        autoRotate: true
+                    },
+                    baseTexture: 'http://localhost:63342/SOTN/images/earth.jpg',
+                    displacementScale: 0.1,
+                    shading: 'color',
+                    // 地球背景星图设置
+                    environment: 'http://localhost:63342/SOTN/images/starfield.jpg',
+                    postEffect:{
+                        enable:true,
+                    },
+
+                    layers: [
+                        /*{
+                            type: 'overlay',
+                            blendTo: 'emission',
+                            texture:param.chinaChart
+                            //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
+                        }*/
+                        /*{
+                         type: 'blend',
+                         blendTo: 'emission',
+                         texture: 'http://localhost:63342/SOTN/images/night.jpg'
+                         },*/{
+                         type: 'overlay',
+                         blendTo: 'emission',
+                         texture:param.chinaChart
+                         //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
+                         }],
+                },
+                series:[]
+            }
+            return geo;
+        },
         //获取中国map实例
         getChinaMapInstance:function(){
             var geo = {

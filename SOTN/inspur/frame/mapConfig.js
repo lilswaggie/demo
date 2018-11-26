@@ -4,6 +4,17 @@
 
 if(!Global.mapGlobal) Global.mapGlobal = {};
 
+Global.mapGlobal.treeMapConfig = {
+    noRotate:{                               
+        distance:100,                      //视角距离
+        targetCoord:[109.1162,34.2004]     //定位位置
+    },
+    rotate:{                             
+        distance:200,         
+        targetCoord:[116.46, 39.92]
+    }
+}
+
 //symbol:otn line 
 Global.mapGlobal.symbolConfig = {
     OTN_SYMBOL:'http://localhost:63342/SOTN/images/OTN_N_B.png',
