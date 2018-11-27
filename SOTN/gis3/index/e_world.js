@@ -2,6 +2,10 @@
  * Created by wang.ning on 2018/11/26.
  */
 $(function () {
+    // 更改可视窗口的高度
+    var height = $("body").GeoUtils('getHeight');
+    console.log('height',height)
+    $('#g_map').css('height', height);
 
     //处理数据:
     //处理各世界点
@@ -174,5 +178,13 @@ $(function () {
             series: series
         }
         e_map.setOption(options);
+        // echarts自适应
+        window.onresize = function () {
+            // 更改可视窗口的高度
+            var height = $("body").GeoUtils('getHeight');
+            $('#g_map').css('height', height);
+            $("body").GeoUtils('getResize',e_map);
+        }
+        
     });
 });

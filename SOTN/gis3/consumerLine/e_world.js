@@ -3,6 +3,9 @@
  */
 (function($){
     $.fn.WorldModule = function(options,param){
+        // 更改可视窗口的高度
+        var height = $("body").GeoUtils('getHeight');
+        $('#g_map').css('height', height);
         if(typeof options == 'string') return $.fn.WorldModule.methods[options](param);
         $.fn.WorldModule.methods.init();
     }
@@ -33,7 +36,12 @@
                     console.log('params',params.data );
                 });
             });
-
+            // echarts自适应
+            window.onresize = function () {
+                var height = $("body").GeoUtils('getHeight');
+                $('#g_map').css('height', height);
+                $("body").GeoUtils('getResize',chart);
+            }
 
         },
         renderData:function(chart){

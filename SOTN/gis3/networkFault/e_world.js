@@ -1,62 +1,67 @@
 /**
  * Created by wang.ning on 2018/11/23.
  */
-(function($){
-    $.fn.WorldModule = function(options,param){
-        if(typeof options == 'string') return $.fn.WorldModule.methods[options](param);
+(function ($) {
+    $.fn.WorldModule = function (options, param) {
+        // 更改可视窗口的高度
+        var height = $("body").GeoUtils('getHeight');
+        $('#g_map').css('height', height);
+
+        if (typeof options == 'string') return $.fn.WorldModule.methods[options](param);
         $.fn.WorldModule.methods.init();
     }
     $.fn.WorldModule.methods = {
-        init:function(){
+        init: function () {
             var chart = echarts.init(document.getElementById("g_map"));
-            $.get('../../geodata/world.json',function(mapJson){
+            $.get('../../geodata/world.json', function (mapJson) {
                 var data = [];
-                $.each(mapJson.features,function(index,item){
+                $.each(mapJson.features, function (index, item) {
                     var row = {};
-                    //row.name = item.properties.NAME;
-                    //row.lon = item.CP[0];
-                    //row.lat = item.CP[1];
-                    //data.push(row);
                     data.push("1");
                 });
-                echarts.registerMap('world',mapJson);
+                echarts.registerMap('world', mapJson);
                 chart.setOption({
                     backgroundColor: '#BEDBF9',
                     geo: $("body").GeoUtils('getWorldMapInstance'),
-                    series:[]
+                    series: []
                 });
                 $.fn.WorldModule.methods.renderData(chart);
-                chart.on('click',function(params){
-                    console.log('params',params.data);
+                chart.on('click', function (params) {
+                    console.log('params', params.data);
                 });
             });
-
+            // echarts自适应
+            window.onresize = function () {
+                var height = $("body").GeoUtils('getHeight');
+                $('#g_map').css('height', height);
+                $("body").GeoUtils('getResize',chart);
+            }
 
         },
-        renderData:function(chart){
+        renderData: function (chart) {
             var lines = $("body").GeoUtils('getLine');
-            var scatterPoint = $("body").GeoUtils('getScatter',{
-                symbol:'image://http://localhost:63342/SOTN/images/OTN_N_B.png'
+            var scatterPoint = $("body").GeoUtils('getScatter', {
+                symbol: 'image://'+Global.mapGlobal.symbolConfig.OTN_SYMBOL
             });
 
-            $.get('../../geodata/world_service.json',function(datas){
-                if(datas && datas.nodes){
+            $.get('../../geodata/world_service.json', function (datas) {
+                if (datas && datas.nodes) {
                     var ps = [];
-                    datas.nodes.map(function(nodeItem,nodeIndex){
+                    datas.nodes.map(function (nodeItem, nodeIndex) {
                         var point = {
-                            name:nodeItem.oname,
-                            value:[nodeItem.longitude,nodeItem.lantitude].concat(60),
-                            data:nodeItem
+                            name: nodeItem.oname,
+                            value: [nodeItem.longitude, nodeItem.lantitude].concat(60),
+                            data: nodeItem
                         }
                         ps.push(point);
                     });
 
                     var ls = [];
-                    datas.edges.map(function(edgeItem,edgeIndex){
+                    datas.edges.map(function (edgeItem, edgeIndex) {
                         var line = {
-                            oname:edgeItem.oname,
-                            coords:[[edgeItem.a_longitude,edgeItem.a_lantitude],[edgeItem.z_longitude,edgeItem.z_lantitude]],
-                            data:edgeItem
+                            oname: edgeItem.oname,
+                            coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
+                            data: edgeItem
                         }
                         ls.push(line);
                     });
@@ -78,29 +83,28 @@
             });
         },
         //渲染告警数据
-        renderWarningData:function(chart){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
-                if(datas && datas.serviceline){
-                    datas.serviceline.map(function(warningItem,warningIndex){
+        renderWarningData: function (chart) {
+            $.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
+                if (datas && datas.serviceline) {
+                    datas.serviceline.map(function (warningItem, warningIndex) {
                         var options = chart.getOption();
-                        options.series.map(function(serieItem,nodeIndex){
-                            if(serieItem.type == 'lines'){
-                                serieItem.data.map(function(serieItemData,s_index){
+                        options.series.map(function (serieItem, nodeIndex) {
+                            if (serieItem.type == 'lines') {
+                                serieItem.data.map(function (serieItemData, s_index) {
                                     var flag = false; //标识 是否告警
-                                    serieItemData.data.aggr.map(function(aggrItem,aggrIndex){
-                                        if(aggrItem.oid == warningItem){
+                                    serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                        if (aggrItem.oid == warningItem) {
                                             flag = true;
                                         }
                                     });
-                                    if(flag){
+                                    if (flag) {
                                         serieItemData.lineStyle = {
-                                            color:Global.mapGlobal.echartsConfig.lineColor.fault
+                                            color: Global.mapGlobal.echartsConfig.lineColor.fault
                                         };
                                     }
                                 });
                             }
                         });
-                        console.error('warnningoptions',options);
                         chart.setOption(options);
                     });
 
@@ -108,19 +112,19 @@
             });
         },
         //实时渲染功能
-        realRenderWarningData:function(chart){
-            if(Global.mapGlobal.queryPOI.realQueryFlag){
-                setInterval(function(){
+        realRenderWarningData: function (chart) {
+            if (Global.mapGlobal.queryPOI.realQueryFlag) {
+                setInterval(function () {
                     $.fn.ChinaModule.methods.renderWarningData(chart);
-                },Global.mapGlobal.queryPOI.realQueryTimer);
+                }, Global.mapGlobal.queryPOI.realQueryTimer);
             }
         },
-        chartEventsTrigger:function(chart){
-            chart.on('click',function(params){
+        chartEventsTrigger: function (chart) {
+            chart.on('click', function (params) {
                 var old_opt = chart.getOption();
                 var lightdatas = [];
                 lightdatas.push(params.data);
-                if(params.seriesType && params.seriesType == 'lines'){
+                if (params.seriesType && params.seriesType == 'lines') {
                     var opt = chart.getOption();
                     opt.series.push({
                         name: 'lights_line',
@@ -140,10 +144,10 @@
                             color: 'red',
                             symbolSize: 3
                         },
-                        data:lightdatas
+                        data: lightdatas
                     });
                     chart.setOption(opt);
-                }else{
+                } else {
                     chart.setOption(old_opt);
                 }
             });

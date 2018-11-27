@@ -1,58 +1,71 @@
 /**
  * @author wang.ning
  */
-(function($){
-    $.fn.ChinaModule = function(options,params){
-        if(typeof options == 'string') return $.fn.ChinaModule.methods[options](params);
+(function ($) {
+    $.fn.ChinaModule = function (options, params) {
+        var height = $("body").GeoUtils('getHeight');
+        $('#g_map').css('height', height);
+
+        if (typeof options == 'string') return $.fn.ChinaModule.methods[options](params);
         $.fn.ChinaModule.methods.init();
     }
     $.fn.ChinaModule.methods = {
-        init:function(){
+        init: function () {
             var chart = echarts.init(document.getElementById('g_map'));
             chart.setOption({
-                geo:$("body").GeoUtils('getChinaMapInstance'),
-                series:[{
-                    type:'map',
-                    map:'china',
-                    silent:true,
-                    itemStyle:{
-                        borderColor:'#A1BBEC',
-                        borderWidth:1,
-                        areaColor:'#F9FBFF'
+                geo: $("body").GeoUtils('getChinaMapInstance'),
+                series: [{
+                    type: 'map',
+                    map: 'china',
+                    silent: true,
+                    itemStyle: {
+                        borderColor: '#A1BBEC',
+                        borderWidth: 1,
+                        areaColor: '#F9FBFF'
                     },
-                    emphasis:{
-                        itemStyle:{
-                            areaColor:'#F9FBFF'
+                    emphasis: {
+                        itemStyle: {
+                            areaColor: '#F9FBFF'
                         }
                     },
-                    data:$("body").GeoUtils('getChinaRegions')
+                    data: $("body").GeoUtils('getChinaRegions')
                 }]
             });
+            // 数据渲染
             $.fn.ChinaModule.methods.renderData(chart);
-            
+
             $.fn.ChinaModule.methods.chartEventsTrigger(chart);
+
+            window.onresize = function () {
+                var height = $("body").GeoUtils('getHeight');
+                $('#g_map').css('height', height);
+                $("body").GeoUtils('getResize',chart);
+
+            }
+
         },
-        renderData:function(chart){
+        renderData: function (chart) {
             var points = $("body").GeoUtils('getEffectScatters');
             var lines = $("body").GeoUtils('getLines');
-            $.get(Global.mapGlobal.queryPOI.queryServiceLines,function(datas){
-                if(datas && datas.nodes){
+            //$.get(Global.mapGlobal.queryPOI.queryServiceLines, function (datas) {
+            $.get('../../geodata/servicelines.json',function(datas){
+                if (datas && datas.nodes) {
                     var ps = [];
-                    datas.nodes.map(function(nodeItem,nodeIndex){
+                    datas.nodes.map(function (nodeItem, nodeIndex) {
                         var point = {
-                            name:nodeItem.oname,
-                            value:[nodeItem.longitude,nodeItem.lantitude].concat(30),
-                            data:nodeItem
+                            name: nodeItem.oname,
+                            value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
+                            data: nodeItem
                         }
                         ps.push(point);
                     });
-                   
+
                     var ls = [];
-                    datas.edges.map(function(edgeItem,edgeIndex){
+                    datas.edges.map(function (edgeItem, edgeIndex) {
                         var line = {
-                            oname:edgeItem.oname,
-                            coords:[[edgeItem.a_longitude,edgeItem.a_lantitude],[edgeItem.z_longitude,edgeItem.z_lantitude]],
-                            data:edgeItem
+                            oname: edgeItem.oname,
+                            coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
+                            data: edgeItem
                         }
                         ls.push(line);
                     });
@@ -76,49 +89,50 @@
 
         },
         //渲染告警数据
-        renderWarningData:function(chart){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
-                if(datas && datas.serviceline){
-                    datas.serviceline.map(function(warningItem,warningIndex){
+        renderWarningData: function (chart) {
+            //$.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
+            $.get('../../geodata/queryWarnings.json',function(datas){
+                if (datas && datas.serviceline) {
+                    datas.serviceline.map(function (warningItem, warningIndex) {
                         var options = chart.getOption();
-                        options.series.map(function(serieItem,nodeIndex){
-                            if(serieItem.type == 'lines'){
-                                serieItem.data.map(function(serieItemData,s_index){
+                        options.series.map(function (serieItem, nodeIndex) {
+                            if (serieItem.type == 'lines') {
+                                serieItem.data.map(function (serieItemData, s_index) {
                                     var flag = false; //标识 是否告警
-                                    serieItemData.data.aggr.map(function(aggrItem,aggrIndex){
-                                        if(aggrItem.oid == warningItem){
+                                    serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                        if (aggrItem.oid == warningItem) {
                                             flag = true;
                                         }
                                     });
-                                    if(flag){
+                                    if (flag) {
                                         serieItemData.lineStyle = {
-                                            color:Global.mapGlobal.echartsConfig.lineColor.fault
-                                        }; 
+                                            color: Global.mapGlobal.echartsConfig.lineColor.fault
+                                        };
                                     }
                                 });
                             }
                         });
-                        console.error('warnningoptions',options);
+                        console.error('warnningoptions', options);
                         chart.setOption(options);
                     });
-                    
+
                 }
             });
         },
         //实时渲染功能
-        realRenderWarningData:function(chart){
-            if(Global.mapGlobal.queryPOI.realQueryFlag){
-                setInterval(function(){
+        realRenderWarningData: function (chart) {
+            if (Global.mapGlobal.queryPOI.realQueryFlag) {
+                setInterval(function () {
                     $.fn.ChinaModule.methods.renderWarningData(chart);
-                },Global.mapGlobal.queryPOI.realQueryTimer);
+                }, Global.mapGlobal.queryPOI.realQueryTimer);
             }
         },
-        chartEventsTrigger:function(chart){
-            chart.on('click',function(params){
+        chartEventsTrigger: function (chart) {
+            chart.on('click', function (params) {
                 var old_opt = chart.getOption();
                 var lightdatas = [];
                 lightdatas.push(params.data);
-                if(params.seriesType && params.seriesType == 'lines'){
+                if (params.seriesType && params.seriesType == 'lines') {
                     var opt = chart.getOption();
                     opt.series.push({
                         name: 'lights_line',
@@ -130,7 +144,7 @@
                                 width: Global.mapGlobal.echartsConfig.lineWidth,
                                 curveness: Global.mapGlobal.echartsConfig.lineCurveness
                             }
-                        }, 
+                        },
                         effect: {
                             show: true,
                             period: 6,
@@ -138,10 +152,10 @@
                             color: 'red',
                             symbolSize: 3
                         },
-                        data:lightdatas
+                        data: lightdatas
                     });
                     chart.setOption(opt);
-                }else{
+                } else {
                     chart.setOption(old_opt);
                 }
             });

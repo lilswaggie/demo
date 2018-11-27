@@ -81,7 +81,8 @@ define([
          * @param {绘制数据} this_instance 
          */
         drawingGraphics:function(this_instance){
-            $.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
+            //$.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
+            $.get('../../geodata/queryOTN.json',function(datas){
                 if(datas && datas.nodes){
                     Global.mapGlobal.lineLayer.clear();
                     Global.mapGlobal.otnLayer.clear();
@@ -128,7 +129,8 @@ define([
          * 告警数据查询
          */
         queryWarningOTN:function(this_instance){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
                 if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
             });

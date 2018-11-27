@@ -6,11 +6,21 @@
         if(typeof options == 'string') return $.fn.GeoUtils.methods[options](param);
     }
     $.fn.GeoUtils.methods = {
+        // chart自适应
+        getResize: function(chart){
+            chart.resize();
+        },
+        // 获取高度
+        getHeight:function () {
+            var height =   $(window).height();
+            return height + 'px';
+        },
         /**
          * 获取3d地球实例
          * @param param {chinaChart:''}
          * @returns {{globe: {show: boolean, viewControl: {targetCoord: [number,number], autoRotateSpeed: number, distance: number, autoRotate: boolean}, baseTexture: string, displacementScale: number, shading: string, environment: string, postEffect: {enable: boolean}, layers: [*]}, series: Array}}
          */
+
         get3dMapInstance:function(param){
             var geo = {
                 backgroundColor: '#000',
@@ -27,7 +37,7 @@
                     //baseColor:'#fff',
                     show:true,
                     viewControl:{
-                        targetCoord: [116.46, 39.92],
+                        targetCoord: [109.1162, 34.2004],
                         autoRotateSpeed: 5,
                         distance: 200,
                         autoRotate: true
@@ -43,21 +53,21 @@
 
                     layers: [
                         /*{
-                            type: 'overlay',
-                            blendTo: 'emission',
-                            texture:param.chinaChart
-                            //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
-                        }*/
+                         type: 'overlay',
+                         blendTo: 'emission',
+                         texture:param.chinaChart
+                         //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
+                         }*/
                         /*{
                          type: 'blend',
                          blendTo: 'emission',
                          texture: 'http://localhost:63342/SOTN/images/night.jpg'
                          },*/{
-                         type: 'overlay',
-                         blendTo: 'emission',
-                         texture:param.chinaChart
-                         //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
-                         }],
+                            type: 'overlay',
+                            blendTo: 'emission',
+                            texture:param.chinaChart
+                            //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
+                        }],
                 },
                 series:[]
             }
@@ -225,8 +235,8 @@
                     }
                 },
                 label:{
-                        show:true,
-                        position:'middle',
+                    show:true,
+                    position:'middle',
                 },
                 data:[]
             }
@@ -265,8 +275,8 @@
                     }
                 },
                 label:{
-                        show:true,
-                        position:'middle',
+                    show:true,
+                    position:'middle',
                 },
                 data:[]
             }
@@ -283,7 +293,7 @@
                         width: Global.mapGlobal.echartsConfig.lineWidth,
                         curveness: Global.mapGlobal.echartsConfig.lineCurveness
                     }
-                }, 
+                },
                 effect: {
                     show: true,
                     period: 6,
@@ -315,7 +325,7 @@
                         coords: [fromCoord, toCoord]
                     });
                 }
-                }
+            }
             return res;
         }
     }
@@ -325,6 +335,7 @@
                 "name": "俄罗斯",
                 "selected": false,
                 "label": {
+                    //color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -332,42 +343,42 @@
                 "name": "北极地区",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "扬马延岛（挪）",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "冰岛",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "法罗群岛（丹）",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "芬兰",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "爱沙尼亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -395,14 +406,14 @@
                 "name": "白俄罗斯",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "爱尔兰",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -423,14 +434,14 @@
                 "name": "蒙古",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "乌克兰",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -444,7 +455,7 @@
                 "name": "德国",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -465,7 +476,7 @@
                 "name": "匈牙利",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -507,7 +518,7 @@
                 "name": "罗马尼亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -528,7 +539,7 @@
                 "name": "保加利亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -556,7 +567,7 @@
                 "name": "安道尔",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -584,14 +595,14 @@
                 "name": "土库曼斯坦",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "乌兹别克斯坦",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -605,14 +616,14 @@
                 "name": "朝鲜",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "阿尔及利亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -626,21 +637,21 @@
                 "name": "阿富汗",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "马耳他",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "伊拉克",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -682,56 +693,56 @@
                 "name": "日本",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "巴基斯坦",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "尼泊尔",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "不丹",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "巴哈马",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "西撒哈拉",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "孟加拉国",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "阿曼",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -745,21 +756,21 @@
                 "name": "沙特阿拉伯",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "老挝",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "多米尼加",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -801,21 +812,21 @@
                 "name": "马里",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "塞内加尔",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "布基纳法索",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -836,7 +847,7 @@
                 "name": "菲律宾",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -850,14 +861,14 @@
                 "name": "尼加拉瓜",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "缅甸",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -871,28 +882,28 @@
                 "name": "柬埔寨",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "吉布提",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "特立尼达",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "乍得",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -920,7 +931,7 @@
                 "name": "利比里亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -934,13 +945,14 @@
                 "name": "斯里兰卡",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "尼日利亚",
                 "selected": false,
                 "label": {
+                    color:'#eee',
                     "show": true
                 }
             },
@@ -948,6 +960,7 @@
                 "name": "苏丹",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -955,14 +968,14 @@
                 "name": "马来西亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "圭亚那",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -976,49 +989,49 @@
                 "name": "索马里",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "瑙鲁",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "文莱",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "马尔代夫",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "赤道几内亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "乌干达",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "新加坡",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1032,21 +1045,21 @@
                 "name": "肯尼亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "加蓬",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "厄瓜多尔",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1074,56 +1087,56 @@
                 "name": "坦桑尼亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "查戈斯群岛",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "所罗门群岛",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "东帝汶",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "塞舌尔",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "科摩罗",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "马拉维",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "赞比亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1137,21 +1150,21 @@
                 "name": "津巴布韦",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "纳米比亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "巴拉圭",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1165,20 +1178,21 @@
                 "name": "阿根廷",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "斯威士兰",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "南非",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1186,28 +1200,28 @@
                 "name": "莱索托",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "乌拉圭",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "新西兰",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "福克兰群岛",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1221,7 +1235,7 @@
                 "name": "格鲁吉亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -1242,14 +1256,14 @@
                 "name": "伊朗",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "巴林",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             }/*,
              {
@@ -1270,7 +1284,7 @@
                 "name": "比利时",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1298,7 +1312,7 @@
                 "name": "智利",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1312,21 +1326,21 @@
                 "name": "委内瑞拉",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "秘鲁",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "玻利维亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1354,7 +1368,7 @@
                 "name": "危地马拉",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1368,14 +1382,14 @@
                 "name": "巴拿马",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "哥伦比亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1396,14 +1410,14 @@
                 "name": "古巴",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "斐济群岛",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1417,7 +1431,7 @@
                 "name": "韩国",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1431,14 +1445,14 @@
                 "name": "安哥拉",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "也门",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
@@ -1447,14 +1461,14 @@
                 "label": {
                     "show": true
                 }
-            }/*,
+            },
              {
              "name": "泰国",
              "selected": false,
              "label": {
              "show": true
              }
-             }*//*,
+             }/*,
              {
              "name": "莫桑比克",
              "selected": false,
@@ -1466,21 +1480,21 @@
                 "name": "科威特",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "几内亚",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "中非",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1494,6 +1508,7 @@
                 "name": "扎伊尔",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1515,13 +1530,14 @@
                 "name": "葡萄牙",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "希腊",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1529,6 +1545,7 @@
                 "name": "突尼斯",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1536,6 +1553,7 @@
                 "name": "摩洛哥",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             }/*,
@@ -1550,6 +1568,7 @@
                 "name": "越南",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1557,6 +1576,7 @@
                 "name": "土耳其",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1564,6 +1584,7 @@
                 "name": "叙利亚",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1571,6 +1592,7 @@
                 "name": "以色列",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             }/*,
@@ -1585,6 +1607,7 @@
                 "name": "埃及",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1592,6 +1615,7 @@
                 "name": "西班牙",
                 "selected": false,
                 "label": {
+                    color:'#C5C8D4',
                     "show": true
                 }
             },
@@ -1613,14 +1637,14 @@
                 "name": "意大利",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {
                 "name": "英国",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             /*{
@@ -1634,7 +1658,7 @@
                 "name": "印度",
                 "selected": false,
                 "label": {
-                    "show": true
+                    "show": false
                 }
             },
             {

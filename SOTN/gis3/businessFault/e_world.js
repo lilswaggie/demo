@@ -3,6 +3,10 @@
  */
 (function($){
     $.fn.WorldModule = function(options,param){
+
+        var height = $("body").GeoUtils('getHeight');
+        $('#g_map').css('height', height);
+
         if(typeof options == 'string') return $.fn.WorldModule.methods[options](param);
         $.fn.WorldModule.methods.init();
     }
@@ -31,7 +35,13 @@
                 });
             });
 
-
+             // echarts自适应
+             window.onresize = function () {
+                 var height = $("body").GeoUtils('getHeight');
+                 $('#g_map').css('height', height);
+                 $("body").GeoUtils('getResize',chart);
+            }
+            
         },
         renderData:function(chart){
             var lines = $("body").GeoUtils('getLine');
@@ -79,7 +89,8 @@
         },
         //渲染告警数据
         renderWarningData:function(chart){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+              $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.serviceline){
                     datas.serviceline.map(function(warningItem,warningIndex){
                         var options = chart.getOption();
