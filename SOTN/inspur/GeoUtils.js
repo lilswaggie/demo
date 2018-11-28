@@ -42,7 +42,7 @@
                         distance: 200,
                         autoRotate: true
                     },
-                    baseTexture: 'http://localhost:63342/SOTN/images/earth.jpg',
+                    baseTexture: 'http://localhost:63342/SOTN/images/lizi.png',
                     displacementScale: 0.1,
                     shading: 'color',
                     // 地球背景星图设置
