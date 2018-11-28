@@ -2,7 +2,6 @@
     $.fn.threeMap = function () {
         // 更改可视窗口的高度
         var height = $.fn.GeoUtils.methods.getHeight();
-        console.log(height)
         $('#g_map').css('height', height);
         $.fn.threeMap.methods.init();
     }
@@ -19,17 +18,23 @@
 
             // echarts自适应
             window.onresize = function () {
-                $.fn.GeoUtils.methods.getResize(chinaChart);
-                $.fn.GeoUtils.methods.getResize(e_map);
                 // 更改可视窗口的高度
                 var height = $.fn.GeoUtils.methods.getHeight();
-                console.log(height)
                 $('#g_map').css('height', height);
-                var height2 =  $('#g_map').css('height');
-                console.log(height2)
+                $.fn.GeoUtils.methods.getResize(chinaChart);
+                $.fn.GeoUtils.methods.getResize(e_map);
+
             }
             // 点击事件
-            // $('.province').click($.fn.threeMap.methods.eventTrigger(e_map));
+            $('.province').click(function () {
+                $.fn.threeMap.methods.eventTrigger(e_map)
+            });
+            $('.colorChange').click(function () {
+                $.fn.threeMap.methods.eventColor(chinaChart, e_map)
+            })
+            $('#g_map').click(function () {
+                $.fn.threeMap.methods.eventMap(chinaChart, e_map)
+            })
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -69,10 +74,11 @@
             $.get('geoData.json', function (data) {
                 option['visualMap'] = {
                     left: 'right',
-                    min: 500000,
-                    max: 38000000,
+                    min: 500,
+                    max: 5000,
+                    // color:[#74B7E0','#4575b4','#1E69A6','#2791CB','#0A24A5'],
                     inRange: {
-                        color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                        color: ['#74B7E0', '#74B7E0', '#74B7E0']
                     },
                     text: ['High', 'Low'],           // 文本，默认为数值文本
                     calculable: true
@@ -135,24 +141,31 @@
                     }, {
                         type: 'lines3D',
                         name: '王宁测试',
+                        // var effectColor = ['#1CD6CE','#0AFF8B','#0AE0FA'];
+                        // var linesColor = ['#225755','#1F6F48','#29676F'];
                         effect: {
                             show: true,
-                            trailWidth: 3,
+                            trailWidth: 2,
                             trailLength: 0.15,
                             trailOpacity: 1,
-                            // trailColor: 'rgb(30, 30, 60)'
-                            trailColor: 'red'
+                            trailColor: '#03E3FF'
                         },
 
                         lineStyle: {
-                            width: 1,
-                            //color: 'rgb(50, 50, 150)',
-                            color: 'rgb(118, 233, 241)',
-                            opacity: 0.1
+                            width: 2,
+                            color: '#29676F',
+                            opacity: 0.9
                         },
                         blendMode: 'lighter',
 
-                        data: [[[116.4136103013, 39.9110666857], [132.5390625000, -25.6415263731]], [[116.4136103013, 39.9110666857], [-0.368333, 51.874722]]]
+                        data: [
+                            {coords: [[116.4136103013, 39.9110666857], [-95.639302, 37.266899]],lineStyle: {color:'#225755'}},
+                            {coords: [[101.4038, 36.8207], [-2.401801,30.95309]],lineStyle: {color:'#1F6F48'}},
+                            {coords: [[106.6992, 26.7682], [133.003999,-26.013866]],lineStyle: {color:'#1F6F48'}},
+                            // 非洲
+                            {coords: [[91.1865, 30.1465], [17.326883,-23.866826]],lineStyle: {color:'#17717C'}},
+                            {coords: [[102.9199, 25.4663], [97.393614,-68.480939]],lineStyle: {color:'#1F6F48'}},
+                        ]
                     }
                 )
                 option.series = series;
@@ -161,7 +174,6 @@
 
         },
         eventTrigger: function (nathionalChart) {
-            alert(1)
             var option = nathionalChart.getOption();
 
             if (option.globe[0].viewControl.autoRotate) {
@@ -172,8 +184,61 @@
                 option.globe[0].viewControl.autoRotate = true;
             }
             nathionalChart.setOption(option);
+        },
+        eventColor: function (chinaChart, e_map) {
+            var option = chinaChart.getOption();
+            if (option.visualMap[0].inRange.color.length == 3) {
+                var optionMap = e_map.getOption();
+                
+                option.visualMap[0] = {
+                    left: 'right',
+                    min: 500,
+                    max: 5000,
+                    inRange: {
+                        color: ['#74B7E0', '#4575b4', '#2791CB', '#0A24A5']
+                    },
+                    text: ['High', 'Low'],           // 文本，默认为数值文本
+                    calculable: true
+                }
+                chinaChart.setOption(option);
+                // 判断球的状态
+                if (optionMap.globe[0].viewControl.autoRotate) {
+                    optionMap.globe[0].viewControl.distance = 100;
+                    optionMap.globe[0].viewControl.autoRotate = false;
+                    e_map.setOption(optionMap);
+                } else {
+                    if (optionMap.globe[0].viewControl.distance != 100) {
+                        optionMap.globe[0].viewControl.distance = 200;
+                        optionMap.globe[0].viewControl.autoRotate = true;
+                        e_map.setOption(optionMap);
+                    }
+                }
+
+            } else {
+                $.fn.threeMap.methods.eventTrigger(e_map);
+            }
+        },
+        eventMap: function (chinaChart, nathionalChart) {
+            var optionChina = chinaChart.getOption();
+            var optionNational = nathionalChart.getOption();
+            if (!optionNational.globe[0].viewControl.autoRotate) {
+                if (optionChina.visualMap[0].inRange.color.length == 4) {
+                    optionChina.visualMap[0] = {
+                        left: 'right',
+                        min: 500,
+                        max: 5000,
+                        inRange: {
+                            color: ['#74B7E0', '#74B7E0', '#74B7E0']
+                        },
+                        text: ['High', 'Low'],           // 文本，默认为数值文本
+                        calculable: true
+                    }
+                    chinaChart.setOption(optionChina)
+                }
+                optionNational.globe[0].viewControl.distance = 200;
+                optionNational.globe[0].viewControl.autoRotate = true;
+                nathionalChart.setOption(optionNational);
+            }
         }
-
     }
-
 })(jQuery);
