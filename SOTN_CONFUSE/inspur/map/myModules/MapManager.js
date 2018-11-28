@@ -1,1 +1,135 @@
-define(["esri/map","esri/layers/WebTiledLayer","utils/GeometryUtil","esri/layers/GraphicsLayer","esri/graphic","utils/SymbolUtil","esri/geometry/webMercatorUtils","esri/toolbars/draw","dojo/_base/declare"],function(c,g,e,d,h,i,b,a,f){return f(null,{map:null,constructor:function(){var n=new c("map",Global.mapGlobal.mapInstance.mapOptions);this.map=n;Global.mapGlobal.map=n;if(Global.mapGlobal.mapInstance.isCenter){n.centerAndZoom(e.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],""),Global.mapGlobal.mapInstance.zoom)}var k=new g(Global.mapGlobal.base.map,{copyright:"Heditu",id:"baseMap"});n.addLayer(k);var o=new d();n.addLayer(o);Global.mapGlobal.lineLayer=o;var m=new d();n.addLayer(m);Global.mapGlobal.otnLayer=m;var j=this;j.drawingGraphics(j);j.realQueryWarningOTN(j);var l=[139.565+200,-23.565-10];console.log("xx",b.lngLatToXY(l[0],l[1]))},drawingGraphics:function(j){$.get(Global.mapGlobal.queryPOI.queryOTN,function(k){if(k&&k.nodes){if(k.edges){j._drawingLines(k.edges)}j._drawingPoints(k.nodes);j.queryWarningOTN(j)}})},realQueryWarningOTN:function(j){if(Global.mapGlobal.queryPOI.realQueryFlag){setInterval(function(){j.queryWarningOTN(j)},Global.mapGlobal.queryPOI.realQueryTimer)}},_drawingLines:function(j){j.map(function(p,l){var o=e.getPoint(p.a_longitude,p.a_lantitude,"");var n=e.getPoint(p.z_longitude,p.z_lantitude,"");var k=e.getPolylineByPoints(o,n);var m=new h(k,i.getLineSymbol(),p);Global.mapGlobal.lineLayer.add(m)})},_drawingPoints:function(j){j.map(function(m,k){var n=e.getPoint(m.longitude,m.lantitude,"");var l=new h(n,i.getOTNSymbol(),m);Global.mapGlobal.otnLayer.add(l)})},queryWarningOTN:function(j){$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(k){if(k&&k.site){j._handlerOTNWarning(k.site)}if(k&&k.topolink){j._handlerLineWarning(k.topolink)}})},_handlerOTNWarning:function(j){j.map(function(l,k){Global.mapGlobal.otnLayer.graphics.map(function(n,m){if(n.attributes.oid==l){n.setSymbol(i.getOTNWarningSymbol())}})})},_handlerLineWarning:function(j){j.map(function(l,k){Global.mapGlobal.lineLayer.graphics.map(function(o,n){var m=false;o.attributes.aggr.map(function(p,q){if(p.oid==l){m=true}});if(m){o.setSymbol(i.getWarningLineSymbol())}})})}})});
+/**
+ * @author wang.ning
+ */
+define([
+    "esri/map",
+    "esri/layers/WebTiledLayer",
+    "utils/GeometryUtil",
+    "esri/layers/GraphicsLayer",
+    "esri/graphic",
+    "utils/SymbolUtil",
+    "esri/geometry/webMercatorUtils",
+    "esri/toolbars/draw",
+    "dojo/_base/declare"
+],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,declare){
+    return declare(null,{
+        map:null,
+        constructor:function(){
+            var map = new Map("map",Global.mapGlobal.mapInstance.mapOptions);
+            this.map = map;
+            Global.mapGlobal.map = map;
+
+            if(Global.mapGlobal.mapInstance.isCenter)
+                map.centerAndZoom(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],''),Global.mapGlobal.mapInstance.zoom);
+            
+            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': 'Heditu','id': 'baseMap'});
+            map.addLayer(layer);
+
+            var lineLayer = new GraphicsLayer();
+            map.addLayer(lineLayer);
+            Global.mapGlobal.lineLayer = lineLayer;
+
+            var graphicLayer = new GraphicsLayer();
+            map.addLayer(graphicLayer);
+            Global.mapGlobal.otnLayer = graphicLayer;
+
+            var this_instance = this;
+
+            this_instance.drawingGraphics(this_instance);
+            this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
+
+            var aa = [139.565+200,-23.565-10];
+            console.log('xx',webMercatorUtils.lngLatToXY(aa[0], aa[1]));
+
+            
+            
+
+
+           
+        },
+        /**
+         * 
+         * @param {绘制数据} this_instance 
+         */
+        drawingGraphics:function(this_instance){
+            $.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
+                if(datas && datas.nodes){
+                    if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
+                    this_instance._drawingPoints(datas.nodes);                  //绘制点数据
+                    this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                }
+            });
+        },
+        /**
+         * 实时查询告警数据
+         */
+        realQueryWarningOTN:function(this_instance){
+            if(Global.mapGlobal.queryPOI.realQueryFlag){
+                setInterval(function(){
+                    this_instance.queryWarningOTN(this_instance);
+                },Global.mapGlobal.queryPOI.realQueryTimer);
+            }
+        },
+        /**
+         * 绘制线数据
+         */
+        _drawingLines:function(lines){
+            lines.map(function(lineItem,index){
+                var a_p = GeometryUtil.getPoint(lineItem.a_longitude,lineItem.a_lantitude,'');
+                var z_p = GeometryUtil.getPoint(lineItem.z_longitude,lineItem.z_lantitude,'');
+                var line = GeometryUtil.getPolylineByPoints(a_p,z_p);
+                var g = new Graphic(line,SymbolUtil.getLineSymbol(),lineItem);
+                Global.mapGlobal.lineLayer.add(g);
+            });
+        },
+        /**
+         * 绘制点设施
+         * @param {} points 
+         */
+        _drawingPoints:function(points){
+            points.map(function(item,index){
+                var p1 = GeometryUtil.getPoint(item.longitude,item.lantitude,'');
+                var g = new Graphic(p1,SymbolUtil.getOTNSymbol(),item);
+                Global.mapGlobal.otnLayer.add(g);
+            });
+        },
+        /**
+         * 告警数据查询
+         */
+        queryWarningOTN:function(this_instance){
+            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+                if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
+                if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
+            });
+        },
+        /**
+         * 处理otn设备告警
+         */
+        _handlerOTNWarning:function(warningPoints){
+            warningPoints.map(function(warningOtnItem,otnIndex){
+                Global.mapGlobal.otnLayer.graphics.map(function(graphic,gIndex){
+                    if(graphic.attributes.oid == warningOtnItem){
+                        graphic.setSymbol(SymbolUtil.getOTNWarningSymbol());
+                    }
+                });
+            });
+        },
+        /**
+         * 处理逻辑线告警
+         */
+        _handlerLineWarning:function(warningToplink){
+            warningToplink.map(function(warningLinkItem,warningLinkIndex){
+                Global.mapGlobal.lineLayer.graphics.map(function(graphic,lIndex){
+                    var flag = false;
+                    graphic.attributes.aggr.map(function(aggrItem,aggrIndex){
+                        if(aggrItem.oid == warningLinkItem){
+                            flag = true;
+                            //break;
+                        }
+                    });
+                    if(flag)  graphic.setSymbol(SymbolUtil.getWarningLineSymbol()); 
+                });
+            });
+        }          
+    });
+});
