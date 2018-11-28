@@ -5,7 +5,6 @@
     $.fn.ChinaModule = function (options, params) {
         var height = $("body").GeoUtils('getHeight');
         $('#g_map').css('height', height);
-
         if (typeof options == 'string') return $.fn.ChinaModule.methods[options](params);
         $.fn.ChinaModule.methods.init();
     }
@@ -34,7 +33,8 @@
             // 数据渲染
             $.fn.ChinaModule.methods.renderData(chart);
 
-            $.fn.ChinaModule.methods.chartEventsTrigger(chart);
+
+            //$.fn.ChinaModule.methods.chartEventsTrigger(chart);
             // 自适应调整
             window.onresize = function () {
                 var height = $("body").GeoUtils('getHeight');
@@ -42,10 +42,15 @@
                 $("body").GeoUtils('getResize', chart);
 
             };
-            // 点击事件：线条高亮，两端闪烁
-            $(".port").click(function () {
-                $.fn.ChinaModule.methods.linesEventTrigger({ id: "123", chart: chart })
+            // 点击事件
+            $("#g_map").click(function () {
+                $.fn.ChinaModule.methods.mapEventTrigger(chart);
             })
+            // 线条高亮，两端闪烁
+            $(".port").click(function () {
+                $.fn.ChinaModule.methods.linesEventTrigger({ id: "123", chart })
+            });
+
         },
         renderData: function (chart) {
             var points = $("body").GeoUtils('getEffectScatters');
@@ -86,6 +91,8 @@
 
                     //实时渲染开启
                     $.fn.ChinaModule.methods.realRenderWarningData(chart);
+
+
                 }
             });
 
@@ -119,7 +126,8 @@
                         chart.setOption(options);
                     });
 
-                }
+                };
+                $.fn.ChinaModule.globalOption = chart.getOption();
             });
         },
         //实时渲染功能
@@ -159,53 +167,111 @@
                     });
                     chart.setOption(opt);
                 } else {
+                    chart.clear()
                     chart.setOption(old_opt);
                 }
             });
         },
+        /**
+         * @author pimingzhao
+         * @param {id,chart} param 
+         * 点击事件
+         */
         linesEventTrigger: function (param) {
             var oid = param.id;
             var chart = param.chart;
             var option = chart.getOption();
             var series = option.series;
-            // map  effectScatter  lines
-
-            series.forEach((element,index) => {
-                if (element.type == 'lines') {
-                    // 在线条里寻找 需要高亮的那条线，拿到端点数据
-                    var linesData = element.data;
-                    linesData.forEach((ele, i) => {
-                        var linesAggr = ele.data.aggr;
-                        linesAggr.forEach(ele => {
-                            if(oid == ele.oid) {
-                                var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
-                                series.push({
-                                    type: 'lines',
-                                    name: 'lines专线',
-                                    effect: {
-                                        show: true,
-                                        period: 4,
-                                        // 迁移
-                                        symbol: planePath,
-                                        symbolSize: 15
-                                    },
-                                    data: [{
+            // 线条数据
+            var dataLines = [];
+            // 端点数据
+            var dataPorts = [];
+            if (series.length == 3) {
+                series.forEach((element, index) => {
+                    if (element.type == 'lines') {
+                        // 在线条里寻找 需要高亮的那条线，拿到端点数据
+                        var linesData = element.data;
+                        linesData.forEach((ele, i) => {
+                            var linesAggr = ele.data.aggr;
+                            linesAggr.forEach(ele => {
+                                if (oid == ele.oid) {
+                                    dataLines.push({
                                         name: linesData[i].oname,
                                         coords: linesData[i].coords,
-                                        lineStyle: {color: "blue",width:2,curveness: 0.2}
-                                    }]
-                                },{
-                                    type: 'effectScatter',
-                                    name: 'effectScatter',
-                                    // itemStyle: 
-                                    data: linesData[i].coords
-                                });
-                                chart.setOption(option)
-                            }
+                                        lineStyle: { color: "#674BFF", width: 1, curveness: 0.2 }
+                                    });
+                                    linesData[i].coords.forEach(ele => {
+                                        dataPorts.push(ele)
+                                    });
+                                }
+                            });
                         });
-                    });
-                }
-            });
+                    }
+                });
+                $.fn.ChinaModule.methods.renderLinesEffect({
+                    series,
+                    dataLines,
+                    dataPorts
+                })
+                chart.setOption(option)
+            }
+
+            console.error('新', chart.getOption());
+        },
+        /**
+         * @author: pimingzhao
+         * @param {series,dataLines,dataPorts} param 
+         * 处理线条和端点数据
+         */
+        renderLinesEffect: function (param) {
+            param.series.push({
+                type: 'lines',
+                name: 'lines专线',
+                zlevel: 1,
+                effect: {
+                    show: true,
+                    period: 5,
+                    trailLength: 0.5,
+                    color: '#fff',
+                    symbolSize: 4
+                },
+                data: param.dataLines
+            }, {
+                    name: 'effectScatter',
+                    type: 'effectScatter',
+                    coordinateSystem: 'geo',
+                    zlevel: 2,
+                    // 涟漪的设置
+                    rippleEffect: {
+                        // 波纹的绘制方式 strike fill
+                        brushType: 'stroke'
+                    },
+                    // 图形文字标签
+                    // label: {
+                    //     normal: {
+                    //         show: true,
+                    //         position: 'right',
+                    //         formatter: '{b}'
+                    //     }
+                    // },
+                    symbolSize: 7,
+                    itemStyle: {
+                        normal: {
+                            color: 'blue',
+                            opacity: 0.8
+                        }
+                    },
+                    data: param.dataPorts
+                });
+        },
+        // 地图点击事件
+        mapEventTrigger: function (chart) {
+            if (chart.getOption().series.length != 3) {
+                console.error('老数据:', $.fn.ChinaModule.globalOption);
+                chart.setOption($.fn.ChinaModule.globalOption)
+                chart.clear()
+                chart.setOption($.fn.ChinaModule.globalOption)
+            }
         }
     }
 })(jQuery);

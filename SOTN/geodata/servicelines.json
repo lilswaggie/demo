@@ -247,7 +247,7 @@
     "z_longitude": 102.9199,
     "z_lantitude": 25.4663,
     "aggr": [{
-      "oid": "专线 ID",
+      "oid": "123",
       "oname": "专线名称",
       "a_nename": "A端网元名称",
       "z_nename": "Z端网元名称",
