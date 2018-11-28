@@ -27,7 +27,19 @@
                 });
                 $.fn.WorldModule.methods.renderData(chart);
                 chart.on('click', function (params) {
-                    console.log('params', params.data);
+                    console.log('params', params);
+                    if(params.componentSubType == 'scatter'){
+                        var $menu = $("<div/>").menu({});
+                        $menu.menu('appendItem',{
+                            text: params.name,
+                            data:params.data,
+                            //iconCls: 'icon-ok',
+                        });
+                         $menu.menu('show',{
+                            left: params.event.event.pageX,
+                            top: params.event.event.pageY
+                        });
+                    }
                 });
             });
             // echarts自适应
@@ -121,6 +133,7 @@
         },
         chartEventsTrigger: function (chart) {
             chart.on('click', function (params) {
+                console.error('params',params);
                 var old_opt = chart.getOption();
                 var lightdatas = [];
                 lightdatas.push(params.data);
