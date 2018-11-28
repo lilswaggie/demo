@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>业务故障-政企业务</title>
-    <script src="../../lib/jquery-1.12.4.min.js"></script>
-    <script src="../../lib/echarts4/echarts.js"></script>
-    <script src="../../geodata/china.js"></script>
-    <script src="../../inspur/GeoUtils.js"></script>
+    <script src="../lib/jquery-1.12.4.min.js"></script>
+     <script src="../lib/echarts4/echarts.js"></script>
+     <script src="../geodata/china.js"></script>
+     <script src="../inspur/GeoUtils.js"></script>
 </head>
 <body>
     <div id="g_map" style="width:100%;height:800px;"></div>
@@ -55,7 +55,6 @@
             var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
            
             var color = ['#a6c84c', '#ffa022', '#46bee9'];
-            console.error('bjdatas:',$("body").GeoUtils('convertData',BJData));
             var series = [];
             [['北京', BJData], ['上海', SHData], ['广州', GZData]].forEach(function (item, i) {
                 series.push(
@@ -231,13 +230,11 @@
                 data:[]
             }
             $.get('https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',function(datas){
-                console.error('datas',datas);
-                
+
                 if(datas && datas.nodes){
                     //处理点数据：闪烁
                     var ps = [];
                     datas.nodes.map(function(nodeItem,nodeIndex){
-                        console.error('nodeItem',nodeItem);
                         var point = {
                             name:nodeItem.oname,
                             value:[nodeItem.longitude,nodeItem.lantitude].concat(30)
@@ -266,11 +263,9 @@
             
 
             chart.on('click',function(params){
-                console.error('options',chart.getOption());
-                //var old_opt = chart.getOption();
-                /*if(params.seriesType && params.seriesType == 'lines'){
-                    console.error('params',params);
-                    console.error('series',chart.getOption().series);
+
+                console.error('old_opt',old_series);
+                if(params.seriesType && params.seriesType == 'lines'){
                     var opt = chart.getOption();
                     opt.series.push({
                         name: ' Top10',
@@ -294,8 +289,14 @@
                     });
                     chart.setOption(opt);
                 }else{
-                    //chart.setOption(old_opt);
-                }*/
+                    alert('就还原')
+                    var newOpt = chart.getOption();
+                    newOpt.series = old_series
+;
+                    console.error(newOpt);
+                    chart.setOption(newOpt);
+                    console.error('看看怎么回事,',chart.getOption());
+                }
             });
             
         });
