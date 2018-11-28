@@ -78,7 +78,7 @@
                     max: 5000,
                     // color:[#74B7E0','#4575b4','#1E69A6','#2791CB','#0A24A5'],
                     inRange: {
-                        color: ['#74B7E0', '#74B7E0', '#74B7E0']
+                        color: ['#74B7E0', '#4575b4', '#2791CB','#0A24A5']
                     },
                     text: ['High', 'Low'],           // 文本，默认为数值文本
                     calculable: true
@@ -233,7 +233,7 @@
                         text: ['High', 'Low'],           // 文本，默认为数值文本
                         calculable: true
                     }
-                    chinaChart.setOption(optionChina)
+                    // chinaChart.setOption(optionChina)
                 }
                 optionNational.globe[0].viewControl.distance = 200;
                 optionNational.globe[0].viewControl.autoRotate = true;
