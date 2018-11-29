@@ -42,6 +42,7 @@
                 $("body").GeoUtils('getResize', chart);
 
             };
+
             // 点击事件
             $("#g_map").click(function () {
                 $.fn.ChinaModule.methods.mapEventTrigger(chart);
@@ -171,6 +172,7 @@
                     chart.setOption(old_opt);
                 }
             });
+
         },
         /**
          * @author pimingzhao

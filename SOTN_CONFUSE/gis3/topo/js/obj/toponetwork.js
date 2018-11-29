@@ -73,5 +73,13 @@ twaver.Util.ext(toponetwork, twaver.vector.Network, {
         });
     },
     interactionHandler: function (e) {
+        /*if (e.kind == 'clickElement' ){
+            var element = e.element;
+            if(element instanceof TransNe){
+                var int_id=element.getClient("int_id");
+                alert(int_id)
+            }
+        }*/
+
     }
 });

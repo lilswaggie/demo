@@ -4,11 +4,22 @@
 
 if(!Global.mapGlobal) Global.mapGlobal = {};
 
+Global.mapGlobal.treeMapConfig = {
+    noRotate:{                               
+        distance:100,                      //视角距离
+        targetCoord:[109.1162,34.2004]     //定位位置
+    },
+    rotate:{                             
+        distance:200,         
+        targetCoord:[116.46, 39.92]
+    }
+}
+
 //symbol:otn line 
 Global.mapGlobal.symbolConfig = {
-    OTN_SYMBOL:'http://localhost:63342/SOTN/images/OTN_N_B.png',
-    OTN_DEFAULT_SYMBOL:'http://localhost:63342/SOTN/images/OTN_F_B.png',
-    OTN_LIGHT_SYMBOL:'http://localhost:63342/SOTN/images/ceshi2.png',
+    OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',
+    OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
+    OTN_LIGHT_SYMBOL:Global.sysPath+'images/ceshi2.png',
     SYMBOL_WIDTH:16,
     SYMBOL_HEIGHT:16,
 }
@@ -36,8 +47,8 @@ Global.mapGlobal.mapInstance = {
             wkid: 4326
         },
         center: [108.92361111111111, 34.54083333333333],
-        maxZoom: 18,
-        minZoom: 1,
+        maxZoom: 15,
+        minZoom: 5,
         logo: false,
         slider: false,
         wrapAround180: false,
