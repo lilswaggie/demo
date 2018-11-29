@@ -31,10 +31,10 @@
             });
             $('.colorChange').click(function () {
                 $.fn.threeMap.methods.eventColor(chinaChart, e_map)
-            })
+            });
             $('#g_map').click(function () {
                 $.fn.threeMap.methods.eventMap(chinaChart, e_map)
-            })
+            });
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -52,7 +52,7 @@
                     itemStyle: {
                         normal: {
                             areaColor: "rgba(0,0,152,0.5)",
-                            borderColor: 'red'
+                            borderColor: '#032E29'
                         }
                     },
                     emphasis: {
@@ -78,7 +78,7 @@
                     max: 5000,
                     // color:[#74B7E0','#4575b4','#1E69A6','#2791CB','#0A24A5'],
                     inRange: {
-                        color: ['#74B7E0', '#4575b4', '#2791CB','#0A24A5']
+                        color: ['#0FF5D8', '#1a766c', '#1a766c','#032E29']
                     },
                     text: ['High', 'Low'],           // 文本，默认为数值文本
                     calculable: true
@@ -89,7 +89,8 @@
                     // 绘制完整尺寸的 echarts 实例
                     top: 0, left: 0,
                     right: 0, bottom: 0,
-                    roam: true,
+                    // 控制缩放
+                    roam: false,
                     //silent:true,//图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件。
                     boundingCoords: [[-180, 90], [180, -90]],
                     itemStyle: {
@@ -142,7 +143,7 @@
                         type: 'lines3D',
                         name: '王宁测试',
                         // var effectColor = ['#1CD6CE','#0AFF8B','#0AE0FA'];
-                        // var linesColor = ['#225755','#1F6F48','#29676F'];
+                        // var linesColor = ['#225755','#1F6F48','#298176',#0A464D'];
                         effect: {
                             show: true,
                             trailWidth: 2,
