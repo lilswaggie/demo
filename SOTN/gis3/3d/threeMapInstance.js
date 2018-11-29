@@ -148,7 +148,7 @@
                             trailWidth: 2,
                             trailLength: 0.15,
                             trailOpacity: 1,
-                            trailColor: '#03E3FF'
+                            trailColor: '#FBFCF9'
                         },
 
                         lineStyle: {
@@ -159,12 +159,12 @@
                         blendMode: 'lighter',
 
                         data: [
-                            {coords: [[116.4136103013, 39.9110666857], [-95.639302, 37.266899]],lineStyle: {color:'#225755'}},
-                            {coords: [[101.4038, 36.8207], [-2.401801,30.95309]],lineStyle: {color:'#1F6F48'}},
-                            {coords: [[106.6992, 26.7682], [133.003999,-26.013866]],lineStyle: {color:'#1F6F48'}},
+                            {coords: [[116.4136103013, 39.9110666857], [-95.639302, 37.266899]],lineStyle: {color:'#B33341'}},
+                            {coords: [[101.4038, 36.8207], [-2.401801,30.95309]],lineStyle: {color:'#94BD68'}},
+                            {coords: [[106.6992, 26.7682], [133.003999,-26.013866]],lineStyle: {color:'#388283'}},
                             // 非洲
-                            {coords: [[91.1865, 30.1465], [17.326883,-23.866826]],lineStyle: {color:'#17717C'}},
-                            {coords: [[102.9199, 25.4663], [97.393614,-68.480939]],lineStyle: {color:'#1F6F48'}},
+                            {coords: [[91.1865, 30.1465], [17.326883,-23.866826]],lineStyle: {color:'#94BD68'}},
+                            {coords: [[102.9199, 25.4663], [97.393614,-68.480939]],lineStyle: {color:'#B33341'}},
                         ]
                     }
                 )
