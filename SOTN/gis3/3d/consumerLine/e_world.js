@@ -20,7 +20,7 @@
                 });
                 echarts.registerMap('world',mapJson);
                 chart.setOption({
-                    backgroundColor: '#060A10',
+                    backgroundColor: '#BEDBF9',
                     geo: $("body").GeoUtils('getWorldMapInstance'),
                     series:[/*{
                         //center:[145.3893,0.0516],
@@ -75,27 +75,7 @@
                     scatterPoint.data = ps;
 
                     var options = chart.getOption();
-                    // 白色拖尾
-                    options.series.push(lines,{
-                        name: 'linesTrail',
-                        type: 'lines',
-                        zlevel: 1,
-                        effect: {
-                            show: true,
-                            period: 6,
-                            trailLength: 0.7,
-                            color: '#fff',
-                            symbolSize: 3
-                        },
-                        lineStyle: {
-                            normal: {
-                                color: '#E1DCDD',
-                                width: 0,
-                                curveness: 0.2
-                            }
-                        },
-                        data: ls
-                    });
+                    options.series.push(lines);
                     options.series.push(scatterPoint);
 
                     chart.setOption(options);
@@ -125,7 +105,7 @@
                                     });
                                     if(flag){
                                         serieItemData.lineStyle = {
-                                            color: '#9D3B3B'
+                                            color:Global.mapGlobal.echartsConfig.lineColor.fault
                                         };
                                     }
                                 });
@@ -167,7 +147,7 @@
                             show: true,
                             period: 6,
                             trailLength: 0.7,
-                            color: '#fff',
+                            color: 'red',
                             symbolSize: 3
                         },
                         data:lightdatas
