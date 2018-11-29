@@ -31,10 +31,13 @@
             });
             $('.colorChange').click(function () {
                 $.fn.threeMap.methods.eventColor(chinaChart, e_map)
-            })
+            });
             $('#g_map').click(function () {
                 $.fn.threeMap.methods.eventMap(chinaChart, e_map)
-            })
+            });
+            chinaChart.on('mousedown', function (params) {
+                console.log(params);
+            });
         },
         //获取中国地图贴图
         getChinaChart: function () {
