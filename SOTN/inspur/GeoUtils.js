@@ -38,7 +38,7 @@
                     show:true,
                     viewControl:{
                         targetCoord: [109.1162, 34.2004],
-                        autoRotateSpeed: 5,
+                        autoRotateSpeed: 10,
                         distance: 200,
                         autoRotate: true
                     },
