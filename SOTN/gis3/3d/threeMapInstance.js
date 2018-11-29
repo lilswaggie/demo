@@ -78,7 +78,7 @@
                     max: 5000,
                     // color:[#74B7E0','#4575b4','#1E69A6','#2791CB','#0A24A5'],
                     inRange: {
-                        color: ['#0FF5D8', '#1a766c', '#1a766c','#032E29']
+                        color: ['#0FF5D8', '#1a766c', '#1a766c', '#032E29']
                     },
                     text: ['High', 'Low'],           // 文本，默认为数值文本
                     calculable: true
@@ -160,12 +160,49 @@
                         blendMode: 'lighter',
 
                         data: [
-                            {coords: [[116.4136103013, 39.9110666857], [-95.639302, 37.266899]],lineStyle: {color:'#B33341'}},
-                            {coords: [[101.4038, 36.8207], [-2.401801,30.95309]],lineStyle: {color:'#94BD68'}},
-                            {coords: [[106.6992, 26.7682], [133.003999,-26.013866]],lineStyle: {color:'#388283'}},
+                            { coords: [[116.4136103013, 39.9110666857], [-95.639302, 37.266899]], lineStyle: { color: '#B33341' } },
+                            { coords: [[101.4038, 36.8207], [-2.401801, 30.95309]], lineStyle: { color: '#94BD68' } },
+                            { coords: [[106.6992, 26.7682], [133.003999, -26.013866]], lineStyle: { color: '#388283' } },
                             // 非洲
-                            {coords: [[91.1865, 30.1465], [17.326883,-23.866826]],lineStyle: {color:'#94BD68'}},
-                            {coords: [[102.9199, 25.4663], [97.393614,-68.480939]],lineStyle: {color:'#B33341'}},
+                            { coords: [[91.1865, 30.1465], [17.326883, -23.866826]], lineStyle: { color: '#94BD68' } },
+                            { coords: [[102.9199, 25.4663], [97.393614, -68.480939]], lineStyle: { color: '#B33341' } },
+                        ]
+                    }, {
+                        type: 'scatter3D',
+                        name: 'scatter3D2',
+                        coordinateSystem: 'globe',
+                        symbol: 'circle',
+                        symbolSize: '5',
+                        itemStyle: {
+                            color: 'blue',
+                            opacity: 0.9
+                        },
+                        label: {
+                            show: true,
+                            formatter: '{b}'
+                        },
+                        data: [
+                            {
+                                name: '北京', value: [116.4136103013, 39.9110666857]
+                            }, {
+                                name: '美国', value: [-95.639302, 37.266899]
+                            },{ 
+                                name: "青海", value: [101.4038, 36.8207] 
+                            }, {
+                                name: '阿尔及利亚',value: [-2.401801, 30.95309]
+                            }, {
+                                name: '贵州',value: [106.6992, 26.7682]
+                            }, {
+                                name: '澳大利亚',value: [134.247186,-25.479252]
+                            },{
+                                name: '西藏',value: [91.1865, 30.1465]
+                            },{
+                                name: '纳米比亚',value: [17.326883, -23.866826]
+                            },{
+                                name: '云南',value: [102.9199, 25.4663]
+                            },{
+                                name: '南极洲',value: [97.393614, -68.480939]
+                            }
                         ]
                     }
                 )
@@ -190,7 +227,7 @@
             var option = chinaChart.getOption();
             if (option.visualMap[0].inRange.color.length == 3) {
                 var optionMap = e_map.getOption();
-                
+
                 option.visualMap[0] = {
                     left: 'right',
                     min: 500,
