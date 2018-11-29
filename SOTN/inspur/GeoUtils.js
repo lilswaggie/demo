@@ -80,6 +80,12 @@
                          texture: 'http://localhost:63342/SOTN/images/night.jpg'
                          }],
                 },
+                tooltip: {
+                    show: true,
+                    trigger: 'item',
+                    alwaysShowContent: true,
+                    formatter: '{b}'
+                },
                 series:[]
             }
             return geo;
@@ -98,7 +104,7 @@
                         areaColor:'#F9FBFF'
                     }
                 },
-                //regions:$("body").GeoUtils('getChinaRegions')
+                // regions:$("body").GeoUtils('getChinaRegions')
             }
             return geo;
         },
