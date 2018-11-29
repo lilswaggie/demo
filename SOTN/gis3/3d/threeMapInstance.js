@@ -10,7 +10,7 @@
             var e_map = echarts.init(document.getElementById("g_map"));
             var chinaChart = $.fn.threeMap.methods.getChinaChart();
 
-            var option = $("body").GeoUtils('get3dMapInstance', { chinaChart: chinaChart });
+            var option = $("body").GeoUtils('get3dMapInstance',{ chinaChart: chinaChart });  //
             e_map.setOption(option);
             // 渲染数据
             $.fn.threeMap.methods.renderNationalData(e_map);
@@ -19,14 +19,14 @@
             // echarts自适应
             window.onresize = function () {
                 // 更改可视窗口的高度
-                var height = $.fn.GeoUtils.methods.getHeight();
+                var height = $("body").GeoUtils('getHeight');
                 $('#g_map').css('height', height);
-                $.fn.GeoUtils.methods.getResize(chinaChart);
-                $.fn.GeoUtils.methods.getResize(e_map);
+                $("body").GeoUtils('getResize',chinaChart);
+                $("body").GeoUtils('getResize',e_map);
 
             }
             // 点击事件
-            $('.province').click(function () {
+           /* $('.province').click(function () {
                 $.fn.threeMap.methods.eventTrigger(e_map)
             });
             $('.colorChange').click(function () {
@@ -34,7 +34,7 @@
             })
             $('#g_map').click(function () {
                 $.fn.threeMap.methods.eventMap(chinaChart, e_map)
-            })
+            })*/
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -89,7 +89,7 @@
                     // 绘制完整尺寸的 echarts 实例
                     top: 0, left: 0,
                     right: 0, bottom: 0,
-                    roam: true,
+                    roam: false,
                     //silent:true,//图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件。
                     boundingCoords: [[-180, 90], [180, -90]],
                     itemStyle: {
@@ -136,6 +136,10 @@
                         itemStyle: {
                             color: 'blue',
                             opacity: 0.9
+                        },
+                        label:{
+                            show:false,
+                            formatter:'王宁'
                         },
                         data: data.spots
                     }, {
