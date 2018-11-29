@@ -42,11 +42,21 @@
                         distance: 200,
                         autoRotate: true
                     },
-                    baseTexture: 'http://localhost:63342/SOTN/images/earth.jpg',
+                    baseTexture: 'http://localhost:63342/SOTN/images/lizi.png',
                     displacementScale: 0.1,
                     shading: 'color',
-                    // 地球背景星图设置
-                    environment: 'http://localhost:63342/SOTN/images/starfield.jpg',
+                    environment:'transparent',
+                    // 地球背景星图设置 http://localhost:63342/SOTN/images/background.png
+                    //environment: 'auto',
+                    //environment: 'asset/starfield.jpg',
+                    //environment: '#000',
+                    /*environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0, color: '#00aaff' // 天空颜色
+                    }, {
+                        offset: 0.7, color: '#998866' // 地面颜色
+                    }, {
+                        offset: 1, color: '#998866' // 地面颜色
+                    }], false),*/
                     postEffect:{
                         enable:true,
                     },

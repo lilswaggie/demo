@@ -161,11 +161,11 @@ $(function () {
                     },
                     emphasis: {
                         areaColor: '#3F7FDB',
-                        shadowOffsetX: 0,
+                        /*shadowOffsetX: 0,
                         shadowOffsetY: 0,
                         shadowBlur: 20,
                         borderWidth: 0,
-                        //shadowColor: '#ffc7eb'
+                        shadowColor: '#ffc7eb'*/
                     }
                 },
                 emphasis:{
