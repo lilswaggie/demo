@@ -1,7 +1,7 @@
 (function ($) {
     $.fn.threeMap = function () {
         // 更改可视窗口的高度
-        var height = $.fn.GeoUtils.methods.getHeight();
+        var height = $("body").GeoUtils('getHeight');
         $('#g_map').css('height', height);
         $.fn.threeMap.methods.init();
     }
@@ -9,7 +9,6 @@
         init: function () {
             var e_map = echarts.init(document.getElementById("g_map"));
             var chinaChart = $.fn.threeMap.methods.getChinaChart();
-
             var option = $("body").GeoUtils('get3dMapInstance', { chinaChart: chinaChart });
             e_map.setOption(option);
             // 渲染数据
@@ -19,10 +18,10 @@
             // echarts自适应
             window.onresize = function () {
                 // 更改可视窗口的高度
-                var height = $.fn.GeoUtils.methods.getHeight();
+                var height = $("body").GeoUtils('getHeight');
                 $('#g_map').css('height', height);
-                $.fn.GeoUtils.methods.getResize(chinaChart);
-                $.fn.GeoUtils.methods.getResize(e_map);
+                $("body").GeoUtils('getResize',{chart: chinaChart});
+                $("body").GeoUtils('getResize',{chart: e_map});
 
             }
             // 点击事件
@@ -179,7 +178,11 @@
                         },
                         label: {
                             show: true,
-                            formatter: '{b}'
+                            formatter: '{b}',
+                            textStyle: {
+                                color: '#000'
+                            },
+                            backgroundColor: '#d49f3e'
                         },
                         data: [
                             {
@@ -207,7 +210,8 @@
                     }
                 )
                 option.series = series;
-                nathionalChart.setOption(option)
+                option.backgroundColor = 'rgba(0,0,0,0)';
+                nathionalChart.setOption(option);
             });
 
         },
