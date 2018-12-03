@@ -23,7 +23,7 @@
 
         get3dMapInstance:function(param){
             var geo = {
-                backgroundColor: '#000',
+                backgroundColor: 'rgba(0,0,0,0)',
                 globe: {
                     /*  viewControl:{
                      rotateSensitivity:0, //鼠标旋转灵敏度
