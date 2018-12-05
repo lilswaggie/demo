@@ -20,7 +20,7 @@
                 });
                 echarts.registerMap('world',mapJson);
                 chart.setOption({
-                    backgroundColor: '#060A10',
+                    backgroundColor: 'rgba(0,0,0,0)',
                     geo: $("body").GeoUtils('getWorldMapInstance'),
                     series:[/*{
                         //center:[145.3893,0.0516],
@@ -110,7 +110,9 @@
         },
         //渲染告警数据
         renderWarningData:function(chart){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            //../../geodata/queryWarnings.json
+            //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.serviceline){
                     datas.serviceline.map(function(warningItem,warningIndex){
                         var options = chart.getOption();

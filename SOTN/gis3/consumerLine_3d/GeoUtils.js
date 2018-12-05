@@ -94,6 +94,7 @@
         getWorldMapInstance: function () {
             var geo = {
                 map: 'world',
+                top:'25%',
                 silent: false,
                 roam: false,
                 show: true,

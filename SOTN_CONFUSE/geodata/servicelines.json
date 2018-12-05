@@ -1,0 +1,430 @@
+{
+  "nodes": [{
+      "oid": 10,
+      "oname": "北京",
+      "longitude": 116.4551,
+      "lantitude": 40.2539,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 11,
+      "oname": "河南",
+      "longitude": 113.4668,
+      "lantitude": 34.6234,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 12,
+      "oname": "四川",
+      "longitude": 103.9526,
+      "lantitude": 30.7617,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 13,
+      "oname": "西藏",
+      "longitude": 91.1865,
+      "lantitude": 30.1465,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 14,
+      "oname": "新疆",
+      "longitude": 87.9236,
+      "lantitude": 43.5883,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 15,
+      "oname": "湖南",
+      "longitude": 113.0823,
+      "lantitude": 28.2568,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 16,
+      "oname": "云南",
+      "longitude": 102.9199,
+      "lantitude": 25.4663,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 17,
+      "oname": "山东",
+      "longitude": 117.1582,
+      "lantitude": 36.8701,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 18,
+      "oname": "福建",
+      "longitude": 119.4543,
+      "lantitude": 25.9222,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 19,
+      "oname": "黑龙江",
+      "longitude": 127.9688,
+      "lantitude": 45.368,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 20,
+      "oname": "内蒙古",
+      "longitude": 111.4124,
+      "lantitude": 40.4901,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 21,
+      "oname": "陕西",
+      "longitude": 109.1162,
+      "lantitude": 34.2004,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 22,
+      "oname": "江苏",
+      "longitude": 118.8062,
+      "lantitude": 31.9208,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    },
+    {
+      "oid": 23,
+      "oname": "青海",
+      "longitude": 101.4038,
+      "lantitude": 36.8207,
+      "aggr": [{
+        "oid": "网元ID",
+        "oname": "网元名称"
+      }]
+    }
+  ],
+  "edges": [{
+    "oid": 100,
+    "oname": "北京-河南",
+    "a_oid": 10,
+    "a_oname": "北京",
+    "a_longitude": 116.4551,
+    "a_lantitude": 40.2539,
+    "z_oid": 11,
+    "z_oname": "河南",
+    "z_longitude": 113.4668,
+    "z_lantitude": 34.6234,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 101,
+    "oname": "河南-四川",
+    "a_oid": 11,
+    "a_oname": "河南",
+    "a_longitude": 113.4668,
+    "a_lantitude": 34.6234,
+    "z_oid": 12,
+    "z_oname": "四川",
+    "z_longitude": 103.9526,
+    "z_lantitude": 30.7617,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 102,
+    "oname": "四川-西藏",
+    "a_oid": 12,
+    "a_oname": "四川",
+    "a_longitude": 103.9526,
+    "a_lantitude": 30.7617,
+    "z_oid": 13,
+    "z_oname": "西藏",
+    "z_longitude": 91.1865,
+    "z_lantitude": 30.1465,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 103,
+    "oname": "西藏-新疆",
+    "a_oid": 13,
+    "a_oname": "西藏",
+    "a_longitude": 91.1865,
+    "a_lantitude": 30.1465,
+    "z_oid": 14,
+    "z_oname": "新疆",
+    "z_longitude": 87.9236,
+    "z_lantitude": 43.5883,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 104,
+    "oname": "河南-湖南",
+    "a_oid": 11,
+    "a_oname": "河南",
+    "a_longitude": 113.4668,
+    "a_lantitude": 34.6234,
+    "z_oid": 15,
+    "z_oname": "湖南",
+    "z_longitude": 113.0823,
+    "z_lantitude": 28.2568,
+    "aggr": [{
+      "oid": "123",
+      "oname": "告警专线1",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 105,
+    "oname": "湖南-云南",
+    "a_oid": 15,
+    "a_oname": "湖南",
+    "a_longitude": 113.0823,
+    "a_lantitude": 28.2568,
+    "z_oid": 16,
+    "z_oname": "云南",
+    "z_longitude": 102.9199,
+    "z_lantitude": 25.4663,
+    "aggr": [{
+      "oid": "123",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 106,
+    "oname": "北京-山东",
+    "a_oid": 10,
+    "a_oname": "北京",
+    "a_longitude": 116.4551,
+    "a_lantitude": 40.2539,
+    "z_oid": 17,
+    "z_oname": "山东",
+    "z_longitude": 117.1582,
+    "z_lantitude": 36.8701,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 107,
+    "oname": "山东-江苏",
+    "a_oid": 17,
+    "a_oname": "山东",
+    "a_longitude": 117.1582,
+    "a_lantitude": 36.8701,
+    "z_oid": 22,
+    "z_oname": "江苏",
+    "z_longitude": 118.8062,
+    "z_lantitude": 31.9208,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 108,
+    "oname": "北京-陕西",
+    "a_oid": 10,
+    "a_oname": "北京",
+    "a_longitude": 116.4551,
+    "a_lantitude": 40.2539,
+    "z_oid": 21,
+    "z_oname": "陕西",
+    "z_longitude": 109.1162,
+    "z_lantitude": 34.2004,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 109,
+    "oname": "北京-黑龙江",
+    "a_oid": 10,
+    "a_oname": "北京",
+    "a_longitude": 116.4551,
+    "a_lantitude": 40.2539,
+    "z_oid": 19,
+    "z_oname": "黑龙江",
+    "z_longitude": 127.9688,
+    "z_lantitude": 45.368,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 110,
+    "oname": "北京-内蒙古",
+    "a_oid": 10,
+    "a_oname": "北京",
+    "a_longitude": 116.4551,
+    "a_lantitude": 40.2539,
+    "z_oid": 20,
+    "z_oname": "内蒙古",
+    "z_longitude": 111.4124,
+    "z_lantitude": 40.4901,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 110,
+    "oname": "内蒙古-新疆",
+    "a_oid": 20,
+    "a_oname": "内蒙古",
+    "a_longitude": 111.4124,
+    "a_lantitude": 40.4901,
+    "z_oid": 14,
+    "z_oname": "新疆",
+    "z_longitude": 87.9236,
+    "z_lantitude": 43.5883,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 111,
+    "oname": "江苏-福建",
+    "a_oid": 22,
+    "a_oname": "江苏",
+    "a_longitude": 118.8062,
+    "a_lantitude": 31.9208,
+    "z_oid": 18,
+    "z_oname": "福建",
+    "z_longitude": 119.4543,
+    "z_lantitude": 25.9222,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 112,
+    "oname": "西藏-青海",
+    "a_oid": 22,
+    "a_oname": "西藏",
+    "a_longitude": 91.1865,
+    "a_lantitude": 30.1465,
+    "z_oid": 18,
+    "z_oname": "青海",
+    "z_longitude": 101.4038,
+    "z_lantitude": 36.8207,
+    "aggr": [{
+      "oid": "专线 ID",
+      "oname": "专线名称",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }, {
+    "oid": 112,
+    "oname": "内蒙古-青海",
+    "a_oid": 22,
+    "a_oname": "内蒙古",
+    "a_longitude": 111.4124,
+    "a_lantitude": 40.4901,
+    "z_oid": 18,
+    "z_oname": "青海",
+    "z_longitude": 101.4038,
+    "z_lantitude": 36.8207,
+    "aggr": [{
+      "oid": "234",
+      "oname": "告警专线2",
+      "a_nename": "A端网元名称",
+      "z_nename": "Z端网元名称",
+      "a_portname": "A端端口名称",
+      "z_portname": "Z端端口名称"
+    }]
+  }]
+
+}
