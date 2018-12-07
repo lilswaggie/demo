@@ -8,12 +8,10 @@
         $('#g_map').css('height', height);
         if(typeof options == 'string') return $.fn.WorldModule.methods[options](param);
         $.fn.WorldModule.methods.init();
-        $.fn.WorldModule.methods.chartDBClickEventTrigger();
-        gis.renderLine = $.fn.WorldModule.methods.renderLightLine;
     }
     $.fn.WorldModule.methods = {
         init:function(){
-            $.fn.WorldModule.defaults.chart = echarts.init(document.getElementById("g_map"));
+            var chart = echarts.init(document.getElementById("g_map"));
             $.get('../../geodata/world.json',function(mapJson){
                 var data = [];
                 $.each(mapJson.features,function(index,item){
@@ -21,8 +19,8 @@
                     data.push("1");
                 });
                 echarts.registerMap('world',mapJson);
-                $.fn.WorldModule.defaults.chart.setOption({
-                    backgroundColor: '#BEDBF9',
+                chart.setOption({
+                    backgroundColor: 'rgba(0,0,0,0)',
                     geo: $("body").GeoUtils('getWorldMapInstance'),
                     series:[/*{
                         //center:[145.3893,0.0516],
@@ -33,17 +31,16 @@
                         map:'china'
                     }*/]
                 });
-                $.fn.WorldModule.methods.renderData($.fn.WorldModule.defaults.chart);
-                $.fn.WorldModule.defaults.chart.on('click',function(params){
-                    $("body").WorldModule('renderLightLine',{id:144});
+                $.fn.WorldModule.methods.renderData(chart);
+                chart.on('click',function(params){
+                    console.log('params',params.data );
                 });
-
             });
             // echarts自适应
             window.onresize = function () {
                 var height = $("body").GeoUtils('getHeight');
                 $('#g_map').css('height', height);
-                $("body").GeoUtils('getResize',$.fn.WorldModule.defaults.chart);
+                $("body").GeoUtils('getResize',chart);
             }
 
         },
@@ -76,9 +73,29 @@
                     });
                     lines.data = ls;
                     scatterPoint.data = ps;
-                    console.error('线的数据',ls);
+
                     var options = chart.getOption();
-                    options.series.push(lines);
+                    // 白色拖尾
+                    options.series.push(lines,{
+                        name: 'linesTrail',
+                        type: 'lines',
+                        zlevel: 1,
+                        effect: {
+                            show: true,
+                            period: 6,
+                            trailLength: 0.7,
+                            color: '#fff',
+                            symbolSize: 3
+                        },
+                        lineStyle: {
+                            normal: {
+                                color: '#E1DCDD',
+                                width: 0,
+                                curveness: 0.2
+                            }
+                        },
+                        data: ls
+                    });
                     options.series.push(scatterPoint);
 
                     chart.setOption(options);
@@ -93,7 +110,9 @@
         },
         //渲染告警数据
         renderWarningData:function(chart){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            //../../geodata/queryWarnings.json
+            //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.serviceline){
                     datas.serviceline.map(function(warningItem,warningIndex){
                         var options = chart.getOption();
@@ -108,7 +127,7 @@
                                     });
                                     if(flag){
                                         serieItemData.lineStyle = {
-                                            color:Global.mapGlobal.echartsConfig.lineColor.fault
+                                            color: '#9D3B3B'
                                         };
                                     }
                                 });
@@ -116,8 +135,8 @@
                         });
                         chart.setOption(options);
                     });
+
                 }
-                $.fn.WorldModule.defaults.oldOption = chart.getOption();
             });
         },
         //实时渲染功能
@@ -150,7 +169,7 @@
                             show: true,
                             period: 6,
                             trailLength: 0.7,
-                            color: 'red',
+                            color: '#fff',
                             symbolSize: 3
                         },
                         data:lightdatas
@@ -160,48 +179,6 @@
                     chart.setOption(old_opt);
                 }
             });
-        },
-        /**
-         * 外部调用接口：
-         * 1、专线高亮、有亮点流动、显示专线名称、显示AZ两端的设备名称
-         * @param：lineType 线的类型：是国际专线还是国内专线  1：国内专线  2：国际专线
-         * @param  {id:'',zh_label:''} 实际专线数据，线的int_id,线的中文名称
-         */
-        renderLightLine:function(lineData){
-
-            var lineRecord;
-            $.fn.WorldModule.defaults.chart.getOption().series.map(function(seri,key){
-                if(seri.type == 'lines'){
-                    var flag = false;
-                    seri.data.map(function(line,key){
-                        var aggrs = line.data.aggr;
-                        aggrs.map(function(aggr,aggrKey){
-                            if(aggr.oid == lineData.id){
-                                flag = true;
-                                lineRecord = line;
-                            }
-                        });
-                    });
-                }
-            });
-            console.error('lineRecord',lineRecord);
-            var lightLineSeri = $("body").GeoUtils('getLightsLine');
-            lightLineSeri.data.push(lineRecord);
-            var chartOption = $.fn.WorldModule.defaults.chart.getOption();
-            chartOption.series.push(lightLineSeri);
-            $.fn.WorldModule.defaults.chart.setOption(chartOption);
-        },
-        /**
-         * 清除chart上现有的特效
-         */
-        chartDBClickEventTrigger:function(){
-            $.fn.WorldModule.defaults.chart.on('dblclick',function(){
-                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption);
-            });
         }
-    },
-    $.fn.WorldModule.defaults = {
-        chart:null,
-        oldOption:null
     }
 })(jQuery);

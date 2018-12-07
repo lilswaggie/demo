@@ -23,7 +23,7 @@
 
         get3dMapInstance:function(param){
             var geo = {
-                backgroundColor: 'rgba(0,0,0,0)',
+                backgroundColor: '#000',
                 globe: {
                     /*  viewControl:{
                      rotateSensitivity:0, //鼠标旋转灵敏度
@@ -38,17 +38,17 @@
                     show:true,
                     viewControl:{
                         targetCoord: [109.1162, 34.2004],
-                        autoRotateSpeed: 5,
+                        autoRotateSpeed: 10,
                         distance: 200,
                         autoRotate: true
                     },
-                    baseTexture: 'http://localhost:63342/SOTN/images/lizi.png',
+                    baseTexture: Global.sysPath+'images/lizi.png',
                     displacementScale: 0.1,
                     shading: 'color',
-                    environment:'transparent',
+                    //environment:'rgba(128, 128, 128, 0.1)',
                     // 地球背景星图设置 http://localhost:63342/SOTN/images/background.png
-                    //environment: 'auto',
-                    //environment: 'asset/starfield.jpg',
+                    //environment: '#022040',
+                    environment: Global.sysPath+'images/starfield.jpg',
                     //environment: '#000',
                     /*environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                         offset: 0, color: '#00aaff' // 天空颜色
@@ -68,18 +68,24 @@
                          texture:param.chinaChart
                          //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
                          }*/
-                        /*{
-                         type: 'blend',
-                         blendTo: 'emission',
-                         texture: 'http://localhost:63342/SOTN/images/night.jpg'
-                         },*/{
+                        {
                             type: 'overlay',
                             blendTo: 'emission',
                             texture:param.chinaChart
                             //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
-                        }],
+                        },
+                        {
+                         type: 'blend',
+                         blendTo: 'emission',
+                         texture: Global.sysPath+'images/night.jpg'
+                         }],
                 },
-                
+                tooltip: {
+                    show: true,
+                    trigger: 'item',
+                    alwaysShowContent: true,
+                    formatter: '{b}'
+                },
                 series:[]
             }
             return geo;
@@ -105,6 +111,7 @@
         getWorldMapInstance:function(){
             var geo = {
                 map:'world',
+                top:'25%',
                 silent:false,
                 roam: false,
                 show:true,
@@ -164,7 +171,7 @@
                 },
                 data:[]
             };
-            return es
+            return es;
         },
         /* networkDefault */
         getEffectScatter:function () {
@@ -293,6 +300,10 @@
             }
             return lines;
         },
+        /**
+         * 获取线高亮
+         * @returns {{name: string, type: string, zlevel: number, lineStyle: {normal: {color: string, width: number, curveness: number}}, effect: {show: boolean, period: number, trailLength: number, color: string, symbolSize: number}, data: Array}}
+         */
         getLightsLine:function(){
             var lightLine = {
                 name: 'lights_line',

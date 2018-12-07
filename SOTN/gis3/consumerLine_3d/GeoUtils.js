@@ -62,12 +62,12 @@
                          type: 'blend',
                          blendTo: 'emission',
                          texture: 'http://localhost:63342/SOTN/images/night.jpg'
-                         },*/{
+                         },*//*{
                             type: 'overlay',
                             blendTo: 'emission',
                             texture: param.chinaChart
                             //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
-                        }],
+                        }*/],
                 },
                 series: []
             }
@@ -94,6 +94,7 @@
         getWorldMapInstance: function () {
             var geo = {
                 map: 'world',
+                top:'25%',
                 silent: false,
                 roam: false,
                 show: true,
