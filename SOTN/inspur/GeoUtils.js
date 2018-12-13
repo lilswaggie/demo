@@ -142,6 +142,9 @@
          * @returns {{name: string, type: string, color: string, coordinateSystem: string, label: {normal: {show: boolean, position: string, formatter: string}}, symbol: string, symbolSize: symbolSize, itemStyle: {normal: {color: string}}, data: Array}}
          */
         getScatter:function(param){
+            var symbolSize = param.symbolSize ? param.symbolSize:function (val) {
+                return val[2] / 4;
+            };
             var es = {
                 name:'devices',
                 type:'scatter',
@@ -156,9 +159,7 @@
                 },
                 //'image://http://localhost:63342/SOTN/images/OTN_N_B.png'
                 symbol:param.symbol ,
-                symbolSize: function (val) {
-                    return val[2] / 4;
-                },
+                symbolSize: symbolSize,
                 itemStyle: {
                     normal: {
                         color: '#4D8CF4'
