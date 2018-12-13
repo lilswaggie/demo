@@ -9,10 +9,11 @@
 
         if(typeof options == 'string') return $.fn.WorldModule.methods[options](param);
         $.fn.WorldModule.methods.init();
+        $.fn.WorldModule.methods.exportMethod();
     }
     $.fn.WorldModule.methods = {
         init:function(){
-            var chart = echarts.init(document.getElementById("g_map"));
+            $.fn.WorldModule.defaults.chart = echarts.init(document.getElementById("g_map"));
             $.get('../../geodata/world.json',function(mapJson){
                 var data = [];
                 $.each(mapJson.features,function(index,item){
@@ -24,24 +25,39 @@
                     data.push("1");
                 });
                 echarts.registerMap('world',mapJson);
-                chart.setOption({
+                $.fn.WorldModule.defaults.chart.setOption({
                     backgroundColor: '#BEDBF9',
                     geo: $("body").GeoUtils('getWorldMapInstance'),
                     series:[]
                 });
-                $.fn.WorldModule.methods.renderData(chart);
-                chart.on('click',function(params){
+                $.fn.WorldModule.methods.renderData($.fn.WorldModule.defaults.chart);
+                $.fn.WorldModule.defaults.chart.on('click',function(params){
                     console.log('params',params.data);
                 });
             });
 
-             // echarts自适应
-             window.onresize = function () {
-                 var height = $("body").GeoUtils('getHeight');
-                 $('#g_map').css('height', height);
-                 $("body").GeoUtils('getResize',chart);
+            // echarts自适应
+            window.onresize = function () {
+                var height = $("body").GeoUtils('getHeight');
+                $('#g_map').css('height', height);
+                $("body").GeoUtils('getResize',$.fn.WorldModule.defaults.chart);
+                var newOption = $.fn.WorldModule.defaults.chart.getOption();
+                $.fn.WorldModule.defaults.chart.clear();
+                $.fn.WorldModule.defaults.chart.setOption(newOption);
             }
-            
+            // 线条高亮，两端闪烁
+            $(".port").click(function () {
+                $.fn.WorldModule.defaults.count += 1;
+                if ($.fn.WorldModule.defaults.count == 1) {
+                    console.log('you clicked me')
+                    // 点击时传递对应id触发事件
+                    gis.renderLine({ id: "123" });
+                    // gis.renderLine({ id: "234" });
+                }
+            });
+            $("#g_map").click(function(){
+                $.fn.WorldModule.methods.clearEventTrigger();
+            })
         },
         renderData:function(chart){
             var lines = $("body").GeoUtils('getLine');
@@ -90,7 +106,7 @@
         //渲染告警数据
         renderWarningData:function(chart){
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
-              $.get('../../geodata/queryWarnings.json',function(datas){
+            $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.serviceline){
                     datas.serviceline.map(function(warningItem,warningIndex){
                         var options = chart.getOption();
@@ -114,15 +130,15 @@
                         console.error('warnningoptions',options);
                         chart.setOption(options);
                     });
-
                 }
+                $.fn.WorldModule.defaults.oldOption = chart.getOption();
             });
         },
         //实时渲染功能
         realRenderWarningData:function(chart){
             if(Global.mapGlobal.queryPOI.realQueryFlag){
                 setInterval(function(){
-                    $.fn.ChinaModule.methods.renderWarningData(chart);
+                    $.fn.WorldModule.methods.renderWarningData(chart);
                 },Global.mapGlobal.queryPOI.realQueryTimer);
             }
         },
@@ -158,6 +174,127 @@
                     chart.setOption(old_opt);
                 }
             });
+        },
+        /**
+         * @author 小皮
+         *
+         */
+        renderLightLine: function (lineData) {
+            // lineRecords: 高亮线条的集合
+            var lineRecords = [];
+            $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
+                if (seri.type == 'lines') {
+                    seri.data.map(function (line, key) {
+                        var aggrs = line.data.aggr;
+                        aggrs.map(function (aggr, aggrKey) {
+                            if (aggr.oid == lineData.id) {
+                                lineRecords.push(line)
+                            }
+                        });
+                    });
+                }
+            });
+            var dataLines = [];
+            var dataPorts = [];
+            lineRecords.forEach(function (e) {
+                var linesTemp = {
+                    coords: e.coords,
+                    name: e.oname,
+                    data: e.data
+                };
+                dataLines.push(linesTemp);
+                var portsTemp = [
+                    {
+                        name: e.data.aggr[0].a_nename,
+                        value: e.coords[0]
+                    }, {
+                        name: e.data.aggr[0].z_nename,
+                        value: e.coords[1]
+                    }
+                ];
+                dataPorts = dataPorts.concat(portsTemp);
+            });
+            var param = {
+                dataLines: dataLines,
+                dataPorts: dataPorts
+            }
+            var lightLineSeri = $.fn.WorldModule.methods.renderScatterEffect(param);
+            var chartOption = $.fn.WorldModule.defaults.chart.getOption();
+
+            chartOption.series = chartOption.series.concat(lightLineSeri)
+            $.fn.WorldModule.defaults.chart.setOption(chartOption);
+        },
+        /**
+         * @author: 小皮
+         * @param {dataLines,dataPorts} param
+         * 处理线条和端点数据
+         */
+        renderScatterEffect: function (param) {
+            var series = [];
+            series.push({
+                    type: 'lines',
+                    name: 'lights_line',
+                    lineStyle: {
+                        color: 'blue',
+                        width: 1,
+                        curveness: 0.2
+                    },
+                    zlevel: 1,
+                    effect: {
+                        show: true,
+                        period: 5,
+                        trailLength: 0.5,
+                        color: '#fff',
+                        symbol: 'circle',
+                        symbolSize: 4
+                    },
+                    data: param.dataLines
+                }, {
+                    name: 'effectScatter',
+                    type: 'effectScatter',
+                    coordinateSystem: 'geo',
+                    zlevel: 2,
+                    // 涟漪的设置
+                    rippleEffect: {
+                        // 波纹的绘制方式 strike fill
+                        brushType: 'stroke'
+                    },
+                    label: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}',
+                        color: 'red',
+                        fontsize: 12
+                    },
+                    symbolSize: 7,
+                    itemStyle: {
+                        normal: {
+                            color: 'blue',
+                            opacity: 0.8
+                        }
+                    },
+                    data: param.dataPorts
+                }
+            );
+            return series;
+        },
+        // 对外暴露的方法
+        exportMethod: function () {
+            gis.renderLine = $.fn.WorldModule.methods.renderLightLine;
+        },
+        // 地图点击事件清除chart上的现有特效
+        clearEventTrigger: function () {
+            var op = $.fn.WorldModule.defaults.chart.getOption();
+            op.series = [];
+
+            $.fn.WorldModule.defaults.chart.setOption(op);
+            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            $.fn.WorldModule.defaults.count = 0;
         }
-    }
+    },
+        $.fn.WorldModule.defaults = {
+            chart: null,
+            oldOption: null,
+            count: 0
+        }
 })(jQuery);

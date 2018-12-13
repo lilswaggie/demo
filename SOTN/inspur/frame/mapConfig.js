@@ -17,11 +17,12 @@ Global.mapGlobal.treeMapConfig = {
 
 //symbol:otn line 
 Global.mapGlobal.symbolConfig = {
-    OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',
+
+    OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
     OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
     OTN_LIGHT_SYMBOL:Global.sysPath+'images/ceshi2.png',
-    SYMBOL_WIDTH:16,
-    SYMBOL_HEIGHT:16,
+    SYMBOL_WIDTH:34,
+    SYMBOL_HEIGHT:26,
 }
 
 //symbol:
@@ -65,10 +66,12 @@ Global.mapGlobal.mapInstance = {
 
 //queryPOI
 Global.mapGlobal.queryPOI = {
-    queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
+    //queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
+
     queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
     queryLinks:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryLinks',                //otn设备间逻辑线呈现
     queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    queryOTN:'http://10.154.8.22:8088/sotn/api/resource/topolinks',
     queryONTLine:'',
     realQueryFlag:false,           //实时查询标志
     realQueryTimer:5000,          //1000为1s

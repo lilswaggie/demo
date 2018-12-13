@@ -84,7 +84,7 @@ twaver.Util.ext(toponetwork, twaver.vector.Network, {
             var element = e.element;
             if(element instanceof TransNe){
                 var int_id=element.getClient("int_id");
-
+                alert(123)
             }
         }
     }

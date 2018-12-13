@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.min.js"></script>
+    <script src="lib/clipboard/clipboard.js"></script>
+</head>
+<body>
+    <script>
+        $(function () {
+            var authorization = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3RuLW84IiwiZXhwIjoxNTQ2OTk5MzU4LCJpYXQiOjE1NDQ0MDczNTh9.AsyYb4RB6QLuW-Nt1FFnthh4-OvK3lIuUx7Q1FLrkpeu55klEV5g1XXBeB2Y0Lomz-aAcJoTqByLEBYdPt117Q';
+            $.ajax({
+                url:'http://10.154.8.22:8088/sotn/api/resource/topolinks?scene=indoor',
+                //url:'http://10.154.8.22:8088/sotn/api/business/stats/current/business_quality?aa=1',
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3RuLW84IiwiZXhwIjoxNTQ2OTk5MzU4LCJpYXQiOjE1NDQ0MDczNTh9.AsyYb4RB6QLuW-Nt1FFnthh4-OvK3lIuUx7Q1FLrkpeu55klEV5g1XXBeB2Y0Lomz-aAcJoTqByLEBYdPt117Q'
+                },
+                success:function(data){
+                    console.log('data',data);
+                },
+                error:function(data){
+                    console.log('data',data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

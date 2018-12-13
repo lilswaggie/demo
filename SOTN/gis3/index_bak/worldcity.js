@@ -1,4 +1,4 @@
-var cityJson = {
+var worldCity = {
 	"name" : "CityPoint",
 	"type" : "FeatureCollection",
 	"features" : [

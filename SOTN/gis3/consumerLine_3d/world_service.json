@@ -532,7 +532,7 @@
       "z_lantitude": 6942562.9541,
       "aggr": [
         {
-          "oid": "专线 ID",
+          "oid": "123",
           "oname": "专线名称",
           "a_nename": "A端网元名称",
           "z_nename": "Z端网元名称",
@@ -598,7 +598,7 @@
       "z_lantitude": 2778795.8423,
       "aggr": [
         {
-          "oid": "专线 ID",
+          "oid": "1234",
           "oname": "专线名称",
           "a_nename": "A端网元名称",
           "z_nename": "Z端网元名称",
@@ -708,7 +708,7 @@
       "z_lantitude": 1310926.0346,
       "aggr": [
         {
-          "oid": "专线 ID",
+          "oid": "1234",
           "oname": "专线名称",
           "a_nename": "A端网元名称",
           "z_nename": "Z端网元名称",
@@ -818,7 +818,7 @@
       "z_lantitude": 6118466.6095,
       "aggr": [
         {
-          "oid": "专线 ID",
+          "oid": "1234",
           "oname": "专线名称",
           "a_nename": "A端网元名称",
           "z_nename": "Z端网元名称",
@@ -1409,7 +1409,7 @@
       "z_lantitude": 4130781.6362,
       "aggr": [
         {
-          "oid": "23",
+          "oid": "144",
           "oname": "专线名称",
           "a_nename": "A端网元名称",
           "z_nename": "Z端网元名称",

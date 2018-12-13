@@ -10,7 +10,7 @@
         getResize: function(chart){
             chart.resize();
         },
-        // 获取高度
+        // 获取当前窗口高度
         getHeight:function () {
             var height =   $(window).height();
             return height + 'px';
@@ -23,7 +23,7 @@
 
         get3dMapInstance:function(param){
             var geo = {
-                backgroundColor: '#000',
+                backgroundColor: 'rgba(0,0,0,0)',
                 globe: {
                     /*  viewControl:{
                      rotateSensitivity:0, //鼠标旋转灵敏度
@@ -38,9 +38,10 @@
                     show:true,
                     viewControl:{
                         targetCoord: [109.1162, 34.2004],
-                        autoRotateSpeed: 10,
+                        autoRotateSpeed: 5,
                         distance: 200,
-                        autoRotate: true
+                        autoRotate: true,
+                        zoomSensitivity: 0
                     },
                     baseTexture: Global.sysPath+'images/lizi.png',
                     displacementScale: 0.1,
@@ -48,7 +49,7 @@
                     //environment:'rgba(128, 128, 128, 0.1)',
                     // 地球背景星图设置 http://localhost:63342/SOTN/images/background.png
                     //environment: '#022040',
-                    environment: Global.sysPath+'images/starfield.jpg',
+                    //environment: Global.sysPath+'images/starfield.jpg',
                     //environment: '#000',
                     /*environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                         offset: 0, color: '#00aaff' // 天空颜色
@@ -69,8 +70,8 @@
                          //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
                          }*/
                         {
-                            type: 'overlay',
-                            blendTo: 'emission',
+                            type: 'blend',
+                            blendTo: 'albedo',
                             texture:param.chinaChart
                             //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
                         },
@@ -79,12 +80,6 @@
                          blendTo: 'emission',
                          texture: Global.sysPath+'images/night.jpg'
                          }],
-                },
-                tooltip: {
-                    show: true,
-                    trigger: 'item',
-                    alwaysShowContent: true,
-                    formatter: '{b}'
                 },
                 series:[]
             }
@@ -111,6 +106,7 @@
         getWorldMapInstance:function(){
             var geo = {
                 map:'world',
+                top:'25%',
                 silent:false,
                 roam: false,
                 show:true,
@@ -171,6 +167,28 @@
                 data:[]
             };
             return es;
+        },
+        /*
+        * @author: 小皮
+        * scatterSeri
+        * param { a_nename,z_nename,coords }
+        * */
+        renderScatter:function(params){
+            params.scatterSeri.label = {
+                show: true,
+                position: 'right',
+                formatter: '{b}',
+                color: 'red',
+                fontsize: 12
+            };
+            params.scatterSeri.data = [{
+                name: params.param.a_nename,
+                value: params.param.coords[0]
+            },{
+                name: params.param.z_nename,
+                value: params.param.coords[1]
+            }];
+            return params.scatterSeri;
         },
         /* networkDefault */
         getEffectScatter:function () {
@@ -299,6 +317,10 @@
             }
             return lines;
         },
+        /**
+         * 获取线高亮
+         * @returns {{name: string, type: string, zlevel: number, lineStyle: {normal: {color: string, width: number, curveness: number}}, effect: {show: boolean, period: number, trailLength: number, color: string, symbolSize: number}, data: Array}}
+         */
         getLightsLine:function(){
             var lightLine = {
                 name: 'lights_line',

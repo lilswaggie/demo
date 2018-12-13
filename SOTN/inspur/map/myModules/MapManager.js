@@ -38,8 +38,6 @@ define([
             this_instance.drawingGraphics(this_instance);
             this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
 
-            var aa = [139.565+200,-23.565-10];
-            console.log('xx',webMercatorUtils.lngLatToXY(aa[0], aa[1]));
 
             
             
@@ -52,13 +50,36 @@ define([
          * @param {绘制数据} this_instance 
          */
         drawingGraphics:function(this_instance){
-            $.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
+            //$.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
+            /*$.get('http://localhost:63342/SOTN/geodata/aa.json',function(data){
+                var datas = data.data;
                 if(datas && datas.nodes){
                     if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                     this_instance._drawingPoints(datas.nodes);                  //绘制点数据
                     this_instance.queryWarningOTN(this_instance);               //接入告警数据
                 }
+            });*/
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    var datas = data.data;
+                    if(datas && datas.nodes){
+                        if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
+                        this_instance._drawingPoints(datas.nodes);                  //绘制点数据
+                        this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                    }
+                },
+                error:function(data){
+                    console.log('data',data);
+                }
             });
+
         },
         /**
          * 实时查询告警数据
