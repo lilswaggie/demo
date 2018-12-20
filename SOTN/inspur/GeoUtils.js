@@ -10,7 +10,7 @@
         getResize: function(chart){
             chart.resize();
         },
-        // 获取高度
+        // 获取当前窗口高度
         getHeight:function () {
             var height =   $(window).height();
             return height + 'px';
@@ -23,7 +23,7 @@
 
         get3dMapInstance:function(param){
             var geo = {
-                backgroundColor: '#000',
+                backgroundColor: 'rgba(0,0,0,0)',
                 globe: {
                     /*  viewControl:{
                      rotateSensitivity:0, //鼠标旋转灵敏度
@@ -38,9 +38,10 @@
                     show:true,
                     viewControl:{
                         targetCoord: [109.1162, 34.2004],
-                        autoRotateSpeed: 10,
+                        autoRotateSpeed: 5,
                         distance: 200,
-                        autoRotate: true
+                        autoRotate: true,
+                        zoomSensitivity: 0
                     },
                     baseTexture: Global.sysPath+'images/lizi.png',
                     displacementScale: 0.1,
@@ -48,7 +49,7 @@
                     //environment:'rgba(128, 128, 128, 0.1)',
                     // 地球背景星图设置 http://localhost:63342/SOTN/images/background.png
                     //environment: '#022040',
-                    environment: Global.sysPath+'images/starfield.jpg',
+                    //environment: Global.sysPath+'images/starfield.jpg',
                     //environment: '#000',
                     /*environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                         offset: 0, color: '#00aaff' // 天空颜色
@@ -69,8 +70,8 @@
                          //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
                          }*/
                         {
-                            type: 'overlay',
-                            blendTo: 'emission',
+                            type: 'blend',
+                            blendTo: 'albedo',
                             texture:param.chinaChart
                             //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
                         },
@@ -79,12 +80,6 @@
                          blendTo: 'emission',
                          texture: Global.sysPath+'images/night.jpg'
                          }],
-                },
-                tooltip: {
-                    show: true,
-                    trigger: 'item',
-                    alwaysShowContent: true,
-                    formatter: '{b}'
                 },
                 series:[]
             }
@@ -147,6 +142,9 @@
          * @returns {{name: string, type: string, color: string, coordinateSystem: string, label: {normal: {show: boolean, position: string, formatter: string}}, symbol: string, symbolSize: symbolSize, itemStyle: {normal: {color: string}}, data: Array}}
          */
         getScatter:function(param){
+            var symbolSize = param.symbolSize ? param.symbolSize:function (val) {
+                return val[2] / 4;
+            };
             var es = {
                 name:'devices',
                 type:'scatter',
@@ -161,17 +159,38 @@
                 },
                 //'image://http://localhost:63342/SOTN/images/OTN_N_B.png'
                 symbol:param.symbol ,
-                symbolSize: function (val) {
-                    return val[2] / 4;
-                },
+                symbolSize: symbolSize,
                 itemStyle: {
                     normal: {
-                        color: '#4D8CF4'
+                        color: '#4D8CF4',
+                        opacity: 1
                     }
                 },
                 data:[]
             };
             return es;
+        },
+        /*
+        * @author: 小皮
+        * scatterSeri
+        * param { a_nename,z_nename,coords }
+        * */
+        renderScatter:function(params){
+            params.scatterSeri.label = {
+                show: true,
+                position: 'right',
+                formatter: '{b}',
+                color: 'red',
+                fontsize: 12
+            };
+            params.scatterSeri.data = [{
+                name: params.param.a_nename,
+                value: params.param.coords[0]
+            },{
+                name: params.param.z_nename,
+                value: params.param.coords[1]
+            }];
+            return params.scatterSeri;
         },
         /* networkDefault */
         getEffectScatter:function () {
@@ -357,7 +376,7 @@
                 "name": "俄罗斯",
                 "selected": false,
                 "label": {
-                    //color:'#C5C8D4',
+                    // "color":'#72758C',
                     "show": true
                 }
             },
@@ -974,7 +993,7 @@
                 "name": "尼日利亚",
                 "selected": false,
                 "label": {
-                    color:'#eee',
+                    "color":'#eee',
                     "show": true
                 }
             },
@@ -982,7 +1001,7 @@
                 "name": "苏丹",
                 "selected": false,
                 "label": {
-                    color:'#C5C8D4',
+                    // "color":'red',
                     "show": true
                 }
             },
@@ -1165,6 +1184,7 @@
                 "name": "澳大利亚",
                 "selected": false,
                 "label": {
+                    "color" :'#72758C',
                     "show": true
                 }
             },
@@ -1320,6 +1340,7 @@
                 "name": "墨西哥",
                 "selected": false,
                 "label": {
+                    // "color":'#72758C',
                     "show": true
                 }
             },
@@ -1341,6 +1362,7 @@
                 "name": "加拿大",
                 "selected": false,
                 "label": {
+                    // "color":'#72758C',
                     "show": true
                 }
             },
@@ -1369,6 +1391,7 @@
                 "name": "巴西",
                 "selected": false,
                 "label": {
+                    "color" :'#72758C',
                     "show": true
                 }
             },
@@ -1481,6 +1504,7 @@
                 "name": "印度尼西亚",
                 "selected": false,
                 "label": {
+                    color:'#72758C',
                     "show": true
                 }
             },
@@ -1530,7 +1554,7 @@
                 "name": "扎伊尔",
                 "selected": false,
                 "label": {
-                    color:'#C5C8D4',
+                    // "color":'#72758C',
                     "show": true
                 }
             },

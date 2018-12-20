@@ -19,7 +19,8 @@ define([
             return picMarkerSymbol;
         },
         getLineSymbol:function(){
-            var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color("#508AF4"), 3);
+            //var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color("#508AF4"), 3);
+            var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color([80,138,244,1]), 3);
             return lineSymbol;
         },
         getWarningLineSymbol:function(){

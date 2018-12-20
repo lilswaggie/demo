@@ -82,13 +82,33 @@ define([
          */
         drawingGraphics:function(this_instance){
             //$.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
-            $.get('../../geodata/queryOTN.json',function(datas){
+           /* $.get('../../geodata/queryOTN.json',function(datas){
                 if(datas && datas.nodes){
                     Global.mapGlobal.lineLayer.clear();
                     Global.mapGlobal.otnLayer.clear();
                     if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                     this_instance._drawingPoints(datas.nodes);                  //绘制点数据
                     this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                }
+            });*/
+
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3RuLW84IiwiZXhwIjoxNTQ2OTk5MzU4LCJpYXQiOjE1NDQ0MDczNTh9.AsyYb4RB6QLuW-Nt1FFnthh4-OvK3lIuUx7Q1FLrkpeu55klEV5g1XXBeB2Y0Lomz-aAcJoTqByLEBYdPt117Q'
+                },
+                success:function(data){
+                    var datas = data.data;
+                    if(datas && datas.nodes){
+                        Global.mapGlobal.lineLayer.clear();
+                        Global.mapGlobal.otnLayer.clear();
+                        if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
+                        this_instance._drawingPoints(datas.nodes);                  //绘制点数据
+                        this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                    }
                 }
             });
         },

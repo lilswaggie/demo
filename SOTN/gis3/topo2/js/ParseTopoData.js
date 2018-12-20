@@ -25,7 +25,6 @@ var ParseTopoData = {
     parseData: function (json,box) {
         this.init(box);
         var aroom=new dataBaseObj();
-        aroom.setImage('room');
         aroom.setClient("int_id",json.a_transequiproom_id);
         aroom.setClient("flag",'a');
         aroom.setClient("zh_label",json.a_transequiproom_value);
@@ -33,7 +32,6 @@ var ParseTopoData = {
         this.box.add(aroom);
 
         var zroom=new dataBaseObj();
-        zroom.setImage('room');
         zroom.setClient("int_id",json.z_transequiproom_id);
         zroom.setClient("zh_label",json.z_transequiproom_value);
         zroom.setClient("flag",'z');
@@ -51,27 +49,22 @@ var ParseTopoData = {
         atrans.setClient("isTermial",'true');
         atrans.setClient("flag",'a');
         atrans.setCenterLocation(this.span*this.begin_x,this.center_y);
-        atrans.setImage('bigtrans');
         this.box.add(atrans);
 
         var line_a=new CirLine('aline',aroom,atrans);
-        line_a.setStyle('link.color','#2D9395');
         line_a.setStyle('link.width',1)
         this.box.add(line_a);
 
         var ztrans=new TransNe(zneid);
-
         ztrans.setClient("int_id",zneid);
         ztrans.setClient("zh_label",znename);
         ztrans.setClient("isTermial",'true');
         ztrans.setClient("flag",'z');
         ztrans.setCenterLocation(this.center_x*2-this.span*this.begin_x,this.center_y);
-        ztrans.setImage('bigtrans');
         this.box.add(ztrans);
 
         var line_z=new CirLine('zline',ztrans,zroom);
-        line_z.setStyle('link.width',1);
-        line_z.setStyle('link.color','#2D9395');
+        line_z.setStyle('link.width',1)
         this.box.add(line_z);
 
         //画通道
@@ -118,7 +111,6 @@ var ParseTopoData = {
                             from.setClient("int_id", seg.a_ne_id);
                             from.setClient("zh_label", seg.a_ne_name);
                             from.setClient("angle",angle);
-                            from.setImage('transne');
                             from.setCenterLocation(this.center_x + radius_a * (Math.sin(angle)), this.center_y + radius_b * (Math.cos(angle)));
                             this.box.add(from);
                         }
@@ -133,7 +125,6 @@ var ParseTopoData = {
                             to.setClient("int_id", seg.z_ne_id);
                             to.setClient("zh_label", seg.z_ne_name);
                             to.setClient("angle",angle);
-                            to.setImage('transne');
                             to.setCenterLocation(this.center_x + radius_a * (Math.sin(angle)), this.center_y + radius_b * (Math.cos(angle)));
                             this.box.add(to);
                         }
@@ -142,7 +133,6 @@ var ParseTopoData = {
                         }
 
                         var routeline = new RouteLine(seg.a_ne_id + "-" + seg.z_ne_id, from, to);
-                        routeline.setStyle('link.color','#2D9395');
                         if (seg.iscutoff == 'true') {
                             routeline.setStyle('link.pattern', [8, 8]);
                         }

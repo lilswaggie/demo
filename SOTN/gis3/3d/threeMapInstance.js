@@ -7,31 +7,33 @@
     }
     $.fn.threeMap.methods = {
         init: function () {
-            var e_map = echarts.init(document.getElementById("g_map"));
-            var chinaChart = $.fn.threeMap.methods.getChinaChart();
-            var option = $("body").GeoUtils('get3dMapInstance', { chinaChart: chinaChart });
-            e_map.setOption(option);
+            $.fn.threeMap.defaults.nathionalChart = echarts.init(document.getElementById("g_map"));
+            $.fn.threeMap.defaults.chinaChart = $.fn.threeMap.methods.getChinaChart();
+            var option = $("body").GeoUtils('get3dMapInstance', { chinaChart: $.fn.threeMap.defaults.chinaChart });
+            $.fn.threeMap.defaults.nathionalChart.setOption(option);
             // 渲染数据
-            $.fn.threeMap.methods.renderNationalData(e_map);
-            $.fn.threeMap.methods.renderChinaData(chinaChart);
+            $.fn.threeMap.methods.renderNationalData();
+            $.fn.threeMap.methods.renderChinaData();
 
             // echarts自适应
             window.onresize = function () {
                 var height = $("body").GeoUtils('getHeight');
                 $('#g_map').css('height', height);
-                $("body").GeoUtils('getResize', chinaChart);
-                $("body").GeoUtils('getResize', e_map);
+                $("body").GeoUtils('getResize', $.fn.threeMap.defaults.chinaChart);
+                $("body").GeoUtils('getResize', $.fn.threeMap.defaults.nathionalChart);
             };
             // 点击事件
             $('.province').click(function () {
-                $.fn.threeMap.methods.eventTrigger(e_map);
+                $.fn.threeMap.methods.eventTrigger();
             });
-            /*$('.colorChange').click(function () {
-                $.fn.threeMap.methods.eventColor(chinaChart, e_map)
-            });*/
+            $('.colorChange').click(function () {
+                $.fn.threeMap.methods.eventColor();
+            });
             $('#g_map').click(function () {
-                $.fn.threeMap.methods.eventMap(chinaChart, e_map)
+                $.fn.threeMap.methods.eventMap();
             });
+            //对外提供方法
+            gis.renderColor = $.fn.threeMap.methods.eventColor
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -44,19 +46,22 @@
                     map: 'china',
                     top: 0, left: 0,
                     right: 0, bottom: 0,
-                    silent: false,
+                    silent: true,
                     boundingCoords: [[-180, 90], [180, -90]],
                     itemStyle: {
                         normal: {
                             areaColor: "rgba(0,0,152,0.5)",
-                            borderColor: '#032E29'
+                            borderColor: '#032E29',
                         }
-                    },
-                    emphasis: {
-                        itemStyle: {
-                            color: 'blue'
-                        }
-                    }
+                    },/*
+                     emphasis: {
+                     itemStyle: {
+                     areaColor: 'red',
+                     color: 'red',
+                     // opacity 为0，不显示颜色
+                     opacity: 0
+                     }
+                     }*/
 
                 },
                 series: []
@@ -65,17 +70,34 @@
         },
 
         //渲染中国数据
-        renderChinaData: function (chinaChart) {
-            var option = chinaChart.getOption();
+        renderChinaData: function () {
+            var option = $.fn.threeMap.defaults.chinaChart.getOption();
             var series = [];
-            
-            var symbolPath = 'image://' +  Global.mapGlobal.symbolConfig.OTN_SYMBOL;
-            $.get('geoData.json', function (data) {
+
+            var symbolPath = 'image://' + Global.mapGlobal.symbolConfig.OTN_SYMBOL;
+            $.get('indoor.json', function (data) {
+                var dataPorts = []; var dataLines = [];
+                var edges = data.edges;
+                var nodes = data.nodes;
+                nodes.forEach(function (e) {
+                    var temp = {
+                        name: e.oname,
+                        value: [e.longtitude, e.lantitude]
+                    };
+                    dataPorts.push(temp);
+                });
+                edges.forEach(function (e) {
+                    var temp = {
+                        name: e.oname,
+                        coords: [[e.a_longtitude, e.a_lantitude], [e.z_longtitude, e.z_lantitude]]
+                    };
+                    dataLines.push(temp);
+                });
+
                 option['visualMap'] = {
                     left: 'right',
                     min: 500,
                     max: 5000,
-                    // color:[#74B7E0','#4575b4','#1E69A6','#2791CB','#0A24A5'],
                     inRange: {
                         color: ['#0FF5D8', '#1a766c', '#1a766c', '#032E29']
                     },
@@ -84,8 +106,7 @@
                 }
                 series.push({
                     type: 'map',
-                    map: 'china',//world是html页面引入的地图文件名字
-                    // 绘制完整尺寸的 echarts 实例
+                    map: 'china',
                     top: 0, left: 0,
                     right: 0, bottom: 0,
                     // 控制缩放
@@ -94,20 +115,20 @@
                     boundingCoords: [[-180, 90], [180, -90]],
                     itemStyle: {
                         normal: {
-                            areaColor: "rgba(0,0,152,0.5)",
-                            //areaColor:'red'
-                            // 测试使用，颜色的变淡应与此有关
+                            // areaColor: "rgba(0,0,152,0.5)",
+                            areaColor: '#2791CB',
                             opacity: 1
-                        },
-                        emphasis: { label: { show: true } }
-                    },
-
-                    emphasis: {
-                        itemStyle: {
-                            color: 'blue'
                         }
                     },
-                    data: data.region
+                    emphasis: {
+                        itemStyle: {
+                            areaColor: 'none',
+                            opacity: 1
+                        },
+                        label: { show: false }
+                    },
+                    // data里面的值value的大小决定颜色的深浅
+                    data: Regions
                 }, {
                     type: 'lines',
                     name: 'lines3D',
@@ -116,7 +137,7 @@
                         color: '#0352DB',
                         opacity: 1
                     },
-                    data: data.lines
+                    data: dataLines
                 }, {
                     type: 'scatter',
                     name: 'scatter3D',
@@ -127,106 +148,108 @@
                         color: 'red',
                         opacity: 1
                     },
-                    data: data.spots
+                    data: dataPorts
                 })
                 option.series = series;
-                chinaChart.setOption(option);
-            })
+                $.fn.threeMap.defaults.chinaChart.setOption(option);
+
+                $.fn.threeMap.defaults.oldOption = option;
+            });
             // 渲染告警数据：
-            $.get('geoData.json',function(data){
-                
-            })
+            // $.get('geoData.json',function(data){
+            //
+            // })
+        },
+        renderColor: function (arr) {
+            var colors = ['#B33341', '#94BD68', '#388283'];
+            arr.forEach(function (e, index) {
+                e.lineStyle = {
+                    color: colors[index % 3]
+                };
+            });
+            return arr;
         },
         //渲染国际数据
-        renderNationalData: function (nathionalChart) {
-            var option = nathionalChart.getOption();
+        renderNationalData: function () {
+            var option = $.fn.threeMap.defaults.nathionalChart.getOption();
             var series = [];
-            series.push(
-                {
-                    type: 'lines3D',
-                    name: '王宁测试',
-                    // var effectColor = ['#1CD6CE','#0AFF8B','#0AE0FA'];
-                    // var linesColor = ['#225755','#1F6F48','#298176',#0A464D'];
-                    effect: {
-                        show: true,
-                        trailWidth: 2,
-                        trailLength: 0.15,
-                        trailOpacity: 1,
-                        trailColor: '#FBFCF9'
-                    },
 
-                    lineStyle: {
-                        width: 2,
-                        color: '#29676F',
-                        opacity: 0.9
-                    },
-                    blendMode: 'lighter',
+            $.get('outdoor.json', function (data) {
+                var dataPorts = []; var dataLines = [];
+                var nodes = data.nodes;
+                var edges = data.edges;
 
-                    data: [
-                        { coords: [[116.4136103013, 39.9110666857], [-95.639302, 37.266899]], lineStyle: { color: '#B33341' } },
-                        { coords: [[101.4038, 36.8207], [-2.401801, 30.95309]], lineStyle: { color: '#94BD68' } },
-                        { coords: [[106.6992, 26.7682], [133.003999, -26.013866]], lineStyle: { color: '#388283' } },
-                        // 非洲
-                        { coords: [[91.1865, 30.1465], [17.326883, -23.866826]], lineStyle: { color: '#94BD68' } },
-                        { coords: [[102.9199, 25.4663], [97.393614, -68.480939]], lineStyle: { color: '#B33341' } },
-                    ]
+                nodes.forEach(function (e) {
+                    var temp = {
+                        name: e.oname,
+                        value: [e.longtitude, e.lantitude]
+                    };
+                    dataPorts.push(temp);
+                });
+                edges.forEach(function (e) {
+                    var temp = {
+                        name: e.oname,
+                        coords: [[e.a_longtitude, e.a_lantitude], [e.z_longtitude, e.z_lantitude]]
+                    };
+                    dataLines.push(temp);
+                });
 
-                }, {
-                    type: 'scatter3D',
-                    name: 'scatter3D2',
-                    coordinateSystem: 'globe',
-                    symbol: 'none',
-                    symbolSize: '5',
-                    itemStyle: {
-                        color: 'blue',
-                        opacity: 0.9
-                    },
-                    label: {
-                        show: true,
-                        formatter: '{b}',
-                        textStyle: {
-                            color: '#000'
+                series.push(
+                    {
+                        type: 'lines3D',
+                        name: '王宁测试',
+                        effect: {
+                            show: true,
+                            trailWidth: 2,
+                            trailLength: 0.15,
+                            trailOpacity: 1,
+                            trailColor: '#FBFCF9'
                         },
-                        backgroundColor: '#d49f3e'
-                    },
-                    data: [
-                        {
-                            name: '北京', value: [116.4136103013, 39.9110666857]
-                        }, {
-                            name: '美国', value: [-95.639302, 37.266899]
-                        }, {
-                            name: "青海", value: [101.4038, 36.8207]
-                        }, {
-                            name: '阿尔及利亚', value: [-2.401801, 30.95309]
-                        }, {
-                            name: '贵州', value: [106.6992, 26.7682]
-                        }, {
-                            name: '澳大利亚', value: [134.247186, -25.479252]
-                        }, {
-                            name: '西藏', value: [91.1865, 30.1465]
-                        }, {
-                            name: '纳米比亚', value: [17.326883, -23.866826]
-                        }, {
-                            name: '云南', value: [102.9199, 25.4663]
-                        }, {
-                            name: '南极洲', value: [97.393614, -68.480939]
-                        }
-                    ]
 
-                })
-            option.series = series;
-            option.backgroundColor = 'rgba(0,0,0,0)';
-            nathionalChart.setOption(option);
+                        lineStyle: {
+                            width: 2,
+                            color: '#29676F',
+                            opacity: 0.9
+                        },
+                        blendMode: 'lighter',
+
+                        data: $.fn.threeMap.methods.renderColor(dataLines)
+                    }, {
+                        type: 'scatter3D',
+                        name: 'scatter3D2',
+                        coordinateSystem: 'globe',
+                        symbol: 'none',
+                        symbolSize: '5',
+                        itemStyle: {
+                            color: 'blue',
+                            opacity: 0.9
+                        },
+                        label: {
+                            show: true,
+                            formatter: '{b}',
+                            textStyle: {
+                                color: '#000',
+                                borderWidth: 0,
+                                borderColor: 'red'
+                            }
+                        },
+                        data: dataPorts
+                    });
+                console.log(series);
+                option.series = series;
+                option.backgroundColor = 'rgba(0,0,0,0)';
+                $.fn.threeMap.defaults.nathionalChart.setOption(option);
+            });
         },
-        eventTrigger: function (nathionalChart) {
-            var option = nathionalChart.getOption();
-
+        // 点击查看中国
+        eventTrigger: function () {
+            var option = $.fn.threeMap.defaults.nathionalChart.getOption();
             if (option.globe[0].viewControl.autoRotateSpeed == 5) {
                 // 缩放效果
                 //option.globe[0].viewControl.distance = 100;
                 // option.globe[0].viewControl.autoRotate = false;
                 // 控制速度达到效果
-                option.globe[0].viewControl.targetCoord = [109.1162, 34.2004];
+                option.globe[0].viewControl.targetCoord = [109.1162, 34.2004]
                 option.globe[0].viewControl.autoRotateSpeed = 0;
             } else {
                 // 缩放效果
@@ -236,73 +259,53 @@
                 option.globe[0].viewControl.targetCoord = null;
                 option.globe[0].viewControl.autoRotateSpeed = 5;
             }
-            nathionalChart.setOption(option);
+            $.fn.threeMap.defaults.nathionalChart.setOption(option);
         },
-        eventColor: function (chinaChart, e_map) {
-            var option = chinaChart.getOption();
-            if (option.visualMap[0].inRange.color.length == 3) {
-                var optionMap = e_map.getOption();
-
-                option.visualMap[0] = {
-                    left: 'right',
-                    min: 500,
-                    max: 5000,
-                    inRange: {
-                        color: ['#74B7E0', '#4575b4', '#2791CB', '#0A24A5']
-                    },
-                    text: ['High', 'Low'],           // 文本，默认为数值文本
-                    calculable: true
-                }
-                chinaChart.setOption(option);
-                // 判断球的状态
-                if (optionMap.globe[0].viewControl.autoRotate) {
-                    optionMap.globe[0].viewControl.distance = 100;
-                    optionMap.globe[0].viewControl.autoRotate = false;
-                    e_map.setOption(optionMap);
-                } else {
-                    if (optionMap.globe[0].viewControl.distance != 100) {
-                        optionMap.globe[0].viewControl.distance = 200;
-                        optionMap.globe[0].viewControl.autoRotate = true;
-                        e_map.setOption(optionMap);
+        // 点击渲染颜色
+        eventColor: function () {
+            $.get('indoor.json', function (data) {
+                var option = $.fn.threeMap.defaults.chinaChart.getOption();
+                option.series.forEach(function (e, index) {
+                    if (e.type == 'map') {
+                        option.series[index].data = data.regions;
                     }
-                }
-
-            } else {
-                $.fn.threeMap.methods.eventTrigger(e_map);
-            }
+                })
+                $.fn.threeMap.defaults.chinaChart.setOption(option);
+            });
+            // 颜色渲染完成后是否需要球动起来
+            $.fn.threeMap.methods.eventTrigger();
         },
-        eventMap: function (chinaChart, nathionalChart) {
-            var optionChina = chinaChart.getOption();
-            var optionNational = nathionalChart.getOption();
+        // 点击球动或不动，清除颜色
+        eventMap: function () {
+            var optionChina = $.fn.threeMap.defaults.chinaChart.getOption();
+            var optionNational = $.fn.threeMap.defaults.nathionalChart.getOption();
+            // 将中心点取消，从哪停止，从哪开始
+            optionNational.globe[0].viewControl.targetCoord = null;
 
             if (optionNational.globe[0].viewControl.autoRotateSpeed == 5) {
-                // 颜色渲染
-                /*if (optionChina.visualMap[0].inRange.color.length == 4) {
-                    optionChina.visualMap[0] = {
-                        left: 'right',
-                        min: 500,
-                        max: 5000,
-                        inRange: {
-                            color: ['#74B7E0', '#74B7E0', '#74B7E0']
-                        },
-                        text: ['High', 'Low'],           // 文本，默认为数值文本
-                        calculable: true
-                    }
-                    // chinaChart.setOption(optionChina)
-                }*/
                 // 缩放功能
                 //optionNational.globe[0].viewControl.distance = 200;
                 // option.globe[0].viewControl.autoRotate = true;
                 // 控制速度达到效果
                 optionNational.globe[0].viewControl.autoRotateSpeed = 0;
-                nathionalChart.setOption(optionNational);
-            }else {
+            } else {
                 // 控制速度达到效果
-
-                optionNational.globe[0].viewControl.targetCoord = null;
                 optionNational.globe[0].viewControl.autoRotateSpeed = 5;
-                nathionalChart.setOption(optionNational);
             }
+            $.fn.threeMap.defaults.nathionalChart.setOption(optionNational);
+
+            optionChina.series.forEach(function(element) {
+                if (element.type == 'map') {
+                if (element.data[0].name != '山东' || element.data[0].value != 50) {
+                    $.fn.threeMap.defaults.chinaChart.setOption($.fn.threeMap.defaults.oldOption, true, false, false);
+                }
+            }
+        });
         }
-    }
+    },
+        $.fn.threeMap.defaults = {
+            oldOption: null,
+            nathionalChart: null,
+            chinaChart: null
+        }
 })(jQuery);

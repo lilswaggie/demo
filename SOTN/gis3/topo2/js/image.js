@@ -7,10 +7,6 @@ var image={
         twaver.Util.registerImageByUrl('./images/sideroute.png','sideroute',this.network);
         twaver.Util.registerImageByUrl('./images/database.png','database',this.network);
         twaver.Util.registerImageByUrl('./images/route.png','route',this.network);
-
-        twaver.Util.registerImageByUrl('./images/transne.png','transne',this.network);
-        twaver.Util.registerImageByUrl('./images/bigtrans.png','bigtrans',this.network);
-        twaver.Util.registerImageByUrl('./images/room.png','room',this.network);
     },
     registerImage: function (url, svg) {
         var image = new Image();
