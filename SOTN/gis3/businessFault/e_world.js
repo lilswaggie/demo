@@ -87,6 +87,7 @@
                         ls.push(line);
                     });
                     lines.data = ls;
+
                     scatterPoint.data = ps;
 
                     var options = chart.getOption();
@@ -121,7 +122,7 @@
                                     });
                                     if(flag){
                                         serieItemData.lineStyle = {
-                                            color:Global.mapGlobal.echartsConfig.lineColor.fault
+                                            color: Global.mapGlobal.echartsConfig.lineColor.fault
                                         };
                                     }
                                 });

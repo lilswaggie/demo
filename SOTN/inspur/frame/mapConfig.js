@@ -33,9 +33,9 @@ Global.mapGlobal.echartsConfig = {
     },
     //var color = ['#a6c84c', '#ffa022', '#46bee9'];
     lineColor:{
-        normal:'#5F97F5',
-        fault:'red',
-        light:'#24F052'
+        normal:'#4D8CF4',
+        fault:'#F84848',
+        light:'#D0021B'
     },
     lineWidth:2,
     lineCurveness:0.2

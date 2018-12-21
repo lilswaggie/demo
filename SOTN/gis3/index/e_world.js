@@ -71,63 +71,89 @@
                     selected:true,
                     emphasis: {
                         label: {
-                            show: false
+                            show: false,
+                            color: "#72758C"
+
                         }
                     }
                 },{
                     name: '瑞典',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '尼日尔',
                     label:{
-                        show: true
+
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '俄罗斯',
                     label: {
-                        show: true
+
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '加拿大',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
                     }
                 },{
                     name: '印度尼西亚',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '巴西',
                     label: {
-                        show: true
+
+                        show: true,
+                        color: "#72758C"
                     }
                 },{
                     name: '墨西哥',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '苏丹',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '澳大利亚',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '伊朗',
                     label: {
-                        show: true
+                        show: true,
+                        color: "#72758C"
+
                     }
                 },{
                     name: '扎伊尔',
                     label: {
-                        show: true
+
+                        show: true,
+                        color: "#72758C"
+
                     }
                 }
             ];
@@ -239,8 +265,9 @@
                         normal: {
                             // 线条颜色的设置
                             color: $.fn.WorldModule.methods.getLinkColor(linkCfg), // '#000', // linkCfg.color,
-                            width: 2.5 // ,
-                            // opacity: 0.6
+                            width: 2.5  ,
+                            opacity: 0.9
+
                         },
                         emphasis: {
                             width: 5,
@@ -339,7 +366,8 @@
                     // "COLOR":"#4285F4"
                 },{
                     "TYPE":"租用海缆",
-                    "COLOR":"#F35B5B"
+                    "COLOR":"#F84848"
+
                     // "COLOR":"#A752F2"
                 },{
                     "TYPE":"自有陆缆",
