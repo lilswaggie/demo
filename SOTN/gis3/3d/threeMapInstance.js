@@ -4,6 +4,8 @@
         var height = $("body").GeoUtils('getHeight');
         $('#g_map').css('height', height);
         $.fn.threeMap.methods.init();
+        // 对外提供的方法
+        $.fn.threeMap.methods.exportMethod();
     }
     $.fn.threeMap.methods = {
         init: function () {
@@ -24,16 +26,14 @@
             };
             // 点击事件
             $('.province').click(function () {
-                $.fn.threeMap.methods.eventTrigger();
+                gis.eventTrigger();
             });
             $('.colorChange').click(function () {
-                $.fn.threeMap.methods.eventColor();
+                gis.renderColor();
             });
             $('#g_map').click(function () {
-                $.fn.threeMap.methods.eventMap();
+                gis.eventMap();
             });
-            //对外提供方法
-            gis.renderColor = $.fn.threeMap.methods.eventColor
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -301,6 +301,12 @@
                 }
             }
         });
+        },
+        // 对外暴露的方法
+        exportMethod: function () {
+            gis.renderColor = $.fn.threeMap.methods.eventColor;
+            gis.eventTrigger = $.fn.threeMap.methods.eventTrigger;
+            gis.eventMap = $.fn.threeMap.methods.eventMap;
         }
     },
         $.fn.threeMap.defaults = {
