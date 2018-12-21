@@ -39,9 +39,13 @@
                     viewControl:{
                         targetCoord: [109.1162, 34.2004],
                         autoRotateSpeed: 5,
-                        distance: 200,
+                        distance: 230,
                         autoRotate: true,
-                        zoomSensitivity: 0
+                        zoomSensitivity: 1,
+                        // 最近处（大）
+                        minDistance: 140,
+                        // 最远处（小）
+                        maxDistance: 300
                     },
                     baseTexture: Global.sysPath+'images/lizi.png',
                     displacementScale: 0.1,
