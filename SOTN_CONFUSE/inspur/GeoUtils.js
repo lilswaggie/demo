@@ -23,7 +23,7 @@
 
         get3dMapInstance:function(param){
             var geo = {
-                backgroundColor: '#000',
+                backgroundColor: 'rgba(0,0,0,0)',
                 globe: {
                     /*  viewControl:{
                      rotateSensitivity:0, //鼠标旋转灵敏度
@@ -38,15 +38,25 @@
                     show:true,
                     viewControl:{
                         targetCoord: [109.1162, 34.2004],
-                        autoRotateSpeed: 5,
+                        autoRotateSpeed: 10,
                         distance: 200,
                         autoRotate: true
                     },
-                    baseTexture: 'http://localhost:63342/SOTN/images/earth.jpg',
+                    baseTexture: Global.sysPath+'images/lizi.png',
                     displacementScale: 0.1,
                     shading: 'color',
-                    // 地球背景星图设置
-                    environment: 'http://localhost:63342/SOTN/images/starfield.jpg',
+                    //environment:'rgba(0,0,0,0)',
+                    // 地球背景星图设置 http://localhost:63342/SOTN/images/background.png
+                    //environment: 'auto',
+                    //environment: 'asset/starfield.jpg',
+                    //environment: '#000',
+                    /*environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0, color: '#00aaff' // 天空颜色
+                    }, {
+                        offset: 0.7, color: '#998866' // 地面颜色
+                    }, {
+                        offset: 1, color: '#998866' // 地面颜色
+                    }], false),*/
                     postEffect:{
                         enable:true,
                     },
@@ -58,16 +68,23 @@
                          texture:param.chinaChart
                          //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
                          }*/
-                        /*{
-                         type: 'blend',
-                         blendTo: 'emission',
-                         texture: 'http://localhost:63342/SOTN/images/night.jpg'
-                         },*/{
+                        {
                             type: 'overlay',
                             blendTo: 'emission',
                             texture:param.chinaChart
                             //texture: 'http://localhost:63342/SOTN/images/earth.jpg'
-                        }],
+                        },
+                        {
+                         type: 'blend',
+                         blendTo: 'emission',
+                         texture: Global.sysPath+'images/night.jpg'
+                         }],
+                },
+                tooltip: {
+                    show: true,
+                    trigger: 'item',
+                    alwaysShowContent: true,
+                    formatter: '{b}'
                 },
                 series:[]
             }
@@ -87,7 +104,7 @@
                         areaColor:'#F9FBFF'
                     }
                 },
-                //regions:$("body").GeoUtils('getChinaRegions')
+                // regions:$("body").GeoUtils('getChinaRegions')
             }
             return geo;
         },
@@ -153,7 +170,7 @@
                 },
                 data:[]
             };
-            return es
+            return es;
         },
         /* networkDefault */
         getEffectScatter:function () {

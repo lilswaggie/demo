@@ -73,6 +73,7 @@
                         label: {
                             show: false,
                             color: "#72758C"
+
                         }
                     }
                 },{
@@ -80,18 +81,23 @@
                     label: {
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '尼日尔',
                     label:{
+
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '俄罗斯',
                     label: {
+
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '加拿大',
@@ -104,10 +110,12 @@
                     label: {
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '巴西',
                     label: {
+
                         show: true,
                         color: "#72758C"
                     }
@@ -116,30 +124,36 @@
                     label: {
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '苏丹',
                     label: {
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '澳大利亚',
                     label: {
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '伊朗',
                     label: {
                         show: true,
                         color: "#72758C"
+
                     }
                 },{
                     name: '扎伊尔',
                     label: {
+
                         show: true,
                         color: "#72758C"
+
                     }
                 }
             ];
@@ -253,6 +267,7 @@
                             color: $.fn.WorldModule.methods.getLinkColor(linkCfg), // '#000', // linkCfg.color,
                             width: 2.5  ,
                             opacity: 0.9
+
                         },
                         emphasis: {
                             width: 5,
@@ -352,6 +367,7 @@
                 },{
                     "TYPE":"租用海缆",
                     "COLOR":"#F84848"
+
                     // "COLOR":"#A752F2"
                 },{
                     "TYPE":"自有陆缆",
