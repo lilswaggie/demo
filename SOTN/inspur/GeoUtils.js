@@ -162,7 +162,8 @@
                 symbolSize: symbolSize,
                 itemStyle: {
                     normal: {
-                        color: '#4D8CF4'
+                        color: '#4D8CF4',
+                        opacity: 1
                     }
                 },
                 data:[]
@@ -375,7 +376,7 @@
                 "name": "俄罗斯",
                 "selected": false,
                 "label": {
-                    //color:'#C5C8D4',
+                    // "color":'#72758C',
                     "show": true
                 }
             },
@@ -992,7 +993,7 @@
                 "name": "尼日利亚",
                 "selected": false,
                 "label": {
-                    color:'#eee',
+                    "color":'#eee',
                     "show": true
                 }
             },
@@ -1000,7 +1001,7 @@
                 "name": "苏丹",
                 "selected": false,
                 "label": {
-                    color:'#C5C8D4',
+                    // "color":'red',
                     "show": true
                 }
             },
@@ -1183,6 +1184,7 @@
                 "name": "澳大利亚",
                 "selected": false,
                 "label": {
+                    "color" :'#72758C',
                     "show": true
                 }
             },
@@ -1338,6 +1340,7 @@
                 "name": "墨西哥",
                 "selected": false,
                 "label": {
+                    // "color":'#72758C',
                     "show": true
                 }
             },
@@ -1359,6 +1362,7 @@
                 "name": "加拿大",
                 "selected": false,
                 "label": {
+                    // "color":'#72758C',
                     "show": true
                 }
             },
@@ -1387,6 +1391,7 @@
                 "name": "巴西",
                 "selected": false,
                 "label": {
+                    "color" :'#72758C',
                     "show": true
                 }
             },
@@ -1499,6 +1504,7 @@
                 "name": "印度尼西亚",
                 "selected": false,
                 "label": {
+                    color:'#72758C',
                     "show": true
                 }
             },
@@ -1548,7 +1554,7 @@
                 "name": "扎伊尔",
                 "selected": false,
                 "label": {
-                    color:'#C5C8D4',
+                    // "color":'#72758C',
                     "show": true
                 }
             },
