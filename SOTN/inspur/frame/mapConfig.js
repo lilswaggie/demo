@@ -56,7 +56,7 @@ Global.mapGlobal.mapInstance = {
         isZoomSlider: false,
         autoResize: true,
         notwork: '',
-        MapType: ''
+        MapType: '',
     },
     isCenter:true,                                        //系统初始化是否启用center定位
     center:[108.92361111111111,34.54083333333333],        //关联isCenter属性 

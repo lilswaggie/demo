@@ -10,20 +10,25 @@ define([
     "utils/SymbolUtil",
     "esri/geometry/webMercatorUtils",
     "esri/toolbars/draw",
+    "esri/dijit/BasemapGallery",
+    "esri/dijit/Basemap",
     "dojo/_base/declare"
-],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,declare){
+],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,BasemapGallery,Basemap,declare){
     return declare(null,{
         map:null,
         constructor:function(){
             var map = new Map("map",Global.mapGlobal.mapInstance.mapOptions);
+
             this.map = map;
             Global.mapGlobal.map = map;
 
+
             if(Global.mapGlobal.mapInstance.isCenter)
                 map.centerAndZoom(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],''),Global.mapGlobal.mapInstance.zoom);
-            
+
             var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': 'Heditu','id': 'baseMap'});
             map.addLayer(layer);
+
 
             var lineLayer = new GraphicsLayer();
             map.addLayer(lineLayer);
