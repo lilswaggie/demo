@@ -14,6 +14,7 @@
     $.fn.WorldModule.methods = {
         init:function(){
             $.fn.WorldModule.defaults.chart = echarts.init(document.getElementById("g_map"));
+
             $.get('../../geodata/world.json',function(mapJson){
                 var data = [];
                 $.each(mapJson.features,function(index,item){
@@ -64,8 +65,59 @@
             var scatterPoint = $("body").GeoUtils('getScatter',{
                 symbol:'circle'
             });
+            $.ajax({
+                url:'http://10.154.8.22:8088/sotn/api/resource/servicelines?scene=outdoor',
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.log('data',data);
+                    var datas = data.data;
+                    if(datas && datas.nodes){
+                        var ps = [];
+                        datas.nodes.map(function(nodeItem,nodeIndex){
+                            var point = {
+                                name:nodeItem.oname,
+                                value:[nodeItem.longitude,nodeItem.lantitude].concat(20),
+                                data:nodeItem
+                            }
+                            ps.push(point);
+                        });
 
-            $.get('../../geodata/world_service.json',function(datas){
+                        var ls = [];
+                        datas.edges.map(function(edgeItem,edgeIndex){
+                            var line = {
+                                oname:edgeItem.oname,
+                                coords:[[edgeItem.a_longitude,edgeItem.a_lantitude],[edgeItem.z_longitude,edgeItem.z_lantitude]],
+                                data:edgeItem
+                            }
+                            ls.push(line);
+                        });
+                        lines.data = ls;
+
+                        scatterPoint.data = ps;
+                        console.log('scatterPoint',scatterPoint)
+                        var options = chart.getOption();
+                        options.series.push(lines);
+                        options.series.push(scatterPoint);
+
+                        chart.setOption(options);
+
+                        //渲染告警数据开启
+                        $.fn.WorldModule.methods.renderWarningData(chart);
+
+                        //实时渲染开启
+                        $.fn.WorldModule.methods.realRenderWarningData(chart);
+                    }
+                },
+                error:function(data){
+                    console.log('data',data);
+                }
+            });
+            /*$.get('../../geodata/world_service.json',function(datas){
                 if(datas && datas.nodes){
                     var ps = [];
                     datas.nodes.map(function(nodeItem,nodeIndex){
@@ -102,7 +154,7 @@
                     //实时渲染开启
                     $.fn.WorldModule.methods.realRenderWarningData(chart);
                 }
-            });
+            });*/
         },
         //渲染告警数据
         renderWarningData:function(chart){

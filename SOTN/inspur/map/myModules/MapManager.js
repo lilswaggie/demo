@@ -12,22 +12,32 @@ define([
     "esri/toolbars/draw",
     "esri/dijit/BasemapGallery",
     "esri/dijit/Basemap",
+    "esri/layers/ArcGISDynamicMapServiceLayer",
     "dojo/_base/declare"
-],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,BasemapGallery,Basemap,declare){
+],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,BasemapGallery,Basemap,ArcGISDynamicMapServiceLayer,declare){
     return declare(null,{
         map:null,
         constructor:function(){
             var map = new Map("map",Global.mapGlobal.mapInstance.mapOptions);
-
             this.map = map;
             Global.mapGlobal.map = map;
-
 
             if(Global.mapGlobal.mapInstance.isCenter)
                 map.centerAndZoom(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],''),Global.mapGlobal.mapInstance.zoom);
 
             var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': 'Heditu','id': 'baseMap'});
             map.addLayer(layer);
+
+            map.on('extent-change',function(param){
+                var extent = param.extent;
+                var xmax = extent.xmax;
+                var xmin = extent.xmin;
+                var ymax = extent.ymax;
+                var ymin = extent.ymin;
+                if(xmax > 21417927.26173119 || xmin < 1753877.784974391 || ymin < -1817867.590739129 ||ymax > 9179282.542702826){
+                    map.centerAt(GeometryUtil.getPoint(108.92361111111111,34.54083333333333));
+                }
+            });
 
 
             var lineLayer = new GraphicsLayer();
