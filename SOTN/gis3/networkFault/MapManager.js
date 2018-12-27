@@ -149,6 +149,23 @@ define([
          * 告警数据查询
          */
         queryWarningOTN:function(this_instance){
+
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3RuLW84IiwiZXhwIjoxNTQ2OTk5MzU4LCJpYXQiOjE1NDQ0MDczNTh9.AsyYb4RB6QLuW-Nt1FFnthh4-OvK3lIuUx7Q1FLrkpeu55klEV5g1XXBeB2Y0Lomz-aAcJoTqByLEBYdPt117Q'
+                },
+                success:function(data){
+                    console.error('告警数据',data);
+                    var datas = data.data;
+                    if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
+                    if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
+                }
+            });
+
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
             $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理

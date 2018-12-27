@@ -20,7 +20,7 @@ define([
             if(Global.mapGlobal.mapInstance.isCenter)
                 map.centerAndZoom(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],''),Global.mapGlobal.mapInstance.zoom);
             
-            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': 'Heditu','id': 'baseMap'});
+            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': '','id': 'baseMap'});
             map.addLayer(layer);
 
             var lineLayer = new GraphicsLayer();
@@ -149,11 +149,28 @@ define([
          * 告警数据查询
          */
         queryWarningOTN:function(this_instance){
+
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('告警数据',data);
+                    var datas = data.data;
+                    if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
+                    if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
+                }
+            });
+
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
-              $.get('../../geodata/queryWarnings.json',function(datas){
+              /*$.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
                 if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
-            });
+            });*/
         },
         /**
          * 处理otn设备告警

@@ -74,14 +74,15 @@ Global.mapGlobal.mapInstance = {
 //queryPOI
 Global.mapGlobal.queryPOI = {
     //queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
-
-    queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
+    //queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
+    //queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    queryWarningOTN:'http://10.154.8.22:8088/sotn/api/alert/active/resources',//告警
     queryLinks:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryLinks',                //otn设备间逻辑线呈现
-    queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    queryServiceLines:'http://10.154.8.22:8088/sotn/api/resource/servicelines',
     queryOTN:'http://10.154.8.22:8088/sotn/api/resource/topolinks',
     queryONTLine:'',
     realQueryFlag:false,           //实时查询标志
-    realQueryTimer:5000,          //1000为1s
+    realQueryTimer:10000,          //1000为1s
 }
 
 //baseMap
