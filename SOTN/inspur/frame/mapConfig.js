@@ -110,4 +110,8 @@ Global.mapGlobal.threeDimensional = function (value) {
     } else {
         return false;
     }
+
 }
+
+}
+
