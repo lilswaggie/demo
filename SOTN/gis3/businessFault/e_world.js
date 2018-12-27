@@ -58,6 +58,9 @@
             });
             $("#g_map").click(function(){
                 $.fn.WorldModule.methods.clearEventTrigger();
+
+                //回调超超接口
+                top.gis.clearSelectedLine();
             })
         },
         renderData:function(chart){
@@ -382,6 +385,8 @@
             $.fn.WorldModule.defaults.chart.setOption(op);
             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             $.fn.WorldModule.defaults.count = 0;
+
+
         }
     },
         $.fn.WorldModule.defaults = {

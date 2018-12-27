@@ -20,7 +20,7 @@ Global.mapGlobal.symbolConfig = {
 
     OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
     OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
-    OTN_LIGHT_SYMBOL:Global.sysPath+'images/ceshi2.png',
+    OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTN_LIGHT.png',
     SYMBOL_WIDTH:34,
     SYMBOL_HEIGHT:26,
 }
@@ -77,7 +77,6 @@ Global.mapGlobal.queryPOI = {
     //queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
     //queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
     queryWarningOTN:'http://10.154.8.22:8088/sotn/api/alert/active/resources',//告警
-    queryLinks:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryLinks',                //otn设备间逻辑线呈现
     queryServiceLines:'http://10.154.8.22:8088/sotn/api/resource/servicelines',
     queryOTN:'http://10.154.8.22:8088/sotn/api/resource/topolinks',
     queryONTLine:'',
@@ -88,4 +87,27 @@ Global.mapGlobal.queryPOI = {
 //baseMap
 Global.mapGlobal.base = {
     map:'http://sgdt.mlocso.com:8089/tileServer?x={col}&y={row}&z={level}&maptype=2&key=5592f4830d22caccc27546e61faf9048&number=123456789'
+}
+
+// 3d接口配置
+Global.mapGlobal.threeDimensional = function (value) {
+    if(value === 'element'){
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/element/location';
+    } else if(value === 'optical_cable_length'){
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location';
+    } else if(value === 'optical_cable_fault') {
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location';
+    } else if(value === 'element_fault') {
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location';
+    } else if(value === 'port_fault') {
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location';
+    } else if(value === 'wave_fault') {
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location';
+    } else if(value === 'fault_handling_time') {
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location';
+    } else if(value === 'fault_handling_rate') {
+        return 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location';
+    } else {
+        return false;
+    }
 }

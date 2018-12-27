@@ -58,6 +58,9 @@ define([
                                 params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
                                 var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
                                 Global.mapGlobal.textLayer.add(g);
+
+                                //调用超超接口
+                                top.gis.setWarnOtnNetworkFault(params.graphic.attributes.oid,params.graphic.attributes.oname);
                             }
                         });
                     });
@@ -72,6 +75,9 @@ define([
                 Global.mapGlobal.textLayer.clear();
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym)
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
+
+                //调用超超接口
+                top.gis.clearWarnOtnNetworkFault();
             });
 
            

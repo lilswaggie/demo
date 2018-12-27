@@ -50,6 +50,9 @@
             // 点击事件
             $("#g_map").click(function () {
                 $.fn.ChinaModule.methods.clearEventTrigger();
+
+                //回调超超接口
+                top.gis.clearSelectedLine();
             })
             // 线条高亮，两端闪烁
             $(".port").click(function () {
@@ -245,6 +248,7 @@
                 if (seri.type == 'lines') {
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
+                        console.log('你点击的线数据：',lineData.id);
                         aggrs.map(function (aggr, aggrKey) {
                             if (aggr.oid == lineData.id) {
                                 lineRecords.push(line)
@@ -253,6 +257,10 @@
                     });
                 }
             });
+
+            if(lineRecords.size == 0){
+                console.error('暂未找到对应数据');
+            }
             var dataLines = [];
             var dataPorts = [];
             lineRecords.forEach(function (e) {
@@ -349,6 +357,8 @@
             $.fn.ChinaModule.defaults.chart.setOption(op);
             $.fn.ChinaModule.defaults.chart.setOption($.fn.ChinaModule.defaults.oldOption,true,false,false);
             $.fn.ChinaModule.defaults.count = 0;
+
+
         }
     },
         $.fn.ChinaModule.defaults = {
