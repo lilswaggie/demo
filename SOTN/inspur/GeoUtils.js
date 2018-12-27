@@ -53,7 +53,7 @@
                     //environment:'rgba(128, 128, 128, 0.1)',
                     // 地球背景星图设置 http://localhost:63342/SOTN/images/background.png
                     //environment: '#022040',
-                    //environment: Global.sysPath+'images/starfield.jpg',
+                    environment: Global.sysPath+'images/starfield.jpg',
                     //environment: '#000',
                     /*environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                         offset: 0, color: '#00aaff' // 天空颜色

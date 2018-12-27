@@ -26,7 +26,8 @@
                     geo: $("body").GeoUtils('getWorldMapInstance'),
                     series: []
                 });
-                $.fn.WorldModule.methods.renderData($.fn.WorldModule.defaults.chart);
+                //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
+                //$.fn.WorldModule.methods.renderData($.fn.WorldModule.defaults.chart);
             });
             // echarts自适应
             window.onresize = function () {
@@ -37,21 +38,84 @@
                 $.fn.WorldModule.defaults.chart.clear();
                 $.fn.WorldModule.defaults.chart.setOption(newOption);
             };
-            // 点击事件
-            $("#customer").click(function(){
-                $.fn.WorldModule.defaults.count += 1;
-                if($.fn.WorldModule.defaults.count == 1){
-                    gis.renderLine({ id: 144 });
+        },
+        //对外接口：渲染数据，跟下面的方法readerData无区别
+        renderCustomerLine:function(customer){
+            var lines = $("body").GeoUtils('getLine');
+            var scatterPoint = $("body").GeoUtils('getScatter', {
+                symbol: 'circle'
+            });
+
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryServiceLines+"?scene='outdoor'&ccustomer_name='"+customer.customer_name+"'",
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('客户专线',data);
+                    var datas = data.data;
+                    if (datas && datas.nodes) {
+                        var ps = [];
+                        datas.nodes.map(function (nodeItem, nodeIndex) {
+                            var point = {
+                                name: nodeItem.oname,
+                                value: [nodeItem.longitude_excursion, nodeItem.lantitude_excursion].concat(20),
+                                data: nodeItem
+                            }
+                            ps.push(point);
+                        });
+
+                        var ls = [];
+                        datas.edges.map(function (edgeItem, edgeIndex) {
+                            var line = {
+                                oname: edgeItem.oname,
+                                coords: [[edgeItem.a_longitude_excursion, edgeItem.a_lantitude_excursion], [edgeItem.z_longitude_excursion, edgeItem.z_lantitude_excursion]],
+                                data: edgeItem
+                            }
+                            ls.push(line);
+                        });
+                        lines.data = ls;
+                        scatterPoint.data = ps;
+                        console.error('线的数据', ls);
+                        var options = $.fn.WorldModule.defaults.chart.getOption();
+                        options.series.push(lines);
+                        options.series.push(scatterPoint);
+
+                        $.fn.WorldModule.defaults.chart.setOption(options);
+
+                        //渲染告警数据开启
+                        $.fn.WorldModule.methods.renderWarningData($.fn.WorldModule.defaults.chart);
+
+                        //实时渲染开启
+                        $.fn.WorldModule.methods.realRenderWarningData($.fn.WorldModule.defaults.chart);
+                    }
                 }
             });
 
         },
+        //渲染数据
         renderData: function (chart) {
             var lines = $("body").GeoUtils('getLine');
             var scatterPoint = $("body").GeoUtils('getScatter', {
                 symbol: 'circle'
             });
 
+            $.ajax({
+                //url:Global.mapGlobal.queryPOI.queryServiceLines+"?scene=indoor&customer_name=apple",
+                url:"http://10.154.8.22:8088/sotn/api/resource/servicelines?scene='outdoor'&ccustomer_name='中国建设银行'",
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('客户专线',data);
+                }
+            });
             $.get('world_service.json', function (datas) {
                 if (datas && datas.nodes) {
                     var ps = [];
@@ -92,7 +156,43 @@
         },
         //渲染告警数据
         renderWarningData: function (chart) {
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    var datas = data.data;
+                    if (datas && datas.serviceline) {
+                        datas.serviceline.map(function (warningItem, warningIndex) {
+                            var options = chart.getOption();
+                            options.series.map(function (serieItem, nodeIndex) {
+                                if (serieItem.type == 'lines' && serieItem.name != 'chinaLine') {
+                                    serieItem.data.map(function (serieItemData, sindex) {
+                                        var flag = false; //标识 是否告警
+                                        serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                            if (aggrItem.oid == warningItem) {
+                                                flag = true;
+                                            }
+                                        });
+                                        if (flag) {
+                                            serieItemData.lineStyle = {
+                                                color: Global.mapGlobal.echartsConfig.lineColor.fault
+                                            };
+                                        }
+                                    });
+                                }
+                            });
+                            chart.setOption(options);
+                        });
+                    }
+                    $.fn.WorldModule.defaults.oldOption = chart.getOption();
+                }
+            });
+            /*$.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
                 if (datas && datas.serviceline) {
                     datas.serviceline.map(function (warningItem, warningIndex) {
                         var options = chart.getOption();
@@ -117,7 +217,7 @@
                     });
                 }
                 $.fn.WorldModule.defaults.oldOption = chart.getOption();
-            });
+            });*/
         },
         //实时渲染功能
         realRenderWarningData: function (chart) {
@@ -167,6 +267,8 @@
          * @param  {id:'',zh_label:''} 实际专线数据，线的int_id,线的中文名称
          */
         renderLightLine: function (lineData) {
+            //清下chart高亮效果
+            $.fn.WorldModule.methods.clearChart();
 
             var lineRecord;
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -188,43 +290,45 @@
              *   @author: 小皮
              *   显示两端网元名称
              * */
-            var a_nename = lineRecord.data.aggr[0].a_nename;
-            var z_nename = lineRecord.data.aggr[0].z_nename;
-            var coords = lineRecord.coords;
-            var scatterSeri = $("body").GeoUtils('getScatter', { symbol: 'circle' });
-            var params = {
-                scatterSeri: scatterSeri,
-                param: {
-                    a_nename: a_nename,
-                    z_nename: z_nename,
-                    coords: coords
-                }
-            };
-            var scatterSerie = $("body").GeoUtils('renderScatter', params);
+            if(lineRecord){
+                var a_nename = lineRecord.data.aggr[0].a_nename;
+                var z_nename = lineRecord.data.aggr[0].z_nename;
+                var coords = lineRecord.coords;
+                var scatterSeri = $("body").GeoUtils('getScatter', { symbol: 'circle' });
+                var params = {
+                    scatterSeri: scatterSeri,
+                    param: {
+                        a_nename: a_nename,
+                        z_nename: z_nename,
+                        coords: coords
+                    }
+                };
+                var scatterSerie = $("body").GeoUtils('renderScatter', params);
 
-            var lightLineSeri = $("body").GeoUtils('getLightsLine');
-            lightLineSeri.data.push(lineRecord);
-            var chartOption = $.fn.WorldModule.defaults.chart.getOption();
-            chartOption.series.push(lightLineSeri, scatterSerie);
-            $.fn.WorldModule.defaults.chart.setOption(chartOption);
+                var lightLineSeri = $("body").GeoUtils('getLightsLine');
+                lightLineSeri.data.push(lineRecord);
+                var chartOption = $.fn.WorldModule.defaults.chart.getOption();
+                chartOption.series.push(lightLineSeri, scatterSerie);
+                $.fn.WorldModule.defaults.chart.setOption(chartOption);
+            }else{
+                console.error('暂无关联到数据..');
+            }
+
             // chartOption.series.push(lightLineSeri);
             // $.fn.WorldModule.defaults.chart.setOption(chartOption);
         },
         // 对外暴露的方法
         exportMethod: function(){
             gis.renderLine = $.fn.WorldModule.methods.renderLightLine;
+            gis.renderCustomerLine = $.fn.WorldModule.methods.renderCustomerLine;
         },
         /**
          * 清除chart上现有的特效
          */
         chartDBClickEventTrigger: function () {
             $("#g_map").click(function(){
-                var op = $.fn.WorldModule.defaults.chart.getOption();
-                op.series = [];
-
-                $.fn.WorldModule.defaults.chart.setOption(op);
-                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-                $.fn.WorldModule.defaults.count = 0;
+                $.fn.WorldModule.methods.clearChart();
+                top.gis.clearSelectedLine();
             });
             /*$.fn.WorldModule.defaults.chart.on('click', function () {
                 var op = $.fn.WorldModule.defaults.chart.getOption();
@@ -234,6 +338,13 @@
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
                 $.fn.WorldModule.defaults.count = 0;
             });*/
+        },
+        clearChart:function(){
+            var op = $.fn.WorldModule.defaults.chart.getOption();
+            op.series = [];
+            $.fn.WorldModule.defaults.chart.setOption(op);
+            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            $.fn.WorldModule.defaults.count = 0;
         }
     },
     $.fn.WorldModule.defaults = {

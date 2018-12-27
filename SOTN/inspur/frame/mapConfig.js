@@ -20,7 +20,7 @@ Global.mapGlobal.symbolConfig = {
 
     OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
     OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
-    OTN_LIGHT_SYMBOL:Global.sysPath+'images/ceshi2.png',
+    OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTN_LIGHT.png',
     SYMBOL_WIDTH:34,
     SYMBOL_HEIGHT:26,
 }
@@ -47,16 +47,23 @@ Global.mapGlobal.mapInstance = {
         spatialReference: {
             wkid: 4326
         },
+        isMapNavigation:true,
+        isScrollWheel:true,
+        isScrollWheelZoom:true,
+        isPan:true,
+        fadeOnZoom:true,
+        displayGraphicsOnPan:true,
         center: [108.92361111111111, 34.54083333333333],
+        zoom: 10,
         maxZoom: 15,
-        minZoom: 5,
+        minZoom: 4,
         logo: false,
-        slider: false,
-        wrapAround180: false,
-        isZoomSlider: false,
+        //slider: true,
+        wrapAround180: true,
+        isZoomSlider: true,
         autoResize: true,
         notwork: '',
-        MapType: ''
+        MapType: '',
     },
     isCenter:true,                                        //系统初始化是否启用center定位
     center:[108.92361111111111,34.54083333333333],        //关联isCenter属性 
@@ -67,14 +74,14 @@ Global.mapGlobal.mapInstance = {
 //queryPOI
 Global.mapGlobal.queryPOI = {
     //queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
-
-    queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
-    queryLinks:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryLinks',                //otn设备间逻辑线呈现
-    queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    //queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
+    //queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    queryWarningOTN:'http://10.154.8.22:8088/sotn/api/alert/active/resources',//告警
+    queryServiceLines:'http://10.154.8.22:8088/sotn/api/resource/servicelines',
     queryOTN:'http://10.154.8.22:8088/sotn/api/resource/topolinks',
     queryONTLine:'',
     realQueryFlag:false,           //实时查询标志
-    realQueryTimer:5000,          //1000为1s
+    realQueryTimer:10000,          //1000为1s
 }
 
 //baseMap
@@ -103,20 +110,8 @@ Global.mapGlobal.threeDimensional = function (value) {
     } else {
         return false;
     }
-    // // 传输网元个数的分省统计
-    // element: 'http://10.154.8.22:8088/sotn/api/network/stats/element/location',
-    // // 一干光缆长度的分省统计
-    // optical_cable_length: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location',
-    // 光缆故障次数分省统计。统计当前实时的值
-    // optical_cable_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location',
-    // 网元故障次数分省统计。获取的是实时的统计结果
-    // element_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location',
-    // 光功率不合格端口数（故障端口数）的分省统计
-    // port_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location',
-    // 误码率不合格端口数(个)
-    // wave_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location',
-    // 网络故障处理时长(h)
-    // fault_handling_time: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location',
-    // 网络故障处理及时率(%)
-    // fault_handling_rate: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location'
+
 }
+
+}
+
