@@ -3,7 +3,7 @@
     {
       "oname": "扎门乌德",
       "oid": 10101,
-      "longtitude": 111.3274469,
+      "longitude": 111.3274469,
       "lantitude": 43.3814971,
       "aggr": [
         {
@@ -15,7 +15,7 @@
     {
       "oname": "法兰克福 Frakfurt",
       "oid": 10102,
-      "longtitude": 8.6300713,
+      "longitude": 8.6300713,
       "lantitude": 50.09867,
       "aggr": [
         {
@@ -27,7 +27,7 @@
     {
       "oname": "中国满洲里",
       "oid": 10103,
-      "longtitude": 117.4207129,
+      "longitude": 117.4207129,
       "lantitude": 49.4920635,
       "aggr": [
         {
@@ -39,7 +39,7 @@
     {
       "oname": "Lodon",
       "oid": 10104,
-      "longtitude": -0.0039907,
+      "longitude": -0.0039907,
       "lantitude": 51.511393,
       "aggr": [
         {
@@ -51,7 +51,7 @@
     {
       "oname": "HK",
       "oid": 10105,
-      "longtitude": 114.2444392,
+      "longitude": 114.2444392,
       "lantitude": 22.2660651,
       "aggr": [
         {
@@ -63,7 +63,7 @@
     {
       "oname": "Califoria",
       "oid": 10106,
-      "longtitude": -120.8111732,
+      "longitude": -120.8111732,
       "lantitude": 35.2518968,
       "aggr": [
         {
@@ -75,7 +75,7 @@
     {
       "oname": "Chikura, Japan",
       "oid": 10107,
-      "longtitude": 141.1248,
+      "longitude": 141.1248,
       "lantitude": 43.1572391,
       "aggr": [
         {
@@ -87,7 +87,7 @@
     {
       "oname": "Washigton",
       "oid": 10108,
-      "longtitude": -122.3368834,
+      "longitude": -122.3368834,
       "lantitude": 47.8278882,
       "aggr": [
         {
@@ -99,7 +99,7 @@
     {
       "oname": "doa Bach, Orgo, US",
       "oid": 10109,
-      "longtitude": -123.9488889,
+      "longitude": -123.9488889,
       "lantitude": 45.6439933,
       "aggr": [
         {
@@ -111,7 +111,7 @@
     {
       "oname": "Taiwan",
       "oid": 10110,
-      "longtitude": 121.3939587,
+      "longitude": 121.3939587,
       "lantitude": 25.1348084,
       "aggr": [
         {
@@ -123,7 +123,7 @@
     {
       "oname": "kitaibaraki, Japa",
       "oid": 10111,
-      "longtitude": 140.554657,
+      "longitude": 140.554657,
       "lantitude": 36.8161403,
       "aggr": [
         {
@@ -139,11 +139,11 @@
       "oname": "扎门乌德-法兰克福 Frakfurt",
       "a_oid": 10101,
       "a_oname": "扎门乌德",
-      "a_longtitude": 111.3274469,
+      "a_longitude": 111.3274469,
       "a_lantitude": 43.3814971,
       "z_oid": 10102,
       "z_oname": "法兰克福 Frakfurt",
-      "z_longtitude": 8.6300713,
+      "z_longitude": 8.6300713,
       "z_lantitude": 50.09867,
       "aggr": [
         {
@@ -161,11 +161,11 @@
       "oname": "中国满洲里-Lodon",
       "a_oid": 10103,
       "a_oname": "中国满洲里",
-      "a_longtitude": 117.4207129,
+      "a_longitude": 117.4207129,
       "a_lantitude": 49.4920635,
       "z_oid": 10104,
       "z_oname": "Lodon",
-      "z_longtitude": -0.0039907,
+      "z_longitude": -0.0039907,
       "z_lantitude": 51.511393,
       "aggr": [
         {
@@ -183,11 +183,11 @@
       "oname": "中国满洲里-法兰克福 Frakfurt",
       "a_oid": 10103,
       "a_oname": "中国满洲里",
-      "a_longtitude": 117.4207129,
+      "a_longitude": 117.4207129,
       "a_lantitude": 49.4920635,
       "z_oid": 10102,
       "z_oname": "法兰克福 Frakfurt",
-      "z_longtitude": 8.6300713,
+      "z_longitude": 8.6300713,
       "z_lantitude": 50.09867,
       "aggr": [
         {
@@ -205,11 +205,11 @@
       "oname": "HK-Califoria",
       "a_oid": 10105,
       "a_oname": "HK",
-      "a_longtitude": 114.2444392,
+      "a_longitude": 114.2444392,
       "a_lantitude": 22.2660651,
       "z_oid": 10106,
       "z_oname": "Califoria",
-      "z_longtitude": -120.8111732,
+      "z_longitude": -120.8111732,
       "z_lantitude": 35.2518968,
       "aggr": [
         {
@@ -227,11 +227,11 @@
       "oname": "HK-Chikura, Japan",
       "a_oid": 10105,
       "a_oname": "HK",
-      "a_longtitude": 114.2444392,
+      "a_longitude": 114.2444392,
       "a_lantitude": 22.2660651,
       "z_oid": 10107,
       "z_oname": "Chikura, Japan",
-      "z_longtitude": 141.1248,
+      "z_longitude": 141.1248,
       "z_lantitude": 43.1572391,
       "aggr": [
         {
@@ -249,11 +249,11 @@
       "oname": "Chikura, Japan-Washigton",
       "a_oid": 10107,
       "a_oname": "Chikura, Japan",
-      "a_longtitude": 141.1248,
+      "a_longitude": 141.1248,
       "a_lantitude": 43.1572391,
       "z_oid": 10108,
       "z_oname": "Washigton",
-      "z_longtitude": -122.3368834,
+      "z_longitude": -122.3368834,
       "z_lantitude": 47.8278882,
       "aggr": [
         {
@@ -271,11 +271,11 @@
       "oname": "Chikura, Japan-doa Bach, Orgo, US",
       "a_oid": 10107,
       "a_oname": "Chikura, Japan",
-      "a_longtitude": 141.1248,
+      "a_longitude": 141.1248,
       "a_lantitude": 43.1572391,
       "z_oid": 10109,
       "z_oname": "doa Bach, Orgo, US",
-      "z_longtitude": -123.9488889,
+      "z_longitude": -123.9488889,
       "z_lantitude": 45.6439933,
       "aggr": [
         {
@@ -293,11 +293,11 @@
       "oname": "Taiwan-kitaibaraki, Japa",
       "a_oid": 10110,
       "a_oname": "Taiwan",
-      "a_longtitude": 121.3939587,
+      "a_longitude": 121.3939587,
       "a_lantitude": 25.1348084,
       "z_oid": 10111,
       "z_oname": "kitaibaraki, Japa",
-      "z_longtitude": 140.554657,
+      "z_longitude": 140.554657,
       "z_lantitude": 36.8161403,
       "aggr": [
         {
@@ -315,11 +315,11 @@
       "oname": "Taiwan-doa Bach, Orgo, US",
       "a_oid": 10110,
       "a_oname": "Taiwan",
-      "a_longtitude": 121.3939587,
+      "a_longitude": 121.3939587,
       "a_lantitude": 25.1348084,
       "z_oid": 10109,
       "z_oname": "doa Bach, Orgo, US",
-      "z_longtitude": -123.9488889,
+      "z_longitude": -123.9488889,
       "z_lantitude": 45.6439933,
       "aggr": [
         {

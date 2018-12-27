@@ -3,7 +3,7 @@
     {
       "oid": 101021,
       "oname": "哈尔滨",
-      "longtitude": 127.9688,
+      "longitude": 127.9688,
       "lantitude": 45.368,
       "aggr": [
         {
@@ -15,7 +15,7 @@
     {
       "oid": 101022,
       "oname": "长春",
-      "longtitude": 125.8154,
+      "longitude": 125.8154,
       "lantitude": 44.2584,
       "aggr": [
         {
@@ -27,7 +27,7 @@
     {
       "oid": 101023,
       "oname": "沈阳",
-      "longtitude": 123.1238,
+      "longitude": 123.1238,
       "lantitude": 42.1216,
       "aggr": [
         {
@@ -39,7 +39,7 @@
     {
       "oid": 101024,
       "oname": "天津",
-      "longtitude": 117.4219,
+      "longitude": 117.4219,
       "lantitude": 39.4189,
       "aggr": [
         {
@@ -51,7 +51,7 @@
     {
       "oid": 101025,
       "oname": "济南",
-      "longtitude": 117.1582,
+      "longitude": 117.1582,
       "lantitude": 36.8701,
       "aggr": [
         {
@@ -63,7 +63,7 @@
     {
       "oid": 101026,
       "oname": "南京",
-      "longtitude": 118.8062,
+      "longitude": 118.8062,
       "lantitude": 31.9208,
       "aggr": [
         {
@@ -75,7 +75,7 @@
     {
       "oid": 101027,
       "oname": "南昌",
-      "longtitude": 116.0046,
+      "longitude": 116.0046,
       "lantitude": 28.6633,
       "aggr": [
         {
@@ -87,7 +87,7 @@
     {
       "oid": 101028,
       "oname": "福州",
-      "longtitude": 119.4543,
+      "longitude": 119.4543,
       "lantitude": 25.9222,
       "aggr": [
         {
@@ -99,7 +99,7 @@
     {
       "oid": 101029,
       "oname": "广州",
-      "longtitude": 113.5107,
+      "longitude": 113.5107,
       "lantitude": 23.2196,
       "aggr": [
         {
@@ -111,7 +111,7 @@
     {
       "oid": 101030,
       "oname": "南宁",
-      "longtitude": 108.479,
+      "longitude": 108.479,
       "lantitude": 23.1152,
       "aggr": [
         {
@@ -123,7 +123,7 @@
     {
       "oid": 101031,
       "oname": "拉萨",
-      "longtitude": 91.1865,
+      "longitude": 91.1865,
       "lantitude": 30.1465,
       "aggr": [
         {
@@ -135,7 +135,7 @@
     {
       "oid": 101032,
       "oname": "乌鲁木齐",
-      "longtitude": 87.9236,
+      "longitude": 87.9236,
       "lantitude": 43.5883,
       "aggr": [
         {
@@ -147,7 +147,7 @@
     {
       "oid": 101033,
       "oname": "西宁",
-      "longtitude": 101.4038,
+      "longitude": 101.4038,
       "lantitude": 36.8207,
       "aggr": [
         {
@@ -159,7 +159,7 @@
     {
       "oid": 101034,
       "oname": "银川",
-      "longtitude": 106.3586,
+      "longitude": 106.3586,
       "lantitude": 38.1775,
       "aggr": [
         {
@@ -171,7 +171,7 @@
     {
       "oid": 101035,
       "oname": "呼和浩特",
-      "longtitude": 111.4124,
+      "longitude": 111.4124,
       "lantitude": 40.4901,
       "aggr": [
         {
@@ -183,7 +183,7 @@
     {
       "oid": 101036,
       "oname": "北京",
-      "longtitude": 116.4551,
+      "longitude": 116.4551,
       "lantitude": 40.2539,
       "aggr": [
         {
@@ -195,7 +195,7 @@
     {
       "oid": 101037,
       "oname": "天津",
-      "longtitude": 117.4219,
+      "longitude": 117.4219,
       "lantitude": 39.4189,
       "aggr": [
         {
@@ -207,7 +207,7 @@
     {
       "oid": 101038,
       "oname": "昆明",
-      "longtitude": 102.9199,
+      "longitude": 102.9199,
       "lantitude": 25.4663,
       "aggr": [
         {
@@ -219,7 +219,7 @@
     {
       "oid": 101039,
       "oname": "贵阳",
-      "longtitude": 106.6992,
+      "longitude": 106.6992,
       "lantitude": 26.7682,
       "aggr": [
         {
@@ -231,7 +231,7 @@
     {
       "oid": 101040,
       "oname": "长沙",
-      "longtitude": 113.0823,
+      "longitude": 113.0823,
       "lantitude": 28.2568,
       "aggr": [
         {
@@ -243,7 +243,7 @@
     {
       "oid": 101041,
       "oname": "西安",
-      "longtitude": 109.1162,
+      "longitude": 109.1162,
       "lantitude": 34.2004,
       "aggr": [
         {
@@ -255,7 +255,7 @@
     {
       "oid": 101042,
       "oname": "海口",
-      "longtitude": 110.3893,
+      "longitude": 110.3893,
       "lantitude": 19.8516,
       "aggr": [
         {
@@ -267,7 +267,7 @@
     {
       "oid": 101043,
       "oname": "武汉",
-      "longtitude": 114.3896,
+      "longitude": 114.3896,
       "lantitude": 30.6628,
       "aggr": [
         {
@@ -279,7 +279,7 @@
     {
       "oid": 101044,
       "oname": "郑州",
-      "longtitude": 113.4668,
+      "longitude": 113.4668,
       "lantitude": 34.6234,
       "aggr": [
         {
@@ -291,7 +291,7 @@
     {
       "oid": 101045,
       "oname": "太原",
-      "longtitude": 112.3352,
+      "longitude": 112.3352,
       "lantitude": 37.9413,
       "aggr": [
         {
@@ -303,7 +303,7 @@
     {
       "oid": 101046,
       "oname": "石家庄",
-      "longtitude": 114.4995,
+      "longitude": 114.4995,
       "lantitude": 38.1006,
       "aggr": [
         {
@@ -319,11 +319,11 @@
       "oname": "哈尔滨-长春",
       "a_oid": 101021,
       "a_oname": "哈尔滨",
-      "a_longtitude": 127.9688,
+      "a_longitude": 127.9688,
       "a_lantitude": 45.368,
       "z_oid": 101022,
       "z_oname": "长春",
-      "z_longtitude": 125.8154,
+      "z_longitude": 125.8154,
       "z_lantitude": 44.2584,
       "aggr": [
         {
@@ -341,11 +341,11 @@
       "oname": "长春-沈阳",
       "a_oid": 101022,
       "a_oname": "长春",
-      "a_longtitude": 125.8154,
+      "a_longitude": 125.8154,
       "a_lantitude": 44.2584,
       "z_oid": 101023,
       "z_oname": "沈阳",
-      "z_longtitude": 123.1238,
+      "z_longitude": 123.1238,
       "z_lantitude": 42.1216,
       "aggr": [
         {
@@ -363,11 +363,11 @@
       "oname": "沈阳-天津",
       "a_oid": 101023,
       "a_oname": "沈阳",
-      "a_longtitude": 123.1238,
+      "a_longitude": 123.1238,
       "a_lantitude": 42.1216,
       "z_oid": 101037,
       "z_oname": "天津",
-      "z_longtitude": 117.4219,
+      "z_longitude": 117.4219,
       "z_lantitude": 39.4189,
       "aggr": [
         {
@@ -385,11 +385,11 @@
       "oname": "天津-济南",
       "a_oid": 101037,
       "a_oname": "天津",
-      "a_longtitude": 117.4219,
+      "a_longitude": 117.4219,
       "a_lantitude": 39.4189,
       "z_oid": 101025,
       "z_oname": "济南",
-      "z_longtitude": 117.1582,
+      "z_longitude": 117.1582,
       "z_lantitude": 36.8701,
       "aggr": [
         {
@@ -407,11 +407,11 @@
       "oname": "济南-南京",
       "a_oid": 101025,
       "a_oname": "济南",
-      "a_longtitude": 117.1582,
+      "a_longitude": 117.1582,
       "a_lantitude": 36.8701,
       "z_oid": 101026,
       "z_oname": "南京",
-      "z_longtitude": 118.8062,
+      "z_longitude": 118.8062,
       "z_lantitude": 31.9208,
       "aggr": [
         {
@@ -429,11 +429,11 @@
       "oname": "南京-南昌",
       "a_oid": 101026,
       "a_oname": "南京",
-      "a_longtitude": 118.8062,
+      "a_longitude": 118.8062,
       "a_lantitude": 31.9208,
       "z_oid": 101027,
       "z_oname": "南昌",
-      "z_longtitude": 116.0046,
+      "z_longitude": 116.0046,
       "z_lantitude": 28.6633,
       "aggr": [
         {
@@ -451,11 +451,11 @@
       "oname": "南昌-福州",
       "a_oid": 101027,
       "a_oname": "南昌",
-      "a_longtitude": 116.0046,
+      "a_longitude": 116.0046,
       "a_lantitude": 28.6633,
       "z_oid": 101028,
       "z_oname": "福州",
-      "z_longtitude": 119.4543,
+      "z_longitude": 119.4543,
       "z_lantitude": 25.9222,
       "aggr": [
         {
@@ -473,11 +473,11 @@
       "oname": "福州-广州",
       "a_oid": 101028,
       "a_oname": "福州",
-      "a_longtitude": 119.4543,
+      "a_longitude": 119.4543,
       "a_lantitude": 25.9222,
       "z_oid": 101029,
       "z_oname": "广州",
-      "z_longtitude": 113.5107,
+      "z_longitude": 113.5107,
       "z_lantitude": 23.2196,
       "aggr": [
         {
@@ -495,11 +495,11 @@
       "oname": "广州-南宁",
       "a_oid": 101029,
       "a_oname": "广州",
-      "a_longtitude": 113.5107,
+      "a_longitude": 113.5107,
       "a_lantitude": 23.2196,
       "z_oid": 101030,
       "z_oname": "南宁",
-      "z_longtitude": 108.479,
+      "z_longitude": 108.479,
       "z_lantitude": 23.1152,
       "aggr": [
         {
@@ -517,11 +517,11 @@
       "oname": "南宁-贵阳",
       "a_oid": 101030,
       "a_oname": "南宁",
-      "a_longtitude": 108.479,
+      "a_longitude": 108.479,
       "a_lantitude": 23.1152,
       "z_oid": 101039,
       "z_oname": "贵阳",
-      "z_longtitude": 106.6992,
+      "z_longitude": 106.6992,
       "z_lantitude": 26.7682,
       "aggr": [
         {
@@ -539,11 +539,11 @@
       "oname": "贵阳-昆明",
       "a_oid": 101039,
       "a_oname": "贵阳",
-      "a_longtitude": 106.6992,
+      "a_longitude": 106.6992,
       "a_lantitude": 26.7682,
       "z_oid": 101038,
       "z_oname": "昆明",
-      "z_longtitude": 102.9199,
+      "z_longitude": 102.9199,
       "z_lantitude": 25.4663,
       "aggr": [
         {
@@ -561,11 +561,11 @@
       "oname": "昆明-拉萨",
       "a_oid": 101038,
       "a_oname": "昆明",
-      "a_longtitude": 102.9199,
+      "a_longitude": 102.9199,
       "a_lantitude": 25.4663,
       "z_oid": 101031,
       "z_oname": "拉萨",
-      "z_longtitude": 91.1865,
+      "z_longitude": 91.1865,
       "z_lantitude": 30.1465,
       "aggr": [
         {
@@ -583,11 +583,11 @@
       "oname": "拉萨-乌鲁木齐",
       "a_oid": 101031,
       "a_oname": "拉萨",
-      "a_longtitude": 91.1865,
+      "a_longitude": 91.1865,
       "a_lantitude": 30.1465,
       "z_oid": 101032,
       "z_oname": "乌鲁木齐",
-      "z_longtitude": 87.9236,
+      "z_longitude": 87.9236,
       "z_lantitude": 43.5883,
       "aggr": [
         {
@@ -605,11 +605,11 @@
       "oname": "乌鲁木齐-西宁",
       "a_oid": 101032,
       "a_oname": "乌鲁木齐",
-      "a_longtitude": 87.9236,
+      "a_longitude": 87.9236,
       "a_lantitude": 43.5883,
       "z_oid": 101033,
       "z_oname": "西宁",
-      "z_longtitude": 101.4038,
+      "z_longitude": 101.4038,
       "z_lantitude": 36.8207,
       "aggr": [
         {
@@ -627,11 +627,11 @@
       "oname": "西宁-银川",
       "a_oid": 101033,
       "a_oname": "西宁",
-      "a_longtitude": 101.4038,
+      "a_longitude": 101.4038,
       "a_lantitude": 36.8207,
       "z_oid": 101034,
       "z_oname": "银川",
-      "z_longtitude": 106.3586,
+      "z_longitude": 106.3586,
       "z_lantitude": 38.1775,
       "aggr": [
         {
@@ -649,11 +649,11 @@
       "oname": "银川-呼和浩特",
       "a_oid": 101034,
       "a_oname": "银川",
-      "a_longtitude": 106.3586,
+      "a_longitude": 106.3586,
       "a_lantitude": 38.1775,
       "z_oid": 101035,
       "z_oname": "呼和浩特",
-      "z_longtitude": 111.4124,
+      "z_longitude": 111.4124,
       "z_lantitude": 40.4901,
       "aggr": [
         {
@@ -671,11 +671,11 @@
       "oname": "呼和浩特-北京",
       "a_oid": 101035,
       "a_oname": "呼和浩特",
-      "a_longtitude": 111.4124,
+      "a_longitude": 111.4124,
       "a_lantitude": 40.4901,
       "z_oid": 101036,
       "z_oname": "北京",
-      "z_longtitude": 116.4551,
+      "z_longitude": 116.4551,
       "z_lantitude": 40.2539,
       "aggr": [
         {
@@ -693,11 +693,11 @@
       "oname": "北京-天津",
       "a_oid": 101036,
       "a_oname": "北京",
-      "a_longtitude": 116.4551,
+      "a_longitude": 116.4551,
       "a_lantitude": 40.2539,
       "z_oid": 101037,
       "z_oname": "天津",
-      "z_longtitude": 117.4219,
+      "z_longitude": 117.4219,
       "z_lantitude": 39.4189,
       "aggr": [
         {
@@ -715,11 +715,11 @@
       "oname": "南宁-海口",
       "a_oid": 101030,
       "a_oname": "南宁",
-      "a_longtitude": 108.479,
+      "a_longitude": 108.479,
       "a_lantitude": 23.1152,
       "z_oid": 101042,
       "z_oname": "海口",
-      "z_longtitude": 110.3893,
+      "z_longitude": 110.3893,
       "z_lantitude": 19.8516,
       "aggr": [
         {
@@ -737,11 +737,11 @@
       "oname": "海口-广州",
       "a_oid": 101042,
       "a_oname": "海口",
-      "a_longtitude": 110.3893,
+      "a_longitude": 110.3893,
       "a_lantitude": 19.8516,
       "z_oid": 101029,
       "z_oname": "广州",
-      "z_longtitude": 113.5107,
+      "z_longitude": 113.5107,
       "z_lantitude": 23.2196,
       "aggr": [
         {
@@ -759,11 +759,11 @@
       "oname": "西宁-昆明",
       "a_oid": 101033,
       "a_oname": "西宁",
-      "a_longtitude": 101.4038,
+      "a_longitude": 101.4038,
       "a_lantitude": 36.8207,
       "z_oid": 101038,
       "z_oname": "昆明",
-      "z_longtitude": 102.9199,
+      "z_longitude": 102.9199,
       "z_lantitude": 25.4663,
       "aggr": [
         {
@@ -781,11 +781,11 @@
       "oname": "西宁-昆明",
       "a_oid": 101033,
       "a_oname": "西宁",
-      "a_longtitude": 101.4038,
+      "a_longitude": 101.4038,
       "a_lantitude": 36.8207,
       "z_oid": 101038,
       "z_oname": "昆明",
-      "z_longtitude": 102.9199,
+      "z_longitude": 102.9199,
       "z_lantitude": 25.4663,
       "aggr": [
         {
@@ -803,11 +803,11 @@
       "oname": "西宁-西安",
       "a_oid": 101033,
       "a_oname": "西宁",
-      "a_longtitude": 101.4038,
+      "a_longitude": 101.4038,
       "a_lantitude": 36.8207,
       "z_oid": 101041,
       "z_oname": "西安",
-      "z_longtitude": 109.1162,
+      "z_longitude": 109.1162,
       "z_lantitude": 34.2004,
       "aggr": [
         {
@@ -825,11 +825,11 @@
       "oname": "西安-太原",
       "a_oid": 101041,
       "a_oname": "西安",
-      "a_longtitude": 109.1162,
+      "a_longitude": 109.1162,
       "a_lantitude": 34.2004,
       "z_oid": 101045,
       "z_oname": "太原",
-      "z_longtitude": 112.3352,
+      "z_longitude": 112.3352,
       "z_lantitude": 37.9413,
       "aggr": [
         {
@@ -847,11 +847,11 @@
       "oname": "太原-济南",
       "a_oid": 101045,
       "a_oname": "太原",
-      "a_longtitude": 112.3352,
+      "a_longitude": 112.3352,
       "a_lantitude": 37.9413,
       "z_oid": 101025,
       "z_oname": "济南",
-      "z_longtitude": 117.1582,
+      "z_longitude": 117.1582,
       "z_lantitude": 36.8701,
       "aggr": [
         {
@@ -869,11 +869,11 @@
       "oname": "西安-济南",
       "a_oid": 101041,
       "a_oname": "西安",
-      "a_longtitude": 109.1162,
+      "a_longitude": 109.1162,
       "a_lantitude": 34.2004,
       "z_oid": 101025,
       "z_oname": "济南",
-      "z_longtitude": 117.1582,
+      "z_longitude": 117.1582,
       "z_lantitude": 36.8701,
       "aggr": [
         {
@@ -891,11 +891,11 @@
       "oname": "西安-贵阳",
       "a_oid": 101041,
       "a_oname": "西安",
-      "a_longtitude": 109.1162,
+      "a_longitude": 109.1162,
       "a_lantitude": 34.2004,
       "z_oid": 101039,
       "z_oname": "贵阳",
-      "z_longtitude": 106.6992,
+      "z_longitude": 106.6992,
       "z_lantitude": 26.7682,
       "aggr": [
         {
@@ -913,11 +913,11 @@
       "oname": "广州-长沙",
       "a_oid": 101029,
       "a_oname": "广州",
-      "a_longtitude": 113.5107,
+      "a_longitude": 113.5107,
       "a_lantitude": 23.2196,
       "z_oid": 101040,
       "z_oname": "长沙",
-      "z_longtitude": 113.0823,
+      "z_longitude": 113.0823,
       "z_lantitude": 28.2568,
       "aggr": [
         {
@@ -935,11 +935,11 @@
       "oname": "长沙-武汉",
       "a_oid": 101040,
       "a_oname": "长沙",
-      "a_longtitude": 113.0823,
+      "a_longitude": 113.0823,
       "a_lantitude": 28.2568,
       "z_oid": 101043,
       "z_oname": "武汉",
-      "z_longtitude": 114.3896,
+      "z_longitude": 114.3896,
       "z_lantitude": 30.6628,
       "aggr": [
         {
@@ -957,11 +957,11 @@
       "oname": "武汉-郑州",
       "a_oid": 101043,
       "a_oname": "武汉",
-      "a_longtitude": 114.3896,
+      "a_longitude": 114.3896,
       "a_lantitude": 30.6628,
       "z_oid": 101044,
       "z_oname": "郑州",
-      "z_longtitude": 113.4668,
+      "z_longitude": 113.4668,
       "z_lantitude": 34.6234,
       "aggr": [
         {
@@ -979,11 +979,11 @@
       "oname": "郑州-太原",
       "a_oid": 101044,
       "a_oname": "郑州",
-      "a_longtitude": 113.4668,
+      "a_longitude": 113.4668,
       "a_lantitude": 34.6234,
       "z_oid": 101045,
       "z_oname": "太原",
-      "z_longtitude": 112.3352,
+      "z_longitude": 112.3352,
       "z_lantitude": 37.9413,
       "aggr": [
         {
@@ -1001,11 +1001,11 @@
       "oname": "太原-北京",
       "a_oid": 101045,
       "a_oname": "太原",
-      "a_longtitude": 112.3352,
+      "a_longitude": 112.3352,
       "a_lantitude": 37.9413,
       "z_oid": 101036,
       "z_oname": "北京",
-      "z_longtitude": 116.4551,
+      "z_longitude": 116.4551,
       "z_lantitude": 40.2539,
       "aggr": [
         {
@@ -1023,11 +1023,11 @@
       "oname": "南昌-武汉",
       "a_oid": 101027,
       "a_oname": "南昌",
-      "a_longtitude": 116.0046,
+      "a_longitude": 116.0046,
       "a_lantitude": 28.6633,
       "z_oid": 101043,
       "z_oname": "武汉",
-      "z_longtitude": 114.3896,
+      "z_longitude": 114.3896,
       "z_lantitude": 30.6628,
       "aggr": [
         {
@@ -1045,11 +1045,11 @@
       "oname": "武汉-西安",
       "a_oid": 101043,
       "a_oname": "武汉",
-      "a_longtitude": 114.3896,
+      "a_longitude": 114.3896,
       "a_lantitude": 30.6628,
       "z_oid": 101041,
       "z_oname": "西安",
-      "z_longtitude": 109.1162,
+      "z_longitude": 109.1162,
       "z_lantitude": 34.2004,
       "aggr": [
         {
@@ -1067,11 +1067,11 @@
       "oname": "西安-郑州",
       "a_oid": 101041,
       "a_oname": "西安",
-      "a_longtitude": 109.1162,
+      "a_longitude": 109.1162,
       "a_lantitude": 34.2004,
       "z_oid": 101044,
       "z_oname": "郑州",
-      "z_longtitude": 113.4668,
+      "z_longitude": 113.4668,
       "z_lantitude": 34.6234,
       "aggr": [
         {
@@ -1089,11 +1089,11 @@
       "oname": "郑州-济南",
       "a_oid": 101044,
       "a_oname": "郑州",
-      "a_longtitude": 113.4668,
+      "a_longitude": 113.4668,
       "a_lantitude": 34.6234,
       "z_oid": 101025,
       "z_oname": "济南",
-      "z_longtitude": 117.1582,
+      "z_longitude": 117.1582,
       "z_lantitude": 36.8701,
       "aggr": [
         {
@@ -1111,11 +1111,11 @@
       "oname": "呼和浩特-太原",
       "a_oid": 101035,
       "a_oname": "呼和浩特",
-      "a_longtitude": 111.4124,
+      "a_longitude": 111.4124,
       "a_lantitude": 40.4901,
       "z_oid": 101045,
       "z_oname": "太原",
-      "z_longtitude": 112.3352,
+      "z_longitude": 112.3352,
       "z_lantitude": 37.9413,
       "aggr": [
         {
@@ -1133,11 +1133,11 @@
       "oname": "太原-石家庄",
       "a_oid": 101045,
       "a_oname": "太原",
-      "a_longtitude": 112.3352,
+      "a_longitude": 112.3352,
       "a_lantitude": 37.9413,
       "z_oid": 101046,
       "z_oname": "石家庄",
-      "z_longtitude": 114.4995,
+      "z_longitude": 114.4995,
       "z_lantitude": 38.1006,
       "aggr": [
         {
@@ -1155,11 +1155,11 @@
       "oname": "石家庄-北京",
       "a_oid": 101046,
       "a_oname": "石家庄",
-      "a_longtitude": 114.4995,
+      "a_longitude": 114.4995,
       "a_lantitude": 38.1006,
       "z_oid": 101036,
       "z_oname": "北京",
-      "z_longtitude": 116.4551,
+      "z_longitude": 116.4551,
       "z_lantitude": 40.2539,
       "aggr": [
         {
