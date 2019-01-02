@@ -29,12 +29,11 @@
                 gis.eventTrigger();
             });
             $('.colorChange').click(function () {
-                gis.renderColor('optical_cable_length');
+                // gis.renderColor('optical_cable_length');
             });
             $('#g_map').click(function () {
                 $.fn.threeMap.methods.eventMap();
             });
-            
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -239,8 +238,9 @@
                             formatter: '{b}',
                             textStyle: {
                                 color: '#000',
-                                borderWidth: 0,
-                                borderColor: 'red'
+                                borderWidth: 1,
+                                // borderColor: 'rgba(0,0,0,1)',
+                                borderColor: '#fff',
                             }
                         },
                         data: dataPorts

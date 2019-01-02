@@ -45,7 +45,8 @@
                         // 最近处（大）
                         minDistance: 140,
                         // 最远处（小）
-                        maxDistance: 300
+                        maxDistance: 300,
+                        // rotateSensitivity: [1, 0]  //只使地球横向旋转
                     },
                     baseTexture: Global.sysPath+'images/lizi.png',
                     displacementScale: 0.1,

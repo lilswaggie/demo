@@ -52,6 +52,12 @@
         },
         renderData: function (chart) {
             var lines = $("body").GeoUtils('getLine');
+            lines.emphasis.lineStyle = {
+                color: null,
+                width: 3,
+                type: "solid"
+            };
+            console.error('lines',lines);
             var scatterPoint = $("body").GeoUtils('getScatter', {
                 symbol: 'image://'+Global.mapGlobal.symbolConfig.OTN_SYMBOL,
                 symbolSize:[26,22]
