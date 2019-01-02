@@ -45,9 +45,9 @@
             var scatterPoint = $("body").GeoUtils('getScatter', {
                 symbol: 'circle'
             });
-
+            console.error('客户数据',customer);
             $.ajax({
-                url:Global.mapGlobal.queryPOI.queryServiceLines+"?scene='outdoor'&ccustomer_name='"+customer.customer_name+"'",
+                url:Global.mapGlobal.queryPOI.queryServiceLines+"?scene=outdoor&customer_name="+customer.name,
                 type:'get',
                 dataType:'json',
                 headers:{

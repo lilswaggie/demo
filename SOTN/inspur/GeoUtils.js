@@ -6,6 +6,17 @@
         if(typeof options == 'string') return $.fn.GeoUtils.methods[options](param);
     }
     $.fn.GeoUtils.methods = {
+        //获取后台授权token
+        getToken:function(){
+            var token;
+            if(top.gis.getToken){
+                token = top.gis.getToken();
+                if(!token){
+                    token = Global.Authorization;
+                }
+            }
+            return token;
+        },
         // chart自适应
         getResize: function(chart){
             chart.resize();
@@ -47,7 +58,8 @@
                         // 最远处（小）
                         maxDistance: 300
                     },
-                    baseTexture: Global.sysPath+'images/lizi.png',
+                    //baseTexture: Global.sysPath+'images/lizi.png',
+                    baseTexture:Global.sysPath+'images/lizi.jpg',
                     displacementScale: 0.1,
                     shading: 'color',
                     //environment:'rgba(128, 128, 128, 0.1)',

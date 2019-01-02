@@ -140,7 +140,6 @@
                     data: dataLines
                 }, {
                     type: 'scatter',
-                    name: 'scatter3D',
                     coordinateSystem: 'geo',
                     symbol: symbolPath,
                     symbolSize: '15',
@@ -151,6 +150,31 @@
                     data: dataPorts
                 })
                 option.series = series;
+                option.series.push({
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    label:{
+                        show:true,
+                        color:'#000',
+                        fontSize:20,
+                        backgroundColor:'#fff',
+                        padding:5,
+                        formatter:function(params){
+                            return params.name;
+                        }
+                    },
+                    data:[
+                        {
+                            name:'扎门乌德',
+                            value:[111.3274469, 43.3814971],
+                        },
+                        {
+                            name:'法兰克福',
+                            value:[8.6300713, 50.09867]
+                        }
+                    ]
+                });
+                console.error('chinaChartSeries',option.series);
                 $.fn.threeMap.defaults.chinaChart.setOption(option);
 
                 $.fn.threeMap.defaults.oldOption = option;
@@ -193,7 +217,7 @@
                     };
                     dataLines.push(temp);
                 });
-
+                console.error('dataPorts',dataPorts);
                 series.push(
                     {
                         type: 'lines3D',
@@ -225,7 +249,7 @@
                             opacity: 0.9
                         },
                         label: {
-                            show: true,
+                            show: false,
                             formatter: '{b}',
                             textStyle: {
                                 color: '#000',
