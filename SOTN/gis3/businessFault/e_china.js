@@ -50,6 +50,9 @@
             // 点击事件
             $("#g_map").click(function () {
                 $.fn.ChinaModule.methods.clearEventTrigger();
+
+                //回调超超接口
+                top.gis.clearSelectedLine();
             })
             // 线条高亮，两端闪烁
             $(".port").click(function () {
@@ -61,8 +64,58 @@
         renderData: function (chart) {
             var points = $("body").GeoUtils('getEffectScatters');
             var lines = $("body").GeoUtils('getLines');
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryServiceLines+'?scene=indoor',
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.log('国内专线数据',data)
+                    var datas = data.data;
+                    if (datas && datas.nodes) {
+                        var ps = [];
+                        datas.nodes.map(function (nodeItem, nodeIndex) {
+                            var point = {
+                                name: nodeItem.oname,
+                                value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
+                                data: nodeItem
+                            }
+                            ps.push(point);
+                        });
+
+                        var ls = [];
+                        datas.edges.map(function (edgeItem, edgeIndex) {
+                            var line = {
+                                oname: edgeItem.oname,
+                                coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
+                                data: edgeItem
+                            }
+                            ls.push(line);
+                        });
+                        points.data = ps;
+                        lines.data = ls;
+
+                        var options = chart.getOption();
+                        options.series.push(points);
+                        options.series.push(lines);
+
+                        chart.setOption(options);
+
+                        //渲染告警数据
+                        $.fn.ChinaModule.methods.renderWarningData(chart);
+
+                        //实时渲染开启
+                        $.fn.ChinaModule.methods.realRenderWarningData(chart);
+
+                    }
+
+                }
+            });
             //$.get(Global.mapGlobal.queryPOI.queryServiceLines, function (datas) {
-            $.get('../../geodata/servicelines.json', function (datas) {
+            /*$.get('../../geodata/servicelines.json', function (datas) {
                 if (datas && datas.nodes) {
                     var ps = [];
                     datas.nodes.map(function (nodeItem, nodeIndex) {
@@ -100,14 +153,53 @@
 
 
                 }
-            });
+            });*/
 
 
         },
         //渲染告警数据
         renderWarningData: function (chart) {
+
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('告警数据',data);
+                    var datas = data.data;
+                    if (datas && datas.serviceline) {
+                        datas.serviceline.map(function (warningItem, warningIndex) {
+                            var options = chart.getOption();
+                            options.series.map(function (serieItem, nodeIndex) {
+                                if (serieItem.type == 'lines') {
+                                    serieItem.data.map(function (serieItemData, s_index) {
+                                        var flag = false; //标识 是否告警
+                                        serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                            if (aggrItem.oid == warningItem) {
+                                                flag = true;
+                                            }
+                                        });
+                                        if (flag) {
+                                            serieItemData.lineStyle = {
+                                                color: Global.mapGlobal.echartsConfig.lineColor.fault
+                                            };
+                                        }
+                                    });
+                                }
+                            });
+                            chart.setOption(options);
+                        });
+
+                    };
+                    $.fn.ChinaModule.defaults.oldOption = chart.getOption();
+                }
+            });
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
-            $.get('../../geodata/queryWarnings.json', function (datas) {
+            /*$.get('../../geodata/queryWarnings.json', function (datas) {
                 if (datas && datas.serviceline) {
                     datas.serviceline.map(function (warningItem, warningIndex) {
                         var options = chart.getOption();
@@ -133,7 +225,7 @@
 
                 };
                 $.fn.ChinaModule.defaults.oldOption = chart.getOption();
-            });
+            });*/
         },
         //实时渲染功能
         realRenderWarningData: function (chart) {
@@ -156,6 +248,7 @@
                 if (seri.type == 'lines') {
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
+                        console.log('你点击的线数据：',lineData.id);
                         aggrs.map(function (aggr, aggrKey) {
                             if (aggr.oid == lineData.id) {
                                 lineRecords.push(line)
@@ -164,6 +257,10 @@
                     });
                 }
             });
+
+            if(lineRecords.size == 0){
+                console.error('暂未找到对应数据');
+            }
             var dataLines = [];
             var dataPorts = [];
             lineRecords.forEach(function (e) {
@@ -260,6 +357,8 @@
             $.fn.ChinaModule.defaults.chart.setOption(op);
             $.fn.ChinaModule.defaults.chart.setOption($.fn.ChinaModule.defaults.oldOption,true,false,false);
             $.fn.ChinaModule.defaults.count = 0;
+
+
         }
     },
         $.fn.ChinaModule.defaults = {

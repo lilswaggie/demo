@@ -194,53 +194,11 @@
             };
             pointSer.itemStyle = {
                 normal: {
-                    // shadowBlur: 5,
-                    // shadowColor: function (params) {
-                    //     return $.fn.WorldModule.methods.getSiteColor(params.data)
-                    // },
-                    // shadowOffsetY: 5,
                     color: function (params) {
                         return $.fn.WorldModule.methods.getSiteColor(params.data)
                     }
                 }
             };
-            // var pointSer = {
-            //     tooltip: {
-            //         formatter: '{b}'
-            //     },
-            //     type: 'scatter',
-            //     coordinateSystem: 'geo',
-            //     data: sitedata,
-            //     symbol: 'circle',
-            //     hoverAnimation: true,
-            //     zlevel: 20,
-            //     symbolSize: 4,
-            //     symbolRotate: 0,
-            //     label: {
-            //         // normal: {
-            //         //   formatter: '{b}', // '{b}',
-            //         //   position: 'center',
-            //         //   color: '#000',
-            //         //   // fontWeight: 'bold',
-            //         //   show: true
-            //         // },
-            //         // emphasis: {
-            //         //   show: true
-            //         // }
-            //     },
-            //     itemStyle: {
-            //         normal: {
-            //             shadowBlur: 5,
-            //             shadowColor: function (params) {
-            //                 return $.fn.WorldModule.methods.getSiteColor(params.data)
-            //             },
-            //             shadowOffsetY: 5,
-            //             color: function (params) {
-            //                 return $.fn.WorldModule.methods.getSiteColor(params.data)
-            //             }
-            //         }
-            //     }
-            // }
             return pointSer;
         },
         getLinkSers:function () {
@@ -337,7 +295,7 @@
             } else if (linkcolor && linkcolor.COLOR) {
                 linkcolor = linkcolor.COLOR;
             } else {
-                linkcolor = '#F8FF67';
+                linkcolor = '#05FF00';
             }
             return linkcolor;
         },

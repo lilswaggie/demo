@@ -20,7 +20,7 @@ Global.mapGlobal.symbolConfig = {
 
     OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
     OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
-    OTN_LIGHT_SYMBOL:Global.sysPath+'images/ceshi2.png',
+    OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTN_LIGHT.png',
     SYMBOL_WIDTH:34,
     SYMBOL_HEIGHT:26,
 }
@@ -47,16 +47,23 @@ Global.mapGlobal.mapInstance = {
         spatialReference: {
             wkid: 4326
         },
+        isMapNavigation:true,
+        isScrollWheel:true,
+        isScrollWheelZoom:true,
+        isPan:true,
+        fadeOnZoom:true,
+        displayGraphicsOnPan:true,
         center: [108.92361111111111, 34.54083333333333],
+        zoom: 10,
         maxZoom: 15,
-        minZoom: 5,
+        minZoom: 4,
         logo: false,
-        slider: false,
-        wrapAround180: false,
-        isZoomSlider: false,
+        //slider: true,
+        wrapAround180: true,
+        isZoomSlider: true,
         autoResize: true,
         notwork: '',
-        MapType: ''
+        MapType: '',
     },
     isCenter:true,                                        //系统初始化是否启用center定位
     center:[108.92361111111111,34.54083333333333],        //关联isCenter属性 
@@ -67,14 +74,14 @@ Global.mapGlobal.mapInstance = {
 //queryPOI
 Global.mapGlobal.queryPOI = {
     //queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
-
-    queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
-    queryLinks:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryLinks',                //otn设备间逻辑线呈现
-    queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    //queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
+    //queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
+    queryWarningOTN:'http://10.154.8.22:8088/sotn/api/alert/active/resources',//告警
+    queryServiceLines:'http://10.154.8.22:8088/sotn/api/resource/servicelines',
     queryOTN:'http://10.154.8.22:8088/sotn/api/resource/topolinks',
     queryONTLine:'',
     realQueryFlag:false,           //实时查询标志
-    realQueryTimer:5000,          //1000为1s
+    realQueryTimer:10000,          //1000为1s
 }
 
 //baseMap
@@ -83,40 +90,30 @@ Global.mapGlobal.base = {
 }
 
 // 3d接口配置
-Global.mapGlobal.threeDimensional = function (value) {
-    if(value === 'element'){
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/element/location';
-    } else if(value === 'optical_cable_length'){
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location';
-    } else if(value === 'optical_cable_fault') {
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location';
-    } else if(value === 'element_fault') {
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location';
-    } else if(value === 'port_fault') {
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location';
-    } else if(value === 'wave_fault') {
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location';
-    } else if(value === 'fault_handling_time') {
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location';
-    } else if(value === 'fault_handling_rate') {
-        return 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location';
-    } else {
-        return false;
-    }
-    // // 传输网元个数的分省统计
-    // element: 'http://10.154.8.22:8088/sotn/api/network/stats/element/location',
-    // // 一干光缆长度的分省统计
-    // optical_cable_length: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location',
-    // 光缆故障次数分省统计。统计当前实时的值
-    // optical_cable_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location',
-    // 网元故障次数分省统计。获取的是实时的统计结果
-    // element_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location',
-    // 光功率不合格端口数（故障端口数）的分省统计
-    // port_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location',
-    // 误码率不合格端口数(个)
-    // wave_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location',
-    // 网络故障处理时长(h)
-    // fault_handling_time: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location',
-    // 网络故障处理及时率(%)
-    // fault_handling_rate: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location'
+Global.mapGlobal.threeDimensional = {
+    element: 'http://10.154.8.22:8088/sotn/api/network/stats/element/location',
+    optical_cable_length: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location',
+    optical_cable_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location',
+    element_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location',
+    port_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location',
+    wave_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location',
+    fault_handling_time: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location',
+    fault_handling_rate: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location',
+    bandwidth: 'http://10.154.8.22:8088/sotn/api/network/stats/all/bandwidth/location',
+    coverage_area: 'http://10.154.8.22:8088/sotn/api/network/stats/all/coverage/location',
+    // 国际客户数与国内客户数接口为同一个
+    inter_customer: 'http://10.154.8.22:8088/sotn/api/customers/stats/num/location',
+    national_customer: 'http://10.154.8.22:8088/sotn/api/customers/stats/num/location',
+    inter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=1',
+    gov_enter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=2',
+    alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location',
+    first_level_alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location?alarmSeverity=1',
+    leased_line_usable_rate: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/usable/location',
+    survey_handling_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/survey_time/location',
+    leased_line_switch_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/circuit_switch/location',
+    leased_line_complaint_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_time/location',
+    leased_line_complaint_num: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_num/location',
+    leased_line_interrupt_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/interrupted/location',
+    leased_line_delay_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/delay/location'
 }
+

@@ -14,6 +14,7 @@
     $.fn.WorldModule.methods = {
         init:function(){
             $.fn.WorldModule.defaults.chart = echarts.init(document.getElementById("g_map"));
+
             $.get('../../geodata/world.json',function(mapJson){
                 var data = [];
                 $.each(mapJson.features,function(index,item){
@@ -57,6 +58,9 @@
             });
             $("#g_map").click(function(){
                 $.fn.WorldModule.methods.clearEventTrigger();
+
+                //回调超超接口
+                top.gis.clearSelectedLine();
             })
         },
         renderData:function(chart){
@@ -64,8 +68,60 @@
             var scatterPoint = $("body").GeoUtils('getScatter',{
                 symbol:'circle'
             });
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryServiceLines+'?scene=outdoor',
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.log('data',data);
+                    var datas = data.data;
+                    if(datas && datas.nodes){
+                        var ps = [];
+                        datas.nodes.map(function(nodeItem,nodeIndex){
+                            var point = {
+                                name:nodeItem.oname,
+                                value:[nodeItem.longitude_excursion,nodeItem.lantitude_excursion].concat(20),
+                                data:nodeItem
+                            }
+                            ps.push(point);
+                        });
 
-            $.get('../../geodata/world_service.json',function(datas){
+                        var ls = [];
+                        datas.edges.map(function(edgeItem,edgeIndex){
+                            var line = {
+                                oname:edgeItem.oname,
+                                coords:[[edgeItem.a_longitude_excursion,edgeItem.a_lantitude_excursion],[edgeItem.z_longitude_excursion,edgeItem.z_lantitude_excursion]],
+                                //coords:[[edgeItem.a_longitude,edgeItem.a_lantitude],[edgeItem.z_longitude,edgeItem.z_lantitude]],
+                                data:edgeItem
+                            }
+                            ls.push(line);
+                        });
+                        lines.data = ls;
+
+                        scatterPoint.data = ps;
+                        console.log('scatterPoint',scatterPoint)
+                        var options = chart.getOption();
+                        options.series.push(lines);
+                        options.series.push(scatterPoint);
+
+                        chart.setOption(options);
+
+                        //渲染告警数据开启
+                        $.fn.WorldModule.methods.renderWarningData(chart);
+
+                        //实时渲染开启
+                        $.fn.WorldModule.methods.realRenderWarningData(chart);
+                    }
+                },
+                error:function(data){
+                    console.log('data',data);
+                }
+            });
+           /* $.get('../../geodata/world_service.json',function(datas){
                 if(datas && datas.nodes){
                     var ps = [];
                     datas.nodes.map(function(nodeItem,nodeIndex){
@@ -102,12 +158,50 @@
                     //实时渲染开启
                     $.fn.WorldModule.methods.realRenderWarningData(chart);
                 }
-            });
+            });*/
         },
         //渲染告警数据
         renderWarningData:function(chart){
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('告警数据',data);
+                    var datas = data.data;
+                    if(datas && datas.serviceline){
+                        datas.serviceline.map(function(warningItem,warningIndex){
+                            var options = chart.getOption();
+                            options.series.map(function(serieItem,nodeIndex){
+                                if(serieItem.type == 'lines'){
+                                    serieItem.data.map(function(serieItemData,s_index){
+                                        var flag = false; //标识 是否告警
+                                        serieItemData.data.aggr.map(function(aggrItem,aggrIndex){
+                                            if(aggrItem.oid == warningItem){
+                                                flag = true;
+                                            }
+                                        });
+                                        if(flag){
+                                            serieItemData.lineStyle = {
+                                                color: Global.mapGlobal.echartsConfig.lineColor.fault
+                                            };
+                                        }
+                                    });
+                                }
+                            });
+                            console.error('warnningoptions',options);
+                            chart.setOption(options);
+                        });
+                    }
+                    $.fn.WorldModule.defaults.oldOption = chart.getOption();
+                }
+            });
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
-            $.get('../../geodata/queryWarnings.json',function(datas){
+           /* $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.serviceline){
                     datas.serviceline.map(function(warningItem,warningIndex){
                         var options = chart.getOption();
@@ -133,7 +227,7 @@
                     });
                 }
                 $.fn.WorldModule.defaults.oldOption = chart.getOption();
-            });
+            });*/
         },
         //实时渲染功能
         realRenderWarningData:function(chart){
@@ -291,6 +385,8 @@
             $.fn.WorldModule.defaults.chart.setOption(op);
             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             $.fn.WorldModule.defaults.count = 0;
+
+
         }
     },
         $.fn.WorldModule.defaults = {

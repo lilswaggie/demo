@@ -10,8 +10,11 @@ define([
     "utils/SymbolUtil",
     "esri/geometry/webMercatorUtils",
     "esri/toolbars/draw",
+    "esri/dijit/BasemapGallery",
+    "esri/dijit/Basemap",
+    "esri/layers/ArcGISDynamicMapServiceLayer",
     "dojo/_base/declare"
-],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,declare){
+],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,BasemapGallery,Basemap,ArcGISDynamicMapServiceLayer,declare){
     return declare(null,{
         map:null,
         constructor:function(){
@@ -21,9 +24,21 @@ define([
 
             if(Global.mapGlobal.mapInstance.isCenter)
                 map.centerAndZoom(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],''),Global.mapGlobal.mapInstance.zoom);
-            
-            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': 'Heditu','id': 'baseMap'});
+
+            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'id': 'baseMap'});
             map.addLayer(layer);
+
+            map.on('extent-change',function(param){
+                var extent = param.extent;
+                var xmax = extent.xmax;
+                var xmin = extent.xmin;
+                var ymax = extent.ymax;
+                var ymin = extent.ymin;
+                if(xmax > 21417927.26173119 || xmin < 1753877.784974391 || ymin < -1817867.590739129 ||ymax > 9179282.542702826){
+                    map.centerAt(GeometryUtil.getPoint(108.92361111111111,34.54083333333333));
+                }
+            });
+
 
             var lineLayer = new GraphicsLayer();
             map.addLayer(lineLayer);
@@ -37,11 +52,6 @@ define([
 
             this_instance.drawingGraphics(this_instance);
             this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
-
-
-            
-            
-
 
            
         },
@@ -118,10 +128,24 @@ define([
          * 告警数据查询
          */
         queryWarningOTN:function(this_instance){
-            $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    var datas = data.data;
+                    if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
+                    if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
+                }
+            });
+           /* $.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
                 if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
                 if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
-            });
+            });*/
         },
         /**
          * 处理otn设备告警

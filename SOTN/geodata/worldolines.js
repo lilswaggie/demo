@@ -21691,7 +21691,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "BBG+IG",
+			"NAME": "BBG+EIG",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21731,7 +21731,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "DRAM",
+			"NAME": "DREAM",
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21794,7 +21794,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "RA",
+			"NAME": "ERA",
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21811,7 +21811,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "RMC",
+			"NAME": "ERMC",
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21834,7 +21834,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "TP",
+			"NAME": "TPE",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",

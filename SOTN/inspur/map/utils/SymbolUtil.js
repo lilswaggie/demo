@@ -7,7 +7,7 @@ define([
 ],function(PictureMarkerSymbol,SimpleLineSymbol,Color,TextSymbol,Font){
     return {
         getOTNSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH);
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
             return picMarkerSymbol;
         },
         getOTNWarningSymbol:function(){
