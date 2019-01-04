@@ -50,6 +50,7 @@ define([
                 Global.mapGlobal.clickGraphic.sym = params.graphic.symbol;
                 if(params.graphic.attributes.aggr){
                     var $menu = $("<div/>").menu({});
+                    console.error('站点数据',params.graphic.attributes)
                     params.graphic.attributes.aggr.map(function(arrItem,index){
                         $menu.menu('appendItem',{
                             text: arrItem.oname,
