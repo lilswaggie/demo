@@ -90,7 +90,7 @@ Global.mapGlobal.base = {
 }
 
 // 3d接口配置
-<<<<<<< HEAD
+
 Global.mapGlobal.threeDimensional = function (value) {
     if(value === 'element'){
         return Global.baseQueryURL+'/sotn/api/network/stats/element/location';
@@ -111,32 +111,5 @@ Global.mapGlobal.threeDimensional = function (value) {
     } else {
         return false;
     }
-=======
-Global.mapGlobal.threeDimensional = {
-    element: 'http://10.154.8.22:8088/sotn/api/network/stats/element/location',
-    optical_cable_length: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location',
-    optical_cable_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location',
-    element_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location',
-    port_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location',
-    wave_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location',
-    fault_handling_time: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location',
-    fault_handling_rate: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location',
-    bandwidth: 'http://10.154.8.22:8088/sotn/api/network/stats/all/bandwidth/location',
-    coverage_area: 'http://10.154.8.22:8088/sotn/api/network/stats/all/coverage/location',
-    // 国际客户数与国内客户数接口为同一个
-    inter_customer: 'http://10.154.8.22:8088/sotn/api/customers/stats/num/location',
-    national_customer: 'http://10.154.8.22:8088/sotn/api/customers/stats/num/location',
-    inter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=1',
-    gov_enter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=2',
-    alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location',
-    first_level_alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location?alarmSeverity=1',
-    leased_line_usable_rate: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/usable/location',
-    survey_handling_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/survey_time/location',
-    leased_line_switch_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/circuit_switch/location',
-    leased_line_complaint_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_time/location',
-    leased_line_complaint_num: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_num/location',
-    leased_line_interrupt_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/interrupted/location',
-    leased_line_delay_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/delay/location'
->>>>>>> b923aec4bedcef0c12fc11559233f2a9ec8fb896
-}
+
 
