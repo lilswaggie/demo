@@ -74,13 +74,12 @@
             var option = $.fn.threeMap.defaults.chinaChart.getOption();
             var series = [];
             var symbolPath = 'image://' + Global.mapGlobal.symbolConfig.OTN_SYMBOL;
+
+
             $.fn.threeMap.methods.renderChinalabel(option,series);
             $.fn.threeMap.methods.renderChinaLinesPorts(symbolPath,option,series);
 
-            // 渲染告警数据：
-            // $.get('geoData.json',function(data){
-            //
-            // })
+
         },
         renderChinaLinesPorts: function(symbolPath,option,series) {
             $.ajax({

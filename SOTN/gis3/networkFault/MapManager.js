@@ -23,6 +23,9 @@ define([
             var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': 'Heditu','id': 'baseMap'});
             map.addLayer(layer);
 
+            map.setZoom(Global.mapGlobal.mapInstance.mapOptions.zoom)
+            map.centerAt(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.mapOptions.center[0],Global.mapGlobal.mapInstance.mapOptions.center[1]));
+
             var lineLayer = new GraphicsLayer();
             map.addLayer(lineLayer);
             Global.mapGlobal.lineLayer = lineLayer;
@@ -48,7 +51,6 @@ define([
                 if(params.graphic.attributes.aggr){
                     var $menu = $("<div/>").menu({});
                     params.graphic.attributes.aggr.map(function(arrItem,index){
-                        console.error('点击资源',params.graphic.attributes);
                         $menu.menu('appendItem',{
                             text: arrItem.oname,
                             data:arrItem,
@@ -58,9 +60,9 @@ define([
                                 params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
                                 var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
                                 Global.mapGlobal.textLayer.add(g);
-
+                                console.error('点击网元',arrItem);
                                 //调用超超接口
-                                top.gis.setWarnOtnNetworkFault(params.graphic.attributes.oid,params.graphic.attributes.oname);
+                                top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
                             }
                         });
                     });
