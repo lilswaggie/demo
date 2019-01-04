@@ -17,7 +17,11 @@
     <style>
         html, body, #map {
             background: url("../../images/gis_bg.png") no-repeat;
+<<<<<<< HEAD
             background-size:100% 100%;
+=======
+            background-size: 100% 100%;
+>>>>>>> c3da1a3848a697fc64544b8514fc4c5b3c8eebae
             height: 100%;
             margin: 0;
             padding: 0;
@@ -25,11 +29,11 @@
         .full_container{
             cursor: pointer;
             z-index:10;
-
         }
         .circle{
+            cursor: pointer;
             position: absolute;
-            right:10px;
+            right:20px;
             top:10px;
             background: url("../../images/full_screen.png") no-repeat;
             background-position:center;
@@ -37,7 +41,7 @@
             width:32px;
             height:32px;
             border-radius: 50%;
-
+            z-index:10;
         }
 
        /* .triangle-up {
@@ -69,25 +73,28 @@
 
         .rect{
             margin-top: 20px;
-            width: 100px;
-            height: 50px;
-            background: #fafa;
-            border-radius: 10px;
+            width: 40px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            text-align: center;
+            background: rgba(51,51,51,0.8);
+            border-radius: 3px;
             position: absolute;
-            right:10px;
-            top:20px;
+            right:14px;
+            top:29px;
+            color: rgba(255,255,255,1);
         }
         .rect:before {
             position: absolute;
             content: "";
-            top: -35px;
-            left: 30px;
-            z-index: 100;
+            top: -8px;
+            left: 14px;
             display: block;
             width: 0px;
             height: 0px;
-            border: 15px solid transparent;
-            border-bottom: 20px solid #fafa;
+            border: 4px solid transparent;
+            border-bottom: 4px solid rgba(51,51,51,0.8);
         }
 
 
@@ -100,6 +107,12 @@
     <div id="map" style="position: relative;">
         <div class="full_container">
             <div class="circle"></div>
+<<<<<<< HEAD
+=======
+            <div>
+                <div class="rect">全屏</div>
+            </div>
+>>>>>>> c3da1a3848a697fc64544b8514fc4c5b3c8eebae
         </div>
     </div>
     <script src="../../inspur/map/map.js"></script>

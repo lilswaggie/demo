@@ -55,11 +55,12 @@ define([
             this_instance.drawingGraphics(this_instance);
             this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
 
-           
+            this_instance.zoomFullScreen();
+
         },
         /**
-         * 
-         * @param {绘制数据} this_instance 
+         *
+         * @param {绘制数据} this_instance
          */
         drawingGraphics:function(this_instance){
             //$.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
@@ -117,7 +118,7 @@ define([
         },
         /**
          * 绘制点设施
-         * @param {} points 
+         * @param {} points
          */
         _drawingPoints:function(points){
             points.map(function(item,index){
@@ -175,9 +176,35 @@ define([
                             //break;
                         }
                     });
-                    if(flag)  graphic.setSymbol(SymbolUtil.getWarningLineSymbol()); 
+                    if(flag)  graphic.setSymbol(SymbolUtil.getWarningLineSymbol());
                 });
             });
-        }          
+        },
+        /**
+         * 放大处理
+         * */
+       zoomFullScreen: function () {
+            var width = document.body.clientWidth;
+            var height = document.body.clientHeight;
+            $("body").on('click','.circle',function(){
+                var innerHtml = $(".rect").html();
+                if(innerHtml == '退出全屏') {
+                    $(".rect").html('全屏');
+                    $("#map").css('width',width);
+                    $("#map").css('height',height);
+                    $(".rect").css('width','40px');
+                    $(".rect").css('right','14px');
+                    $('head').append("<style>.rect::before{ left: 14px }</style>");
+                    console.log(width);
+                } else {
+                    $("#map").css('width','100%');
+                    $("#map").css('height','100%');
+                    $(".rect").html('退出全屏');
+                    $(".rect").css('width','60px');
+                    $(".rect").css('right','4px');
+                    $('head').append("<style>.rect::before{ left: 24px }</style>");
+                };
+            });
+        }
     });
 });
