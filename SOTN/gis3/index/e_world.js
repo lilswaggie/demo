@@ -39,6 +39,7 @@
                     series: series
                 });
 
+                $.fn.WorldModule.methods.getPorts(e_map);
                 // echarts自适应调整
                 window.onresize = function () {
                     var height = $("body").GeoUtils('getHeight');
@@ -315,6 +316,34 @@
             }
             // console.log(pointColor)
             return pointColor;
+        },
+        getPorts: function (e_map) {
+            var option = e_map.getOption();
+            var url = '../../geoData/S3_POINT_DATA.json';
+            $.get(url,function (data) {
+                if(data && data.features) {
+                    var dataPorts = [];
+                    data.features.forEach(function(ele,index){
+                        var temp = {
+                            value: ele.geometry.coordinates
+                        };
+                        dataPorts.push(temp);
+                    });
+                    var series = [{
+                       type: 'scatter',
+                        name: 'scatterPort',
+                        coordinateSystem: 'geo',
+                        symbol: 'circle',
+                        symbolSize: 2,
+                        itemStyle: {
+                           color: 'blue'
+                        },
+                        data: dataPorts
+                    }];
+                    option.series = series.concat(option.series);
+                    e_map.setOption(option);
+                }
+            });
         },
         lineColorJson: {
             "colors":[
