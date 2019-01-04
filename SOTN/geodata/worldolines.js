@@ -21657,7 +21657,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "APC-2",
+			"NAME": "APCN-2",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21674,7 +21674,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "AS",
+			"NAME": "ASE",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21721,6 +21721,41 @@ var worldLines = {
 			"SHAPE_Leng": 9150762.05951
 		}
 	}, {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-14536747.06476141, 5652245.9114971887],
+                [-3455891.8963906341, 2473937.6552835233]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "SMW4",
+            "TYPE": "租用陆缆",
+            "PROPERTY": "租用",
+            "REMARK": "",
+            "SHAPE_Leng": 11322619.7131
+        }
+    },{
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-939637.55513369024, 3911556.94889911],
+                [44905.68499813523,-3736583.4237177167]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "NCP",
+            "TYPE": "租用海缆",
+            "PROPERTY": "租用",
+            "REMARK": "",
+            "SHAPE_Leng": 11322619.7131
+        }
+    }
+        ,{
 		"type": "Feature",
 		"geometry": {
 			"type": "LineString",
@@ -21857,7 +21892,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "Uity",
+			"NAME": "Unity",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",

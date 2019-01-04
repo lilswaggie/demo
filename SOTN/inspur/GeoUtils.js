@@ -124,7 +124,7 @@
                 map:'world',
                 top:'25%',
                 silent:false,
-                roam: false,
+                roam: true,
                 show:true,
                 zoom: 1.2,
                 center: [160, 20],
