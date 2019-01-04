@@ -29,12 +29,11 @@
                 gis.eventTrigger();
             });
             $('.colorChange').click(function () {
-                gis.renderColor('optical_cable_length');
+                gis.renderColor('leased_line_usable_rate');
             });
             $('#g_map').click(function () {
                 $.fn.threeMap.methods.eventMap();
             });
-            
         },
         //获取中国地图贴图
         getChinaChart: function () {
@@ -108,7 +107,8 @@
                             min: 500,
                             max: 5000,
                             inRange: {
-                                color: ['#0FF5D8', '#1a766c', '#1a766c', '#032E29']
+                                // color: ['#0FF5D8', '#1a766c', '#1a766c', '#032E29']
+                                color: ['#5DF3F5', '#62CFC0', '#4AB4A5', '#1A766C']
                             },
                             text: ['High', 'Low'],           // 文本，默认为数值文本
                             calculable: true
@@ -142,8 +142,13 @@
                             name: 'lines3D',
                             lineStyle: {
                                 width: 1,
-                                color: '#0352DB',
-                                opacity: 1
+                                // color: '#09B5FE',
+                                color: '#17AAFF',
+                                opacity: 1,
+                                shadowBlur: 5,
+                                shadowColor: '#03364B',
+                                shadowOffsetX: 0,
+                                shadowOffsetY: 2
                             },
                             data: dataLines
                         }, {
@@ -158,10 +163,54 @@
                             },
                             data: dataPorts
                         });
-                        option.series = series;
-                        $.fn.threeMap.defaults.chinaChart.setOption(option);
+                        $.ajax({
+                            "url": 'outdoor.json',
+                            dataType:'json',
+                            success: function (datas) {
+                                var dataPorts2 = [];
+                                var nodes2 = datas.nodes;
+                                nodes2.forEach(function (e) {
+                                    var temp2 = {
+                                        name: e.oname,
+                                        value: [e.longitude, e.lantitude]
+                                    };
+                                    dataPorts2.push(temp2);
+                                    series.push({
+                                        type: 'scatter',
+                                        name: 'scatter2s',
+                                        coordinateSystem: 'geo',
+                                        symbol: 'circle',
+                                        symbolSize: '1',
+                                        itemStyle: {
+                                            color: 'red',
+                                            opacity: 1
+                                        },
+                                        label: {
+                                            show: true,
+                                            position: 'insideTopLeft',
+                                            distance: 8,
+                                            formatter: '{b}',
+                                            color: "#ffffff",
+                                            backgroundColor: '#24696C',
+                                            shadowColor: '#0B1717',
+                                            shadowBlur: 4,
+                                            shadowOffsetX: 0,
+                                            shadowOfsetY: 2,
+                                            fontSize: 18,
+                                            padding: [5,10],
+                                            opactity: 1,
+                                            borderWidth: 1,
+                                            borderColor: '#6BECD4'
+                                        },
+                                        data: dataPorts2
+                                    });
+                                });
+                                option.series = series;
+                                $.fn.threeMap.defaults.chinaChart.setOption(option);
 
-                        $.fn.threeMap.defaults.oldOption = option;
+                                $.fn.threeMap.defaults.oldOption = option;
+                            }
+                        });
                     }
                 }
             });
@@ -185,17 +234,17 @@
             var series = [];
 
             $.get('outdoor.json', function (data) {
-                var dataPorts = []; var dataLines = [];
-                var nodes = data.nodes;
+                /*var dataPorts = [];*/ var dataLines = [];
+                /*var nodes = data.nodes;*/
                 var edges = data.edges;
 
-                nodes.forEach(function (e) {
+                /*nodes.forEach(function (e) {
                     var temp = {
                         name: e.oname,
                         value: [e.longitude, e.lantitude]
                     };
                     dataPorts.push(temp);
-                });
+                });*/
                 edges.forEach(function (e) {
                     var temp = {
                         name: e.oname,
@@ -224,7 +273,7 @@
                         blendMode: 'lighter',
 
                         data: $.fn.threeMap.methods.renderColor(dataLines)
-                    }, {
+                    }/*, {
                         type: 'scatter3D',
                         name: 'scatter3D2',
                         coordinateSystem: 'globe',
@@ -239,12 +288,13 @@
                             formatter: '{b}',
                             textStyle: {
                                 color: '#000',
-                                borderWidth: 0,
-                                borderColor: 'red'
+                                borderWidth: 1,
+                                // borderColor: 'rgba(0,0,0,1)',
+                                borderColor: '#fff',
                             }
                         },
                         data: dataPorts
-                    });
+                    }*/);
                 option.series = series;
                 option.backgroundColor = 'rgba(0,0,0,0)';
                 $.fn.threeMap.defaults.nathionalChart.setOption(option);
@@ -272,7 +322,7 @@
         },
         // 点击渲染颜色
         eventColorHttp: function(key) {
-            var url = Global.mapGlobal.threeDimensional(key);
+            var url = Global.mapGlobal.threeDimensional[key];
             if(url) {
                 $.ajax({
                     url: url,
@@ -319,7 +369,8 @@
                     min: min,
                     max: max,
                     inRange: {
-                        color: ['#0FF5D8', '#1a766c', '#1a766c', '#032E29']
+                        // color: ['#0FF5D8', '#1a766c', '#1a766c', '#032E29']
+                        color: ['#5DF3F5', '#62CFC0', '#4AB4A5', '#1A766C']
                     },
                     text: ['High', 'Low'],           // 文本，默认为数值文本
                     calculable: true
