@@ -73,64 +73,21 @@
         renderChinaData: function () {
             var option = $.fn.threeMap.defaults.chinaChart.getOption();
             var series = [];
-
             var symbolPath = 'image://' + Global.mapGlobal.symbolConfig.OTN_SYMBOL;
 
-            $.ajax({
-                url: 'outdoor.json',
-                dataType:'json',
-                success: function (datas) {
-                    var dataPorts2 = [];
-                    var nodes2 = datas.nodes;
-                    nodes2.forEach(function (e) {
-                        var temp2 = {
-                            name: e.oname,
-                            value: [e.longitude, e.lantitude]
-                        };
-                        dataPorts2.push(temp2);
-                        series.push({
-                            type: 'scatter',
-                            name: 'scatter2s',
-                            coordinateSystem: 'geo',
-                            symbol: 'circle',
-                            symbolSize: '1',
-                            itemStyle: {
-                                color: 'red',
-                                opacity: 1
-                            },
-                            label: {
-                                show: true,
-                                position: 'insideTopLeft',
-                                distance: 8,
-                                formatter: '{b}',
-                                color: "#ffffff",
-                                backgroundColor: '#24696C',
-                                shadowColor: '#0B1717',
-                                shadowBlur: 4,
-                                shadowOffsetX: 0,
-                                shadowOfsetY: 2,
-                                fontSize: 18,
-                                padding: [5,10],
-                                opactity: 1,
-                                borderWidth: 1,
-                                borderColor: '#6BECD4'
-                            },
-                            data: dataPorts2
-                        });
-                    });
-                    option.series = series;
-                    $.fn.threeMap.defaults.chinaChart.setOption(option);
 
-                    $.fn.threeMap.defaults.oldOption = option;
-                }
-            });
+            $.fn.threeMap.methods.renderChinalabel(option,series);
+            $.fn.threeMap.methods.renderChinaLinesPorts(symbolPath,option,series);
 
+
+        },
+        renderChinaLinesPorts: function(symbolPath,option,series) {
             $.ajax({
                 url: Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
                 type:'get',
                 dataType:'json',
                 headers:{
-                    Authorization:Global.Authorization
+                    Authorization: Global.Authorization
                 },
                 success:function(datas){
                     var data = datas.data;
@@ -214,7 +171,7 @@
                             },
                             data: dataPorts
                         });
-                        option.series = series;
+                        option.series = series.concat(option.series);
                         $.fn.threeMap.defaults.chinaChart.setOption(option);
 
                         $.fn.threeMap.defaults.oldOption = option;
@@ -222,10 +179,54 @@
                     }
                 }
             });
-            // 渲染告警数据：
-            // $.get('geoData.json',function(data){
-            //
-            // })
+        },
+        renderChinalabel: function(option,series) {
+            $.get('outdoor.json',function (datas) {
+                if(datas && datas.nodes) {
+                    var dataPorts = [];
+                    var nodes = datas.nodes;
+                    nodes.forEach(function (e) {
+                        var temp2 = {
+                            name: e.oname,
+                            value: [e.longitude, e.lantitude]
+                        };
+                        dataPorts.push(temp2);
+                        series.push({
+                            type: 'scatter',
+                            name: 'scatter2s',
+                            coordinateSystem: 'geo',
+                            symbol: 'circle',
+                            symbolSize: '1',
+                            itemStyle: {
+                                color: 'red',
+                                opacity: 1
+                            },
+                            label: {
+                                show: true,
+                                position: 'insideTopLeft',
+                                distance: 8,
+                                formatter: '{b}',
+                                color: "#ffffff",
+                                backgroundColor: '#24696C',
+                                shadowColor: '#0B1717',
+                                shadowBlur: 4,
+                                shadowOffsetX: 0,
+                                shadowOfsetY: 2,
+                                fontSize: 18,
+                                padding: [5,10],
+                                opactity: 1,
+                                borderWidth: 1,
+                                borderColor: '#6BECD4'
+                            },
+                            data: dataPorts
+                        });
+                    });
+                    option.series = series.concat(option.series);
+                    $.fn.threeMap.defaults.chinaChart.setOption(option);
+
+                    $.fn.threeMap.defaults.oldOption = option;
+                }
+            });
         },
         renderColor: function (arr) {
             var colors = ['#B33341', '#94BD68', '#388283'];

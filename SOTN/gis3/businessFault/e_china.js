@@ -63,7 +63,7 @@
         },
         renderData: function (chart) {
             var points = $("body").GeoUtils('getEffectScatters');
-            var lines = $("body").GeoUtils('getLines');
+            var lines = $("body").GeoUtils('getLine');
             $.ajax({
                 url:Global.mapGlobal.queryPOI.queryServiceLines+'?scene=indoor&customer_name=',
                 dataType:'json',
