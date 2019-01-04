@@ -295,7 +295,7 @@
             } else if (linkcolor && linkcolor.COLOR) {
                 linkcolor = linkcolor.COLOR;
             } else {
-                linkcolor = '#F8FF67';
+                linkcolor = '#05FF00';
             }
             return linkcolor;
         },
