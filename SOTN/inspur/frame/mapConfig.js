@@ -76,9 +76,9 @@ Global.mapGlobal.queryPOI = {
     //queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
     //queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
     //queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
-    queryWarningOTN:'http://10.154.8.22:8088/sotn/api/alert/active/resources',//告警
-    queryServiceLines:'http://10.154.8.22:8088/sotn/api/resource/servicelines',
-    queryOTN:'http://10.154.8.22:8088/sotn/api/resource/topolinks',
+    queryWarningOTN:Global.baseQueryURL+'/sotn/api/alert/active/resources',//告警
+    queryServiceLines:Global.baseQueryURL+'/sotn/api/resource/servicelines',
+    queryOTN:Global.baseQueryURL+'/sotn/api/resource/topolinks',
     queryONTLine:'',
     realQueryFlag:false,           //实时查询标志
     realQueryTimer:10000,          //1000为1s
@@ -90,30 +90,28 @@ Global.mapGlobal.base = {
 }
 
 // 3d接口配置
-Global.mapGlobal.threeDimensional = {
-    element: 'http://10.154.8.22:8088/sotn/api/network/stats/element/location',
-    optical_cable_length: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_length/location',
-    optical_cable_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/optical_cable_fault/location',
-    element_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/element_fault/location',
-    port_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/port_fault/location',
-    wave_fault: 'http://10.154.8.22:8088/sotn/api/network/stats/wave_fault/location',
-    fault_handling_time: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_time/location',
-    fault_handling_rate: 'http://10.154.8.22:8088/sotn/api/network/stats/fault_handling_rate/location',
-    bandwidth: 'http://10.154.8.22:8088/sotn/api/network/stats/all/bandwidth/location',
-    coverage_area: 'http://10.154.8.22:8088/sotn/api/network/stats/all/coverage/location',
-    // 国际客户数与国内客户数接口为同一个
-    inter_customer: 'http://10.154.8.22:8088/sotn/api/customers/stats/num/location',
-    national_customer: 'http://10.154.8.22:8088/sotn/api/customers/stats/num/location',
-    inter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=1',
-    gov_enter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=2',
-    alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location',
-    first_level_alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location?alarmSeverity=1',
-    leased_line_usable_rate: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/usable/location',
-    survey_handling_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/survey_time/location',
-    leased_line_switch_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/circuit_switch/location',
-    leased_line_complaint_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_time/location',
-    leased_line_complaint_num: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_num/location',
-    leased_line_interrupt_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/interrupted/location',
-    leased_line_delay_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/delay/location'
+
+Global.mapGlobal.threeDimensional = function (value) {
+    if(value === 'element'){
+        return Global.baseQueryURL+'/sotn/api/network/stats/element/location';
+    } else if(value === 'optical_cable_length'){
+        return Global.baseQueryURL+'/sotn/api/network/stats/optical_cable_length/location';
+    } else if(value === 'optical_cable_fault') {
+        return Global.baseQueryURL+'/sotn/api/network/stats/optical_cable_fault/location';
+    } else if(value === 'element_fault') {
+        return Global.baseQueryURL+'/sotn/api/network/stats/element_fault/location';
+    } else if(value === 'port_fault') {
+        return Global.baseQueryURL+'/sotn/api/network/stats/port_fault/location';
+    } else if(value === 'wave_fault') {
+        return Global.baseQueryURL+'/sotn/api/network/stats/wave_fault/location';
+    } else if(value === 'fault_handling_time') {
+        return Global.baseQueryURL+'/sotn/api/network/stats/fault_handling_time/location';
+    } else if(value === 'fault_handling_rate') {
+        return Global.baseQueryURL+'/sotn/api/network/stats/fault_handling_rate/location';
+    } else {
+        return false;
+    }
+
 }
+
 

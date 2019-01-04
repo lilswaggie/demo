@@ -65,7 +65,7 @@
             var points = $("body").GeoUtils('getEffectScatters');
             var lines = $("body").GeoUtils('getLine');
             $.ajax({
-                url:Global.mapGlobal.queryPOI.queryServiceLines+'?scene=indoor',
+                url:Global.mapGlobal.queryPOI.queryServiceLines+'?scene=indoor&customer_name=',
                 dataType:'json',
                 type:'get',
                 headers:{
@@ -249,6 +249,7 @@
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
                         console.log('你点击的线数据：',lineData.id);
+                        console.log('地图上聚合线',aggrs);
                         aggrs.map(function (aggr, aggrKey) {
                             if (aggr.oid == lineData.id) {
                                 lineRecords.push(line)
