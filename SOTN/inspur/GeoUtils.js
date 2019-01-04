@@ -265,8 +265,8 @@
                 },
                 emphasis:{
                     lineStyle:{
-                        color:Global.mapGlobal.echartsConfig.lineColor.light,
-                        width:Global.mapGlobal.echartsConfig.lineWidth,
+                        color:null,
+                        width:3,
                         type:'solid'
                     },
                     label:{
