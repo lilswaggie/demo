@@ -27,8 +27,9 @@ define([
 
             var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'id': 'baseMap'});
             map.addLayer(layer);
-
-            map.on('extent-change',function(param){
+            map.setZoom(Global.mapGlobal.mapInstance.mapOptions.zoom)
+            map.centerAt(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.mapOptions.center[0],Global.mapGlobal.mapInstance.mapOptions.center[1]));
+            /*map.on('extent-change',function(param){
                 var extent = param.extent;
                 var xmax = extent.xmax;
                 var xmin = extent.xmin;
@@ -37,7 +38,8 @@ define([
                 if(xmax > 21417927.26173119 || xmin < 1753877.784974391 || ymin < -1817867.590739129 ||ymax > 9179282.542702826){
                     map.centerAt(GeometryUtil.getPoint(108.92361111111111,34.54083333333333));
                 }
-            });
+            });*/
+
 
 
             var lineLayer = new GraphicsLayer();

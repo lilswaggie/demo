@@ -16,17 +16,96 @@
 
     <style>
         html, body, #map {
-            background: url("../../images/gis_bg.png");
+            background: url("../../images/gis_bg.png") no-repeat;
             height: 100%;
             margin: 0;
             padding: 0;
+            width:1326px;
+            height:504px;
         }
+        .full_container{
+            cursor: pointer;
+            z-index:10;
+
+        }
+        .circle{
+            position: absolute;
+            right:10px;
+            top:10px;
+            background: url("../../images/full_screen.png") no-repeat;
+            background-position:center;
+            background-color: #2C9CFA;
+            width:32px;
+            height:32px;
+            border-radius: 50%;
+
+        }
+
+       /* .triangle-up {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-bottom:5px solid #333333;
+
+        }
+        .rect{
+            width:40px;
+            height:20px;
+            background:rgba(51,51,51,0.8);
+            border-radius:3px;
+        }
+        .text{
+            cursor: pointer;
+            width:24px;
+            height:17px;
+            line-height:17px;
+            font-size:12px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,0.7);
+            margin: 0px auto;
+        }*/
+
+        .rect{
+            margin-top: 20px;
+            width: 100px;
+            height: 50px;
+            background: #fafa;
+            border-radius: 10px;
+            position: absolute;
+            right:10px;
+            top:20px;
+        }
+        .rect:before {
+            position: absolute;
+            content: "";
+            top: -35px;
+            left: 30px;
+            z-index: 100;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border: 15px solid transparent;
+            border-bottom: 20px solid #fafa;
+        }
+
+
+
 
 
     </style>
 </head>
 <body>
-    <div id="map"></div>
+    <div id="map" style="position: relative;">
+        <div class="full_container">
+            <div class="circle"></div>
+            <div>
+                <div class="rect"></div>
+            </div>
+        </div>
+    </div>
     <script src="../../inspur/map/map.js"></script>
 </body>
 </html>
