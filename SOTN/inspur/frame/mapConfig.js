@@ -109,13 +109,16 @@ Global.mapGlobal.threeDimensional = {
     gov_enter_leased_line: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/num/location?businessType=2',
     alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location',
     first_level_alarm: 'http://10.154.8.22:8088/sotn/api/alarms/stats/num/location?alarmSeverity=1',
+    leased_line_fault_handling_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/leased_line_fault_time/location',
     leased_line_usable_rate: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/usable/location',
     survey_handling_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/survey_time/location',
     leased_line_switch_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/circuit_switch/location',
     leased_line_complaint_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_time/location',
     leased_line_complaint_num: 'http://10.154.8.22:8088/sotn/api/handling/stats/complaint_num/location',
     leased_line_interrupt_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/interrupted/location',
-    leased_line_delay_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/delay/location'
+    opening_handling_time: 'http://10.154.8.22:8088/sotn/api/handling/stats/opening_handling_avg_time/location',
+    leased_line_delay_time: 'http://10.154.8.22:8088/sotn/api/leased_lines/stats/delay/location',
+    leased_line_complaint_ongoing: 'http://10.154.8.22:8088/sotn/api/handling/stats/leased_line_complaint_ongoing_num/location'
 }
 
 
