@@ -75,11 +75,62 @@
             var series = [];
 
             var symbolPath = 'image://' + Global.mapGlobal.symbolConfig.OTN_SYMBOL;
+
             $.ajax({
-                url: 'http://10.154.8.22:8088/sotn/api/resource/topolinks?scene=indoor',type:'get',
+                url: 'outdoor.json',
+                dataType:'json',
+                success: function (datas) {
+                    var dataPorts2 = [];
+                    var nodes2 = datas.nodes;
+                    nodes2.forEach(function (e) {
+                        var temp2 = {
+                            name: e.oname,
+                            value: [e.longitude, e.lantitude]
+                        };
+                        dataPorts2.push(temp2);
+                        series.push({
+                            type: 'scatter',
+                            name: 'scatter2s',
+                            coordinateSystem: 'geo',
+                            symbol: 'circle',
+                            symbolSize: '1',
+                            itemStyle: {
+                                color: 'red',
+                                opacity: 1
+                            },
+                            label: {
+                                show: true,
+                                position: 'insideTopLeft',
+                                distance: 8,
+                                formatter: '{b}',
+                                color: "#ffffff",
+                                backgroundColor: '#24696C',
+                                shadowColor: '#0B1717',
+                                shadowBlur: 4,
+                                shadowOffsetX: 0,
+                                shadowOfsetY: 2,
+                                fontSize: 18,
+                                padding: [5,10],
+                                opactity: 1,
+                                borderWidth: 1,
+                                borderColor: '#6BECD4'
+                            },
+                            data: dataPorts2
+                        });
+                    });
+                    option.series = series;
+                    $.fn.threeMap.defaults.chinaChart.setOption(option);
+
+                    $.fn.threeMap.defaults.oldOption = option;
+                }
+            });
+
+            $.ajax({
+                url: Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
+                type:'get',
                 dataType:'json',
                 headers:{
-                    Authorization:'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3RuLW84IiwiZXhwIjoxNTQ2OTk5MzU4LCJpYXQiOjE1NDQ0MDczNTh9.AsyYb4RB6QLuW-Nt1FFnthh4-OvK3lIuUx7Q1FLrkpeu55klEV5g1XXBeB2Y0Lomz-aAcJoTqByLEBYdPt117Q'
+                    Authorization:Global.Authorization
                 },
                 success:function(datas){
                     var data = datas.data;
@@ -163,54 +214,11 @@
                             },
                             data: dataPorts
                         });
-                        $.ajax({
-                            "url": 'outdoor.json',
-                            dataType:'json',
-                            success: function (datas) {
-                                var dataPorts2 = [];
-                                var nodes2 = datas.nodes;
-                                nodes2.forEach(function (e) {
-                                    var temp2 = {
-                                        name: e.oname,
-                                        value: [e.longitude, e.lantitude]
-                                    };
-                                    dataPorts2.push(temp2);
-                                    series.push({
-                                        type: 'scatter',
-                                        name: 'scatter2s',
-                                        coordinateSystem: 'geo',
-                                        symbol: 'circle',
-                                        symbolSize: '1',
-                                        itemStyle: {
-                                            color: 'red',
-                                            opacity: 1
-                                        },
-                                        label: {
-                                            show: true,
-                                            position: 'insideTopLeft',
-                                            distance: 8,
-                                            formatter: '{b}',
-                                            color: "#ffffff",
-                                            backgroundColor: '#24696C',
-                                            shadowColor: '#0B1717',
-                                            shadowBlur: 4,
-                                            shadowOffsetX: 0,
-                                            shadowOfsetY: 2,
-                                            fontSize: 18,
-                                            padding: [5,10],
-                                            opactity: 1,
-                                            borderWidth: 1,
-                                            borderColor: '#6BECD4'
-                                        },
-                                        data: dataPorts2
-                                    });
-                                });
-                                option.series = series;
-                                $.fn.threeMap.defaults.chinaChart.setOption(option);
+                        option.series = series;
+                        $.fn.threeMap.defaults.chinaChart.setOption(option);
 
-                                $.fn.threeMap.defaults.oldOption = option;
-                            }
-                        });
+                        $.fn.threeMap.defaults.oldOption = option;
+
                     }
                 }
             });
