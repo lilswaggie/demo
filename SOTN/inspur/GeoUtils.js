@@ -354,7 +354,7 @@
                 effect: {
                     show: true,
                     period: 6,
-                    trailLength: 0.7,
+                    trailLength: 0.3,
                     color: '#fff',
                     symbolSize: 3
                 },

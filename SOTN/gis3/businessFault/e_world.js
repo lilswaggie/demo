@@ -268,7 +268,7 @@
         },
         /**
          * @author 小皮
-         *
+         * lineData = { id: '' }
          */
         renderLightLine: function (lineData) {
 
@@ -332,17 +332,17 @@
                     name: 'lights_line',
                     lineStyle: {
                         color: 'none',
-                        width: 1,
+                        width: 3,
                         curveness: 0.2
                     },
                     zlevel: 1,
                     effect: {
                         show: true,
                         period: 5,
-                        trailLength: 0.5,
+                        trailLength: 0.3,
                         color: '#fff',
                         symbol: 'circle',
-                        symbolSize: 4
+                        symbolSize: 3
                     },
                     data: param.dataLines
                 }, {
@@ -362,7 +362,7 @@
                         color: 'red',
                         fontsize: 12
                     },
-                    symbolSize: 7,
+                    symbolSize: 4,
                     itemStyle: {
                         normal: {
                             color: 'blue',
@@ -382,12 +382,14 @@
         clearEventTrigger: function (flag) {
             var op = $.fn.WorldModule.defaults.chart.getOption();
             $.fn.WorldModule.defaults.chart.setOption(op);
+            
             if(flag)
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
             else
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
         }
+
     },
         $.fn.WorldModule.defaults = {
             chart: null,
