@@ -12,6 +12,6 @@ require(["./MapManager.js"],function(MapManager){
     Global.mapGlobal.instance.mapManager = new MapManager();
 
     Global.datas = {};
-    Global.ddatas.warningDatas = null;    //存放告警数据
+    Global.datas.warningDatas = null;    //存放告警数据
     
 });
