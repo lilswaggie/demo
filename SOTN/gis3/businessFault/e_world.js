@@ -268,9 +268,11 @@
         },
         /**
          * @author 小皮
-         *
+         * lineData = { id: '' }
          */
         renderLightLine: function (lineData) {
+            // 清除地图上的效果
+            $.fn.WorldModule.methods.clearEventTrigger('ss');
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -328,17 +330,17 @@
                     name: 'lights_line',
                     lineStyle: {
                         color: 'none',
-                        width: 1,
+                        width: 3,
                         curveness: 0.2
                     },
                     zlevel: 1,
                     effect: {
                         show: true,
                         period: 5,
-                        trailLength: 0.5,
+                        trailLength: 0.3,
                         color: '#fff',
                         symbol: 'circle',
-                        symbolSize: 4
+                        symbolSize: 3
                     },
                     data: param.dataLines
                 }, {
@@ -358,7 +360,7 @@
                         color: 'red',
                         fontsize: 12
                     },
-                    symbolSize: 7,
+                    symbolSize: 4,
                     itemStyle: {
                         normal: {
                             color: 'blue',
@@ -375,13 +377,14 @@
             gis.renderLine = $.fn.WorldModule.methods.renderLightLine;
         },
         // 地图点击事件清除chart上的现有特效,并将地图变为原来的样子
-        clearEventTrigger: function () {
+        clearEventTrigger: function (flag) {
             var op = $.fn.WorldModule.defaults.chart.getOption();
-                op.geo[0].center = [160, 20];
-                op.geo[0].zoom = 1.2;
-                    op.series = [];
-                    $.fn.WorldModule.defaults.chart.setOption(op);
-                    $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            $.fn.WorldModule.defaults.chart.setOption(op);
+            if(flag)
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+            else
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
+            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             }
     },
         $.fn.WorldModule.defaults = {
