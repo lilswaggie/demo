@@ -46,6 +46,10 @@
                     $('#g_map').css('height', height);
                     $("body").GeoUtils('getResize',e_map);
                 };
+                // 地图点击事件
+                $("#g_map").click(function () {
+                    $.fn.WorldModule.methods.eventMap(e_map);
+                })
             });
         },
         getGeo: function(){
@@ -373,6 +377,15 @@
                         "COLOR":"#FC9222"
                     }
                 ]
+            }
+        },
+        eventMap:function (e_map) {
+            var option = e_map.getOption();
+            console.log(option);
+            if(option.geo[0].center != [160,20] || option.geo[0].zoom != 1.2) {
+                option.geo[0].center = [160,20];
+                option.geo[0].zoom = 1.2;
+                e_map.setOption(option);
             }
         }
     };
