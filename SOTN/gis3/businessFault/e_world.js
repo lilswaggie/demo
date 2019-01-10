@@ -271,8 +271,6 @@
          * lineData = { id: '' }
          */
         renderLightLine: function (lineData) {
-            // 清除地图上的效果
-            $.fn.WorldModule.methods.clearEventTrigger('ss');
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -325,11 +323,12 @@
          */
         renderScatterEffect: function (param) {
             var series = [];
+            console.error('param',param);
             series.push({
                     type: 'lines',
                     name: 'lights_line',
                     lineStyle: {
-                        color: 'none',
+                        color: '#4D8CF4',
                         width: 3,
                         curveness: 0.2
                     },
@@ -360,7 +359,7 @@
                         color: 'red',
                         fontsize: 12
                     },
-                    symbolSize: 4,
+                    symbolSize: 3,
                     itemStyle: {
                         normal: {
                             color: 'blue',
@@ -379,12 +378,18 @@
         // 地图点击事件清除chart上的现有特效,并将地图变为原来的样子
         clearEventTrigger: function (flag) {
             var op = $.fn.WorldModule.defaults.chart.getOption();
+            op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
-            if(flag)
-                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
-            else
+            var oldOption = $.fn.WorldModule.defaults.chart.getOption();
+            if(flag) {
+                oldOption.geo[0].zoom = op.geo[0].zoom;
+                oldOption.geo[0].center = op.geo[0].center;
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            } else {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
-            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            }
             }
     },
         $.fn.WorldModule.defaults = {
