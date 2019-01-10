@@ -342,11 +342,10 @@
             var op = $.fn.WorldModule.defaults.chart.getOption();
             op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
-            var oldOption = $.fn.WorldModule.defaults.chart.getOption();
             if(flag) {
-                oldOption.geo[0].zoom = op.geo[0].zoom;
-                oldOption.geo[0].center = op.geo[0].center;
-                $.fn.WorldModule.defaults.chart.setOption(oldOption,true,false,false);
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             } else {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];

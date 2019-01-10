@@ -271,7 +271,11 @@
                     normal: {
                         color: Global.mapGlobal.echartsConfig.lineColor.normal,
                         width: Global.mapGlobal.echartsConfig.lineWidth,
-                        curveness: Global.mapGlobal.echartsConfig.lineCurveness
+                        curveness: Global.mapGlobal.echartsConfig.lineCurveness,
+                        shadowColor: '#6C8ECE',
+                        shadowBlur: 4,
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 2
                     }
                 },
                 emphasis:{
