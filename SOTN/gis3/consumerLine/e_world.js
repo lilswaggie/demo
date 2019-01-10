@@ -27,7 +27,7 @@
                     series: []
                 });
                 //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
-                //$.fn.WorldModule.methods.renderData($.fn.WorldModule.defaults.chart);
+                $.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
             });
             // echarts自适应
             window.onresize = function () {
@@ -79,7 +79,6 @@
                         });
                         lines.data = ls;
                         scatterPoint.data = ps;
-                        console.error('线的数据', ls);
                         var options = $.fn.WorldModule.defaults.chart.getOption();
                         options.series.push(lines);
                         options.series.push(scatterPoint);
@@ -105,7 +104,7 @@
 
             $.ajax({
                 //url:Global.mapGlobal.queryPOI.queryServiceLines+"?scene=indoor&customer_name=apple",
-                url:"http://10.154.8.22:8088/sotn/api/resource/servicelines?scene='outdoor'&ccustomer_name='中国建设银行'",
+                url:"http://10.154.8.22:8088/sotn/api/resource/servicelines?scene=indoor&ccustomer_name=抖音",
                 type:'get',
                 dataType:'json',
                 headers:{
@@ -165,6 +164,7 @@
                     Authorization:Global.Authorization
                 },
                 success:function(data){
+                    console.error('告警数据加载成功',data);
                     var datas = data.data;
                     if (datas && datas.serviceline) {
                         datas.serviceline.map(function (warningItem, warningIndex) {

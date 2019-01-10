@@ -742,7 +742,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -10351,7 +10351,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "faster",
+			"NAME": "FASTER",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -13561,7 +13561,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18587,7 +18587,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18684,7 +18684,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18807,7 +18807,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18902,7 +18902,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18945,7 +18945,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19206,7 +19206,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19297,7 +19297,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19316,7 +19316,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19371,7 +19371,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19452,7 +19452,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19485,7 +19485,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19542,7 +19542,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19595,7 +19595,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -19668,7 +19668,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -20081,7 +20081,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -20374,7 +20374,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -20691,7 +20691,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -20766,7 +20766,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -21617,7 +21617,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "smw5",
+			"NAME": "SWM5",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -21714,7 +21714,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "CP",
+			"NAME": "NCP",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
@@ -21731,31 +21731,14 @@ var worldLines = {
         },
         "properties": {
             "ID": "",
-            "NAME": "SMW4",
+            "NAME": "SMW4 + APCN2",
             "TYPE": "租用陆缆",
             "PROPERTY": "租用",
             "REMARK": "",
             "SHAPE_Leng": 11322619.7131
         }
-    },{
-        "type": "Feature",
-        "geometry": {
-            "type": "LineString",
-            "coordinates": [
-                [-939637.55513369024, 3911556.94889911],
-                [44905.68499813523,-3736583.4237177167]
-            ]
-        },
-        "properties": {
-            "ID": "",
-            "NAME": "NCP",
-            "TYPE": "租用海缆",
-            "PROPERTY": "租用",
-            "REMARK": "",
-            "SHAPE_Leng": 11322619.7131
-        }
-    }
-        ,{
+    },
+        {
 		"type": "Feature",
 		"geometry": {
 			"type": "LineString",

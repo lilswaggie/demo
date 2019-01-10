@@ -15,6 +15,7 @@ define([
         constructor:function(){
             var map = new Map("map",Global.mapGlobal.mapInstance.mapOptions);
             this.map = map;
+            map.setMapCursor("pointer");
             Global.mapGlobal.map = map;
 
             if(Global.mapGlobal.mapInstance.isCenter)
@@ -30,7 +31,7 @@ define([
             map.addLayer(lineLayer);
             Global.mapGlobal.lineLayer = lineLayer;
 
-            var graphicLayer = new GraphicsLayer();
+            var graphicLayer = new GraphicsLayer({cursor:'pointer'});
             map.addLayer(graphicLayer);
             Global.mapGlobal.otnLayer = graphicLayer;
 
@@ -48,25 +49,38 @@ define([
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
                 Global.mapGlobal.clickGraphic.gra = params.graphic;
                 Global.mapGlobal.clickGraphic.sym = params.graphic.symbol;
+                console.log('站点数据',params.graphic.attributes)
                 if(params.graphic.attributes.aggr){
-                    var $menu = $("<div/>").menu({});
-                    console.error('站点数据',params.graphic.attributes)
-                    params.graphic.attributes.aggr.map(function(arrItem,index){
-                        $menu.menu('appendItem',{
-                            text: arrItem.oname,
-                            data:arrItem,
-                            //iconCls: 'icon-ok',
-                            onclick: function(){
-                                Global.mapGlobal.textLayer.clear();
-                                params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
-                                var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
-                                Global.mapGlobal.textLayer.add(g);
-                                console.error('点击网元',arrItem);
-                                //调用超超接口
-                                top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
+                    if(Global.datas.warningDatas){
+                        var $menu = $("<div/>").menu({});
+                        console.log('站点数据',params.graphic.attributes)
+
+                        params.graphic.attributes.aggr.map(function(arrItem,index){
+                            console.error('arrItem',arrItem);
+                            console.error('warningDatas',Global.datas.warningDatas);
+                            var text = arrItem.oname;
+                            if(Global.datas.warningDatas.ne.indexOf(arrItem.oid) > -1){
+                                text = '<span style="color: red;">'+arrItem.oname+'</span>';
                             }
+                            $menu.menu('appendItem',{
+                                text: text,
+                                data:arrItem,
+                                //iconCls: 'icon-ok',
+                                onclick: function(){
+                                    Global.mapGlobal.textLayer.clear();
+                                    params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
+                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
+                                    Global.mapGlobal.textLayer.add(g);
+                                    console.log('点击网元',arrItem);
+                                    //调用超超接口
+                                    top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
+                                }
+                            });
                         });
-                    });
+                    }else{
+                        alert('暂无告警数据')
+                    }
+
                 }
                 $menu.menu('show',{
                     left: params.pageX,
@@ -74,13 +88,16 @@ define([
                 });
             });
 
-            Global.mapGlobal.map.on('click',function(){
+            Global.mapGlobal.map.on('click',function(params){
                 Global.mapGlobal.textLayer.clear();
-                if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym)
+                if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
+                }
+                if(!params.graphic){
+                    top.gis.clearWarnOtnNetworkFault();   //调用超超接口
+                }
 
-                //调用超超接口
-                top.gis.clearWarnOtnNetworkFault();
+
             });
 
            
@@ -168,7 +185,8 @@ define([
                     Authorization: Global.Authorization
                 },
                 success:function(data){
-                    console.error('告警数据',data);
+                    console.log('告警数据',data);
+                    Global.datas.warningDatas = data.data;
                     var datas = data.data;
                     if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
                     if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
