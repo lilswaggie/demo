@@ -385,8 +385,11 @@
                     calculable: true
                 }
                 $.fn.threeMap.defaults.chinaChart.setOption(option);
-            // 颜色渲染完成后是否需要球动起来
-            $.fn.threeMap.methods.eventTrigger();
+            // 颜色渲染完成后球不动，转到中国地图
+            var opt = $.fn.threeMap.defaults.nathionalChart.getOption();
+            opt.globe[0].viewControl.targetCoord = [109.1162, 34.2004]
+            opt.globe[0].viewControl.autoRotateSpeed = 0;
+            $.fn.threeMap.defaults.nathionalChart.setOption(opt);
         },
         // 点击球动或不动，清除颜色
         eventMap: function () {
