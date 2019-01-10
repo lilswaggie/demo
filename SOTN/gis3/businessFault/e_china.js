@@ -244,12 +244,13 @@
             $.fn.ChinaModule.methods.clearEventTrigger();
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
+            console.log($.fn.ChinaModule.defaults.chart.getOption());
             $.fn.ChinaModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
-                        console.log('你点击的线数据：',lineData.id);
-                        console.log('地图上聚合线',aggrs);
+                        // console.log('你点击的线数据：',lineData.id);
+                        // console.log('地图上聚合线',aggrs);
                         aggrs.map(function (aggr, aggrKey) {
                             if (aggr.oid == lineData.id) {
                                 lineRecords.push(line)

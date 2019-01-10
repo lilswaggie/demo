@@ -27,7 +27,7 @@
                     series: []
                 });
                 //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
-                //$.fn.WorldModule.methods.renderData($.fn.WorldModule.defaults.chart);
+                $.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
             });
             // echarts自适应
             window.onresize = function () {
@@ -56,7 +56,8 @@
                 },
                 success:function(data){
                     console.error('客户专线',data);
-                    var datas = data.data;
+                    // var datas = data.data;
+                    var datas = data;
                     if (datas && datas.nodes) {
                         var ps = [];
                         datas.nodes.map(function (nodeItem, nodeIndex) {
@@ -79,7 +80,6 @@
                         });
                         lines.data = ls;
                         scatterPoint.data = ps;
-                        console.error('线的数据', ls);
                         var options = $.fn.WorldModule.defaults.chart.getOption();
                         options.series.push(lines);
                         options.series.push(scatterPoint);
@@ -105,7 +105,7 @@
 
             $.ajax({
                 //url:Global.mapGlobal.queryPOI.queryServiceLines+"?scene=indoor&customer_name=apple",
-                url:"http://10.154.8.22:8088/sotn/api/resource/servicelines?scene='outdoor'&ccustomer_name='中国建设银行'",
+                url:"http://10.154.8.22:8088/sotn/api/resource/servicelines?scene=indoor&ccustomer_name=抖音",
                 type:'get',
                 dataType:'json',
                 headers:{
@@ -165,6 +165,7 @@
                     Authorization:Global.Authorization
                 },
                 success:function(data){
+                    console.error('告警数据加载成功',data);
                     var datas = data.data;
                     if (datas && datas.serviceline) {
                         datas.serviceline.map(function (warningItem, warningIndex) {
@@ -193,31 +194,31 @@
                 }
             });
             /*$.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
-                if (datas && datas.serviceline) {
-                    datas.serviceline.map(function (warningItem, warningIndex) {
-                        var options = chart.getOption();
-                        options.series.map(function (serieItem, nodeIndex) {
-                            if (serieItem.type == 'lines' && serieItem.name != 'chinaLine') {
-                                serieItem.data.map(function (serieItemData, sindex) {
-                                    var flag = false; //标识 是否告警
-                                    serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
-                                        if (aggrItem.oid == warningItem) {
-                                            flag = true;
-                                        }
-                                    });
-                                    if (flag) {
-                                        serieItemData.lineStyle = {
-                                            color: Global.mapGlobal.echartsConfig.lineColor.fault
-                                        };
-                                    }
-                                });
-                            }
-                        });
-                        chart.setOption(options);
-                    });
-                }
-                $.fn.WorldModule.defaults.oldOption = chart.getOption();
-            });*/
+             if (datas && datas.serviceline) {
+             datas.serviceline.map(function (warningItem, warningIndex) {
+             var options = chart.getOption();
+             options.series.map(function (serieItem, nodeIndex) {
+             if (serieItem.type == 'lines' && serieItem.name != 'chinaLine') {
+             serieItem.data.map(function (serieItemData, sindex) {
+             var flag = false; //标识 是否告警
+             serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+             if (aggrItem.oid == warningItem) {
+             flag = true;
+             }
+             });
+             if (flag) {
+             serieItemData.lineStyle = {
+             color: Global.mapGlobal.echartsConfig.lineColor.fault
+             };
+             }
+             });
+             }
+             });
+             chart.setOption(options);
+             });
+             }
+             $.fn.WorldModule.defaults.oldOption = chart.getOption();
+             });*/
         },
         //实时渲染功能
         realRenderWarningData: function (chart) {
@@ -268,7 +269,7 @@
          */
         renderLightLine: function (lineData) {
             //清下chart高亮效果
-            $.fn.WorldModule.methods.clearChart();
+            // $.fn.WorldModule.methods.clearChart();
 
             var lineRecord;
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -331,25 +332,24 @@
                 top.gis.clearSelectedLine();
             });
             /*$.fn.WorldModule.defaults.chart.on('click', function () {
-                var op = $.fn.WorldModule.defaults.chart.getOption();
-                op.series = [];
+             var op = $.fn.WorldModule.defaults.chart.getOption();
+             op.series = [];
 
-                $.fn.WorldModule.defaults.chart.setOption(op);
-                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-                $.fn.WorldModule.defaults.count = 0;
-            });*/
+             $.fn.WorldModule.defaults.chart.setOption(op);
+             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+             });*/
         },
         clearChart:function(){
             var op = $.fn.WorldModule.defaults.chart.getOption();
             op.series = [];
+                op.geo[0].center = [160,20];
+                op.geo[0].zoom = 1.2;
             $.fn.WorldModule.defaults.chart.setOption(op);
             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-            $.fn.WorldModule.defaults.count = 0;
-        }
+            }
     },
-    $.fn.WorldModule.defaults = {
-        chart: null,
-        oldOption: null,
-        count: 0
-    }
+        $.fn.WorldModule.defaults = {
+            chart: null,
+            oldOption: null
+        }
 })(jQuery);

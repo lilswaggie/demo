@@ -48,17 +48,13 @@
             }
             // 线条高亮，两端闪烁
             $(".port").click(function () {
-                $.fn.WorldModule.defaults.count += 1;
-                if ($.fn.WorldModule.defaults.count == 1) {
                     console.log('you clicked me')
                     // 点击时传递对应id触发事件
                     gis.renderLine({ id: "123" });
                     // gis.renderLine({ id: "234" });
-                }
             });
             $("#g_map").click(function(){
                 $.fn.WorldModule.methods.clearEventTrigger();
-
                 //回调超超接口
                 top.gis.clearSelectedLine();
             })
@@ -118,7 +114,7 @@
                     }
                 },
                 error:function(data){
-                    console.log('data',data);
+                    console.error('errorData',data);
                 }
             });
            /* $.get('../../geodata/world_service.json',function(datas){
@@ -317,6 +313,7 @@
             var chartOption = $.fn.WorldModule.defaults.chart.getOption();
 
             chartOption.series = chartOption.series.concat(lightLineSeri)
+            console.error('chartOption',chartOption);
             $.fn.WorldModule.defaults.chart.setOption(chartOption);
         },
         /**
@@ -330,7 +327,7 @@
                     type: 'lines',
                     name: 'lights_line',
                     lineStyle: {
-                        color: 'blue',
+                        color: 'none',
                         width: 1,
                         curveness: 0.2
                     },
@@ -377,21 +374,18 @@
         exportMethod: function () {
             gis.renderLine = $.fn.WorldModule.methods.renderLightLine;
         },
-        // 地图点击事件清除chart上的现有特效
+        // 地图点击事件清除chart上的现有特效,并将地图变为原来的样子
         clearEventTrigger: function () {
             var op = $.fn.WorldModule.defaults.chart.getOption();
-            op.series = [];
-
-            $.fn.WorldModule.defaults.chart.setOption(op);
-            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-            $.fn.WorldModule.defaults.count = 0;
-
-
-        }
+                op.geo[0].center = [160, 20];
+                op.geo[0].zoom = 1.2;
+                    op.series = [];
+                    $.fn.WorldModule.defaults.chart.setOption(op);
+                    $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            }
     },
         $.fn.WorldModule.defaults = {
             chart: null,
-            oldOption: null,
-            count: 0
+            oldOption: null
         }
 })(jQuery);

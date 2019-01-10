@@ -48,7 +48,10 @@
                 $('#g_map').css('height', height);
                 $("body").GeoUtils('getResize',chart);
             }
-
+            // 地图点击事件
+            $("#g_map").click(function () {
+                $.fn.WorldModule.methods.eventMap(chart);
+            })
         },
         renderData: function (chart) {
             var lines = $("body").GeoUtils('getLine');
@@ -170,6 +173,14 @@
                     chart.setOption(old_opt);
                 }
             });
+        },
+        eventMap: function (chart) {
+            var option = chart.getOption();
+            if(option.geo[0].center != [160,20] || option.geo[0].zoom != 1.2) {
+                option.geo[0].center = [160,20];
+                option.geo[0].zoom = 1.2;
+                chart.setOption(option);
+            }
         }
     }
 })(jQuery);
