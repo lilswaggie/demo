@@ -323,8 +323,8 @@
                 // 缩放效果
                 // option.globe[0].viewControl.distance = 200;
                 // option.globe[0].viewControl.autoRotate = true;
-                // 控制速度达到效果
-                option.globe[0].viewControl.targetCoord = null;
+                // 将中心点取消
+                // option.globe[0].viewControl.targetCoord = null;
                 option.globe[0].viewControl.autoRotateSpeed = 5;
             }
             $.fn.threeMap.defaults.nathionalChart.setOption(option);
@@ -393,8 +393,9 @@
             var optionChina = $.fn.threeMap.defaults.chinaChart.getOption();
             var optionNational = $.fn.threeMap.defaults.nathionalChart.getOption();
             // 将中心点取消，从哪停止，从哪开始
-            optionNational.globe[0].viewControl.targetCoord = null;
-
+            // optionNational.globe[0].viewControl.targetCoord = null;
+            // 点击查看中国地图
+            optionNational.globe[0].viewControl.targetCoord = [109.1162, 34.2004];
             if (optionNational.globe[0].viewControl.autoRotateSpeed == 5) {
                 // 缩放功能
                 //optionNational.globe[0].viewControl.distance = 200;

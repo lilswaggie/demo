@@ -124,7 +124,7 @@
                 map:'world',
                 top:'25%',
                 silent:false,
-                roam: true,
+                roam:true,
                 show:true,
                 zoom: 1.2,
                 center: [160, 20],
@@ -347,7 +347,7 @@
                 lineStyle: {
                     normal: {
                         color: Global.mapGlobal.echartsConfig.lineColor.light,
-                        width: Global.mapGlobal.echartsConfig.lineWidth,
+                        width: Global.mapGlobal.echartsConfig.lightLineWidth,
                         curveness: Global.mapGlobal.echartsConfig.lineCurveness
                     }
                 },
@@ -355,7 +355,7 @@
                     show: true,
                     period: 6,
                     trailLength: 0.7,
-                    color: 'red',
+                    color: '#fff',
                     symbolSize: 3
                 },
                 data:[]

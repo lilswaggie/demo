@@ -35,9 +35,11 @@ Global.mapGlobal.echartsConfig = {
     lineColor:{
         normal:'#4D8CF4',
         fault:'#F84848',
-        light:'#D0021B'
+        // light:'#D0021B'
+        light: '#4D8CF4'
     },
     lineWidth:2,
+    lightLineWidth: 3,
     lineCurveness:0.2
 
 }
