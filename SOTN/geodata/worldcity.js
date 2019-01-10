@@ -146,18 +146,7 @@ var cityJson = {
 				"TYPE" : ""
 			}
 		},
-        {
-            "type" : "Feature",
-            "geometry" : {
-                "type" : "Point",
-                "coordinates" : [44905.68499813523,-3736583.4237177167]
-            },
-            "properties" : {
-                "ID" : "",
-                "NAME" : "Pacific City, OR, US",
-                "TYPE" : ""
-            }
-        },
+
 		{
 			"type" : "Feature",
 			"geometry" : {

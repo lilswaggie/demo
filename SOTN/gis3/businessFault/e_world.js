@@ -73,7 +73,7 @@
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    console.log('data',data);
+                    console.log('业务专线data',data);
                     var datas = data.data;
                     if(datas && datas.nodes){
                         var ps = [];
@@ -271,6 +271,10 @@
          *
          */
         renderLightLine: function (lineData) {
+
+            //清下chart高亮效果
+            $.fn.WorldModule.methods.clearEventTrigger(true);
+
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -313,7 +317,7 @@
             var chartOption = $.fn.WorldModule.defaults.chart.getOption();
 
             chartOption.series = chartOption.series.concat(lightLineSeri)
-            console.error('chartOption',chartOption);
+
             $.fn.WorldModule.defaults.chart.setOption(chartOption);
         },
         /**
@@ -375,14 +379,15 @@
             gis.renderLine = $.fn.WorldModule.methods.renderLightLine;
         },
         // 地图点击事件清除chart上的现有特效,并将地图变为原来的样子
-        clearEventTrigger: function () {
+        clearEventTrigger: function (flag) {
             var op = $.fn.WorldModule.defaults.chart.getOption();
-                op.geo[0].center = [160, 20];
-                op.geo[0].zoom = 1.2;
-                    op.series = [];
-                    $.fn.WorldModule.defaults.chart.setOption(op);
-                    $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-            }
+            $.fn.WorldModule.defaults.chart.setOption(op);
+            if(flag)
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+            else
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
+            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+        }
     },
         $.fn.WorldModule.defaults = {
             chart: null,
