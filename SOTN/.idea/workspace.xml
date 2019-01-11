@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="dab32cf6-e163-4471-92d3-84750cb48d60" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="china.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gis3/businessFault/china.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="e_china.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gis3/businessFault/e_china.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="180" column="39" lean-forward="false" selection-start-line="180" selection-start-column="37" selection-end-line="184" selection-end-column="45" />
+              <folding>
+                <element signature="e#453#2283#0" expanded="false" />
+                <element signature="e#2322#6069#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="e_world.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gis3/businessFault/e_world.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+              <folding>
+                <marker date="1547174250505" expanded="true" signature="423:16669" ph="{...}" />
+                <marker date="1547174250505" expanded="true" signature="11960:11977" ph="{...}" />
+                <marker date="1547174250505" expanded="true" signature="16707:16771" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="e_world.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gis3/consumerLine/e_world.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="176" column="55" lean-forward="false" selection-start-line="176" selection-start-column="55" selection-end-line="176" selection-end-column="55" />
+              <folding>
+                <element signature="e#537#1808#0" expanded="false" />
+                <element signature="e#1895#4342#0" expanded="false" />
+                <element signature="e#4396#6695#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="world.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gis3/consumerLine/world.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>renderData</find>
+      <find>renderLightLine</find>
+      <find>US</find>
+      <find>warningDatas</find>
+      <find>chartDBClickEventTrigger</find>
+      <find>clearChart</find>
+      <find>renderLine</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/config/global.js" />
+        <option value="$PROJECT_DIR$/geodata/worldcity.js" />
+        <option value="$PROJECT_DIR$/geodata/worldsite.js" />
+        <option value="$PROJECT_DIR$/gis3/businessFault/e_world.js" />
+        <option value="$PROJECT_DIR$/gis3/networkFault/map.js" />
+        <option value="$PROJECT_DIR$/gis3/consumerLine/e_world.js" />
+        <option value="$PROJECT_DIR$/gis3/businessFault/e_china.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gis3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gis3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consumerLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOTN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gis3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="businessFault" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.china.html">
+    <configuration default="false" name="china.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SOTN/gis3/networkFault/china.html">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.china.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.china.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\wang.ning\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dab32cf6-e163-4471-92d3-84750cb48d60" name="Default" comment="" />
+      <created>1547084892100</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1547084892100</updated>
+      <workItem from="1547084896594" duration="9970000" />
+      <workItem from="1547126163068" duration="18000" />
+      <workItem from="1547171656597" duration="3161000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13149000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10071">
+          <caret line="373" column="17" lean-forward="false" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/MapManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <marker date="1547041819646" expanded="true" signature="2887:2898" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10071">
+          <caret line="373" column="17" lean-forward="true" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/MapManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <marker date="1547041819646" expanded="true" signature="2887:2898" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="99" lean-forward="false" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldcity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="155" column="28" lean-forward="true" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldsite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="978" column="10" lean-forward="false" selection-start-line="978" selection-start-column="10" selection-end-line="978" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/networkFault/MapManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <marker date="1547041819646" expanded="true" signature="2887:2898" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/airline.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldolines.js20190111">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1547016661830" expanded="true" signature="17:812693" ph="{&quot;name&quot;: &quot;IntlCable&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="84:812691" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="85:28804" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="122:28672" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="167:28668" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="28690:28801" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="28806:29505" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="28843:29373" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="28888:29369" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="29391:29502" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="29507:38207" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="29544:38075" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="29589:38071" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="38093:38204" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="38209:49439" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="38246:49307" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="38291:49303" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="49325:49436" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="49441:80208" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="49478:80076" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="49523:80072" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="80094:80205" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="80210:87583" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="80247:87451" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="80292:87447" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="87469:87580" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="87585:104178" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="87622:104046" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="87667:104042" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="104064:104175" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="104180:111284" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="104217:111152" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="104262:111148" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="111170:111281" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="111286:122245" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="111323:122113" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="111368:122109" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="122131:122242" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="122247:148938" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="122284:148806" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="122329:148802" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="148824:148935" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="148940:170148" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="148977:170016" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="149022:170012" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="170034:170145" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="170150:181403" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="170187:181271" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="170232:181267" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="181289:181400" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="181405:203708" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="181442:203576" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="181487:203572" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="203594:203705" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="203710:225912" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="203747:225780" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="203792:225776" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="225798:225909" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="225914:245289" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="225951:245157" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="225996:245153" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="245175:245286" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="245291:269950" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="245328:269818" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="245373:269814" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="269836:269947" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="269952:276632" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="269989:276500" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="270034:276496" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="276518:276629" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="276634:295831" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="276671:295699" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="276716:295695" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="295717:295828" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="295833:314338" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="295870:314206" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="295915:314202" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="314224:314335" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="314340:387510" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="314377:387375" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="314422:387371" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="387393:387507" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="387512:398902" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="387549:398767" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="387594:398763" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="398785:398899" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="398904:414804" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="398941:414669" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="398986:414665" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="414687:414801" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="414806:423837" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="414843:423702" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="414888:423698" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="423720:423834" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="423839:447117" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="423876:446982" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="423921:446978" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="447000:447114" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="447119:478503" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="447156:478368" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="447201:478364" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="478386:478500" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="478505:510530" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="478542:510398" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="478587:510394" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="510416:510527" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="510532:512194" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="510569:512062" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="510614:512058" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="512080:512191" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="512196:522983" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="512233:522851" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="512278:522847" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="522869:522980" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="522985:538168" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="523022:538036" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="523067:538032" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="538054:538165" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="538170:552401" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="538207:552269" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="538252:552265" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="552287:552398" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="552403:563599" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="552440:563467" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="552485:563463" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="563485:563596" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="563601:571968" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="563638:571836" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="563683:571832" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="571854:571965" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="571970:589696" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="572007:589564" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="572052:589560" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="589582:589693" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="589698:595158" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="589735:595026" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="589780:595022" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="595044:595155" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="595160:612619" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="595197:612487" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="595242:612483" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="612505:612616" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="612621:691815" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="612658:691683" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="612703:691679" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="691701:691812" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="691817:698463" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="691854:698331" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="691899:698327" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="698349:698460" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="698465:700692" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="698502:700559" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="698547:700555" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="700577:700689" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="700694:703768" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="700731:703635" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="700776:703631" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="703653:703765" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="703770:707905" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="703807:707772" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="703852:707768" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="707790:707902" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="707907:710923" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="707944:710790" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="707989:710786" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="710808:710920" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="710925:712123" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="710962:711990" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="711007:711986" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="712008:712120" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="712125:720983" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="712162:720850" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="712207:720846" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="720868:720980" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="720985:723971" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="721022:723838" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="721067:723834" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="723856:723968" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="723973:724346" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="724010:724213" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="724055:724209" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="724231:724343" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="724348:726110" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="724385:725977" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="724430:725973" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="725995:726107" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="726112:728926" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="726149:728793" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="726194:728789" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="728811:728923" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="728928:729868" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="728965:729735" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="729010:729731" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="729753:729865" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="729870:731768" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="729907:731635" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="729952:731631" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="731653:731765" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="731770:733340" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="731807:733207" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="731852:733203" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="733225:733337" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="733342:735711" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="733379:735578" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="733424:735574" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="735596:735708" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="735713:751647" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="735750:751514" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="735795:751510" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="751532:751644" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="751649:762167" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="751686:762034" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="751731:762030" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="762052:762164" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="762169:773486" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="762206:773353" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="762251:773349" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="773371:773483" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="773488:775883" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="773525:775750" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="773570:775746" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="775768:775880" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="775885:807080" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="775922:806947" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="775967:806943" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="806965:807077" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807082:807494" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807119:807349" ph="{&quot;type&quot;: &quot;MultiLineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807169:807345" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="807175:807251" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="807257:807340" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="807367:807491" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807496:807816" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807533:807668" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807578:807664" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="807686:807813" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807818:808133" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807855:807990" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="807900:807986" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="808008:808130" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808135:808450" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808172:808301" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808217:808297" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="808319:808447" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808452:808863" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808489:808718" ph="{&quot;type&quot;: &quot;MultiLineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808539:808714" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="808545:808621" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="808627:808709" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="808736:808860" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808865:809341" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808914:809118" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="808977:809108" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="809142:809335" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="809351:809665" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="809388:809518" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="809433:809514" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="809536:809662" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="809667:810076" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="809704:809931" ph="{&quot;type&quot;: &quot;MultiLineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="809754:809927" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="809760:809835" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="809841:809922" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="809949:810073" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810078:810489" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810115:810344" ph="{&quot;type&quot;: &quot;MultiLineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810165:810340" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="810171:810247" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="810253:810335" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="810362:810486" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810491:810802" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810528:810657" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810573:810653" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="810675:810799" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810804:811116" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810841:810970" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="810886:810966" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="810988:811113" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811118:811530" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811155:811385" ph="{&quot;type&quot;: &quot;MultiLineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811205:811381" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="811211:811287" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="811293:811376" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="811403:811527" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811532:811946" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811569:811799" ph="{&quot;type&quot;: &quot;MultiLineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811619:811795" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="811625:811701" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="811707:811790" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="811817:811943" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811948:812260" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="811985:812114" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="812030:812110" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="812132:812257" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="812262:812690" ph="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="812299:812546" ph="{&quot;type&quot;: &quot;LineString&quot;...}" />
+            <marker date="1547016661830" expanded="true" signature="812344:812542" ph="[...]" />
+            <marker date="1547016661830" expanded="true" signature="812564:812687" ph="{&quot;ID&quot;: &quot;&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldolines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="92" column="28" lean-forward="true" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+          <folding>
+            <marker date="1547174250505" expanded="true" signature="423:16669" ph="{...}" />
+            <marker date="1547174250505" expanded="true" signature="11960:11977" ph="{...}" />
+            <marker date="1547174250505" expanded="true" signature="16707:16771" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/consumerLine/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/consumerLine/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="176" column="55" lean-forward="false" selection-start-line="176" selection-start-column="55" selection-end-line="176" selection-end-column="55" />
+          <folding>
+            <element signature="e#537#1808#0" expanded="false" />
+            <element signature="e#1895#4342#0" expanded="false" />
+            <element signature="e#4396#6695#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/e_china.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="180" column="39" lean-forward="false" selection-start-line="180" selection-start-column="37" selection-end-line="184" selection-end-column="45" />
+          <folding>
+            <element signature="e#453#2283#0" expanded="false" />
+            <element signature="e#2322#6069#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/businessFault/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

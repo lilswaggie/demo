@@ -340,7 +340,7 @@
                         symbol: 'circle',
                         symbolSize: 2,
                         itemStyle: {
-                           color: 'blue'
+                           color: '#BE2DDC'
                         },
                         data: dataPorts
                     }];

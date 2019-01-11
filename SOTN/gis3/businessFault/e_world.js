@@ -272,7 +272,7 @@
          */
         renderLightLine: function (lineData) {
 
-            //清下chart高亮效果
+            // 清除高亮效果
             $.fn.WorldModule.methods.clearEventTrigger(true);
 
             // lineRecords: 高亮线条的集合
@@ -363,7 +363,7 @@
                         color: 'red',
                         fontsize: 12
                     },
-                    symbolSize: 3,
+                    symbolSize: 2,
                     itemStyle: {
                         normal: {
                             color: 'blue',
@@ -386,9 +386,10 @@
             $.fn.WorldModule.defaults.chart.setOption(op);
 
             var oldOption = $.fn.WorldModule.defaults.oldOption;
+
             if(flag) {
-                oldOption.geo[0].zoom = op.geo[0].zoom;
-                oldOption.geo[0].center = op.geo[0].center;
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             } else {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
@@ -396,7 +397,6 @@
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             }
         }
-
     },
         $.fn.WorldModule.defaults = {
             chart: null,

@@ -27,7 +27,7 @@
                     series: []
                 });
                 //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
-                //$.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
+                $.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
             });
             // echarts自适应
             window.onresize = function () {
@@ -167,17 +167,23 @@
                     console.error('告警数据加载成功',data);
                     var datas = data.data;
                     if (datas && datas.serviceline) {
+                        var options = chart.getOption();
                         datas.serviceline.map(function (warningItem, warningIndex) {
-                            var options = chart.getOption();
                             options.series.map(function (serieItem, nodeIndex) {
                                 if (serieItem.type == 'lines' && serieItem.name != 'chinaLine') {
                                     serieItem.data.map(function (serieItemData, sindex) {
                                         var flag = false; //标识 是否告警
-                                        serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                       /* serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
                                             if (aggrItem.oid == warningItem) {
                                                 flag = true;
                                             }
-                                        });
+                                        });*/
+                                        for(var i = 0; i < serieItemData.data.aggr.length - 1; i++){
+                                             if(serieItemData.data.aggr[i].oid == warningItem){
+                                                 flag = true;
+                                                 break;
+                                             }
+                                        }
                                         if (flag) {
                                             serieItemData.lineStyle = {
                                                 color: Global.mapGlobal.echartsConfig.lineColor.fault
@@ -186,8 +192,8 @@
                                     });
                                 }
                             });
-                            chart.setOption(options);
                         });
+                        chart.setOption(options);
                     }
                     $.fn.WorldModule.defaults.oldOption = chart.getOption();
                 }
@@ -353,17 +359,15 @@
 
             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
 
-
-            var oldOption = $.fn.WorldModule.defaults.chart.getOption();
-            if(flag) {
-                oldOption.geo[0].zoom = op.geo[0].zoom;
-                oldOption.geo[0].center = op.geo[0].center;
-                $.fn.WorldModule.defaults.chart.setOption(oldOption,true,false,false);
+            /*if(flag) {
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             } else {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-            }
+            }*/
 
         }
     },
