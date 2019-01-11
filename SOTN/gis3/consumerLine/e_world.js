@@ -328,11 +328,9 @@
          */
         chartDBClickEventTrigger: function () {
             $("#g_map").click(function(){
-<<<<<<< HEAD
+
                 $.fn.WorldModule.methods.clearChart();
-=======
-                $.fn.WorldModule.methods.clearChart(true);
->>>>>>> a15e3cd34c99fb25b9ba679d114ee80f38af7752
+
                 top.gis.clearSelectedLine();
             });
             /*$.fn.WorldModule.defaults.chart.on('click', function () {
@@ -347,7 +345,6 @@
             var op = $.fn.WorldModule.defaults.chart.getOption();
             op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
-<<<<<<< HEAD
 
             if(flag)
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
@@ -356,7 +353,7 @@
 
             $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
 
-=======
+
             var oldOption = $.fn.WorldModule.defaults.chart.getOption();
             if(flag) {
                 oldOption.geo[0].zoom = op.geo[0].zoom;
@@ -367,7 +364,7 @@
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             }
->>>>>>> a15e3cd34c99fb25b9ba679d114ee80f38af7752
+
         }
     },
     $.fn.WorldModule.defaults = {
