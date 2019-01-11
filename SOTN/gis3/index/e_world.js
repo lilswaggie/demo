@@ -210,11 +210,11 @@
             var links = [];
             var isAnimation = false;
             var linefeatures = worldLines.features;
-
+                //// + linkCfg.properties.TYPE // '12345' // linkCfg.name // '{b}<br/>{c}'
             $.each(linefeatures,function(index,linkCfg){
                 var link = {
                     tooltip: {
-                        formatter: linkCfg.properties.NAME // + linkCfg.properties.TYPE // '12345' // linkCfg.name // '{b}<br/>{c}'
+                        formatter: linkCfg.properties.NAME
                     },
                     type: 'lines',
                     name: linkCfg.properties.NAME,
@@ -323,7 +323,7 @@
         },
         getPorts: function (e_map) {
             var option = e_map.getOption();
-            var url = '../../geoData/S3_POINT_DATA.json';
+            var url = '../../geodata/S3_POINT_DATA.json';
             $.get(url,function (data) {
                 if(data && data.features) {
                     var dataPorts = [];

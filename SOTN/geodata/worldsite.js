@@ -977,24 +977,6 @@ var siteJson = {
 				"ID" : "7C812A88BACFBF38E0506E0A3D025C00"
 			}
 		},
-        {
-            "type" : "Feature",
-            "geometry" : {
-                "type" : "Point",
-                "coordinates" : [ 44905.68499813523,-3736583.4237177167 ]
-            },
-            "properties" : {
-                "NAME" : "Pacific City, OR, US",
-                "CABLE_NAME" : "BBG+IG",
-                "PROVINCE" : "quiix SG1, Sigapor",
-                "LNG" : 103.7875943,
-                "LAT" : 1.29546,
-                "ADDRESS" : "Pacific City, OR, US",
-                "PROPERTY" : "租用",
-                "REMARK" : "",
-                "ID" : "7C812A88BACFBF38E0506E0A3D025C00"
-            }
-        },
 		{
 			"type" : "Feature",
 			"geometry" : {

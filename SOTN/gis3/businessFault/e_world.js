@@ -73,7 +73,7 @@
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    console.log('data',data);
+                    console.log('业务专线data',data);
                     var datas = data.data;
                     if(datas && datas.nodes){
                         var ps = [];
@@ -271,8 +271,10 @@
          * lineData = { id: '' }
          */
         renderLightLine: function (lineData) {
+
             // 清除高亮效果
             $.fn.WorldModule.methods.clearEventTrigger(true);
+
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -315,7 +317,7 @@
             var chartOption = $.fn.WorldModule.defaults.chart.getOption();
 
             chartOption.series = chartOption.series.concat(lightLineSeri)
-            console.error('chartOption',chartOption);
+
             $.fn.WorldModule.defaults.chart.setOption(chartOption);
         },
         /**
@@ -382,6 +384,9 @@
             var op = $.fn.WorldModule.defaults.chart.getOption();
             op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
+
+            var oldOption = $.fn.WorldModule.defaults.oldOption;
+
             if(flag) {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;

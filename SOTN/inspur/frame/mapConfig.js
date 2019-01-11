@@ -55,7 +55,7 @@ Global.mapGlobal.mapInstance = {
         isPan:true,
         fadeOnZoom:true,
         displayGraphicsOnPan:true,
-        center: [108.92361111111111, 38.54083333333333],
+        center: [104.42361111111111, 36.54083333333333],
         zoom: 4,
         fadeOnZoom:true,
         maxZoom: 15,
@@ -69,8 +69,8 @@ Global.mapGlobal.mapInstance = {
         MapType: '',
     },
     isCenter:true,                                        //系统初始化是否启用center定位
-    center:[108.92361111111111,34.54083333333333],        //关联isCenter属性 
-    zoom:6,                                               //关联isCenter
+    center:[104.42361111111111,34.54083333333333],        //关联isCenter属性
+    zoom:4,                                               //关联isCenter
     
 }
 

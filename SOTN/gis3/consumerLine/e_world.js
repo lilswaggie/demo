@@ -27,7 +27,7 @@
                     series: []
                 });
                 //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
-                $.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
+                //$.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
             });
             // echarts自适应
             window.onresize = function () {
@@ -268,7 +268,8 @@
          */
         renderLightLine: function (lineData) {
             //清下chart高亮效果
-            $.fn.WorldModule.methods.clearChart();
+            $.fn.WorldModule.methods.clearChart(true);
+
 
             var lineRecord;
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
@@ -327,7 +328,9 @@
          */
         chartDBClickEventTrigger: function () {
             $("#g_map").click(function(){
-                $.fn.WorldModule.methods.clearChart(true);
+
+                $.fn.WorldModule.methods.clearChart();
+
                 top.gis.clearSelectedLine();
             });
             /*$.fn.WorldModule.defaults.chart.on('click', function () {
@@ -342,6 +345,17 @@
             var op = $.fn.WorldModule.defaults.chart.getOption();
             op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
+
+            if(flag)
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+            else
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
+
+            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+
+
+            var oldOption = $.fn.WorldModule.defaults.oldOption;
+
             if(flag) {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
@@ -351,6 +365,7 @@
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             }
+
         }
     },
     $.fn.WorldModule.defaults = {

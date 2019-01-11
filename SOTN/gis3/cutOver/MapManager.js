@@ -20,7 +20,7 @@ define([
             if(Global.mapGlobal.mapInstance.isCenter)
                 map.centerAndZoom(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.center[0],Global.mapGlobal.mapInstance.center[1],''),Global.mapGlobal.mapInstance.zoom);
             
-            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'copyright': '','id': 'baseMap'});
+            var layer = new WebTiledLayer(Global.mapGlobal.base.map,{'id': 'baseMap'});
             map.addLayer(layer);
 
             var lineLayer = new GraphicsLayer();

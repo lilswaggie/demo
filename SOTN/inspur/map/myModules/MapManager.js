@@ -162,6 +162,7 @@ define([
                 });
             });
         },
+
         /**
          * 处理逻辑线告警
          */
@@ -183,27 +184,53 @@ define([
          * 放大处理
          * */
        zoomFullScreen: function () {
+           var this_instance = this;
             var width = document.body.clientWidth;
             var height = document.body.clientHeight;
             $("body").on('click','.circle',function(){
                 var innerHtml = $(".rect").html();
                 if(innerHtml == '退出全屏') {
                     $(".rect").html('全屏');
-                    $("#map").css('width',width);
-                    $("#map").css('height',height);
+                    this_instance.exitFullScreen();
                     $(".rect").css('width','40px');
                     $(".rect").css('right','14px');
                     $('head').append("<style>.rect::before{ left: 14px }</style>");
-                    console.log(width);
                 } else {
-                    $("#map").css('width','100%');
-                    $("#map").css('height','100%');
+                    this_instance.requestFullScreen();
                     $(".rect").html('退出全屏');
                     $(".rect").css('width','60px');
                     $(".rect").css('right','4px');
                     $('head').append("<style>.rect::before{ left: 24px }</style>");
                 };
             });
+        },
+        requestFullScreen:function(element) {
+            // 判断各种浏览器，找到正确的方法
+            if(element) {
+                element.style.display = "block";
+                element.style.width = "100%";
+                element.style.height = "100%";
+            } else {
+                element = document.body;
+            }
+
+            var requestMethod = element.requestFullScreen || //W3C
+                element.webkitRequestFullScreen || //Chrome等
+                element.mozRequestFullScreen || //FireFox
+                element.msRequestFullScreen; //IE11
+            if (requestMethod) {
+                requestMethod.call(element);
+            } else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        },
+
+       exitFullScreen:function () {
+            (document.exitFullscreen || document.mozCancelFullScreen
+            || document.webkitCancelFullScreen || document.msExitFullscreen).call(document);
         }
     });
 });
