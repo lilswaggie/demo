@@ -151,7 +151,8 @@
                             lineStyle: {
                                 width: 1,
                                 // color: '#09B5FE',
-                                color: '#17AAFF',
+                                // color: '#17AAFF', //线条颜色渲染时会被冲淡
+                                color: '#0371FF',
                                 opacity: 1,
                                 shadowBlur: 5,
                                 shadowColor: '#03364B',
