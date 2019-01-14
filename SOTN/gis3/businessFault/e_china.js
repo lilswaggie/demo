@@ -172,17 +172,23 @@
                     console.error('告警数据',data);
                     var datas = data.data;
                     if (datas && datas.serviceline) {
+                        var options = chart.getOption();
                         datas.serviceline.map(function (warningItem, warningIndex) {
-                            var options = chart.getOption();
                             options.series.map(function (serieItem, nodeIndex) {
                                 if (serieItem.type == 'lines') {
                                     serieItem.data.map(function (serieItemData, s_index) {
                                         var flag = false; //标识 是否告警
-                                        serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                     /*   serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
                                             if (aggrItem.oid == warningItem) {
                                                 flag = true;
                                             }
-                                        });
+                                        });*/
+                                        for(var i = 0; i < serieItemData.data.aggr.length - 1; i++ ){
+                                            if(serieItemData.data.aggr[i].oid == warningItem){
+                                                flag = true;
+                                                break;
+                                            }
+                                        }
                                         if (flag) {
                                             serieItemData.lineStyle = {
                                                 color: Global.mapGlobal.echartsConfig.lineColor.fault
@@ -191,8 +197,8 @@
                                     });
                                 }
                             });
-                            chart.setOption(options);
                         });
+                        chart.setOption(options);
 
                     };
                     $.fn.ChinaModule.defaults.oldOption = chart.getOption();

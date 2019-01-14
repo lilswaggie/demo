@@ -170,8 +170,9 @@
                     console.error('告警数据',data);
                     var datas = data.data;
                     if(datas && datas.serviceline){
+                        var options = chart.getOption();
                         datas.serviceline.map(function(warningItem,warningIndex){
-                            var options = chart.getOption();
+
                             options.series.map(function(serieItem,nodeIndex){
                                 if(serieItem.type == 'lines'){
                                     serieItem.data.map(function(serieItemData,s_index){
@@ -189,9 +190,9 @@
                                     });
                                 }
                             });
-                            console.error('warnningoptions',options);
-                            chart.setOption(options);
+
                         });
+                        chart.setOption(options);
                     }
                     $.fn.WorldModule.defaults.oldOption = chart.getOption();
                 }
