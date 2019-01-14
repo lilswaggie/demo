@@ -27,7 +27,7 @@
                     series: []
                 });
                 //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
-                //$.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
+                $.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
             });
             // echarts自适应
             window.onresize = function () {
@@ -272,8 +272,12 @@
 
 
             var lineRecord;
+            var effectColor = '#4D8CF4';
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
+                    var lineStyleColor = seri.data[0].lineStyle;
+                    if(lineStyleColor && lineStyleColor.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                        effectColor = '#FF7E8B';
                     var flag = false;
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
@@ -305,8 +309,9 @@
                     }
                 };
                 var scatterSerie = $("body").GeoUtils('renderScatter', params);
+                var options = { color: effectColor };
+                var lightLineSeri = $("body").GeoUtils('getLightsLine', options);
 
-                var lightLineSeri = $("body").GeoUtils('getLightsLine');
                 lightLineSeri.data.push(lineRecord);
                 var chartOption = $.fn.WorldModule.defaults.chart.getOption();
                 chartOption.series.push(lightLineSeri, scatterSerie);

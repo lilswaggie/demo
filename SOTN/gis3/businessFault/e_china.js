@@ -240,13 +240,17 @@
          *
          */
         renderLightLine: function (lineData) {
-
+            // 清除高亮效果
             $.fn.ChinaModule.methods.clearEventTrigger();
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
-            console.log($.fn.ChinaModule.defaults.chart.getOption());
+            console.log('option',$.fn.ChinaModule.defaults.chart.getOption());
+            var effectColor = '#0A64FF';
             $.fn.ChinaModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
+                    var lineStyleColor = seri.data[0].lineStyle;
+                    if(lineStyleColor && lineStyleColor.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                        effectColor = '#FF7E8B';
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
                         // console.log('你点击的线数据：',lineData.id);
@@ -285,7 +289,8 @@
             });
             var param = {
                 dataLines: dataLines,
-                dataPorts: dataPorts
+                dataPorts: dataPorts,
+                color: effectColor
             }
             var lightLineSeri = $.fn.ChinaModule.methods.renderScatterEffect(param);
             var chartOption = $.fn.ChinaModule.defaults.chart.getOption();
@@ -304,15 +309,15 @@
                     type: 'lines',
                     name: 'lights_line',
                     lineStyle: {
-                        color: 'blue',
-                        width: 1,
+                        color: param.color,
+                        width: 3,
                         curveness: 0.2
                     },
                     zlevel: 1,
                     effect: {
                         show: true,
                         period: 5,
-                        trailLength: 0.5,
+                        trailLength: 0.3,
                         color: '#fff',
                         symbol: 'circle',
                         symbolSize: 4
@@ -335,10 +340,10 @@
                         color: 'red',
                         fontsize: 12
                     },
-                    symbolSize: 7,
+                    symbolSize: 4,
                     itemStyle: {
                         normal: {
-                            color: 'blue',
+                            color: param.color,
                             opacity: 0.8
                         }
                     },

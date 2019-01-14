@@ -277,8 +277,12 @@
 
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
+            var effectColor = '#4D8CF4';
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
+                    var lineStyleColor = seri.data[0].lineStyle;
+                    if(lineStyleColor && lineStyleColor.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                        effectColor = '#FF7E8B';
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
                         aggrs.map(function (aggr, aggrKey) {
@@ -311,7 +315,8 @@
             });
             var param = {
                 dataLines: dataLines,
-                dataPorts: dataPorts
+                dataPorts: dataPorts,
+                color: effectColor
             }
             var lightLineSeri = $.fn.WorldModule.methods.renderScatterEffect(param);
             var chartOption = $.fn.WorldModule.defaults.chart.getOption();
@@ -332,7 +337,7 @@
                     type: 'lines',
                     name: 'lights_line',
                     lineStyle: {
-                        color: '#4D8CF4',
+                        color: param.color,
                         width: 3,
                         curveness: 0.2
                     },
