@@ -167,17 +167,23 @@
                     console.error('告警数据加载成功',data);
                     var datas = data.data;
                     if (datas && datas.serviceline) {
+                        var options = chart.getOption();
                         datas.serviceline.map(function (warningItem, warningIndex) {
-                            var options = chart.getOption();
                             options.series.map(function (serieItem, nodeIndex) {
                                 if (serieItem.type == 'lines' && serieItem.name != 'chinaLine') {
                                     serieItem.data.map(function (serieItemData, sindex) {
                                         var flag = false; //标识 是否告警
-                                        serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                       /* serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
                                             if (aggrItem.oid == warningItem) {
                                                 flag = true;
                                             }
-                                        });
+                                        });*/
+                                        for(var i = 0; i < serieItemData.data.aggr.length - 1; i++){
+                                             if(serieItemData.data.aggr[i].oid == warningItem){
+                                                 flag = true;
+                                                 break;
+                                             }
+                                        }
                                         if (flag) {
                                             serieItemData.lineStyle = {
                                                 color: Global.mapGlobal.echartsConfig.lineColor.fault
@@ -186,8 +192,8 @@
                                     });
                                 }
                             });
-                            chart.setOption(options);
                         });
+                        chart.setOption(options);
                     }
                     $.fn.WorldModule.defaults.oldOption = chart.getOption();
                 }
@@ -269,15 +275,14 @@
         renderLightLine: function (lineData) {
             //清下chart高亮效果
             $.fn.WorldModule.methods.clearChart(true);
-
-
-            var lineRecord;
+            console.log('点击的线的数据',lineData);
+            var lineRecord = [];
             var effectColor = '#4D8CF4';
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
-                    var lineStyleColor = seri.data[0].lineStyle;
-                    if(lineStyleColor && lineStyleColor.color != Global.mapGlobal.echartsConfig.lineColor.normal)
-                        effectColor = '#FF7E8B';
+                    var lineStyleColor = seri.data[0];
+                    if(lineStyleColor && lineStyleColor.lineStyle && lineStyleColor.lineStyle.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                        effectColor = '#FF7D8B';
                     var flag = false;
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
@@ -295,9 +300,10 @@
              *   @author: 小皮
              *   显示两端网元名称
              * */
-            if(lineRecord){
+            if(lineRecord.length != 0){
                 var a_nename = lineRecord.data.aggr[0].a_nename;
                 var z_nename = lineRecord.data.aggr[0].z_nename;
+
                 var coords = lineRecord.coords;
                 var scatterSeri = $("body").GeoUtils('getScatter', { symbol: 'circle' });
                 var params = {
@@ -351,16 +357,6 @@
             op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
 
-            if(flag)
-                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
-            else
-                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
-
-            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
-
-
-            var oldOption = $.fn.WorldModule.defaults.oldOption;
-
             if(flag) {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
@@ -370,6 +366,16 @@
                 $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
                 $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
             }
+
+            /*if(flag) {
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            } else {
+                $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            }*/
 
         }
     },

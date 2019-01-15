@@ -1,16 +1,16 @@
-(function($){
-    $.fn.WorldModule = function(){
+(function ($) {
+    $.fn.WorldModule = function () {
         $.fn.WorldModule.methods.init();
     };
 
     $.fn.WorldModule.methods = {
-        init:function () {
+        init: function () {
             // 更改可视窗口的高度
             var height = $("body").GeoUtils('getHeight');
             $('#g_map').css('height', height);
-            $.get('../../geodata/world.json',function(mapJson){
+            $.get('../../geodata/world.json', function (mapJson) {
                 var data = [];
-                $.each(mapJson.features,function(index,item){
+                $.each(mapJson.features, function (index, item) {
                     var row = {};
                     //row.name = item.properties.NAME;
                     //row.lon = item.CP[0];
@@ -18,20 +18,21 @@
                     //data.push(row);
                     data.push("1");
                 });
-                echarts.registerMap('world',mapJson);
+                echarts.registerMap('world', mapJson);
                 var e_map = echarts.init(document.getElementById("g_map"));
-                var pointSer = $.fn.WorldModule.methods.getSiteSer()
+                // var pointSer = $.fn.WorldModule.methods.getSiteSer()
                 var links = $.fn.WorldModule.methods.getLinkSers();
                 var categoryA = {
                     name: 'categoryA',
                     type: 'map',
                     geoIndex: 0,
-                    tooltip: {show: false},
+                    tooltip: { show: false },
                     data: [
                     ]
                 }
 
-                var series = [pointSer, categoryA].concat(links);
+                // var series = [pointSer, categoryA].concat(links);
+                var series = [categoryA].concat(links);
 
                 e_map.setOption({
                     tooltip: {},
@@ -44,7 +45,7 @@
                 window.onresize = function () {
                     var height = $("body").GeoUtils('getHeight');
                     $('#g_map').css('height', height);
-                    $("body").GeoUtils('getResize',e_map);
+                    $("body").GeoUtils('getResize', e_map);
                 };
                 // 地图点击事件
                 $("#g_map").click(function () {
@@ -52,7 +53,7 @@
                 })
             });
         },
-        getGeo: function(){
+        getGeo: function () {
             var geo = $("body").GeoUtils('getWorldMapInstance');
             geo.emphasis = null;
             geo.itemStyle = {
@@ -72,8 +73,8 @@
             };
             geo.regions = [
                 {
-                    name:'中华人民共和国',
-                    selected:true,
+                    name: '中华人民共和国',
+                    selected: true,
                     emphasis: {
                         label: {
                             show: false,
@@ -81,22 +82,22 @@
 
                         }
                     }
-                },{
+                }, {
                     name: '瑞典',
                     label: {
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '尼日尔',
-                    label:{
+                    label: {
 
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '俄罗斯',
                     label: {
 
@@ -104,55 +105,55 @@
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '加拿大',
                     label: {
                         show: true,
                         color: "#72758C"
                     }
-                },{
+                }, {
                     name: '印度尼西亚',
                     label: {
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '巴西',
                     label: {
 
                         show: true,
                         color: "#72758C"
                     }
-                },{
+                }, {
                     name: '墨西哥',
                     label: {
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '苏丹',
                     label: {
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '澳大利亚',
                     label: {
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '伊朗',
                     label: {
                         show: true,
                         color: "#72758C"
 
                     }
-                },{
+                }, {
                     name: '扎伊尔',
                     label: {
 
@@ -168,24 +169,24 @@
             var sitedata = []
 
             var sitefeatures = siteJson.features;
-            $.each(sitefeatures,function(index,siteCfg){
+            $.each(sitefeatures, function (index, siteCfg) {
                 if (siteCfg.properties && siteCfg.properties.NAME && siteCfg.geometry && siteCfg.geometry.coordinates) {
                     var cityTmp = {
                         name: siteCfg.properties.NAME,
                         value: siteCfg.geometry.coordinates,
                         PROPERTY: siteCfg.properties.PROPERTY,
-                        county:siteCfg.properties.PROVINCE
+                        county: siteCfg.properties.PROVINCE
                     }
                     sitedata.push(cityTmp);
                 }
             });
-            var pointSer = $("body").GeoUtils('getScatter','circle');
-            pointSer.tooltip = {formatter: '{b}'};
+            var pointSer = $("body").GeoUtils('getScatter', 'circle');
+            pointSer.tooltip = { formatter: '{b}' };
             pointSer.color = null;
             pointSer.data = sitedata;
             pointSer.hoverAnimation = true;
             pointSer.symbolSize = 4;
-            pointSer.label= {
+            pointSer.label = {
                 // normal: {
                 //   formatter: '{b}', // '{b}',
                 //   position: 'center',
@@ -206,12 +207,12 @@
             };
             return pointSer;
         },
-        getLinkSers:function () {
+        getLinkSers: function () {
             var links = [];
             var isAnimation = false;
             var linefeatures = worldLines.features;
-                //// + linkCfg.properties.TYPE // '12345' // linkCfg.name // '{b}<br/>{c}'
-            $.each(linefeatures,function(index,linkCfg){
+            //// + linkCfg.properties.TYPE // '12345' // linkCfg.name // '{b}<br/>{c}'
+            $.each(linefeatures, function (index, linkCfg) {
                 var link = {
                     tooltip: {
                         formatter: linkCfg.properties.NAME
@@ -221,14 +222,14 @@
                     link_type: linkCfg.properties.TYPE,
                     shape_line: linkCfg.properties.SHAPE_LEN,
                     coordinateSystem: 'geo',
-                    data: [{coords: linkCfg.geometry.coordinates}],
+                    data: [{ coords: linkCfg.geometry.coordinates }],
                     polyline: true,
                     // silent: true
                     lineStyle: {
                         normal: {
                             // 线条颜色的设置
                             color: $.fn.WorldModule.methods.getLinkColor(linkCfg), // '#000', // linkCfg.color,
-                            width: 2.5  ,
+                            width: 2.5,
                             opacity: 0.9
 
                         },
@@ -250,8 +251,8 @@
                 }
                 if (linkCfg.geometry.type === 'MultiLineString') {
                     var linkdataT = [];
-                    $.each(linkCfg.geometry.coordinates,function(index,linkCfgCoor){
-                        var corrdT = {coords: linkCfgCoor}
+                    $.each(linkCfg.geometry.coordinates, function (index, linkCfgCoor) {
+                        var corrdT = { coords: linkCfgCoor }
                         linkdataT.push(corrdT);
                     });
 
@@ -288,11 +289,15 @@
             });
             return links;
         },
-        getLinkColor:function (linkCfg) {
-            var linkcolor ;
+        getLinkColor: function (linkCfg) {
+            var linkcolor;
             var lineColorJson = $.fn.WorldModule.methods.lineColorJson;
-            $.each(lineColorJson.colors,function(index,colorItem){
-                if( colorItem.TYPE === linkCfg.properties.TYPE)
+            $.each(lineColorJson.colors, function (index, colorItem) {
+                if (colorItem.TYPE === linkCfg.properties.TYPE)
+                    linkcolor = colorItem;
+            });
+            $.each(lineColorJson.built, function (index, colorItem) {
+                if (colorItem.NAME === linkCfg.properties.NAME)
                     linkcolor = colorItem;
             });
             if (linkcolor instanceof Array && linkcolor.length) {
@@ -300,16 +305,17 @@
             } else if (linkcolor && linkcolor.COLOR) {
                 linkcolor = linkcolor.COLOR;
             } else {
+                console.log('colorr', linkCfg.properties.NAME + '===' + linkCfg.properties.TYPE)
                 linkcolor = '#05FF00';
             }
             return linkcolor;
         },
-        getSiteColor:function (ponitData) {
+        getSiteColor: function (ponitData) {
             var lineColorJson = $.fn.WorldModule.methods.lineColorJson;
             var pointColor = lineColorJson.pointcolors.DEFAULT
             var pcolor;
-            $.each(lineColorJson.pointcolors.CUSTOMER,function(index,colorItem){
-                if(colorItem.TYPE === ponitData.PROPERTY){
+            $.each(lineColorJson.pointcolors.CUSTOMER, function (index, colorItem) {
+                if (colorItem.TYPE === ponitData.PROPERTY) {
                     pcolor = colorItem;
                 }
             });
@@ -324,23 +330,23 @@
         getPorts: function (e_map) {
             var option = e_map.getOption();
             var url = '../../geodata/S3_POINT_DATA.json';
-            $.get(url,function (data) {
-                if(data && data.features) {
+            $.get(url, function (data) {
+                if (data && data.features) {
                     var dataPorts = [];
-                    data.features.forEach(function(ele,index){
+                    data.features.forEach(function (ele, index) {
                         var temp = {
                             value: ele.geometry.coordinates
                         };
                         dataPorts.push(temp);
                     });
                     var series = [{
-                       type: 'scatter',
+                        type: 'scatter',
                         name: 'scatterPort',
                         coordinateSystem: 'geo',
                         symbol: 'circle',
                         symbolSize: 2,
                         itemStyle: {
-                           color: '#BE2DDC'
+                            color: '#2AC4F4'
                         },
                         data: dataPorts
                     }];
@@ -350,40 +356,59 @@
             });
         },
         lineColorJson: {
-            "colors":[
+            "colors": [
                 {
-                    "TYPE":"自有海缆",
-                    "COLOR":"#BE2DDC"
+                    "TYPE": "在建海缆",
+                    "COLOR": "#979797"
+                    // "COLOR":"#BE2DDC"
                     // "COLOR":"#4285F4"
-                },{
-                    "TYPE":"租用海缆",
-                    "COLOR":"#F84848"
+                }, {
+                    "TYPE": "租用海缆",
+                    "COLOR": "#F84848"
 
                     // "COLOR":"#A752F2"
-                },{
-                    "TYPE":"自有陆缆",
-                    "COLOR":"#E8FF00"
-                },{
-                    "TYPE":"租有陆缆",
-                    "COLOR":"#E8FF00"
+                }, {
+                    "TYPE": "租用陆缆",
+                    "COLOR": "#F8FF67"
                 }
 
             ],
-            "pointcolors":{
-                "DEFAULT":"#FC5555",
-                "CUSTOMER":[
+            "pointcolors": {
+                "DEFAULT": "#FC5555",
+                "CUSTOMER": [
                     {
-                        "TYPE":"自有",
-                        "COLOR":"#FC9222"
+                        "TYPE": "自有",
+                        "COLOR": "#FC9222"
                     }
                 ]
-            }
+            },
+            "built": [
+                {
+                    "NAME": "APG",
+                    "COLOR": "#3FF658"
+                },{
+                    "NAME": "FASTER",
+                    "COLOR": "#BE2DDC"
+                },{
+                    "NAME": "SJC",
+                    "COLOR": "#72FAEF"
+                },{
+                    "NAME": "SWM5",
+                    "COLOR": "#2AC4F4"
+                },{
+                    "NAME": "福淡海缆",
+                    "COLOR": "#855512"
+                },{
+                    "NAME": "厦金海缆",
+                    "COLOR": "#F6B251"
+                }
+            ]
         },
-        eventMap:function (e_map) {
+        eventMap: function (e_map) {
             var option = e_map.getOption();
             console.log(option);
-            if(option.geo[0].center != [160,20] || option.geo[0].zoom != 1.2) {
-                option.geo[0].center = [160,20];
+            if (option.geo[0].center != [160, 20] || option.geo[0].zoom != 1.2) {
+                option.geo[0].center = [160, 20];
                 option.geo[0].zoom = 1.2;
                 e_map.setOption(option);
             }

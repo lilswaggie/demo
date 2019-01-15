@@ -172,17 +172,23 @@
                     console.error('告警数据',data);
                     var datas = data.data;
                     if (datas && datas.serviceline) {
+                        var options = chart.getOption();
                         datas.serviceline.map(function (warningItem, warningIndex) {
-                            var options = chart.getOption();
                             options.series.map(function (serieItem, nodeIndex) {
                                 if (serieItem.type == 'lines') {
                                     serieItem.data.map(function (serieItemData, s_index) {
                                         var flag = false; //标识 是否告警
-                                        serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                     /*   serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
                                             if (aggrItem.oid == warningItem) {
                                                 flag = true;
                                             }
-                                        });
+                                        });*/
+                                        for(var i = 0; i < serieItemData.data.aggr.length - 1; i++ ){
+                                            if(serieItemData.data.aggr[i].oid == warningItem){
+                                                flag = true;
+                                                break;
+                                            }
+                                        }
                                         if (flag) {
                                             serieItemData.lineStyle = {
                                                 color: Global.mapGlobal.echartsConfig.lineColor.fault
@@ -191,8 +197,8 @@
                                     });
                                 }
                             });
-                            chart.setOption(options);
                         });
+                        chart.setOption(options);
 
                     };
                     $.fn.ChinaModule.defaults.oldOption = chart.getOption();
@@ -244,16 +250,15 @@
             $.fn.ChinaModule.methods.clearEventTrigger();
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
-            console.log('option',$.fn.ChinaModule.defaults.chart.getOption());
             var effectColor = '#0A64FF';
+            console.log('你点击的线数据：',lineData);
             $.fn.ChinaModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
-                    var lineStyleColor = seri.data[0].lineStyle;
-                    if(lineStyleColor && lineStyleColor.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                    var lineStyleColor = seri.data[0];
+                    if(lineStyleColor && lineStyleColor.lineStyle && lineStyleColor.lineStyle.color != Global.mapGlobal.echartsConfig.lineColor.normal)
                         effectColor = '#FF7E8B';
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
-                        // console.log('你点击的线数据：',lineData.id);
                         // console.log('地图上聚合线',aggrs);
                         aggrs.map(function (aggr, aggrKey) {
                             if (aggr.oid == lineData.id) {
@@ -264,11 +269,12 @@
                 }
             });
 
-            if(lineRecords.size == 0){
+            if(lineRecords.length == 0){
                 console.error('暂未找到对应数据');
             }
             var dataLines = [];
             var dataPorts = [];
+            console.log('高亮线数据',lineRecords)
             lineRecords.forEach(function (e) {
                 var linesTemp = {
                     coords: e.coords,
@@ -317,10 +323,10 @@
                     effect: {
                         show: true,
                         period: 5,
-                        trailLength: 0.3,
+                        trailLength: 0.4,
                         color: '#fff',
                         symbol: 'circle',
-                        symbolSize: 4
+                        symbolSize: 3
                     },
                     data: param.dataLines
                 }, {
@@ -340,11 +346,11 @@
                         color: 'red',
                         fontsize: 12
                     },
-                    symbolSize: 4,
+                    symbolSize: 3,
                     itemStyle: {
                         normal: {
-                            color: param.color,
-                            opacity: 0.8
+                            color: '#FDC400',
+                            opacity: 1
                         }
                     },
                     data: param.dataPorts

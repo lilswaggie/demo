@@ -16,6 +16,7 @@ define([
             var map = new Map("map",Global.mapGlobal.mapInstance.mapOptions);
             this.map = map;
             map.setMapCursor("pointer");
+
             Global.mapGlobal.map = map;
 
             if(Global.mapGlobal.mapInstance.isCenter)
@@ -27,6 +28,10 @@ define([
             map.setZoom(Global.mapGlobal.mapInstance.mapOptions.zoom)
             map.centerAt(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.mapOptions.center[0],Global.mapGlobal.mapInstance.mapOptions.center[1]));
 
+            var mouseGraphTextLayer = new GraphicsLayer();
+            map.addLayer(mouseGraphTextLayer);
+            Global.mapGlobal.mouseGraphTextLayer = mouseGraphTextLayer;       //鼠标移动站点，提示站点名称
+
             var lineLayer = new GraphicsLayer();
             map.addLayer(lineLayer);
             Global.mapGlobal.lineLayer = lineLayer;
@@ -36,8 +41,10 @@ define([
             Global.mapGlobal.otnLayer = graphicLayer;
 
             var textLayer = new GraphicsLayer();
-            map.addLayer(textLayer);
+            map.addLayer(textLayer);     //点击高亮文字图层
             Global.mapGlobal.textLayer = textLayer;
+
+
 
             var this_instance = this;
 
@@ -56,8 +63,6 @@ define([
                         console.log('站点数据',params.graphic.attributes)
 
                         params.graphic.attributes.aggr.map(function(arrItem,index){
-                            console.error('arrItem',arrItem);
-                            console.error('warningDatas',Global.datas.warningDatas);
                             var text = arrItem.oname;
                             if(Global.datas.warningDatas.ne.indexOf(arrItem.oid) > -1){
                                 text = '<span style="color: red;">'+arrItem.oname+'</span>';
@@ -96,9 +101,18 @@ define([
                 if(!params.graphic){
                     top.gis.clearWarnOtnNetworkFault();   //调用超超接口
                 }
-
-
             });
+
+            Global.mapGlobal.otnLayer.on('mouse-over',function(params){
+                var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
+                Global.mapGlobal.mouseGraphTextLayer.add(g);
+            })
+
+            Global.mapGlobal.otnLayer.on('mouse-out',function(params){
+                Global.mapGlobal.mouseGraphTextLayer.clear();
+            })
+
+
 
            
         },
