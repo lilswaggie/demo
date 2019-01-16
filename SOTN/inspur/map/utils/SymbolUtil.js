@@ -18,9 +18,18 @@ define([
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_LIGHT_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
             return picMarkerSymbol;
         },
+        getOTMHightSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_LIGHT_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
+            return picMarkerSymbol;
+        },
         getLineSymbol:function(){
             //var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color("#508AF4"), 3);
             var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color([80,138,244,1]), 3);
+            return lineSymbol;
+        },
+        //线高亮Symbol
+        getLineHightSymbol:function(){
+            var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color("#00FF01"), 3);
             return lineSymbol;
         },
         getWarningLineSymbol:function(){
