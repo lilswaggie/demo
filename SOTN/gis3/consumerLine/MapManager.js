@@ -274,6 +274,8 @@ define([
                 item.setSymbol(SymbolUtil.getOTMHightSymbol());
             })
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
+
+            //小p写弹框代码：
         },
         /**
          * 对苏研提供的对外接口
