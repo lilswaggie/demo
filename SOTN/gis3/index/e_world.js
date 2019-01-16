@@ -215,7 +215,12 @@
             $.each(linefeatures, function (index, linkCfg) {
                 var link = {
                     tooltip: {
-                        formatter: linkCfg.properties.NAME
+                        textStyle: {
+                            color: '#3C3E4AFF',
+                        },
+                        backgroundColor: '#FFFFFFFF',
+                        extraCssText: 'box-shadow: 0px 2px 4px 0px #00000033',
+                        // formatter: `${linkCfg.properties.NAME}<br/>端点：厦门马岗-台湾金门<br/>使用状态：已建`
                     },
                     type: 'lines',
                     name: linkCfg.properties.NAME,

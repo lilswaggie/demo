@@ -267,7 +267,7 @@
         },
         /**
          * @author 小皮
-         * lineData = { id: '' }
+         * @lineData = { id: 'String' }
          */
         renderLightLine: function (lineData) {
 
@@ -329,12 +329,12 @@
         },
         /**
          * @author: 小皮
-         * @param {dataLines,dataPorts} param
+         * @param {color: 'string',dataLines,dataPorts}
          * 处理线条和端点数据
          */
         renderScatterEffect: function (param) {
             var series = [];
-            console.error('param',param);
+            console.info('param',param);
             series.push({
                     type: 'lines',
                     name: 'lights_line',

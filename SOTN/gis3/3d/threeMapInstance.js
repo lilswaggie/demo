@@ -76,12 +76,16 @@
             var symbolPath = 'image://' + Global.mapGlobal.symbolConfig.OTN_SYMBOL;
 
 
-            $.fn.threeMap.methods.renderChinalabel(option,series);
-            $.fn.threeMap.methods.renderChinaLinesPorts(symbolPath,option,series);
+            $.fn.threeMap.methods.renderChinalabel({option:option,series:series});
+            $.fn.threeMap.methods.renderChinaLinesPorts({symbolPath:symbolPath,option:option,series:series});
 
 
         },
-        renderChinaLinesPorts: function(symbolPath,option,series) {
+        /**
+         * 渲染中国区域的线条与端点
+         *  @params { symbolPath: '',option: {},series: [] }
+         * */
+        renderChinaLinesPorts: function(params) {
             $.ajax({
                 url: Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
                 type:'get',
@@ -110,7 +114,7 @@
                             dataLines.push(temp);
                         });
 
-                        option['visualMap'] = {
+                        params.option['visualMap'] = {
                             left: 'right',
                             min: 500,
                             max: 5000,
@@ -121,7 +125,7 @@
                             text: ['High', 'Low'],           // 文本，默认为数值文本
                             calculable: true
                         }
-                        series.push({
+                        params.series.push({
                             type: 'map',
                             map: 'china',
                             top: 0, left: 0,
@@ -164,7 +168,7 @@
                             type: 'scatter',
                             name: 'scatter3D',
                             coordinateSystem: 'geo',
-                            symbol: symbolPath,
+                            symbol: params.symbolPath,
                             symbolSize: '15',
                             itemStyle: {
                                 color: 'red',
@@ -172,16 +176,20 @@
                             },
                             data: dataPorts
                         });
-                        option.series = series.concat(option.series);
-                        $.fn.threeMap.defaults.chinaChart.setOption(option);
+                        params.option.series = params.series.concat(params.option.series);
+                        $.fn.threeMap.defaults.chinaChart.setOption(params.option);
 
-                        $.fn.threeMap.defaults.oldOption = option;
+                        $.fn.threeMap.defaults.oldOption = params.option;
 
                     }
                 }
             });
         },
-        renderChinalabel: function(option,series) {
+        /**
+         * 渲染标题
+         * @params: { option: {},series: [] }
+         * */
+        renderChinalabel: function(params) {
             $.get('outdoor.json',function (datas) {
                 if(datas && datas.nodes) {
                     var dataPorts = [];
@@ -192,7 +200,7 @@
                             value: [e.longitude, e.lantitude]
                         };
                         dataPorts.push(temp2);
-                        series.push({
+                        params.series.push({
                             type: 'scatter',
                             name: 'scatter2s',
                             coordinateSystem: 'geo',
@@ -222,13 +230,14 @@
                             data: dataPorts
                         });
                     });
-                    option.series = series.concat(option.series);
-                    $.fn.threeMap.defaults.chinaChart.setOption(option);
+                    params.option.series = params.series.concat(params.option.series);
+                    $.fn.threeMap.defaults.chinaChart.setOption(params.option);
 
-                    $.fn.threeMap.defaults.oldOption = option;
+                    $.fn.threeMap.defaults.oldOption = params.option;
                 }
             });
         },
+        // 获取颜色的方法，每三个一循环
         renderColor: function (arr) {
             var colors = ['#B33341', '#94BD68', '#388283'];
             arr.forEach(function (e, index) {

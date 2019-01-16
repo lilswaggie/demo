@@ -242,8 +242,9 @@
             }
         },
         /**
+         * 渲染高亮线条
          * @author 小皮
-         *
+         * @lineData: { id: 'String' }
          */
         renderLightLine: function (lineData) {
             // 清除高亮效果
@@ -306,7 +307,7 @@
         },
         /**
          * @author: 小皮
-         * @param {dataLines,dataPorts} param
+         * @param {color:'String',dataLines:[],dataPorts:[]}
          * 处理线条和端点数据
          */
         renderScatterEffect: function (param) {

@@ -743,7 +743,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -770,7 +770,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -999,7 +999,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -1296,7 +1296,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -2099,7 +2099,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -2296,7 +2296,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -2717,7 +2717,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -2908,7 +2908,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -3197,7 +3197,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -3884,7 +3884,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -4457,7 +4457,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -4752,7 +4752,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -5335,7 +5335,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -5916,7 +5916,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -6423,7 +6423,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -7070,7 +7070,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -7251,7 +7251,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -7760,7 +7760,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -8239,7 +8239,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "APG",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -10352,7 +10352,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "FASTER",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -10669,7 +10669,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "FASTER",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -11090,7 +11090,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "FASTER",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -11331,7 +11331,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "FASTER",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -11930,7 +11930,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "FASTER",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -12745,7 +12745,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "FASTER",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -13562,7 +13562,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -13613,7 +13613,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -13890,7 +13890,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -14275,7 +14275,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -14652,7 +14652,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -14949,7 +14949,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -15174,7 +15174,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -15641,7 +15641,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -15792,7 +15792,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -16251,7 +16251,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18342,7 +18342,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18519,7 +18519,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SJC",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18588,7 +18588,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18685,7 +18685,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18808,7 +18808,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18903,7 +18903,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -18946,7 +18946,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19207,7 +19207,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19298,7 +19298,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19317,7 +19317,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19372,7 +19372,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19453,7 +19453,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19486,7 +19486,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19543,7 +19543,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19596,7 +19596,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -19669,7 +19669,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -20082,7 +20082,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -20375,7 +20375,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -20692,7 +20692,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -20767,7 +20767,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -21618,7 +21618,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SWM5",
-			"TYPE": "自有海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
 			"SHAPE_LEN": 0
@@ -73561,7 +73561,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "福淡海缆",
-			"TYPE": "共建海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "共建",
 			"REMARK": "",
 			"SHAPE_Leng": 230536.482835
@@ -73581,7 +73581,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "厦金海缆",
-			"TYPE": "共建海缆",
+			"TYPE": "已建海缆",
 			"PROPERTY": "共建",
 			"REMARK": "",
 			"SHAPE_Leng": 49970.44936
