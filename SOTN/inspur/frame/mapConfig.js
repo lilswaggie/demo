@@ -23,6 +23,7 @@ Global.mapGlobal.symbolConfig = {
     OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTN_LIGHT.png',
     SYMBOL_WIDTH:34,
     SYMBOL_HEIGHT:26,
+    OTM_LIGHT_SYMBOL:Global.sysPath+'images/OTM_LIGHT.png',
 }
 
 //symbol:
