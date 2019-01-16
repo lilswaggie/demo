@@ -343,14 +343,14 @@
          * 获取线高亮
          * @returns {{name: string, type: string, zlevel: number, lineStyle: {normal: {color: string, width: number, curveness: number}}, effect: {show: boolean, period: number, trailLength: number, color: string, symbolSize: number}, data: Array}}
          */
-        getLightsLine:function(){
+        getLightsLine:function(params){
             var lightLine = {
                 name: 'lights_line',
                 type: 'lines',
                 zlevel: 1,
                 lineStyle: {
                     normal: {
-                        color: Global.mapGlobal.echartsConfig.lineColor.light,
+                        color: params.color || Global.mapGlobal.echartsConfig.lineColor.light,
                         width: Global.mapGlobal.echartsConfig.lightLineWidth,
                         curveness: Global.mapGlobal.echartsConfig.lineCurveness
                     }

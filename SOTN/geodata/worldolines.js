@@ -769,7 +769,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -998,7 +998,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -1295,7 +1295,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -2098,7 +2098,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -2295,7 +2295,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -2716,7 +2716,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -2907,7 +2907,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -3196,7 +3196,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -3883,7 +3883,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -4456,7 +4456,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -4751,7 +4751,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -5334,7 +5334,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -5915,7 +5915,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -6422,7 +6422,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -7069,7 +7069,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -7250,7 +7250,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -7759,7 +7759,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -8238,7 +8238,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "apg",
+			"NAME": "APG",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -10668,7 +10668,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "faster",
+			"NAME": "FASTER",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -11089,7 +11089,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "faster",
+			"NAME": "FASTER",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -11330,7 +11330,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "faster",
+			"NAME": "FASTER",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -11929,7 +11929,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "faster",
+			"NAME": "FASTER",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -12744,7 +12744,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "faster",
+			"NAME": "FASTER",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -13612,7 +13612,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -13889,7 +13889,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -14274,7 +14274,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -14651,7 +14651,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -14948,7 +14948,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -15173,7 +15173,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -15640,7 +15640,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -15791,7 +15791,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -16250,7 +16250,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18341,7 +18341,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -18518,7 +18518,7 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "sjc",
+			"NAME": "SJC",
 			"TYPE": "自有海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
@@ -31226,7 +31226,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "NCP",
-			"TYPE": "租用海缆",
+			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 9150762.05951
@@ -33233,12 +33233,12 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "NCP",
-			"TYPE": "租用海缆",
+			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 9150762.05951
 		}
-	}, {
+	}/* , {
 		"type": "Feature",
 		"geometry": {
 			"type": "LineString",
@@ -35461,7 +35461,7 @@ var worldLines = {
 			"REMARK": "",
 			"SHAPE_Leng": 9150762.05951
 		}
-	}, {
+	} */, {
 		"type": "Feature",
 		"geometry": {
 			"type": "LineString",
@@ -36401,7 +36401,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "NCP",
-			"TYPE": "租用海缆",
+			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 9150762.05951
@@ -36424,7 +36424,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "NCP",
-			"TYPE": "租用海缆",
+			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 9150762.05951
@@ -36497,7 +36497,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "NCP",
-			"TYPE": "租用海缆",
+			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 9150762.05951
@@ -38373,7 +38373,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SMW4 + APCN2、BBG + ELG",
-			"TYPE": "租用陆缆",
+			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 11322619.7131
@@ -39313,7 +39313,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SMW4 + APCN2、BBG + ELG",
-			"TYPE": "租用陆缆",
+			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 11322619.7131
@@ -48257,7 +48257,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SMW4 + APCN2、BBG + ELG",
-			"TYPE": "租用陆缆",
+			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 11322619.7131
@@ -50558,7 +50558,7 @@ var worldLines = {
 		"properties": {
 			"ID": "",
 			"NAME": "SMW4 + APCN2、BBG + ELG",
-			"TYPE": "租用陆缆",
+			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
 			"SHAPE_Leng": 11322619.7131

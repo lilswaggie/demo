@@ -282,11 +282,18 @@
         renderLightLine: function (lineData) {
             //清下chart高亮效果
             $.fn.WorldModule.methods.clearChart(true);
+
+            console.log('点击的线的数据',lineData);
+            var lineRecord = [];
+            var effectColor = '#4D8CF4';
+
             console.error('lineData',lineData);
 
-            var lineRecord;
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
+                    var lineStyleColor = seri.data[0];
+                    if(lineStyleColor && lineStyleColor.lineStyle && lineStyleColor.lineStyle.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                        effectColor = '#FF7D8B';
                     var flag = false;
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
@@ -304,9 +311,10 @@
              *   @author: 小皮
              *   显示两端网元名称
              * */
-            if(lineRecord){
+            if(lineRecord.length != 0){
                 var a_nename = lineRecord.data.aggr[0].a_nename;
                 var z_nename = lineRecord.data.aggr[0].z_nename;
+
                 var coords = lineRecord.coords;
                 var scatterSeri = $("body").GeoUtils('getScatter', { symbol: 'circle' });
                 var params = {
@@ -318,8 +326,9 @@
                     }
                 };
                 var scatterSerie = $("body").GeoUtils('renderScatter', params);
+                var options = { color: effectColor };
+                var lightLineSeri = $("body").GeoUtils('getLightsLine', options);
 
-                var lightLineSeri = $("body").GeoUtils('getLightsLine');
                 lightLineSeri.data.push(lineRecord);
                 var chartOption = $.fn.WorldModule.defaults.chart.getOption();
                 chartOption.series.push(lightLineSeri, scatterSerie);
@@ -359,12 +368,15 @@
             op.series = [];
             $.fn.WorldModule.defaults.chart.setOption(op);
 
-            if(flag)
+            if(flag) {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;
-            else
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = op.geo[0].center;
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            } else {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = 1.2;
-
-            $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+                $.fn.WorldModule.defaults.oldOption.geo[0].center = [160,20];
+                $.fn.WorldModule.defaults.chart.setOption($.fn.WorldModule.defaults.oldOption,true,false,false);
+            }
 
             /*if(flag) {
                 $.fn.WorldModule.defaults.oldOption.geo[0].zoom = op.geo[0].zoom;

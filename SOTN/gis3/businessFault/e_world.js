@@ -48,7 +48,6 @@
             }
             // 线条高亮，两端闪烁
             $(".port").click(function () {
-                    console.log('you clicked me')
                     // 点击时传递对应id触发事件
                     gis.renderLine({ id: "123" });
                     // gis.renderLine({ id: "234" });
@@ -99,7 +98,6 @@
                         lines.data = ls;
 
                         scatterPoint.data = ps;
-                        console.log('scatterPoint',scatterPoint)
                         var options = chart.getOption();
                         options.series.push(lines);
                         options.series.push(scatterPoint);
@@ -275,11 +273,15 @@
 
             // 清除高亮效果
             $.fn.WorldModule.methods.clearEventTrigger(true);
-
+            console.log('你点击的线数据：',lineData);
             // lineRecords: 高亮线条的集合
             var lineRecords = [];
+            var effectColor = '#4D8CF4';
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
+                    var lineStyleColor = seri.data[0];
+                    if(lineStyleColor && lineStyleColor.lineStyle && lineStyleColor.lineStyle.color != Global.mapGlobal.echartsConfig.lineColor.normal)
+                        effectColor = '#FF7E8B';
                     seri.data.map(function (line, key) {
                         var aggrs = line.data.aggr;
                         aggrs.map(function (aggr, aggrKey) {
@@ -290,6 +292,9 @@
                     });
                 }
             });
+            if(lineRecords.length == 0){
+                console.error('暂未找到对应数据');
+            }
             var dataLines = [];
             var dataPorts = [];
             lineRecords.forEach(function (e) {
@@ -312,7 +317,8 @@
             });
             var param = {
                 dataLines: dataLines,
-                dataPorts: dataPorts
+                dataPorts: dataPorts,
+                color: effectColor
             }
             var lightLineSeri = $.fn.WorldModule.methods.renderScatterEffect(param);
             var chartOption = $.fn.WorldModule.defaults.chart.getOption();
@@ -333,7 +339,7 @@
                     type: 'lines',
                     name: 'lights_line',
                     lineStyle: {
-                        color: '#4D8CF4',
+                        color: param.color,
                         width: 3,
                         curveness: 0.2
                     },
@@ -341,7 +347,7 @@
                     effect: {
                         show: true,
                         period: 5,
-                        trailLength: 0.3,
+                        trailLength: 0.4,
                         color: '#fff',
                         symbol: 'circle',
                         symbolSize: 3
@@ -367,8 +373,8 @@
                     symbolSize: 2,
                     itemStyle: {
                         normal: {
-                            color: 'blue',
-                            opacity: 0.8
+                            color: '#4D8CF4',
+                            opacity: 1
                         }
                     },
                     data: param.dataPorts
