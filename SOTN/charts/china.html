@@ -7,9 +7,10 @@
     <script src="../lib/echarts4/echarts.js"></script>
     <script src="../geodata/china.js"></script>
     <script src="../inspur/GeoUtils.js"></script>
+    <script src="../geodata/world.js"></script>
 </head>
 <body>
-    <div id="g_map" style="width:800px;height:800px;"></div>
+    <div id="g_map" style="width:1900px;height:800px;"></div>
     <script>
         $(function(){
 
@@ -155,9 +156,10 @@
 
             var chart = echarts.init(document.getElementById('g_map'));
             chart.setOption({
-                //center: [115.97, 29.71],
+                center: [115.97, 29.71],
                 geo:{
-                    map:'china',zoom:1,
+                    map:'world',
+                    zoom:2,
                     itemStyle:{
                         borderColor:'#AFC6EE'
                     },
@@ -165,7 +167,18 @@
                 itemStyle:{
                     borderColor:'red'
                 },
-                series: series    
+                series:[
+                    {
+                        type:'map',
+                        roam:false,
+                        name:'china',
+                        map:'china',
+                        center: [115.97, 29.71],
+                        zoom:0.5,
+                        aspectScale:0.75
+                    }
+                ]
+                //series: series
             })
             chart.on('click',function(params){
                 //var old_opt = chart.getOption();

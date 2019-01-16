@@ -17,7 +17,10 @@ var topo = {
         this.network = network;
         this.network.setScrollBarVisible(false);
 
-        document.getElementById('main').appendChild(this.network.getView());
+        var networkview=this.network.getView();
+        networkview.style.backgroundColor='#050910';
+
+        document.getElementById('main').appendChild(networkview);
 
         var zoomManager = new twaver.vector.LogicalZoomManager(this.network,false);
         this.network.setZoomManager(zoomManager);

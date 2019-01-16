@@ -40,6 +40,9 @@ define([
                 }
             });*/
 
+            var mouseGraphTextLayer = new GraphicsLayer();
+            map.addLayer(mouseGraphTextLayer);
+            Global.mapGlobal.mouseGraphTextLayer = mouseGraphTextLayer;       //鼠标移动站点，提示站点名称
 
 
             var lineLayer = new GraphicsLayer();
@@ -56,6 +59,15 @@ define([
             this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
 
             this_instance.zoomFullScreen();
+
+            Global.mapGlobal.otnLayer.on('mouse-over',function(params){
+                var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
+                Global.mapGlobal.mouseGraphTextLayer.add(g);
+            })
+
+            Global.mapGlobal.otnLayer.on('mouse-out',function(params){
+                Global.mapGlobal.mouseGraphTextLayer.clear();
+            })
 
         },
         /**

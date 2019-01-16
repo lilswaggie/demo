@@ -413,11 +413,6 @@ var data = {
                         },{
                             "a_ne_id": '1110102012201HWCSANEL51483d829cf63088',
                             "a_ne_name": "ZW-15056-BJ北京良乡综合楼-N-HW-OA-M6110",
-                            "z_ne_id": '1110102012201HWCSANEL573dffac1756a548',
-                            "z_ne_name": "ZW-15560-BJ北京大白楼-N-HW-OTM-2",
-                        },{
-                            "a_ne_id": '1110102012201HWCSANEL573dffac1756a548',
-                            "a_ne_name": "ZW-15560-BJ北京大白楼-N-HW-OTM-2",
                             "z_ne_id": '1110102012201HWCSANELf83cc4455eb6bd24',
                             "z_ne_name": "ZW-17367-BJ北京大白楼-N-HW-EXC-1",
                         }
