@@ -8,9 +8,9 @@ twaver.Util.ext(toponetwork, twaver.vector.Network, {
         var self = this;
         self.setKeyboardRemoveEnabled(false);
         self.setZoomDivVisible(false);
-        self.setMaxZoom(10);
-        self.setMinZoom(0.07);
-        self.setDragToPan(false);
+        self.setMaxZoom(3);
+        self.setMinZoom(0.4);
+        // self.setDragToPan(false);
         self.addInteractionListener(self.interactionHandler, self);
         self.setEditableFunction(function (element) {
             return false;
@@ -84,7 +84,7 @@ twaver.Util.ext(toponetwork, twaver.vector.Network, {
             var element = e.element;
             if(element instanceof TransNe){
                 var int_id=element.getClient("int_id");
-                alert(123)
+
             }
         }
     }
