@@ -27,7 +27,14 @@
                     series: []
                 });
                 //整改：不是页面加载完成就渲染数据，由苏研调用这边对外js接口再进行渲染数据
-                $.fn.WorldModule.methods.renderCustomerLine({name:'抖音'});
+                $.fn.WorldModule.methods.renderCustomerLine({engName: "beijingsankuaiyunjisuanyouxiangongsi",
+                faultLeasedLines: 0,
+                id: "951210168951951000",
+                industry: "IT",
+                leasedLineRatio: 3,
+                leasedLines: 3,
+                level: "金牌",
+                name: "北京三快云计算有限公司"});
             });
             // echarts自适应
             window.onresize = function () {
@@ -275,9 +282,13 @@
         renderLightLine: function (lineData) {
             //清下chart高亮效果
             $.fn.WorldModule.methods.clearChart(true);
+
             console.log('点击的线的数据',lineData);
             var lineRecord = [];
             var effectColor = '#4D8CF4';
+
+            console.error('lineData',lineData);
+
             $.fn.WorldModule.defaults.chart.getOption().series.map(function (seri, key) {
                 if (seri.type == 'lines') {
                     var lineStyleColor = seri.data[0];
