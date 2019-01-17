@@ -24,6 +24,21 @@ define([
             }
             return symbol;
         },
+        //根据type类型获取点资源的高亮Symbol,默认为OTM高亮图标
+        getHightPointSymbol:function(type){
+            var symbol;
+            switch (type){
+                case 'OTM':
+                    symbol = this.getOTNHightSymbol();break;
+                case 'OA':
+                    symbol = this.getOAHightSymbol();break;
+                case 'CPE':
+                    symbol = this.getCPEHightSymbol();break;
+                default:
+                    symbol = this.getOTNHightSymbol();break;
+            }
+            return symbol;
+        },
         //OTM图标样式
         getOTNSymbol:function(){
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
@@ -37,10 +52,7 @@ define([
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_WARNING_SYMBOL,30,28);
             return picMarkerSymbol;
         },
-        getOAHightSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_LIGHT_SYMBOL,30,28);
-            return picMarkerSymbol;
-        },
+
         getCPESymbol:function(){
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
             return picMarkerSymbol;
@@ -53,8 +65,12 @@ define([
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_LIGHT_SYMBOL,46,38);
             return picMarkerSymbol;
         },
-        getOTMHightSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_LIGHT_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
+        getOAHightSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_LIGHT_SYMBOL,30,28);
+            return picMarkerSymbol;
+        },
+        getCPEHightSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_LIGHT_SYMBOL,30,28);
             return picMarkerSymbol;
         },
         getLineSymbol:function(){
@@ -64,7 +80,7 @@ define([
         },
         //线高亮Symbol
         getLineHightSymbol:function(){
-            var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color("#00FF01"), 3);
+            var lineSymbol = new SimpleLineSymbol( SimpleLineSymbol.STYLE_SOLID, new Color("#9013FE"), 3);
             return lineSymbol;
         },
         getWarningLineSymbol:function(){

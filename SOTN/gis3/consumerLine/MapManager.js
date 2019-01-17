@@ -73,12 +73,12 @@ define([
                                 //iconCls: 'icon-ok',
                                 onclick: function(){
                                     Global.mapGlobal.textLayer.clear();
-                                    params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
+                                    params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(arrItem.type));
                                     var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
                                     Global.mapGlobal.textLayer.add(g);
                                     console.log('点击网元',arrItem);
                                     //调用超超接口
-                                    top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
+                                    //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
                                 }
                             });
                         });
@@ -101,8 +101,10 @@ define([
 
 
                 if(Global.mapGlobal.topo_link_flag){        //如果专线关联拓扑,topoLink数据高亮，进行取消高亮效果
+
                     //小p写消除弹框代码：
                     $("#elasticFrame").css({'display':'none'});
+
                     var lineGraphics = Global.mapGlobal.lineLayer.graphics;
                     $.each(lineGraphics,function(index,item){
                         item.setSymbol(SymbolUtil.getLineSymbol());
@@ -110,7 +112,7 @@ define([
 
                     var otnGraphics = Global.mapGlobal.otnLayer.graphics;
                     $.each(otnGraphics,function(index,item){
-                        item.setSymbol(SymbolUtil.getOTNSymbol());
+                        item.setSymbol(SymbolUtil.getPointSymbol(item.type));
                     })
                 }
 
@@ -267,13 +269,17 @@ define([
          * 专线关联到拓扑,整条拓扑高亮
          */
         topoLinkHightLight:function(){
+
+            //线
             var lineGraphics = Global.mapGlobal.lineLayer.graphics;
             $.each(lineGraphics,function(index,item){
                 item.setSymbol(SymbolUtil.getLineHightSymbol());
             });
+
+            //点
             var otnGraphics = Global.mapGlobal.otnLayer.graphics;
             $.each(otnGraphics,function(index,item){
-                item.setSymbol(SymbolUtil.getOTMHightSymbol());
+                item.setSymbol(SymbolUtil.getHightPointSymbol(item.type));
             })
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
 
