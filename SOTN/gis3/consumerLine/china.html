@@ -31,7 +31,7 @@
 
         #elasticFrame2 {
             display: none;
-            width: 240px;
+            width: 340px;
             height: 174px;
             padding: 9px 8px 9px 9px;
             box-sizing: border-box;
@@ -196,24 +196,20 @@
         </ul>
     </div>
     <div id="elasticFrame2">
-        <span></span><b id="oName">这里是专线名称名称名称名称名称</b>
+        <span></span><b id="oName"></b>
         <ul class="nav">
-            <li id="aName">A端：</li><b>这是A端传输设备</b><br />
-            <li id="zName">Z端：</li><b>这是Z端传输设备</b>
+            <li id="aName">A端：</li><b id="a_name"></b><br />
+            <li id="zName">Z端：</li><b id="z_name"></b>
             <hr>
-            <li>历史故障次数：</li><span>12</span><br />
-            <li>历史投诉次数：</li><span>0</span><br />
-            <li>历史告警次数：</li><span>12</span><br />
-            <li>历史性能劣化次数：</li><span>12</span>
+            <li>历史故障次数：</li><span id="faultFrequencyNum"></span><br />
+            <li>历史投诉次数：</li><span id="complaintFrequencyNum"></span><br />
+            <li>历史告警次数：</li><span id="alarmFrequencyNum"></span><br />
+            <li>历史性能劣化次数：</li><span id="efficiencyDegradationFrequencyNum">12</span>
         </ul>
     </div>
     <div id="map"></div>
     <script src="map.js"></script>
-    <script>
-        $("#clearFrame").click(function(){
-            $("#elasticFrame").css({'display': 'none'})
-        })
-    </script>
+
 </body>
 
 </html>

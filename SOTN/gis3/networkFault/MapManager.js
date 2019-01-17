@@ -141,7 +141,8 @@ define([
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    var datas = data.data;
+                    //var datas = data.data;
+                    var datas = JSON.parse(data.data.message)
                     if(datas && datas.nodes){
                         Global.mapGlobal.lineLayer.clear();
                         Global.mapGlobal.otnLayer.clear();
