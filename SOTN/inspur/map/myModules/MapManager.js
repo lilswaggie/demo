@@ -83,9 +83,32 @@ define([
                                     Global.mapGlobal.textLayer.add(g);
                                     console.log('点击网元',arrItem);
 
+                                    //异步请求网元数据:
+                                    $.ajax({
+                                        url:Global.mapGlobal.queryPOI.queryNe+arrItem.oid+'/detail',
+                                        type:'get',
+                                        dataType:'json',
+                                        headers:{
+                                            Accept:'application/json;charset=utf-8',
+                                            Authorization:Global.Authorization
+                                        },
+                                        success:function(data){
+                                            console.error('网元详情',data)
+                                            //弹框：小p写布局
+                                            $("#elasticFrame").css({'display': 'block'});
+                                            $("#neName").text(data.data.neName);
+                                            $("#neName").text(data.data.neName);
+                                            $("#state").text(data.data.state);
+                                            $("#vender").text(data.data.vendor);
+                                            $("#serviceLevel").text(data.data.serviceLevel);
+                                            $("#modelName").text(data.data.modelName);
+                                            $("#location").text(data.data.location);
+                                            $("#siteName").text(data.data.relatedSiteName);
+                                            $("#roomName").text(data.data.relatedRoomName);
+                                        }
+                                    });
 
-                                    //弹框：小p写布局
-                                    $("#elasticFrame").css({'display': 'block'})
+
                                     //调用超超接口
                                     //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
                                 }
