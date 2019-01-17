@@ -222,7 +222,7 @@
                         },
                         backgroundColor: '#FFFFFFFF',
                         extraCssText: 'box-shadow: 0px 2px 4px 0px #00000033',
-                        formatter: linkCfg.properties.NAME + '<br/>端点：'+linkCfg.properties.A_NAME+'-'+linkCfg.properties.Z_NAME+ '<br/>使用状态：' + linkCfg.properties.TYPE.replace(reg,''),
+                        formatter: '<span style="font-size: 16px;font-weight: bold;padding:5px;height:28px;line-height: 28px;"><span style="display: inline-block;width:6px;height:6px;background:rgba(246,178,81,1);margin-right:5px;"></span>'+linkCfg.properties.NAME+'</span>' + '<span style="display: block;padding:5px;font-size: 14px;font-weight: bold;">端点：<span style="color:#2C9CFA;">'+linkCfg.properties.A_NAME+'</span>—<span  style="color:#2C9CFA;">'+linkCfg.properties.Z_NAME+ '</span></span><span style="display: block;line-height: 28px;padding:5px;font-size: 14px;font-weight: bold;">使用状态：<span style="color:#2C9CFA;">' + linkCfg.properties.TYPE.replace(reg,'')+'</span></span>',
                         /* formatter: `<div style={backgroundColor:'red'}><span style={width:'20px',height:'20px',backgroundColor:'red'}></span>${linkCfg.properties.NAME}</div>
                         <br/>端点：<em style={color: 'blue'}>${linkCfg.properties.A_NAME}-${linkCfg.properties.Z_NAME}</em>
                         <br/>使用状态：${linkCfg.properties.TYPE.replace(reg,'')}` */
