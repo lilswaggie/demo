@@ -29,16 +29,7 @@ define([
             map.addLayer(layer);
             map.setZoom(Global.mapGlobal.mapInstance.mapOptions.zoom)
             map.centerAt(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.mapOptions.center[0],Global.mapGlobal.mapInstance.mapOptions.center[1]));
-            /*map.on('extent-change',function(param){
-                var extent = param.extent;
-                var xmax = extent.xmax;
-                var xmin = extent.xmin;
-                var ymax = extent.ymax;
-                var ymin = extent.ymin;
-                if(xmax > 21417927.26173119 || xmin < 1753877.784974391 || ymin < -1817867.590739129 ||ymax > 9179282.542702826){
-                    map.centerAt(GeometryUtil.getPoint(108.92361111111111,34.54083333333333));
-                }
-            });*/
+
 
             var mouseGraphTextLayer = new GraphicsLayer();
             map.addLayer(mouseGraphTextLayer);
@@ -53,6 +44,10 @@ define([
             map.addLayer(graphicLayer);
             Global.mapGlobal.otnLayer = graphicLayer;
 
+            var textLayer = new GraphicsLayer();
+            map.addLayer(textLayer);     //点击高亮文字图层
+            Global.mapGlobal.textLayer = textLayer;
+
             var this_instance = this;
 
             this_instance.drawingGraphics(this_instance);
@@ -60,6 +55,70 @@ define([
 
             this_instance.zoomFullScreen();
 
+            //站点点击呈现站点下网元设备
+            Global.mapGlobal.otnLayer.on('click',function(params){
+                if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym)
+                    Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
+                Global.mapGlobal.clickGraphic.gra = params.graphic;
+                Global.mapGlobal.clickGraphic.sym = params.graphic.symbol;
+                console.log('站点数据',params.graphic.attributes)
+                if(params.graphic.attributes.aggr){
+                    if(Global.datas.warningDatas){
+                        var $menu = $("<div/>").menu({});
+                        console.log('站点数据',params.graphic.attributes)
+
+                        params.graphic.attributes.aggr.map(function(arrItem,index){
+                            var text = arrItem.oname;
+                            if(Global.datas.warningDatas.ne.indexOf(arrItem.oid) > -1){
+                                text = '<span style="color: red;">'+arrItem.oname+'</span>';
+                            }
+                            $menu.menu('appendItem',{
+                                text: text,
+                                data:arrItem,
+                                //iconCls: 'icon-ok',
+                                onclick: function(){
+                                    Global.mapGlobal.textLayer.clear();
+                                    params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
+                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
+                                    Global.mapGlobal.textLayer.add(g);
+                                    console.log('点击网元',arrItem);
+
+
+                                    //弹框：小p写布局
+
+
+
+
+
+
+                                    //调用超超接口
+                                    //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
+                                }
+                            });
+                        });
+                    }else{
+                        alert('暂无告警数据')
+                    }
+
+                }
+                $menu.menu('show',{
+                    left: params.pageX,
+                    top: params.pageY
+                });
+            });
+
+            //地图单击空白处
+            Global.mapGlobal.map.on('click',function(params){
+                Global.mapGlobal.textLayer.clear();
+                if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
+                    Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
+                }
+                if(!params.graphic){
+                    top.gis.clearWarnOtnNetworkFault();   //调用超超接口
+                }
+            });
+
+            //鼠标移动显示站点名称
             Global.mapGlobal.otnLayer.on('mouse-over',function(params){
                 var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
                 Global.mapGlobal.mouseGraphTextLayer.add(g);
@@ -152,6 +211,7 @@ define([
                     Authorization:Global.Authorization
                 },
                 success:function(data){
+                    Global.datas.warningDatas = data.data;
                     var datas = data.data;
                     if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
                     if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理

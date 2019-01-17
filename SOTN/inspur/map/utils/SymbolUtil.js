@@ -6,8 +6,17 @@ define([
     "esri/symbols/Font"
 ],function(PictureMarkerSymbol,SimpleLineSymbol,Color,TextSymbol,Font){
     return {
+        //OTM图标样式
         getOTNSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
+            return picMarkerSymbol;
+        },
+        getOASymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_SYMBOL,30,28);
+            return picMarkerSymbol;
+        },
+        getECPSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
             return picMarkerSymbol;
         },
         getOTNWarningSymbol:function(){
