@@ -89,6 +89,7 @@ Global.mapGlobal.queryPOI = {
     queryWarningOTN:Global.baseQueryURL+'/sotn/api/alert/active/resources',//告警
     queryServiceLines:Global.baseQueryURL+'/sotn/api/resource/servicelines',
     queryOTN:Global.baseQueryURL+'/sotn/api/resource/topolinks',
+    queryNe:Global.baseQueryURL+'/sotn/api/network/tir_elements/',  //查询网元详情接口
     queryONTLine:'',
     realQueryFlag:false,           //实时查询标志
     realQueryTimer:10000,          //1000为1s
