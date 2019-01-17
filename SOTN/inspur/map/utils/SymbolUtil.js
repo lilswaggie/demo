@@ -6,6 +6,24 @@ define([
     "esri/symbols/Font"
 ],function(PictureMarkerSymbol,SimpleLineSymbol,Color,TextSymbol,Font){
     return {
+        /**
+         * 根据type类型获取点资源的Symbol,默认为OTM图标
+         * @param type
+         */
+        getPointSymbol:function(type){
+            var symbol;
+            switch (type){
+                case 'OTM':
+                    symbol = this.getOTNSymbol();break;
+                case 'OA':
+                    symbol = this.getOASymbol();break;
+                case 'CPE':
+                    symbol = this.getCPESymbol();break;
+                default:
+                    symbol = this.getOTNSymbol();break;
+            }
+            return symbol;
+        },
         //OTM图标样式
         getOTNSymbol:function(){
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
@@ -15,16 +33,24 @@ define([
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_SYMBOL,30,28);
             return picMarkerSymbol;
         },
-        getECPSymbol:function(){
+        getOAWarningSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_WARNING_SYMBOL,30,28);
+            return picMarkerSymbol;
+        },
+        getOAHightSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_LIGHT_SYMBOL,30,28);
+            return picMarkerSymbol;
+        },
+        getCPESymbol:function(){
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
             return picMarkerSymbol;
         },
         getOTNWarningSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,46,38);
             return picMarkerSymbol;
         },
         getOTNHightSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_LIGHT_SYMBOL,Global.mapGlobal.symbolConfig.SYMBOL_WIDTH,Global.mapGlobal.symbolConfig.SYMBOL_HEIGHT);
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_LIGHT_SYMBOL,46,38);
             return picMarkerSymbol;
         },
         getOTMHightSymbol:function(){

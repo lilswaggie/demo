@@ -20,9 +20,13 @@ Global.mapGlobal.symbolConfig = {
 
     //OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
     OTM_SYMBOL:Global.sysPath+'images/OTM.png',
-    OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
-    OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTN_LIGHT.png',
+    OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTM_B.png',
+    OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTM_H.png',
+
     OA_SYMBOL:Global.sysPath+'images/OA.png',
+    OA_WARNING_SYMBOL:Global.sysPath+'images/OA_B.png',
+    OA_LIGHT_SYMBOL:Global.sysPath+'images/OA_H.png',
+
     SYMBOL_WIDTH:34,
     SYMBOL_HEIGHT:26,
     OTM_LIGHT_SYMBOL:Global.sysPath+'images/OTM_LIGHT.png',
