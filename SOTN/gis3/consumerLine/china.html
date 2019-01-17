@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>网络故障-国内网络</title>
@@ -17,21 +18,91 @@
     <script src="../../lib/easyui-1.6.9/jquery.easyui.min.js"></script>
 
     <style>
-        html, body, #map {
+        html,
+        body,
+        #map {
             height: 100%;
-            width:100%;
+            width: 100%;
             background: url("../../images/gis_bg.png") no-repeat;
             background-size: 100% 100%;
             margin: 0;
             padding: 0;
+        }
+
+        #elasticFrame {
+            display: none;
+            width: 240px;
+            height: 174px;
+            padding: 9px 8px 9px 9px;
+            box-sizing: border-box;
+            background-color: #FFFFFFFF;
+            box-shadow: 0px 1px 2px 0px #00000033;
+            z-index: 200;
+            position: absolute;
+            top: 266px;
+            right: 235px;
+            color: #3C3E4AFF;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        #elasticFrame>span {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #FFE4E3FF;
+            border: 1px solid rgba(253, 99, 96, 1);
+            margin-right: 4px;
+        }
+        #elasticFrame>b {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .nav{
+            padding-left: 22px;
+            padding-right: 9px;
+            margin: 0px;
+        }
+        .nav>li{
+            list-style: none;
+            display: inline-block;
+        }
+        .nav>hr{
+            border-style: dashed;
+            border-color: #DDDDDDFF;
+            margin: 5px 0px 4px;
+            border-top: 1px;
+        }
+        .nav>b{
+            font-weight: normal;
+            color: #72758CFF;
+        }
+        .nav>span{
+            font-size: 14px;
+            color: #2C9CFAFF;
         }
     </style>
 
 
 
 </head>
+
 <body>
+    <div id="elasticFrame">
+        <span></span><b>这里是专线名称名称名称名称名称</b>
+        <ul class="nav">
+            <li>A端：</li><b>这是A端传输设备</b><br/>
+            <li>Z端：</li><b>这是Z端传输设备</b>
+            <hr>
+            <li>历史故障次数：</li><span>12</span><br/>
+            <li>历史投诉次数：</li><span>0</span><br/>
+            <li>历史告警次数：</li><span>12</span><br/>
+            <li>历史性能劣化次数：</li><span>12</span>
+        </ul>
+    </div>
     <div id="map"></div>
     <script src="map.js"></script>
 </body>
+
 </html>
