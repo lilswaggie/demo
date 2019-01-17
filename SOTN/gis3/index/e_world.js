@@ -211,6 +211,8 @@
             var links = [];
             var isAnimation = false;
             var linefeatures = worldLines.features;
+            // 创建正则表达式
+            var reg = /(海缆)|(陆缆)$/;
             //// + linkCfg.properties.TYPE // '12345' // linkCfg.name // '{b}<br/>{c}'
             $.each(linefeatures, function (index, linkCfg) {
                 var link = {
@@ -220,7 +222,11 @@
                         },
                         backgroundColor: '#FFFFFFFF',
                         extraCssText: 'box-shadow: 0px 2px 4px 0px #00000033',
-                        // formatter: `${linkCfg.properties.NAME}<br/>端点：厦门马岗-台湾金门<br/>使用状态：已建`
+                        formatter: linkCfg.properties.NAME + '<br/>端点：'+linkCfg.properties.A_NAME+'-'+linkCfg.properties.Z_NAME+ '<br/>使用状态：' + linkCfg.properties.TYPE.replace(reg,''),
+                        /* formatter: `<div style={backgroundColor:'red'}><span style={width:'20px',height:'20px',backgroundColor:'red'}></span>${linkCfg.properties.NAME}</div>
+                        <br/>端点：<em style={color: 'blue'}>${linkCfg.properties.A_NAME}-${linkCfg.properties.Z_NAME}</em>
+                        <br/>使用状态：${linkCfg.properties.TYPE.replace(reg,'')}` */
+                        
                     },
                     type: 'lines',
                     name: linkCfg.properties.NAME,

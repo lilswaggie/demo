@@ -746,7 +746,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -773,7 +775,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -1002,7 +1006,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -1299,7 +1305,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -2102,7 +2110,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -2299,7 +2309,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -2720,7 +2732,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -2911,7 +2925,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -3200,7 +3216,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -3887,7 +3905,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -4460,7 +4480,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -4755,7 +4777,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -5338,7 +5362,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -5919,7 +5945,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -6426,7 +6454,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -7073,7 +7103,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -7254,7 +7286,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -7763,7 +7797,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -8242,7 +8278,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '將軍澳',
+			"Z_NAME": '頭城 Toucheng'
 		}
 	}, {
 		"type": "Feature",
@@ -10355,7 +10393,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '班顿Bandon',
+			"Z_NAME": 'Seattle (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -10672,7 +10712,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '班顿Bandon',
+			"Z_NAME": 'Seattle (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -11093,7 +11135,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '班顿Bandon',
+			"Z_NAME": 'Seattle (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -11334,7 +11378,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '班顿Bandon',
+			"Z_NAME": 'Seattle (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -11933,7 +11979,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '班顿Bandon',
+			"Z_NAME": 'Seattle (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -12748,7 +12796,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '班顿Bandon',
+			"Z_NAME": 'Seattle (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -13565,7 +13615,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -13616,7 +13668,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -13893,7 +13947,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -14278,7 +14334,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -14655,7 +14713,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -14952,7 +15012,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -15177,7 +15239,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -15644,7 +15708,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -15795,7 +15861,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -16254,7 +16322,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -18345,7 +18415,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -18522,7 +18594,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '舂坎角',
+			"Z_NAME": 'Mega-I (POP)'
 		}
 	}, {
 		"type": "Feature",
@@ -18591,7 +18665,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -18688,7 +18764,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -18811,7 +18889,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -18906,7 +18986,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -18949,7 +19031,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19210,7 +19294,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19301,7 +19387,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19320,7 +19408,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19375,7 +19465,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19456,7 +19548,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19489,7 +19583,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19546,7 +19642,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19599,7 +19697,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -19672,7 +19772,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -20085,7 +20187,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -20378,7 +20482,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -20695,7 +20801,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -20770,7 +20878,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -21621,7 +21731,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "自有",
 			"REMARK": "",
-			"SHAPE_LEN": 0
+			"SHAPE_LEN": 0,
+			"A_NAME": '大士Tuas',
+			"Z_NAME": '巴勒莫Palermo'
 		}
 	}, {
 		"type": "Feature",
@@ -22498,7 +22610,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 12131759.7116
+			"SHAPE_Leng": 12131759.7116,
+			"A_NAME": 'Mega-I, HK',
+			"Z_NAME": 'San Luis Obispo, California, US'
 		}
 	}, {
 		"type": "Feature",
@@ -22521,7 +22635,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 12131759.7116
+			"SHAPE_Leng": 12131759.7116,
+			"A_NAME": 'Mega-I, HK',
+			"Z_NAME": 'San Luis Obispo, California, US'
 		}
 	}, {
 		"type": "Feature",
@@ -23992,7 +24108,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 12131759.7116
+			"SHAPE_Leng": 12131759.7116,
+			"A_NAME": 'Mega-I, HK',
+			"Z_NAME": 'San Luis Obispo, California, US'
 		}
 	}, {
 		"type": "Feature",
@@ -27150,7 +27268,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 2258998.02117
+			"SHAPE_Leng": 2258998.02117,
+			"A_NAME": 'Tanshui, Taiwan',
+			"Z_NAME": 'kitaibaraki, Japan'
 		}
 	}, {
 		"type": "Feature",
@@ -29801,7 +29921,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 3478871.712
+			"SHAPE_Leng": 3478871.712,
+			"A_NAME": 'Tseung Kwan O, HK',
+			"Z_NAME": 'Maruyama, Japan'
 		}
 	}, {
 		"type": "Feature",
@@ -31229,7 +31351,9 @@ var worldLines = {
 			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9150762.05951
+			"SHAPE_Leng": 9150762.05951,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Pacific City, OR, US'
 		}
 	}, {
 		"type": "Feature",
@@ -33236,7 +33360,9 @@ var worldLines = {
 			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9150762.05951
+			"SHAPE_Leng": 9150762.05951,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Pacific City, OR, US'
 		}
 	}/* , {
 		"type": "Feature",
@@ -36404,7 +36530,9 @@ var worldLines = {
 			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9150762.05951
+			"SHAPE_Leng": 9150762.05951,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Pacific City, OR, US'
 		}
 	}, {
 		"type": "Feature",
@@ -36427,7 +36555,9 @@ var worldLines = {
 			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9150762.05951
+			"SHAPE_Leng": 9150762.05951,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Pacific City, OR, US'
 		}
 	}, {
 		"type": "Feature",
@@ -36500,7 +36630,9 @@ var worldLines = {
 			"TYPE": "在建海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9150762.05951
+			"SHAPE_Leng": 9150762.05951,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Pacific City, OR, US'
 		}
 	}, {
 		"type": "Feature",
@@ -38372,11 +38504,13 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "SMW4 + APCN2、BBG + ELG",
+			"NAME": "SMW4 + APCN2",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": 'Mega-I, HK',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -39312,11 +39446,13 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "SMW4 + APCN2、BBG + ELG",
+			"NAME": "SMW4 + APCN2",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": 'Mega-I, HK',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -48256,11 +48392,13 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "SMW4 + APCN2、BBG + ELG",
+			"NAME": "BBG + EIG",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": 'Equinix SG1, Singapore',
+			"Z_NAME": 'Equinix FR5, Frankfurt'
 		}
 	}, {
 		"type": "Feature",
@@ -50557,11 +50695,13 @@ var worldLines = {
 		},
 		"properties": {
 			"ID": "",
-			"NAME": "SMW4 + APCN2、BBG + ELG",
+			"NAME": "BBG + EIG",
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": 'Equinix SG1, Singapore',
+			"Z_NAME": 'Equinix FR5, Frankfurt'
 		}
 	},
 	{
@@ -52916,7 +53056,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 7448777.45945
+			"SHAPE_Leng": 7448777.45945,
+			"A_NAME": '阿拉山口',
+			"Z_NAME": 'Equinix FR5, Frankfurt'
 		}
 	}, {
 		"type": "Feature",
@@ -54918,7 +55060,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 7448777.45945
+			"SHAPE_Leng": 7448777.45945,
+			"A_NAME": '阿拉山口',
+			"Z_NAME": 'Equinix FR5, Frankfurt'
 		}
 	}, {
 		"type": "Feature",
@@ -56728,7 +56872,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9155605.06062
+			"SHAPE_Leng": 9155605.06062,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Nedonna Beach, Oregon, US'
 		}
 	}, {
 		"type": "Feature",
@@ -58170,7 +58316,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9321337.3402
+			"SHAPE_Leng": 9321337.3402,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Lynnwood, Washington, US'
 		}
 	}, {
 		"type": "Feature",
@@ -58193,7 +58341,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9321337.3402
+			"SHAPE_Leng": 9321337.3402,
+			"A_NAME": 'Maruyama, Japan',
+			"Z_NAME": 'Lynnwood, Washington, US'
 		}
 	}, {
 		"type": "Feature",
@@ -59199,7 +59349,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": '中国满洲里',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -60011,7 +60163,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": '中国满洲里',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -61044,7 +61198,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": '中国满洲里',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -62035,7 +62191,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": '中国满洲里',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -62843,7 +63001,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": '中国满洲里',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -64445,7 +64605,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11322619.7131
+			"SHAPE_Leng": 11322619.7131,
+			"A_NAME": '中国满洲里',
+			"Z_NAME": 'Telehouse West, London'
 		}
 	}, {
 		"type": "Feature",
@@ -70925,7 +71087,9 @@ var worldLines = {
 			"TYPE": "租用陆缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 9929084.15753
+			"SHAPE_Leng": 9929084.15753,
+			"A_NAME": '扎门乌德-二连浩特廉租楼',
+			"Z_NAME": 'Equinix FR5, Frankfurt'
 		}
 	}, {
 		"type": "Feature",
@@ -70948,7 +71112,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 11286898.0969
+			"SHAPE_Leng": 11286898.0969,
+			"A_NAME": 'Tanshui, Taiwan',
+			"Z_NAME": 'Nedonna Beach, Oregon, US'
 		}
 	}, {
 		"type": "Feature",
@@ -71748,7 +71914,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 10814214.4944
+			"SHAPE_Leng": 10814214.4944,
+			"A_NAME": 'Chikura, Japan',
+			"Z_NAME": 'Redondo Beach, California, US'
 		}
 	}, {
 		"type": "Feature",
@@ -71771,7 +71939,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 10814214.4944
+			"SHAPE_Leng": 10814214.4944,
+			"A_NAME": 'Chikura, Japan',
+			"Z_NAME": 'Redondo Beach, California, US'
 		}
 	}, {
 		"type": "Feature",
@@ -73547,7 +73717,9 @@ var worldLines = {
 			"TYPE": "租用海缆",
 			"PROPERTY": "租用",
 			"REMARK": "",
-			"SHAPE_Leng": 10814214.4944
+			"SHAPE_Leng": 10814214.4944,
+			"A_NAME": 'Chikura, Japan',
+			"Z_NAME": 'Redondo Beach, California, US'
 		}
 	}, {
 		"type": "Feature",
@@ -73564,7 +73736,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "共建",
 			"REMARK": "",
-			"SHAPE_Leng": 230536.482835
+			"SHAPE_Leng": 230536.482835,
+			"A_NAME": '福州',
+			"Z_NAME": '台湾淡水'
 		}
 	}, {
 		"type": "Feature",
@@ -73584,7 +73758,9 @@ var worldLines = {
 			"TYPE": "已建海缆",
 			"PROPERTY": "共建",
 			"REMARK": "",
-			"SHAPE_Leng": 49970.44936
+			"SHAPE_Leng": 49970.44936,
+			"A_NAME": '厦门马巷',
+			"Z_NAME": '台湾金门'
 		}
 	}]
 }
