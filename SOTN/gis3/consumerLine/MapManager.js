@@ -77,6 +77,31 @@ define([
                                     var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
                                     Global.mapGlobal.textLayer.add(g);
                                     console.log('点击网元',arrItem);
+                                    // 弹框出现展示数据
+                                    $.ajax({
+                                        url:Global.mapGlobal.queryPOI.queryNe+arrItem.oid+'/detail',
+                                        type:'get',
+                                        dataType:'json',
+                                        headers:{
+                                            Accept:'application/json;charset=utf-8',
+                                            Authorization:Global.Authorization
+                                        },
+                                        success: function(data){
+                                            console.error('网元详情',data)
+                                            //弹框：小p写布局
+                                            $("#elasticFrame").css({'display': 'block'});
+                                            $("#neName").text(data.data.neName);
+                                            $("#neName").text(data.data.neName);
+                                            $("#state").text(data.data.state);
+                                            $("#vender").text(data.data.vendor);
+                                            $("#serviceLevel").text(data.data.serviceLevel);
+                                            $("#modelName").text(data.data.modelName);
+                                            $("#location").text(data.data.location);
+                                            $("#siteName").text(data.data.relatedSiteName);
+                                            $("#roomName").text(data.data.relatedRoomName);
+                                        }
+                                    })
+                                    
                                     //调用超超接口
                                     //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
                                 }
@@ -94,6 +119,10 @@ define([
             });
 
             Global.mapGlobal.map.on('click',function(params){
+                // 点击地图清除专线弹框
+                var css = $("#elasticFrame2").css('display');
+                if(css == 'block') 
+                    $("#elasticFrame2").css('display','none');
                 Global.mapGlobal.textLayer.clear();
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
@@ -101,9 +130,6 @@ define([
 
 
                 if(Global.mapGlobal.topo_link_flag){        //如果专线关联拓扑,topoLink数据高亮，进行取消高亮效果
-
-                    //小p写消除弹框代码：
-                    $("#elasticFrame").css({'display':'none'});
 
                     var lineGraphics = Global.mapGlobal.lineLayer.graphics;
                     $.each(lineGraphics,function(index,item){
@@ -285,7 +311,7 @@ define([
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
 
             //小p写弹框代码：
-            $("#elasticFrame").css({'display':'block'});
+            $("#elasticFrame2").css({'display':'block'});
         },
         /**
          * 对苏研提供的对外接口
