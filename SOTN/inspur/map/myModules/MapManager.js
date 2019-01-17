@@ -131,9 +131,9 @@ define([
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
                 }
-                if(!params.graphic){
+                /*if(!params.graphic){
                     top.gis.clearWarnOtnNetworkFault();   //调用超超接口
-                }
+                }*/
             });
 
             //鼠标移动显示站点名称
@@ -144,6 +144,15 @@ define([
 
             Global.mapGlobal.otnLayer.on('mouse-out',function(params){
                 Global.mapGlobal.mouseGraphTextLayer.clear();
+            })
+
+            //网元详情关闭
+            $("#clearFrame").click(function(){
+                $("#elasticFrame").css({'display': 'none'});
+                Global.mapGlobal.textLayer.clear();
+                if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
+                    Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
+                }
             })
 
         },
@@ -170,7 +179,10 @@ define([
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    var datas = data.data;
+                    //console.error('数据data',data)
+                    var datas = JSON.parse(data.data.message)
+                    console.error('datas',datas)
+                    //var datas = data.data;
                     if(datas && datas.nodes){
                         if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                         this_instance._drawingPoints(datas.nodes);                  //绘制点数据

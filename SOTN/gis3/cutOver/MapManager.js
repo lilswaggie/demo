@@ -100,7 +100,8 @@ define([
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    var datas = data.data;
+                    //var datas = data.data;
+                    var datas = JSON.parse(data.data.message)
                     if(datas && datas.nodes){
                         if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                         this_instance._drawingPoints(datas.nodes);                  //绘制点数据
