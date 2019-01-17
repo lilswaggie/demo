@@ -94,6 +94,7 @@
                     Authorization: Global.Authorization
                 },
                 success:function(datas){
+                    console.log('chinaData',datas);
                     var data = datas.data;
                     if(data && data.nodes && data.edges) {
                         var dataPorts = []; var dataLines = [];
@@ -352,6 +353,7 @@
                         Authorization:Global.Authorization
                     },
                     success:function(data){
+                        console.error('colorData',data)
                         var datas = data.data.values;
                         var regions = [];
                         var min =0;var max = 0;

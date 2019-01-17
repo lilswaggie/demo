@@ -88,6 +88,8 @@ define([
                                         },
                                         success: function(data){
                                             console.error('网元详情',data)
+                                            //清除另一个弹框
+                                            this_instance._clearF('elasticFrame2');
                                             //弹框：小p写布局
                                             $("#elasticFrame").css({'display': 'block'});
                                             $("#neName").text(data.data.neName);
@@ -120,9 +122,8 @@ define([
 
             Global.mapGlobal.map.on('click',function(params){
                 // 点击地图清除专线弹框
-                var css = $("#elasticFrame2").css('display');
-                if(css == 'block') 
-                    $("#elasticFrame2").css('display','none');
+                this_instance._clearF('elasticFrame2');
+                this_instance._clearF('elasticFrame');
                 Global.mapGlobal.textLayer.clear();
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
@@ -164,6 +165,13 @@ define([
 
 
            
+        },
+    
+        //清除弹框
+        _clearF:function(id){
+            var css = $("#"+id).css('display');
+            if(css == 'block') 
+                $("#"+id).css('display','none');
         },
         /**
          * 
@@ -312,6 +320,7 @@ define([
 
             //小p写弹框代码：
             $("#elasticFrame2").css({'display':'block'});
+            this_instance._clearF('elasticFrame');
         },
         /**
          * 对苏研提供的对外接口
