@@ -20,7 +20,7 @@
                 });
                 echarts.registerMap('world', mapJson);
                 var e_map = echarts.init(document.getElementById("g_map"));
-                // var pointSer = $.fn.WorldModule.methods.getSiteSer()
+                var pointSer = $.fn.WorldModule.methods.getSiteSer()
                 var links = $.fn.WorldModule.methods.getLinkSers();
                 var categoryA = {
                     name: 'categoryA',
@@ -31,8 +31,8 @@
                     ]
                 }
 
-                // var series = [pointSer, categoryA].concat(links);
-                var series = [categoryA].concat(links);
+                var series = [pointSer, categoryA].concat(links);
+                //var series = [categoryA].concat(links);
 
                 e_map.setOption({
                     tooltip: {},

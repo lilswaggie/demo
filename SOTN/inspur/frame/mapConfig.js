@@ -18,9 +18,11 @@ Global.mapGlobal.treeMapConfig = {
 //symbol:otn line 
 Global.mapGlobal.symbolConfig = {
 
-    OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
+    //OTN_SYMBOL:Global.sysPath+'images/OTN_N_B.png',           //OTN_N_B.png
+    OTM_SYMBOL:Global.sysPath+'images/OTM.png',
     OTN_DEFAULT_SYMBOL:Global.sysPath+'images/OTN_F_B.png',
     OTN_LIGHT_SYMBOL:Global.sysPath+'images/OTN_LIGHT.png',
+    OA_SYMBOL:Global.sysPath+'images/OA.png',
     SYMBOL_WIDTH:34,
     SYMBOL_HEIGHT:26,
     OTM_LIGHT_SYMBOL:Global.sysPath+'images/OTM_LIGHT.png',
