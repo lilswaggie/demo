@@ -194,7 +194,7 @@ define([
         _drawingPoints:function(points){
             points.map(function(item,index){
                 var p1 = GeometryUtil.getPoint(item.longitude,item.lantitude,'');
-                var g = new Graphic(p1,SymbolUtil.getOTNSymbol(),item);
+                var g = new Graphic(p1,SymbolUtil.getPointSymbol(item.type),item);
                 Global.mapGlobal.otnLayer.add(g);
             });
         },
