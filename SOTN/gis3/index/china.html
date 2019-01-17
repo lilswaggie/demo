@@ -96,9 +96,94 @@
             border: 4px solid transparent;
             border-bottom: 4px solid rgba(51,51,51,0.8);
         }
+        #elasticFrame{
+            position: absolute;
+            top: 300px;
+            right: 235px;
+            z-index: 200;
+            box-sizing: border-box;
+            box-shadow: 0px 1px 5px 0px #0000004D;
+            font-size: 12px;
+            display: none;
+        }
+        .framehead{
+            background-color: #66A4EAFF;
+            padding: 9px 8px 10px 10px;
+            color: #FFFFFFFF;
+            line-height: 17px;
+        }
+        ul li{
+            list-style: none;
+        }
+        .framehead .title{
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+            padding-left: 0px;
+            line-height: 20px;
+            font-size: 14px;
+        }
+        .framehead .title>li:first-child{
+            margin-right: 58px;
+        }
+        .framehead .content{
+            margin: 13px 0px 0px;
+            padding-left: 0px;
+            line-height: 17px;
+        }
+        .framehead .content>li,.frameContent>li{
+            display: inline-block;
+        }
+        .framehead .content>li:first-child{
+            color: #2C9CFAFF;
+            background: #FFFFFFFF;
+            border-radius: 2px;
+            padding: 1px 4px;
+            margin-right: 7px;
+        }
+        .framehead .content>li:last-child{
+            margin-right: 25px;
+        }
+        .framehead .content>span{
+            margin: 0px 7px;
+        }
+        .frameContent{
+            margin: 0px;
+            padding: 19px 0px 21px 10px;
+            color: #3C3E4AFF;
+            background-color: #FFFFFFFF;
+        }
+        .frameContent>li:not(:first-child){
+            margin-top: 15px;
+        }
+        .frameContent>span{
+            color: #72758CFF;
+        }
+        #clearFrame:hover{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <div id="elasticFrame">
+        <div class="framehead">
+            <ul class="title">
+                <li>这里是网元名称网元名称</li>
+                <li id="clearFrame">×</li>
+            </ul>
+            <ul class="content">
+                <li>在网</li>
+                <li>华为</li><span>|</span>
+                <li>本地骨干</li><span>|</span>
+                <li>ASDWER123</li>
+            </ul>
+        </div>
+        <ul class="frameContent">
+            <li>区域：</li><span>江苏省苏州市高新区</span><br/>
+            <li>所属站点：</li><span>站点名称123456</span><br/>
+            <li>所属机房：</li><span>机房名称123456</span><br/>
+        </ul>
+    </div>
     <div id="map" style="position: relative;">
         <div class="full_container">
             <div class="circle"></div>
@@ -108,5 +193,10 @@
         </div>
     </div>
     <script src="../../inspur/map/map.js"></script>
+    <script>
+        $("#clearFrame").click(function(){
+            $("#elasticFrame").css({'display': 'none'})
+        })
+    </script>
 </body>
 </html>
