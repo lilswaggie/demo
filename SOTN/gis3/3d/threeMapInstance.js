@@ -94,8 +94,7 @@
                     Authorization: Global.Authorization
                 },
                 success:function(datas){
-                    console.log('chinaData',datas);
-                    var data = datas.data;
+                    var data = JSON.parse(datas.data.message);
                     if(data && data.nodes && data.edges) {
                         var dataPorts = []; var dataLines = [];
                         var edges = data.edges;
@@ -353,7 +352,6 @@
                         Authorization:Global.Authorization
                     },
                     success:function(data){
-                        console.error('colorData',data)
                         var datas = data.data.values;
                         var regions = [];
                         var min =0;var max = 0;
