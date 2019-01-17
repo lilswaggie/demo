@@ -74,7 +74,7 @@ define([
                                 onclick: function(){
                                     Global.mapGlobal.textLayer.clear();
                                     params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(arrItem.type));
-                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
+                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
                                     Global.mapGlobal.textLayer.add(g);
                                     console.log('点击网元',arrItem);
                                     // 弹框出现展示数据
@@ -89,7 +89,8 @@ define([
                                         success: function(data){
                                             console.error('网元详情',data)
                                             //清除另一个弹框
-                                            this_instance._clearF('elasticFrame2');
+                                            //this_instance._clearF('elasticFrame2');
+                                            $("#elasticFrame2").css('display','none');
                                             //弹框：小p写布局
                                             $("#elasticFrame").css({'display': 'block'});
                                             $("#neName").text(data.data.neName);
@@ -158,6 +159,14 @@ define([
             })
 
 
+            $("#clearFrame").click(function(){
+                $("#elasticFrame").css({'display': 'none'});
+                Global.mapGlobal.textLayer.clear();
+                if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
+                    Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
+                }
+            })
+
 
             //对外暴露接口
             this.exportMethod();
@@ -200,6 +209,7 @@ define([
                 success:function(data){
                     //var datas = data.data;
                     var datas = JSON.parse(data.data.message)
+                    console.error('datas',datas)
                     if(datas && datas.nodes){
                         Global.mapGlobal.lineLayer.clear();
                         Global.mapGlobal.otnLayer.clear();
@@ -303,7 +313,7 @@ define([
         /**
          * 专线关联到拓扑,整条拓扑高亮
          */
-        topoLinkHightLight:function(){
+        topoLinkHightLight:function(lineData){
 
             //线
             var lineGraphics = Global.mapGlobal.lineLayer.graphics;
@@ -318,9 +328,45 @@ define([
             })
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
 
+            //查询专线两端的网元设备
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryLineDetail+lineData.id,
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('专线详情data',data);
+                    $("#oName").text(data.data.name);
+                    $("#a_name").text(data.data.aneName);
+                    $("#z_name").text(data.data.zneName);
+                },
+            });
+
+            //查询专线的统计信息
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryLineStatics+lineData.id,
+                type:'get',
+                dataType:'json',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization:Global.Authorization
+                },
+                success:function(data){
+                    console.error('专线统计data',data);
+                    $("#faultFrequencyNum").text(data.data.values.faultFrequencyNum);
+                    $("#alarmFrequencyNum").text(data.data.values.alarmFrequencyNum);
+                    $("#complaintFrequencyNum").text(data.data.values.complaintFrequencyNum);
+                    $("#efficiencyDegradationFrequencyNum").text(data.data.values.efficiencyDegradationFrequencyNum);
+                },
+            });
+
             //小p写弹框代码：
             $("#elasticFrame2").css({'display':'block'});
-            this_instance._clearF('elasticFrame');
+            $("#elasticFrame").css({'display':'none'});
+            //this_instance._clearF('elasticFrame');
         },
         /**
          * 对苏研提供的对外接口
