@@ -143,10 +143,10 @@ define([
                         item.setSymbol(SymbolUtil.getPointSymbol(item.type));
                     })
                 }
-
-                if(!params.graphic){
+                top.gis.clearSelectedLine();
+                /*if(!params.graphic){
                     top.gis.clearWarnOtnNetworkFault();   //调用超超接口
-                }
+                }*/
             });
 
             Global.mapGlobal.otnLayer.on('mouse-over',function(params){
