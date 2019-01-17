@@ -29,7 +29,7 @@
             padding: 0;
         }
 
-        #elasticFrame {
+        #elasticFrame2 {
             display: none;
             width: 240px;
             height: 174px;
@@ -46,7 +46,7 @@
             line-height: 20px;
         }
 
-        #elasticFrame>span {
+        #elasticFrame2>span {
             display: inline-block;
             width: 9px;
             height: 9px;
@@ -55,32 +55,119 @@
             border: 1px solid rgba(253, 99, 96, 1);
             margin-right: 4px;
         }
-        #elasticFrame>b {
+
+        #elasticFrame2>b {
             font-size: 14px;
             font-weight: normal;
         }
-        .nav{
+
+        .nav {
             padding-left: 22px;
             padding-right: 9px;
             margin: 0px;
         }
-        .nav>li{
+
+        .nav>li {
             list-style: none;
             display: inline-block;
         }
-        .nav>hr{
+
+        .nav>hr {
             border-style: dashed;
             border-color: #DDDDDDFF;
             margin: 5px 0px 4px;
             border-top: 1px;
         }
-        .nav>b{
+
+        .nav>b {
             font-weight: normal;
             color: #72758CFF;
         }
-        .nav>span{
+
+        .nav>span {
             font-size: 14px;
             color: #2C9CFAFF;
+        }
+
+        #elasticFrame {
+            position: absolute;
+            top: 300px;
+            right: 235px;
+            z-index: 200;
+            box-sizing: border-box;
+            box-shadow: 0px 1px 5px 0px #0000004D;
+            font-size: 12px;
+            display: none;
+        }
+
+        .framehead {
+            background-color: #66A4EAFF;
+            padding: 9px 8px 10px 10px;
+            color: #FFFFFFFF;
+            line-height: 17px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .framehead .title {
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+            padding-left: 0px;
+            line-height: 20px;
+            font-size: 14px;
+        }
+
+        .framehead .title>li:first-child {
+            margin-right: 58px;
+        }
+
+        .framehead .content {
+            margin: 13px 0px 0px;
+            padding-left: 0px;
+            line-height: 17px;
+        }
+
+        .framehead .content>li,
+        .frameContent>li {
+            display: inline-block;
+        }
+
+        .framehead .content>li:first-child {
+            color: #2C9CFAFF;
+            background: #FFFFFFFF;
+            border-radius: 2px;
+            padding: 1px 4px;
+            margin-right: 7px;
+        }
+
+        .framehead .content>li:last-child {
+            margin-right: 25px;
+        }
+
+        .framehead .content>span {
+            margin: 0px 7px;
+        }
+
+        .frameContent {
+            margin: 0px;
+            padding: 19px 0px 21px 10px;
+            color: #3C3E4AFF;
+            background-color: #FFFFFFFF;
+        }
+
+        .frameContent>li:not(:first-child) {
+            margin-top: 15px;
+        }
+
+        .frameContent>span {
+            color: #72758CFF;
+        }
+
+        #clearFrame:hover {
+            cursor: pointer;
         }
     </style>
 
@@ -90,19 +177,43 @@
 
 <body>
     <div id="elasticFrame">
-        <span></span><b>这里是专线名称名称名称名称名称</b>
+        <div class="framehead">
+            <ul class="title">
+                <li><span id="neName"></span></li>
+                <li id="clearFrame">×</li>
+            </ul>
+            <ul class="content">
+                <li><span id="state"></span></li>
+                <li><span id="vender"></span></li><span>|</span>
+                <li><span id="serviceLevel"></span></li><span>|</span>
+                <li><span id="modelName"></span></li>
+            </ul>
+        </div>
+        <ul class="frameContent">
+            <li>区域：</li><span id="location"></span><br />
+            <li>所属站点：</li><span id="siteName"></span><br />
+            <li>所属机房：</li><span id="roomName"></span><br />
+        </ul>
+    </div>
+    <div id="elasticFrame2">
+        <span></span><b id="oName">这里是专线名称名称名称名称名称</b>
         <ul class="nav">
-            <li>A端：</li><b>这是A端传输设备</b><br/>
-            <li>Z端：</li><b>这是Z端传输设备</b>
+            <li id="aName">A端：</li><b>这是A端传输设备</b><br />
+            <li id="zName">Z端：</li><b>这是Z端传输设备</b>
             <hr>
-            <li>历史故障次数：</li><span>12</span><br/>
-            <li>历史投诉次数：</li><span>0</span><br/>
-            <li>历史告警次数：</li><span>12</span><br/>
+            <li>历史故障次数：</li><span>12</span><br />
+            <li>历史投诉次数：</li><span>0</span><br />
+            <li>历史告警次数：</li><span>12</span><br />
             <li>历史性能劣化次数：</li><span>12</span>
         </ul>
     </div>
     <div id="map"></div>
     <script src="map.js"></script>
+    <script>
+        $("#clearFrame").click(function(){
+            $("#elasticFrame").css({'display': 'none'})
+        })
+    </script>
 </body>
 
 </html>
