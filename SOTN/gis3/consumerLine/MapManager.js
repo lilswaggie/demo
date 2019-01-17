@@ -101,6 +101,8 @@ define([
 
 
                 if(Global.mapGlobal.topo_link_flag){        //如果专线关联拓扑,topoLink数据高亮，进行取消高亮效果
+                    //小p写消除弹框代码：
+                    $("#elasticFrame").css({'display':'none'});
                     var lineGraphics = Global.mapGlobal.lineLayer.graphics;
                     $.each(lineGraphics,function(index,item){
                         item.setSymbol(SymbolUtil.getLineSymbol());
@@ -276,6 +278,7 @@ define([
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
 
             //小p写弹框代码：
+            $("#elasticFrame").css({'display':'block'});
         },
         /**
          * 对苏研提供的对外接口
