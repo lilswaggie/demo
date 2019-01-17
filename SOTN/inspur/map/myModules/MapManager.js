@@ -85,12 +85,7 @@ define([
 
 
                                     //弹框：小p写布局
-
-
-
-
-
-
+                                    $("#elasticFrame").css({'display': 'block'})
                                     //调用超超接口
                                     //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
                                 }
