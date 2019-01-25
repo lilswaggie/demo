@@ -57,6 +57,7 @@ var data = {
                             "a_ne_name": "汇聚浦东主07/SHPD148/10-6-A-1/PTNZX9008",
                             "z_ne_id": 222,
                             "z_ne_name": "南区企业天地-1/PTNZX6200",
+                            "z_alarm":1
                         }],
                         [{
                             "a_ne_id": 111,

@@ -73,7 +73,7 @@ define([
                                 //iconCls: 'icon-ok',
                                 onclick: function(){
                                     Global.mapGlobal.textLayer.clear();
-                                    params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(arrItem.type));
+                                    params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(params.graphic.attributes.type));
                                     var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
                                     Global.mapGlobal.textLayer.add(g);
                                     console.log('点击网元',arrItem);
@@ -140,7 +140,8 @@ define([
 
                     var otnGraphics = Global.mapGlobal.otnLayer.graphics;
                     $.each(otnGraphics,function(index,item){
-                        item.setSymbol(SymbolUtil.getPointSymbol(item.type));
+                        console.error('item',item)
+                        item.setSymbol(SymbolUtil.getPointSymbol(item.attributes.type));
                     })
                 }
                 top.gis.clearSelectedLine();
@@ -249,7 +250,7 @@ define([
         _drawingPoints:function(points){
             points.map(function(item,index){
                 var p1 = GeometryUtil.getPoint(item.longitude,item.lantitude,'');
-                var g = new Graphic(p1,SymbolUtil.getOTNSymbol(),item);
+                var g = new Graphic(p1,SymbolUtil.getPointSymbol(item.type),item);
                 Global.mapGlobal.otnLayer.add(g);
             });
         },
@@ -288,7 +289,7 @@ define([
             warningPoints.map(function(warningOtnItem,otnIndex){
                 Global.mapGlobal.otnLayer.graphics.map(function(graphic,gIndex){
                     if(graphic.attributes.oid == warningOtnItem){
-                        graphic.setSymbol(SymbolUtil.getOTNWarningSymbol());
+                        graphic.setSymbol(SymbolUtil.getWarningPointSymbol(graphic.attributes.type));
                     }
                 });
             });
@@ -324,7 +325,7 @@ define([
             //点
             var otnGraphics = Global.mapGlobal.otnLayer.graphics;
             $.each(otnGraphics,function(index,item){
-                item.setSymbol(SymbolUtil.getHightPointSymbol(item.type));
+                item.setSymbol(SymbolUtil.getHightPointSymbol(item.attributes.type));
             })
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
 
