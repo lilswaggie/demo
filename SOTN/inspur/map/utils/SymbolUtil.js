@@ -39,9 +39,23 @@ define([
             }
             return symbol;
         },
+        getWarningPointSymbol:function(type){
+            var symbol;
+            switch (type){
+                case 'OTM':
+                    symbol = this.getOTNWarningSymbol();break;
+                case 'OA':
+                    symbol = this.getOAWarningSymbol();break;
+                case 'CPE':
+                    symbol = this.getCPEWarningSymbol();break;
+                default:
+                    symbol = this.getOTNWarningSymbol();break;
+            }
+            return symbol;
+        },
         //OTM图标样式
         getOTNSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,34,26);
             return picMarkerSymbol;
         },
         getOASymbol:function(){
@@ -53,12 +67,9 @@ define([
             return picMarkerSymbol;
         },
 
-        getCPESymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
-            return picMarkerSymbol;
-        },
+
         getOTNWarningSymbol:function(){
-            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,46,38);
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,34,26);
             return picMarkerSymbol;
         },
         getOTNHightSymbol:function(){
@@ -67,6 +78,14 @@ define([
         },
         getOAHightSymbol:function(){
             var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OA_LIGHT_SYMBOL,30,28);
+            return picMarkerSymbol;
+        },
+        getCPESymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
+            return picMarkerSymbol;
+        },
+        getCPEWarningSymbol:function(){
+            var picMarkerSymbol = new PictureMarkerSymbol(Global.mapGlobal.symbolConfig.OTM_SYMBOL,46,38);
             return picMarkerSymbol;
         },
         getCPEHightSymbol:function(){

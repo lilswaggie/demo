@@ -78,8 +78,8 @@ define([
                                 //iconCls: 'icon-ok',
                                 onclick: function(){
                                     Global.mapGlobal.textLayer.clear();
-                                    params.graphic.setSymbol(SymbolUtil.getOTNHightSymbol());
-                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname));
+                                    params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(params.graphic.attributes.type));
+                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
                                     Global.mapGlobal.textLayer.add(g);
                                     console.log('点击网元',arrItem);
 
@@ -131,6 +131,7 @@ define([
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym){
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
                 }
+                $("#elasticFrame").css({'display': 'none'});
                 /*if(!params.graphic){
                     top.gis.clearWarnOtnNetworkFault();   //调用超超接口
                 }*/
@@ -259,7 +260,7 @@ define([
             warningPoints.map(function(warningOtnItem,otnIndex){
                 Global.mapGlobal.otnLayer.graphics.map(function(graphic,gIndex){
                     if(graphic.attributes.oid == warningOtnItem){
-                        graphic.setSymbol(SymbolUtil.getOTNWarningSymbol());
+                        graphic.setSymbol(SymbolUtil.getWarningPointSymbol(graphic.attributes.type));
                     }
                 });
             });

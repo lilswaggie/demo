@@ -47,6 +47,7 @@ var data = {
                             //"a_alarm":1,
                             "z_ne_id": '6410102012201HWCSANEL49f8e4ac1ae787f1',
                             "z_ne_name": "ZW-16151-NX吴忠二中心-N-HW-OA-M6335",
+                            "z_alarm":1
                         },{
                             "a_ne_id": '6410102012201HWCSANEL49f8e4ac1ae787f1',
                             "a_ne_name": "ZW-16151-NX吴忠二中心-N-HW-OA-M6335",
@@ -127,6 +128,7 @@ var data = {
                             "a_ne_name": "ZW-15773-SX离石移动生产楼-N-HW-OTM-1",
                             "z_ne_id": '1410102012201HWCSANELcb693d660ff29af9',
                             "z_ne_name": "ZW-15774-SX中阳吴城右线-N-HW-OA-M6253",
+                            "z_alarm":1
 
                         },{
                             "a_ne_id": '1410102012201HWCSANELcb693d660ff29af9',
@@ -275,6 +277,7 @@ var data = {
                             "z_ne_id": '6110102012201HWCSANEL5a15dd57a2cc2b9d',
                             "z_ne_name": "ZW-17247-SX西咸DC-N-HW-EXC-1",
                             "iscutoff":"true",
+                            "z_alarm":1
                         },{
                             "a_ne_id": '6110102012201HWCSANEL5a15dd57a2cc2b9d',
                             "a_ne_name": "ZW-17247-SX西咸DC-N-HW-EXC-1",
