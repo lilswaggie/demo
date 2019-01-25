@@ -31,46 +31,74 @@
 
         #elasticFrame2 {
             display: none;
-            width: 340px;
-            height: 174px;
-            padding: 9px 8px 9px 9px;
             box-sizing: border-box;
             background-color: #FFFFFFFF;
             box-shadow: 0px 1px 2px 0px #00000033;
             z-index: 200;
             position: absolute;
-            top: 266px;
-            right: 235px;
+            top: 52px;
+            left: 111px;
             color: #3C3E4AFF;
             font-size: 12px;
             line-height: 20px;
         }
-
-        #elasticFrame2>span {
+        .container{
+            padding: 9px 8px 6px 9px;
+            background-color: #66A4EAFF;
+            color: #FFFFFFFF;
+        }
+        .container .head {
+            display: flex;
+            justify-content: space-between;
+        }
+        #oName{
+            font-size: 14px;
+            margin-left: 4px;
+            font-weight: normal;
+        }
+        .head .headLeft span{
             display: inline-block;
             width: 9px;
             height: 9px;
-            border-radius: 50%;
             background-color: #FFE4E3FF;
-            border: 1px solid rgba(253, 99, 96, 1);
-            margin-right: 4px;
+            border: 1px solid #FD6360FF;
+            border-radius: 50%;
         }
-
-        #elasticFrame2>b {
-            font-size: 14px;
-            font-weight: normal;
+        .head .headRight{
+            margin-left: 12px;
         }
-
+        .head .headRight img{
+            width: 18px;
+            height: 18px;
+        }
+        .container .openingTime{
+            padding: 0px 20px 0px 5px;
+        }
+        /* .container .openingTime>div,li,span,.head .headLeft span{
+            display: inline-block;
+        } */
+        .container .openingTime>span{
+            margin: 0px 8px;
+        }
+        .container .openingTime .clock{
+            padding: 1px 5px;
+            background-color: #FFFFFF4D;
+            border-radius: 8px;
+            margin-right: 8px;
+            display: inline-block;
+        } 
+        .container .openingTime .clock img{
+            width: 10px;
+            height: 10px;
+        }
         .nav {
-            padding-left: 22px;
-            padding-right: 9px;
+            padding: 8px 9px 8px 22px;
             margin: 0px;
         }
 
-        .nav>li {
-            list-style: none;
+        /* .nav>li {
             display: inline-block;
-        }
+        } */
 
         .nav>hr {
             border-style: dashed;
@@ -107,8 +135,9 @@
             line-height: 17px;
         }
 
-        ul li {
+        li {
             list-style: none;
+            display: inline-block;
         }
 
         .framehead .title {
@@ -120,8 +149,10 @@
             font-size: 14px;
         }
 
-        .framehead .title>li:first-child {
-            margin-right: 58px;
+        .framehead #clearFrame{
+            margin-left: 50px;
+            width: 18px;
+            height: 18px;
         }
 
         .framehead .content {
@@ -130,10 +161,9 @@
             line-height: 17px;
         }
 
-        .framehead .content>li,
-        .frameContent>li {
+        /* .framehead .content>li,.frameContent>li {
             display: inline-block;
-        }
+        } */
 
         .framehead .content>li:first-child {
             color: #2C9CFAFF;
@@ -166,7 +196,7 @@
             color: #72758CFF;
         }
 
-        #clearFrame:hover {
+        #clearFrame:hover,#closeFrame:hover {
             cursor: pointer;
         }
     </style>
@@ -180,7 +210,7 @@
         <div class="framehead">
             <ul class="title">
                 <li><span id="neName"></span></li>
-                <li id="clearFrame">×</li>
+                <img id="clearFrame" src="../../images/close.png" alt="">
             </ul>
             <ul class="content">
                 <li><span id="state"></span></li>
@@ -196,7 +226,25 @@
         </ul>
     </div>
     <div id="elasticFrame2">
-        <span></span><b id="oName"></b>
+        <div class="container">
+            <div class="head">
+                <div class="headLeft">
+                    <span></span><b id="oName"></b>
+                </div>
+                <div class="headRight">
+                    <img id="closeFrame" src="../../images/close.png" alt="">
+                </div>
+            </div>
+            <div class="openingTime">
+                <div class="clock">
+                    <img src="../../images/clock.png" alt="">
+                    <span>2018-12-23</span>
+                </div>
+                <li>传输专线</li>
+                <span>|</span>
+                <li>10G</li>
+            </div>
+        </div>
         <ul class="nav">
             <li id="aName">A端：</li><b id="a_name"></b><br />
             <li id="zName">Z端：</li><b id="z_name"></b>

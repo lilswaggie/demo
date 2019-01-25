@@ -167,6 +167,9 @@ define([
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
                 }
             })
+            $("#closeFrame").click(function(){
+                $("#elasticFrame2").css({'display': 'none'});
+            })
 
 
             //对外暴露接口
