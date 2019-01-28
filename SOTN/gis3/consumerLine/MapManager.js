@@ -333,22 +333,22 @@ define([
          */
         queryWarningOTN:function(this_instance){
 
-            // $.ajax({
-            //     url:Global.mapGlobal.queryPOI.queryWarningOTN,
-            //     dataType:'json',
-            //     type:'get',
-            //     headers:{
-            //         Accept:'application/json;charset=utf-8',
-            //         Authorization: Global.Authorization
-            //     },
-            //     success:function(data){
-            //         console.log('告警数据',data);
-            //         Global.datas.warningDatas = data.data;
-            //         var datas = data.data;
-            //         if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
-            //         if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
-            //     }
-            // });
+            $.ajax({
+                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                dataType:'json',
+                type:'get',
+                headers:{
+                    Accept:'application/json;charset=utf-8',
+                    Authorization: Global.Authorization
+                },
+                success:function(data){
+                    console.log('告警数据',data);
+                    // Global.datas.warningDatas = data.data;
+                    // var datas = data.data;
+                    // if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
+                    // if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
+                }
+            });
             // 假设数据，测试用例，obj应为调用接口后返回的数据。
             var obj = {
                 "ne":[

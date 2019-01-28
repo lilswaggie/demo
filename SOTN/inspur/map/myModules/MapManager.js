@@ -180,10 +180,10 @@ define([
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    //console.error('数据data',data)
-                    var datas = JSON.parse(data.data.message)
-                    console.error('datas',datas)
-                    //var datas = data.data;
+                    console.error('数据data',data)
+                    // var datas = JSON.parse(data.data.message)
+                    // console.error('datas',datas)
+                    var datas = data.data;
                     if(datas && datas.nodes){
                         if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                         this_instance._drawingPoints(datas.nodes);                  //绘制点数据
