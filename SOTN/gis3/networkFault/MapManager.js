@@ -141,8 +141,8 @@ define([
                     Authorization:Global.Authorization
                 },
                 success:function(data){
-                    //var datas = data.data;
-                    var datas = JSON.parse(data.data.message)
+                    var datas = data.data;
+                    // var datas = JSON.parse(data.data.message)
                     console.error('datas',datas)
                     if(datas && datas.nodes){
                         Global.mapGlobal.lineLayer.clear();

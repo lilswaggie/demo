@@ -1,0 +1,94 @@
+{
+    "customer_id": "客户id",
+    "customer_name": "客户名称",
+    "servicelines": [
+        {
+            "serviceline_name": "专线名称",
+            "serviceline_id": "中国移动",
+            "nodes": [
+                {
+                    "oid": 10,
+                    "oname": "大兴区大白楼通信枢纽楼位置点",
+                    "longitude": 116.378092616758,
+                    "lantitude": 39.771920807436,
+                    "type": "网元设备类型"
+                },
+                {
+                    "oid": 11,
+                    "oname": "榆林靖边林家湾综合业务站点",
+                    "longitude": 108.842936504743,
+                    "lantitude": 37.6292158747025,
+                    "type": "网元设备类型"
+                }
+            ],
+            "edges": [
+                {
+                    "a_oid": "10",
+                    "a_oname": "大兴区大白楼通信枢纽楼位置点",
+                    "a_longitude": "116.378092616758",
+                    "a_lantitude": "39.771920807436",
+                    "z_oid": "11",
+                    "z_oname": "榆林靖边林家湾综合业务站点",
+                    "z_longitude": "108.842936504743",
+                    "z_lantitude": "37.6292158747025"
+                }
+            ]
+        },{
+            "serviceline_name": "专线名称",
+            "serviceline_id": "1310102012201HWCSANELefdd678f84da3842",
+            "nodes": [
+                {
+                    "oid": 12,
+                    "oname": "郑州市西区枢纽楼",
+                    "longitude": 113.540907006768,
+                    "lantitude": 34.8044571754452,
+                    "type": "网元设备类型"
+                },
+                {
+                    "oid": 123,
+                    "oname": "郑州郑西开发区",
+                    "longitude": 106.58020008495,
+                    "lantitude": 38.156428115015,
+                    "type": "CPE"
+                },
+                {
+                    "oid": 123,
+                    "oname": "保定定兴",
+                    "longitude": 115.810635684048,
+                    "lantitude": 39.2593848717449,
+                    "type": "CPE"
+                }
+            ],
+            "edges": [
+                {
+                    "a_oid": "12",
+                    "a_oname": "郑州市西区枢纽楼",
+                    "a_longitude": "113.540907006768",
+                    "a_lantitude": "34.8044571754452",
+                    "z_oid": "14",
+                    "z_oname": "保定定兴",
+                    "z_longitude": "115.810635684048",
+                    "z_lantitude": "39.2593848717449"
+                },{
+                    "a_oid": "12",
+                    "a_oname": "郑州市西区枢纽楼",
+                    "a_longitude": "113.540907006768",
+                    "a_lantitude": "34.8044571754452",
+                    "z_oid": "13",
+                    "z_oname": "郑州郑西开发区",
+                    "z_longitude": "106.58020008495",
+                    "z_lantitude": "38.156428115015"
+                },{
+                    "a_oid": "13",
+                    "a_oname": "郑州郑西开发区",
+                    "a_longitude": "106.58020008495",
+                    "a_lantitude": "38.156428115015",
+                    "z_oid": "14",
+                    "z_oname": "保定定兴",
+                    "z_longitude": "115.810635684048",
+                    "z_lantitude": "39.2593848717449"
+                }
+            ]
+        }
+    ]
+}

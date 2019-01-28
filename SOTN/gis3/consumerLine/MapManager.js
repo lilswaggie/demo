@@ -57,71 +57,117 @@ define([
                 Global.mapGlobal.clickGraphic.gra = params.graphic;
                 Global.mapGlobal.clickGraphic.sym = params.graphic.symbol;
                 console.log('站点数据',params.graphic.attributes)
-                if(params.graphic.attributes.aggr){
-                    if(Global.datas.warningDatas){
-                        var $menu = $("<div/>").menu({});
-                        console.log('站点数据',params.graphic.attributes)
-
-                        params.graphic.attributes.aggr.map(function(arrItem,index){
-                            var text = arrItem.oname;
-                            if(Global.datas.warningDatas.ne.indexOf(arrItem.oid) > -1){
-                                text = '<span style="color: red;">'+arrItem.oname+'</span>';
-                            }
-                            $menu.menu('appendItem',{
-                                text: text,
-                                data:arrItem,
-                                //iconCls: 'icon-ok',
-                                onclick: function(){
-                                    Global.mapGlobal.textLayer.clear();
-                                    params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(params.graphic.attributes.type));
-                                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
-                                    Global.mapGlobal.textLayer.add(g);
-                                    console.log('点击网元',arrItem);
-                                    // 弹框出现展示数据
-                                    $.ajax({
-                                        url:Global.mapGlobal.queryPOI.queryNe+arrItem.oid+'/detail',
-                                        type:'get',
-                                        dataType:'json',
-                                        headers:{
-                                            Accept:'application/json;charset=utf-8',
-                                            Authorization:Global.Authorization
-                                        },
-                                        success: function(data){
-                                            console.error('网元详情',data)
-                                            //清除另一个弹框
-                                            //this_instance._clearF('elasticFrame2');
-                                            $("#elasticFrame2").css('display','none');
-                                            //弹框：小p写布局
-                                            $("#elasticFrame").css({'display': 'block'});
-                                            $("#neName").text(data.data.neName);
-                                            $("#neName").text(data.data.neName);
-                                            $("#state").text(data.data.state);
-                                            $("#vender").text(data.data.vendor);
-                                            $("#serviceLevel").text(data.data.serviceLevel);
-                                            $("#modelName").text(data.data.modelName);
-                                            $("#location").text(data.data.location);
-                                            $("#siteName").text(data.data.relatedSiteName);
-                                            $("#roomName").text(data.data.relatedRoomName);
-                                        }
-                                    })
-                                    
-                                    //调用超超接口
-                                    //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
-                                }
-                            });
-                        });
-                    }else{
-                        alert('暂无告警数据')
-                    }
-
+                //oid: 一个网元的id
+                var arrItem = params.graphic.attributes;
+                if(params.graphic.attributes.oid){
+                    Global.mapGlobal.textLayer.clear();
+                    params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(params.graphic.attributes.type));
+                    var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
+                    Global.mapGlobal.textLayer.add(g);
+                    console.log('点击网元',arrItem);
+                    // 弹框出现展示数据
+                    //当前弹框调用的id为前接口的id，后面会有改动
+                    $.ajax({
+                        url:Global.mapGlobal.queryPOI.queryNe+'1310102012201HWCSANELefdd678f84da3842'+'/detail',
+                        type:'get',
+                        dataType:'json',
+                        headers:{
+                            Accept:'application/json;charset=utf-8',
+                            Authorization:Global.Authorization
+                        },
+                        success: function(data){
+                            console.error('网元详情',data)
+                            //清除另一个弹框
+                            //this_instance._clearF('elasticFrame2');
+                            $("#elasticFrame2").css('display','none');
+                            //弹框：小p写布局
+                            $("#elasticFrame").css({'display': 'block'});
+                            $("#neName").text(data.data.neName);
+                            $("#neName").text(data.data.neName);
+                            $("#state").text(data.data.state);
+                            $("#vender").text(data.data.vendor);
+                            $("#serviceLevel").text(data.data.serviceLevel);
+                            $("#modelName").text(data.data.modelName);
+                            $("#location").text(data.data.location);
+                            $("#siteName").text(data.data.relatedSiteName);
+                            $("#roomName").text(data.data.relatedRoomName);
+                        }
+                    })
+                        
+                    //调用超超接口
+                        //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
+                }else{
+                    alert('暂无告警数据')
                 }
-                $menu.menu('show',{
-                    left: params.pageX,
-                    top: params.pageY
-                });
+                // if(params.graphic.attributes.aggr){
+                //     if(Global.datas.warningDatas){
+                //         var $menu = $("<div/>").menu({});
+                //         console.log('站点数据',params.graphic.attributes)
+
+                //         params.graphic.attributes.aggr.map(function(arrItem,index){
+                //             var text = arrItem.oname;
+                //             if(Global.datas.warningDatas.ne.indexOf(arrItem.oid) > -1){
+                //                 text = '<span style="color: red;">'+arrItem.oname+'</span>';
+                //             }
+                //             $menu.menu('appendItem',{
+                //                 text: text,
+                //                 data:arrItem,
+                //                 //iconCls: 'icon-ok',
+                //                 onclick: function(){
+                //                     Global.mapGlobal.textLayer.clear();
+                //                     params.graphic.setSymbol(SymbolUtil.getHightPointSymbol(params.graphic.attributes.type));
+                //                     var g = new Graphic(params.graphic.geometry,SymbolUtil.getTextSymbol(params.graphic.attributes.oname).setOffset(0,15));
+                //                     Global.mapGlobal.textLayer.add(g);
+                //                     console.log('点击网元',arrItem);
+                //                     // 弹框出现展示数据
+                //                     $.ajax({
+                //                         url:Global.mapGlobal.queryPOI.queryNe+arrItem.oid+'/detail',
+                //                         type:'get',
+                //                         dataType:'json',
+                //                         headers:{
+                //                             Accept:'application/json;charset=utf-8',
+                //                             Authorization:Global.Authorization
+                //                         },
+                //                         success: function(data){
+                //                             console.error('网元详情',data)
+                //                             //清除另一个弹框
+                //                             //this_instance._clearF('elasticFrame2');
+                //                             $("#elasticFrame2").css('display','none');
+                //                             //弹框：小p写布局
+                //                             $("#elasticFrame").css({'display': 'block'});
+                //                             $("#neName").text(data.data.neName);
+                //                             $("#neName").text(data.data.neName);
+                //                             $("#state").text(data.data.state);
+                //                             $("#vender").text(data.data.vendor);
+                //                             $("#serviceLevel").text(data.data.serviceLevel);
+                //                             $("#modelName").text(data.data.modelName);
+                //                             $("#location").text(data.data.location);
+                //                             $("#siteName").text(data.data.relatedSiteName);
+                //                             $("#roomName").text(data.data.relatedRoomName);
+                //                         }
+                //                     })
+                                    
+                //                     //调用超超接口
+                //                     //top.gis.setWarnOtnNetworkFault(arrItem.oid,arrItem.oname);
+                //                 }
+                //             });
+                //         });
+                //     }else{
+                //         alert('暂无告警数据')
+                //     }
+
+                // // }
+                // $menu.menu('show',{
+                //     left: params.pageX,
+                //     top: params.pageY
+                // });
             });
 
             Global.mapGlobal.map.on('click',function(params){
+
+                if(params && params.graphic)  return false;
+                // 点击地图清除特效渲染数据
+                this_instance.clearAndRender(this_instance);
                 // 点击地图清除专线弹框
                 this_instance._clearF('elasticFrame2');
                 this_instance._clearF('elasticFrame');
@@ -131,19 +177,19 @@ define([
                 }
 
 
-                if(Global.mapGlobal.topo_link_flag){        //如果专线关联拓扑,topoLink数据高亮，进行取消高亮效果
+                // if(Global.mapGlobal.topo_link_flag){        //如果专线关联拓扑,topoLink数据高亮，进行取消高亮效果
 
-                    var lineGraphics = Global.mapGlobal.lineLayer.graphics;
-                    $.each(lineGraphics,function(index,item){
-                        item.setSymbol(SymbolUtil.getLineSymbol());
-                    });
+                //     var lineGraphics = Global.mapGlobal.lineLayer.graphics;
+                //     $.each(lineGraphics,function(index,item){
+                //         item.setSymbol(SymbolUtil.getLineSymbol());
+                //     });
 
-                    var otnGraphics = Global.mapGlobal.otnLayer.graphics;
-                    $.each(otnGraphics,function(index,item){
-                        console.error('item',item)
-                        item.setSymbol(SymbolUtil.getPointSymbol(item.attributes.type));
-                    })
-                }
+                //     var otnGraphics = Global.mapGlobal.otnLayer.graphics;
+                //     $.each(otnGraphics,function(index,item){
+                //         console.error('item',item)
+                //         item.setSymbol(SymbolUtil.getPointSymbol(item.attributes.type));
+                //     })
+                // }
                 top.gis.clearSelectedLine();
                 /*if(!params.graphic){
                     top.gis.clearWarnOtnNetworkFault();   //调用超超接口
@@ -179,7 +225,18 @@ define([
 
            
         },
-    
+        clearAndRender:function(this_instance){
+            Global.mapGlobal.lineLayer.clear();
+            Global.mapGlobal.otnLayer.clear();
+            var data = Global.datas.defaultDatas;
+            var warningData = Global.datas.warningDatas;
+            data.map(function(item,index){             
+                this_instance._drawingLines(item);//绘制逻辑线
+                this_instance._drawingPoints(item);//绘制点数据
+            })
+            this_instance._handlerOTNWarning(warningData.ne);//点告警数据处理
+            this_instance._handlerLineWarning(warningData.serviceline);//线告警数据处理
+        },
         //清除弹框
         _clearF:function(id){
             var css = $("#"+id).css('display');
@@ -203,24 +260,37 @@ define([
             });*/
 
             $.ajax({
-                url:Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
+                // 本地假造数据，测试用例
+                url: './index.json',
+                // url:Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
                 type:'get',
                 dataType:'json',
-                headers:{
-                    Accept:'application/json;charset=utf-8',
-                    Authorization:Global.Authorization
-                },
+                // headers:{
+                //     Accept:'application/json;charset=utf-8',
+                //     Authorization:Global.Authorization
+                // },
                 success:function(data){
                     //var datas = data.data;
-                    var datas = JSON.parse(data.data.message)
-                    console.error('datas',datas)
-                    if(datas && datas.nodes){
+                    // var datas = JSON.parse(data.data.message)
+                    console.error('datas',data)
+                    if(data && data.servicelines){      
+                        // 将客户下的所有数据放入本地
+                        Global.datas.defaultDatas = data.servicelines;                 
                         Global.mapGlobal.lineLayer.clear();
                         Global.mapGlobal.otnLayer.clear();
-                        if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
-                        this_instance._drawingPoints(datas.nodes);                  //绘制点数据
-                        this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                        data.servicelines.map(function(item,index){                        
+                            if(item.edges) this_instance._drawingLines(item);   //绘制逻辑线
+                            if(item.nodes) this_instance._drawingPoints(item);                  //绘制点数据
+                        })
+                        this_instance.queryWarningOTN(this_instance);
                     }
+                    // if(datas && datas.nodes){
+                    //     Global.mapGlobal.lineLayer.clear();
+                    //     Global.mapGlobal.otnLayer.clear();
+                    //     if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
+                    //     this_instance._drawingPoints(datas.nodes);                  //绘制点数据
+                    //     this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                    // }
                 }
             });
         },
@@ -237,12 +307,13 @@ define([
         /**
          * 绘制线数据
          */
-        _drawingLines:function(lines){
-            lines.map(function(lineItem,index){
+        _drawingLines:function(data){
+            data.edges.map(function(lineItem,index){
                 var a_p = GeometryUtil.getPoint(lineItem.a_longitude,lineItem.a_lantitude,'');
                 var z_p = GeometryUtil.getPoint(lineItem.z_longitude,lineItem.z_lantitude,'');
                 var line = GeometryUtil.getPolylineByPoints(a_p,z_p);
-                var g = new Graphic(line,SymbolUtil.getLineSymbol(),lineItem);
+                // 存放该专线的id值
+                var g = new Graphic(line,SymbolUtil.getLineSymbol(),{id: data.serviceline_id});
                 Global.mapGlobal.lineLayer.add(g);
             });
         },
@@ -250,8 +321,8 @@ define([
          * 绘制点设施
          * @param {} points 
          */
-        _drawingPoints:function(points){
-            points.map(function(item,index){
+        _drawingPoints:function(data){
+            data.nodes.map(function(item,index){
                 var p1 = GeometryUtil.getPoint(item.longitude,item.lantitude,'');
                 var g = new Graphic(p1,SymbolUtil.getPointSymbol(item.type),item);
                 Global.mapGlobal.otnLayer.add(g);
@@ -272,13 +343,25 @@ define([
                 },
                 success:function(data){
                     console.log('告警数据',data);
-                    Global.datas.warningDatas = data.data;
-                    var datas = data.data;
-                    if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
-                    if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
+                    // Global.datas.warningDatas = data.data;
+                    // var datas = data.data;
+                    // if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
+                    // if(datas && datas.topolink) this_instance._handlerLineWarning(datas.topolink);          //线告警数据处理
                 }
             });
-
+            // 假设数据，测试用例，obj应为调用接口后返回的数据。
+            var obj = {
+                "ne":[
+                    123,3345,123                     //网元id
+                ],
+                "serviceline":[
+                    '1310102012201HWCSANELefdd678f84da3842',421,534                       //专线id
+                ]
+            }
+            // 将告警数据放入本地
+            Global.datas.warningDatas = obj;
+            this_instance._handlerOTNWarning(obj.ne);  
+            this_instance._handlerLineWarning(obj.serviceline); 
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
            /* $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
@@ -292,7 +375,7 @@ define([
             warningPoints.map(function(warningOtnItem,otnIndex){
                 Global.mapGlobal.otnLayer.graphics.map(function(graphic,gIndex){
                     if(graphic.attributes.oid == warningOtnItem){
-                        graphic.setSymbol(SymbolUtil.getWarningPointSymbol(graphic.attributes.type));
+                        graphic.setSymbol(SymbolUtil.getHightPointSymbol(graphic.attributes.type));
                     }
                 });
             });
@@ -304,12 +387,15 @@ define([
             warningToplink.map(function(warningLinkItem,warningLinkIndex){
                 Global.mapGlobal.lineLayer.graphics.map(function(graphic,lIndex){
                     var flag = false;
-                    graphic.attributes.aggr.map(function(aggrItem,aggrIndex){
-                        if(aggrItem.oid == warningLinkItem){
-                            flag = true;
-                            //break;
-                        }
-                    });
+                    if(graphic.attributes.id == warningLinkItem){
+                        flag = true;
+                    }
+                    // graphic.attributes.aggr.map(function(aggrItem,aggrIndex){
+                    //     if(aggrItem.oid == warningLinkItem){
+                    //         flag = true;
+                    //         //break;
+                    //     }
+                    // });
                     if(flag)  graphic.setSymbol(SymbolUtil.getWarningLineSymbol()); 
                 });
             });
@@ -318,18 +404,37 @@ define([
          * 专线关联到拓扑,整条拓扑高亮
          */
         topoLinkHightLight:function(lineData){
-
+            if(lineData && lineData.id){
+                var _this = this;
+                var data = Global.datas.defaultDatas;
+                var warningData = Global.datas.warningDatas;
+                data.map(function(item,index){
+                    var flag = false;
+                    if(lineData.id == item.serviceline_id) {
+                        flag = true;
+                    }
+                    if(flag){              
+                        Global.mapGlobal.lineLayer.clear();
+                        Global.mapGlobal.otnLayer.clear();
+                        _this._drawingLines(item);//绘制逻辑线
+                        _this._drawingPoints(item);//绘制点数据
+                        _this._handlerOTNWarning(warningData.ne);//点告警数据处理
+                        _this._handlerLineWarning(warningData.serviceline);//线告警数据处理
+                        return false;
+                    }
+                })
+            }
             //线
-            var lineGraphics = Global.mapGlobal.lineLayer.graphics;
-            $.each(lineGraphics,function(index,item){
-                item.setSymbol(SymbolUtil.getLineHightSymbol());
-            });
+            // var lineGraphics = Global.mapGlobal.lineLayer.graphics;
+            // $.each(lineGraphics,function(index,item){
+            //     item.setSymbol(SymbolUtil.getLineHightSymbol());
+            // });
 
-            //点
-            var otnGraphics = Global.mapGlobal.otnLayer.graphics;
-            $.each(otnGraphics,function(index,item){
-                item.setSymbol(SymbolUtil.getHightPointSymbol(item.attributes.type));
-            })
+            // //点
+            // var otnGraphics = Global.mapGlobal.otnLayer.graphics;
+            // $.each(otnGraphics,function(index,item){
+            //     item.setSymbol(SymbolUtil.getHightPointSymbol(item.attributes.type));
+            // })
             Global.mapGlobal.topo_link_flag = true;             //设置高亮标志
 
             //查询专线两端的网元设备
@@ -376,7 +481,7 @@ define([
          * 对苏研提供的对外接口
          */
         exportMethod:function(){
-            gis.renderTopoLink = this.topoLinkHightLight;
+            gis.renderTopoLink = this.topoLinkHightLight.bind(this);
         }
     });
 });
