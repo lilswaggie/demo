@@ -86,7 +86,9 @@ Global.mapGlobal.queryPOI = {
     //queryOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryOTN2',                    //otn设备数据查询接口
     //queryWarningOTN:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryWarningOTN2',      //otn告警设备数据查询接口
     //queryServiceLines:'https://easy-mock.com/mock/5bebdad3aa71eb233ec34828/example/queryServiceLines',  //查询专线接口
-    queryWarningOTN:Global.baseQueryURL+'/sotn/api/alert/active/resources',//告警
+    queryCustomerLines:Global.baseQueryURL+'/sotn/api/customer/servicelines?customer_name=',//客户专线数据
+    // queryWarningOTN:Global.baseQueryURL+'/sotn/api/alert/active/resources',//告警
+    queryWarningOTN:Global.baseQueryURL+'/sotn/api/alert/fault/resources',//告警
     queryServiceLines:Global.baseQueryURL+'/sotn/api/resource/servicelines',
     queryOTN:Global.baseQueryURL+'/sotn/api/resource/topolinks',
     queryNe:Global.baseQueryURL+'/sotn/api/network/tir_elements/',  //查询网元详情接口
