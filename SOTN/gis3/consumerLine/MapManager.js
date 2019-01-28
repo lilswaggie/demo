@@ -48,8 +48,8 @@ define([
 
             var this_instance = this;
 
-            this_instance.drawingGraphics(this_instance);
-            this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
+            // this_instance.drawingGraphics(this_instance);
+            // this_instance.realQueryWarningOTN(this_instance);     //实时查询告警数据
 
             Global.mapGlobal.otnLayer.on('click',function(params){
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym)
@@ -68,7 +68,7 @@ define([
                     // 弹框出现展示数据
                     //当前弹框调用的id为前接口的id，后面会有改动
                     $.ajax({
-                        url:Global.mapGlobal.queryPOI.queryNe+'1310102012201HWCSANELefdd678f84da3842'+'/detail',
+                        url:Global.mapGlobal.queryPOI.queryNe+arrItem.oid+'/detail',
                         type:'get',
                         dataType:'json',
                         headers:{
@@ -234,8 +234,10 @@ define([
                 this_instance._drawingLines(item);//绘制逻辑线
                 this_instance._drawingPoints(item);//绘制点数据
             })
-            this_instance._handlerOTNWarning(warningData.ne);//点告警数据处理
-            this_instance._handlerLineWarning(warningData.serviceline);//线告警数据处理
+            warningData.map(function(item,index){
+                this_instance._handlerOTNWarning(item.oid);
+                this_instance._handlerLineWarning(item.serviceline_id);
+            })
         },
         //清除弹框
         _clearF:function(id){
@@ -247,52 +249,42 @@ define([
          * 
          * @param {绘制数据} this_instance 
          */
-        drawingGraphics:function(this_instance){
-            //$.get(Global.mapGlobal.queryPOI.queryOTN,function(datas){
-           /* $.get('../../geodata/queryOTN.json',function(datas){
-                if(datas && datas.nodes){
-                    Global.mapGlobal.lineLayer.clear();
-                    Global.mapGlobal.otnLayer.clear();
-                    if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
-                    this_instance._drawingPoints(datas.nodes);                  //绘制点数据
-                    this_instance.queryWarningOTN(this_instance);               //接入告警数据
-                }
-            });*/
-
-            $.ajax({
-                // 本地假造数据，测试用例
-                url: './index.json',
-                // url:Global.mapGlobal.queryPOI.queryOTN+'?scene=indoor',
-                type:'get',
-                dataType:'json',
-                // headers:{
-                //     Accept:'application/json;charset=utf-8',
-                //     Authorization:Global.Authorization
-                // },
-                success:function(data){
-                    //var datas = data.data;
-                    // var datas = JSON.parse(data.data.message)
-                    console.error('datas',data)
-                    if(data && data.servicelines){      
-                        // 将客户下的所有数据放入本地
-                        Global.datas.defaultDatas = data.servicelines;                 
-                        Global.mapGlobal.lineLayer.clear();
-                        Global.mapGlobal.otnLayer.clear();
-                        data.servicelines.map(function(item,index){                        
-                            if(item.edges) this_instance._drawingLines(item);   //绘制逻辑线
-                            if(item.nodes) this_instance._drawingPoints(item);                  //绘制点数据
-                        })
-                        this_instance.queryWarningOTN(this_instance);
+        drawingGraphics:function(params){
+            var this_instance = this;
+            if(params && params.name) {
+                $.ajax({
+                    // 本地假造数据，测试用例
+                    // url: './index.json',
+                    url: Global.mapGlobal.queryPOI.queryCustomerLines + params.name,
+                    type:'get',
+                    dataType:'json',
+                    headers:{
+                        Accept:'application/json;charset=utf-8',
+                        Authorization:Global.Authorization
+                    },
+                    success:function(data){
+                        if(data && data.data && data.data.message && data.data.message.servicelines){      
+                            console.error('datas',data)
+                            // 将客户下的所有数据放入本地
+                            Global.datas.defaultDatas = data.data.message.servicelines;                 
+                            Global.mapGlobal.lineLayer.clear();
+                            Global.mapGlobal.otnLayer.clear();
+                            data.data.message.servicelines.map(function(item,index){                        
+                                if(item.edges) this_instance._drawingLines(item);   //绘制逻辑线
+                                if(item.nodes) this_instance._drawingPoints(item);                  //绘制点数据
+                            })
+                            this_instance.queryWarningOTN(this_instance);
+                        }
+                        // if(datas && datas.nodes){
+                        //     Global.mapGlobal.lineLayer.clear();
+                        //     Global.mapGlobal.otnLayer.clear();
+                        //     if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
+                        //     this_instance._drawingPoints(datas.nodes);                  //绘制点数据
+                        //     this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                        // }
                     }
-                    // if(datas && datas.nodes){
-                    //     Global.mapGlobal.lineLayer.clear();
-                    //     Global.mapGlobal.otnLayer.clear();
-                    //     if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
-                    //     this_instance._drawingPoints(datas.nodes);                  //绘制点数据
-                    //     this_instance.queryWarningOTN(this_instance);               //接入告警数据
-                    // }
-                }
-            });
+                });
+            }
         },
         /**
          * 实时查询告警数据
@@ -343,6 +335,13 @@ define([
                 },
                 success:function(data){
                     console.log('告警数据',data);
+                    if(data && data.data && data.data.message && data.data.message.servicelines) {
+                        Global.datas.warningDatas = data.data.message.servicelines;
+                        data.data.message.servicelines.map(function(item,index){
+                            this_instance._handlerOTNWarning(item.oid);
+                            this_instance._handlerLineWarning(item.serviceline_id);
+                        })
+                    }
                     // Global.datas.warningDatas = data.data;
                     // var datas = data.data;
                     // if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
@@ -350,18 +349,18 @@ define([
                 }
             });
             // 假设数据，测试用例，obj应为调用接口后返回的数据。
-            var obj = {
-                "ne":[
-                    123,3345,123                     //网元id
-                ],
-                "serviceline":[
-                    '1310102012201HWCSANELefdd678f84da3842',421,534                       //专线id
-                ]
-            }
-            // 将告警数据放入本地
-            Global.datas.warningDatas = obj;
-            this_instance._handlerOTNWarning(obj.ne);  
-            this_instance._handlerLineWarning(obj.serviceline); 
+            // var obj = {
+            //     "ne":[
+            //         123,3345,123                     //网元id
+            //     ],
+            //     "serviceline":[
+            //         '1310102012201HWCSANELefdd678f84da3842',421,534                       //专线id
+            //     ]
+            // }
+            // // 将告警数据放入本地
+            // Global.datas.warningDatas = obj;
+            // this_instance._handlerOTNWarning(obj.ne);  
+            // this_instance._handlerLineWarning(obj.serviceline); 
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN,function(datas){
            /* $.get('../../geodata/queryWarnings.json',function(datas){
                 if(datas && datas.site) this_instance._handlerOTNWarning(datas.site);                   //点设备告警数据处理
@@ -384,10 +383,10 @@ define([
          * 处理逻辑线告警
          */
         _handlerLineWarning:function(warningToplink){
-            warningToplink.map(function(warningLinkItem,warningLinkIndex){
+            // warningToplink.map(function(warningLinkItem,warningLinkIndex){
                 Global.mapGlobal.lineLayer.graphics.map(function(graphic,lIndex){
                     var flag = false;
-                    if(graphic.attributes.id == warningLinkItem){
+                    if(graphic.attributes.id == warningToplink){
                         flag = true;
                     }
                     // graphic.attributes.aggr.map(function(aggrItem,aggrIndex){
@@ -398,7 +397,7 @@ define([
                     // });
                     if(flag)  graphic.setSymbol(SymbolUtil.getWarningLineSymbol()); 
                 });
-            });
+            // });
         },
         /**
          * 专线关联到拓扑,整条拓扑高亮
@@ -418,10 +417,12 @@ define([
                         Global.mapGlobal.otnLayer.clear();
                         _this._drawingLines(item);//绘制逻辑线
                         _this._drawingPoints(item);//绘制点数据
-                        _this._handlerOTNWarning(warningData.ne);//点告警数据处理
-                        _this._handlerLineWarning(warningData.serviceline);//线告警数据处理
                         return false;
                     }
+                })
+                warningData.map(function(item,index){
+                    _this._handlerOTNWarning(item.oid);//点告警数据处理
+                    _this._handlerLineWarning(item.serviceline_id);//线告警数据处理
                 })
             }
             //线
@@ -439,7 +440,7 @@ define([
 
             //查询专线两端的网元设备
             $.ajax({
-                url:Global.mapGlobal.queryPOI.queryLineDetail+lineData.id,
+                url:Global.mapGlobal.queryPOI.queryLineDetail,
                 type:'get',
                 dataType:'json',
                 headers:{
@@ -448,9 +449,13 @@ define([
                 },
                 success:function(data){
                     console.error('专线详情data',data);
-                    $("#oName").text(data.data.name);
-                    $("#a_name").text(data.data.aneName);
-                    $("#z_name").text(data.data.zneName);
+                    if(data && data.data && data.data.results) {
+                        data.data.results.map(function(item,index){
+                            $("#oName").text(item.name);
+                            $("#a_name").text(item.aNe.name);
+                            $("#z_name").text(item.zNe.name);
+                        })
+                    }
                 },
             });
 
@@ -481,6 +486,9 @@ define([
          * 对苏研提供的对外接口
          */
         exportMethod:function(){
+            //进来绘制数据
+            gis.renderCustomerLines = this.drawingGraphics.bind(this);
+            //点击右侧
             gis.renderTopoLink = this.topoLinkHightLight.bind(this);
         }
     });
