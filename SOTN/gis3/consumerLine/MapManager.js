@@ -253,8 +253,6 @@ define([
             var this_instance = this;
             if(params && params.name) {
                 $.ajax({
-                    // 本地假造数据，测试用例
-                    // url: './index.json',
                     url: Global.mapGlobal.queryPOI.queryCustomerLines + params.name,
                     type:'get',
                     dataType:'json',
@@ -326,7 +324,7 @@ define([
         queryWarningOTN:function(this_instance){
 
             $.ajax({
-                url:Global.mapGlobal.queryPOI.queryWarningOTN,
+                url:Global.mapGlobal.queryPOI.queryWarningCustomerLines,
                 dataType:'json',
                 type:'get',
                 headers:{
@@ -451,9 +449,11 @@ define([
                     console.error('专线详情data',data);
                     if(data && data.data && data.data.results) {
                         data.data.results.map(function(item,index){
-                            $("#oName").text(item.name);
-                            $("#a_name").text(item.aNe.name);
-                            $("#z_name").text(item.zNe.name);
+                            if(item.id == lineData.id) {
+                                $("#oName").text(item.name);
+                                $("#a_name").text(item.aNe.name);
+                                $("#z_name").text(item.zNe.name);
+                            }
                         })
                     }
                 },
