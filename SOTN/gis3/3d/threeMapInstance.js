@@ -343,9 +343,13 @@
         eventColorHttp: function(key) {
             var url = Global.mapGlobal.threeDimensional[key];
             if(url) {
+                if(url.url){
+                    var type=url.type;
+                    url=url.url;
+                }
                 $.ajax({
                     url: url,
-                    type:'get',
+                    type: type || 'get',
                     dataType:'json',
                     headers:{
                         Accept:'application/json;charset=utf-8',
