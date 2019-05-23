@@ -1,0 +1,44 @@
+.notice-detail-modal {
+
+    font-family: 'MicrosoftYaHei', 'Microsoft YaHei';
+    font-weight: 400;
+
+    .ant-divider-horizontal {
+        margin: 10px 0;
+    }
+
+    .notice-detail {
+
+        .row {
+            position: relative;
+            margin-bottom: 3px;
+
+            .label {
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 14px;
+                color: #72758C;
+                text-align: left;
+                vertical-align: top;
+            }
+
+            .text {
+                font-size: 14px;
+                color: #3C3E4A;
+
+                &.title {
+                    font-size: 16px;
+                }
+            }
+
+            .content {
+                padding: 8px;
+                background-color: rgba(240, 243, 247, 0.4);
+            }
+
+            &.influence-row {
+                margin-top: 10px;
+            }
+        }
+    }
+}
