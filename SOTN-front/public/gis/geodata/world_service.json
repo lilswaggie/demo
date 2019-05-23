@@ -1,0 +1,939 @@
+
+{
+  "nodes": [
+    {
+      "oid": "1",
+      "oname": "测试",
+      "longitude": -3439937.76907297,
+      "lantitude": 2466243.84366478,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 5425810.0122,
+      "lantitude": 7272894.2717,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 8724174.7613,
+      "lantitude": 6118466.6095,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 9350864.0636,
+      "lantitude": 4139447.7601,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 11692703.0354,
+      "lantitude": 4007513.1701,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 10439324.4308,
+      "lantitude": 2688167.2705,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 14892116.842,
+      "lantitude": -940033.9535,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -973017.601,
+      "lantitude": -2853085.5079,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -13885573.0966,
+      "lantitude": 5143771.6414,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -12769632.4827,
+      "lantitude": 6942562.9541,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -5623711.8972,
+      "lantitude": 6679188.6169,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3503464.7674,
+      "lantitude": 136459.1119,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -9980946.9888,
+      "lantitude": -2277602.4922,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -11017357.1515,
+      "lantitude": 4311577.8541,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -8789476.3203,
+      "lantitude": 4454162.2273,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -7648801.3347,
+      "lantitude": 5380960.6531,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": 799322.7771,
+      "lantitude": 6129528.6124,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -626520.9548,
+      "lantitude": -625406.0678,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4725821.6842,
+      "lantitude": 1709413.0433,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4237660.8999,
+      "lantitude": 1310926.0346,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -15437472.7206,
+      "lantitude": 2190635.3028,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -12247147.3703,
+      "lantitude": 2778795.8423,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -13280884.076,
+      "lantitude": 1780705.2299,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -10785657.545,
+      "lantitude": 889552.8974,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -2515763.8997,
+      "lantitude": 4774977.067,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -6151665.4162,
+      "lantitude": 4240285.6675,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4636706.451,
+      "lantitude": 4400693.0874,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -5207043.9438,
+      "lantitude": 4382870.0407,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -5082282.6172,
+      "lantitude": 3527363.8015,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4618883.4043,
+      "lantitude": 3545186.8482,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4030722.8649,
+      "lantitude": 3028318.4954,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3442562.3255,
+      "lantitude": 2921380.2155,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3299977.9523,
+      "lantitude": 3117433.7286,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3121747.4858,
+      "lantitude": 3260018.1018,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4315891.6113,
+      "lantitude": 3937293.8745,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3026423.5496,
+      "lantitude": 3095757.0486,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3917330.7896,
+      "lantitude": 4130781.6362,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3747010.2878,
+      "lantitude": 4156984.7904,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3563588.209,
+      "lantitude": 4156984.7904,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3681502.4025,
+      "lantitude": 3999765.8657,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3222947.2055,
+      "lantitude": 3986664.2886,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -3353962.9761,
+      "lantitude": 3803242.2098,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    },
+    {
+      "oid": "3",
+      "oname": "测试",
+      "longitude": -4009041.829,
+      "lantitude": 3750835.9015,
+      "aggr": [
+        {
+          "oid": "网元ID",
+          "oname": "网元名称"
+        }
+      ]
+    }
+  ],
+  "edges":[
+    {
+      "oid": 0,
+      "oname": "测试",
+      "a_oid": 0,
+      "a_oname": "北京",
+      "a_longitude": -4636706.451,
+      "a_lantitude": 4400693.0874,
+      "z_oid": 0,
+      "z_oname": "山东",
+      "z_longitude": -12769632.4827,
+      "z_lantitude": 6942562.9541,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 1,
+      "oname": "测试",
+      "a_oid": 1,
+      "a_oname": "北京",
+      "a_longitude": -3222947.2055,
+      "a_lantitude": 3986664.2886,
+      "z_oid": 1,
+      "z_oname": "山东",
+      "z_longitude": -5623711.8972,
+      "z_lantitude": 6679188.6169,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 2,
+      "oname": "测试",
+      "a_oid": 2,
+      "a_oname": "北京",
+      "a_longitude": -4009041.829,
+      "a_lantitude": 3750835.9015,
+      "z_oid": 2,
+      "z_oname": "山东",
+      "z_longitude": -13885573.0966,
+      "z_lantitude": 5143771.6414,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 3,
+      "oname": "测试",
+      "a_oid": 3,
+      "a_oname": "北京",
+      "a_longitude": -5207043.9438,
+      "a_lantitude": 4382870.0407,
+      "z_oid": 3,
+      "z_oname": "山东",
+      "z_longitude": -12247147.3703,
+      "z_lantitude": 2778795.8423,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 4,
+      "oname": "测试",
+      "a_oid": 4,
+      "a_oname": "北京",
+      "a_longitude": -6151665.4162,
+      "a_lantitude": 4240285.6675,
+      "z_oid": 4,
+      "z_oname": "山东",
+      "z_longitude": -15437472.7206,
+      "z_lantitude": 2190635.3028,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 5,
+      "oname": "测试",
+      "a_oid": 5,
+      "a_oname": "北京",
+      "a_longitude": -3121747.4858,
+      "a_lantitude": 3260018.1018,
+      "z_oid": 5,
+      "z_oname": "山东",
+      "z_longitude": -13280884.076,
+      "z_lantitude": 1780705.2299,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 6,
+      "oname": "测试",
+      "a_oid": 6,
+      "a_oname": "北京",
+      "a_longitude": -3442562.3255,
+      "a_lantitude": 2921380.2155,
+      "z_oid": 6,
+      "z_oname": "山东",
+      "z_longitude": -10785657.545,
+      "z_lantitude": 889552.8974,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 7,
+      "oname": "测试",
+      "a_oid": 7,
+      "a_oname": "北京",
+      "a_longitude": -3299977.9523,
+      "a_lantitude": 3117433.7286,
+      "z_oid": 7,
+      "z_oname": "山东",
+      "z_longitude": -4725821.6842,
+      "z_lantitude": 1709413.0433,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 8,
+      "oname": "测试",
+      "a_oid": 8,
+      "a_oname": "北京",
+      "a_longitude": -3026423.5496,
+      "a_lantitude": 3095757.0486,
+      "z_oid": 8,
+      "z_oname": "山东",
+      "z_longitude": -4237660.8999,
+      "z_lantitude": 1310926.0346,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 9,
+      "oname": "测试",
+      "a_oid": 9,
+      "a_oname": "北京",
+      "a_longitude": -3439937.76907297,
+      "a_lantitude": 2466243.84366478,
+      "z_oid": 9,
+      "z_oname": "山东",
+      "z_longitude": -3503464.7674,
+      "z_lantitude": 136459.1119,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 10,
+      "oname": "测试",
+      "a_oid": 10,
+      "a_oname": "北京",
+      "a_longitude": -4030722.8649,
+      "a_lantitude": 3028318.4954,
+      "z_oid": 10,
+      "z_oname": "山东",
+      "z_longitude": -626520.9548,
+      "z_lantitude": -625406.0678,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 11,
+      "oname": "测试",
+      "a_oid": 11,
+      "a_oname": "北京",
+      "a_longitude": -3747010.2878,
+      "a_lantitude": 4156984.7904,
+      "z_oid": 11,
+      "z_oname": "山东",
+      "z_longitude": 799322.7771,
+      "z_lantitude": 6129528.6124,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 12,
+      "oname": "测试",
+      "a_oid": 12,
+      "a_oname": "北京",
+      "a_longitude": -3353962.9761,
+      "a_lantitude": 3803242.2098,
+      "z_oid": 12,
+      "z_oname": "山东",
+      "z_longitude": 5425810.0122,
+      "z_lantitude": 7272894.2717,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 13,
+      "oname": "测试",
+      "a_oid": 13,
+      "a_oname": "北京",
+      "a_longitude": -5082282.6172,
+      "a_lantitude": 3527363.8015,
+      "z_oid": 13,
+      "z_oname": "山东",
+      "z_longitude": 8724174.7613,
+      "z_lantitude": 6118466.6095,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 14,
+      "oname": "测试",
+      "a_oid": 14,
+      "a_oname": "北京",
+      "a_longitude": -3917330.7896,
+      "a_lantitude": 4130781.6362,
+      "z_oid": 14,
+      "z_oname": "山东",
+      "z_longitude": 9350864.0636,
+      "z_lantitude": 4139447.7601,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 15,
+      "oname": "测试",
+      "a_oid": 15,
+      "a_oname": "北京",
+      "a_longitude": -4315891.6113,
+      "a_lantitude": 3937293.8745,
+      "z_oid": 15,
+      "z_oname": "山东",
+      "z_longitude": 10439324.4308,
+      "z_lantitude": 2688167.2705,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },
+    {
+      "oid": 16,
+      "oname": "测试",
+      "a_oid": 16,
+      "a_oname": "北京",
+      "a_longitude": -3563588.209,
+      "a_lantitude": 4156984.7904,
+      "z_oid": 16,
+      "z_oname": "山东",
+      "z_longitude": 14892116.842,
+      "z_lantitude": -940033.9535,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },{
+      "oid": 17,
+      "oname": "测试",
+      "a_oid": 17,
+      "a_oname": "北京",
+      "a_longitude":-4725821.6842,
+      "a_lantitude": 1709413.0433,
+      "z_oid": 16,
+      "z_oname": "山东",
+      "z_longitude": -9980946.9888,
+      "z_lantitude": -2277602.4922,
+      "aggr": [
+        {
+          "oid": "专线 ID",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    },{
+      "oid": 18,
+      "oname": "测试",
+      "a_oid": 18,
+      "a_oname": "北京",
+      "a_longitude": -3439937.76907297,
+      "a_lantitude": 2466243.84366478,
+      "z_oid": 16,
+      "z_oname": "山东",
+      "z_longitude": -973017.601,
+      "z_lantitude": -2853085.5079,
+      "aggr": [
+        {
+          "oid": "123",
+          "oname": "专线名称",
+          "a_nename": "A端网元名称",
+          "z_nename": "Z端网元名称",
+          "a_portname": "A端端口名称",
+          "z_portname": "Z端端口名称"
+        }
+      ]
+    }
+  ]
+}

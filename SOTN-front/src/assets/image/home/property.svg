@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="84px" viewBox="0 0 81 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>性能子系统</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="113.214281%" id="linearGradient-1">
+            <stop stop-color="#4285F4" offset="0%"></stop>
+            <stop stop-color="#DEE7F7" stop-opacity="0.215692935" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="31.9534822%" y1="0%" x2="86.0673738%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#4989F4" offset="0%"></stop>
+            <stop stop-color="#A8C5F5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="124.859386%" y2="252.77475%" id="linearGradient-3">
+            <stop stop-color="#4285F4" offset="0%"></stop>
+            <stop stop-color="#DEE7F7" stop-opacity="0.215692935" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="首页v0.3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-800.000000, -695.000000)">
+            <g id="Group-10" transform="translate(0.000000, 634.000000)">
+                <g id="Group-4" transform="translate(800.169839, 61.000000)">
+                    <g id="性能子系统" transform="translate(0.000000, 8.000000)">
+                        <rect id="Rectangle-13" stroke="url(#linearGradient-2)" stroke-width="3" fill="url(#linearGradient-1)" x="55.3387116" y="34.3082474" width="23.2784187" height="29.1649485" rx="4"></rect>
+                        <rect id="Rectangle-13-Copy" stroke="#4285F4" stroke-width="3" fill="#FFFFFF" x="1.5" y="1.5" width="68.7849488" height="49.7505155" rx="4"></rect>
+                        <rect id="Rectangle-14" fill="#4285F4" x="34.6106003" y="51.4639175" width="3.20468521" height="11.5793814"></rect>
+                        <rect id="Rectangle-14-Copy-6" fill="#4285F4" x="19.8690483" y="61.756701" width="32.6877892" height="3.21649485" rx="1.60824742"></rect>
+                        <path d="M27.3392201,29.5308549 L40.6178903,37.5905554 C41.4198574,38.0782612 42.4152285,38.0758324 43.2149578,37.5842183 L57.6843338,28.7123163 L55.0770457,24.1707475 L41.9046703,32.2515715 L28.5902279,24.1654666 C27.7683902,23.6668801 26.746343,23.682352 25.9389909,24.2056014 L12.8187408,32.7046722 L15.5333459,37.1786456 L27.3392201,29.5308549 Z" id="Shape" fill="url(#linearGradient-3)"></path>
+                        <path d="M2.33208418,10.9360825 L69.8621376,10.9360825" id="Line-10" stroke="#4285F4" stroke-width="2" stroke-linecap="square"></path>
+                        <ellipse id="Oval-6" fill="url(#linearGradient-3)" cx="8.33218155" cy="5.78969072" rx="1.92281113" ry="1.92989691"></ellipse>
+                        <ellipse id="Oval-6-Copy" fill="url(#linearGradient-3)" cx="16.0234261" cy="5.78969072" rx="1.92281113" ry="1.92989691"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

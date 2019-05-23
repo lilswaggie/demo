@@ -1,0 +1,223 @@
+@import "../../css/util";
+.work-order{
+    background-color: #F1F4F9;
+    font-size:14px;
+    .title{
+        background-color:#FFFFFF;
+        padding: px2rem(8) px2rem(32);
+        margin-bottom: px2rem(12);
+        text-align: left;
+        .item1{
+            color: #2C9CFA;
+            font-size:14px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+        }
+        .line{
+            display: inline-block;
+            margin-left: px2rem(8);
+            height: px2rem(14);
+            border: 1px solid #f4f4f4;
+        }
+        .item2{
+            font-size:14px;
+            font-family:PingFangSC-Regular;
+            font-weight:600;
+            color:rgba(60,62,74,1);
+            display: inline-block;
+            margin-left: px2rem(8);
+        }
+        .item3{
+            margin-left: 30%;
+            .active{
+                background-color:#2C9CFA ;
+                color: white;
+                display: inline-block;
+                width:px2rem(98);
+                height: px2rem(30);
+                line-height: px2rem(30);
+                text-align: center;
+                cursor: pointer;
+            }
+            .noneact{
+                background-color: #F9FBFC;
+                color: #3C3E4A ;
+                display: inline-block;
+                width:px2rem(98);
+                height: px2rem(32);
+                line-height: px2rem(32);
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+    .content{
+        padding: 0 px2rem(25) 0 px2rem(25);
+        background-color: white;
+        text-align: left;
+        .ant-tabs-bar{
+            .ant-tabs-nav{
+                .ant-tabs-tab{
+                    //font-size:14px;
+                    //font-family:PingFangSC-Regular;
+                    //font-weight:400;
+                }
+            }
+        }
+        .word-tab{
+            .line1{
+                padding: px2rem(16) px2rem(20) px2rem(16) px2rem(17);
+                background:rgba(240,243,247,0.39);
+                .ant-form{
+                    display: flex;
+                    justify-content: space-between;
+                    .left{
+                        width: 86%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .ant-form-item{
+                            margin-bottom: 0;
+                            //margin-right: px2rem(30);
+                            .ant-form-item-label label{
+                                font-size:14px;
+                                font-family:PingFangSC-Regular;
+                                font-weight:400;
+                                color:rgba(114,117,140,1);
+                            }
+                            .ant-select-selection__rendered{
+                                font-size:14px;
+                                font-family:PingFangSC-Regular;
+                                font-weight:400;
+                                color:rgba(114,117,140,1);
+                            }
+                            input{
+                                font-size:14px;
+                                font-family:PingFangSC-Regular;
+                                font-weight:400;
+                                color:rgba(114,117,140,1);
+                            }
+
+                        }
+                        .ant-select-selection{
+                            width: px2rem(150);
+                        }
+                    }
+                    .right{
+                        //width: 8%;
+                        border-left: 1px solid #EFF0F1;
+                        padding-left: px2rem(20);
+                        button{
+                            display: block;
+                            font-size: 12px;
+                            &:first-child{
+                                margin-bottom: 15px;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                    .ant-form-item-control-wrapper{
+                        display: inline-block;
+                        .ant-form-item-children{
+                            input{
+                                width: px2rem(432);
+                            }
+                        }
+                    }
+                }
+            }
+            .line2{
+                padding: px2rem(14) 0 0 0;
+                margin-bottom: px2rem(14);
+                div{
+                    display: inline-block;
+                    margin-right:px2rem(30) ;
+                    img{
+                        margin-right: px2rem(8);
+                        margin-bottom: px2rem(3);
+                    }
+                    span{
+                        font-size:14px;
+                        font-family:PingFangSC-Regular;
+                        font-weight:400;
+                        color:rgba(114,117,140,1);
+                    }
+                    &:last-child{
+                        // float: right;
+                    }
+                }
+            }
+            .workorder-table{
+                table{
+                    table-layout: fixed;
+                    font-size:14px;
+                    font-family:PingFangSC-Regular;
+                    font-weight:400;
+                    color:rgba(114,117,140,1);
+                    th{
+                        font-size: 14px;
+                        background-color: #F9FBFC;
+                        height: px2rem(48);
+                        &:first-child{
+                            padding-left: px2rem(35);
+                        }
+                    }
+                    td{
+                        height: px2rem(48);
+                    }
+                    .control-line{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .line-name{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        span:first-child{
+                            display: inline-block;
+                            width: px2rem(10);
+                            height: px2rem(10);
+                            border-radius: 50%;
+                            margin-right: px2rem(7);
+                        }
+                        span:nth-child(2){
+                            display: inline-block;
+                            margin-right: px2rem(7);
+                        }
+                    }
+                    .policy{
+                        width: px2rem(72);
+                        height: px2rem(28);
+                        border: 1px solid #D5EDFE;
+                        border-radius:2px;
+                        background:rgba(232,246,254,1);
+                        font-size:14px;
+                        font-family:PingFangSC-Regular;
+                        font-weight:400;
+                        color:rgba(44,156,250,1);
+                        margin-right: px2rem(8);
+                    }
+                    .inter{
+                        width: px2rem(72);
+                        height: px2rem(28);
+                        border: 1px solid #DFF2E7;
+                        border-radius:2px;
+                        background:rgba(243,255,237,1);;
+                        font-size:14px;
+                        font-family:PingFangSC-Regular;
+                        font-weight:400;
+                        color:rgba(113,202,65,1);
+                        margin-right: px2rem(8);
+                    }
+                    .client{
+                        img{
+                            margin-right: px2rem(7);
+                            margin-bottom: px2rem(3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+#network-total{
+    position: relative;
+    width: 1438px;
+    >#title{
+        display: inline-block;
+        font-size: 28px;
+        color: #fff;
+        height: 100px;
+        line-height: 100px;
+        vertical-align: middle;
+        margin-top: 40px;
+        >.digital{
+            background-image: url("../imgs/szfpq_bg.svg");
+            background-size:76px 100px;
+            background-repeat: no-repeat;
+            color: #50E3C2;
+            font-size: 90px;
+            margin-left: 11px;
+            vertical-align: middle;
+            width: 76px;
+            height: 100px;
+            display: inline-block;
+        }
+    }
+
+    .chart-example {
+        position: absolute;
+        left: 80px;
+        bottom: 50px;
+        padding-top: 20px;
+        padding-left: 30px;
+        height: 131px;
+        width: 190px;
+        background: url(../imgs/chart-example-bg.png) no-repeat;
+
+        .item {
+            height: 30px;
+            line-height: 30px;
+
+            .otn {
+                display: inline-block;
+                height: 15px;
+                width: 22px;
+                background-image: url(../imgs/otn-icon.png);
+                vertical-align: middle;
+            }
+
+            .zqwltp {
+                display: inline-block;
+                // height: 3px;
+                width: 22px;
+                height:2px;
+                border:3px solid rgba(7,181,254,1);
+            }
+
+            .hlll {
+                display: inline-block;
+                height: 7px;
+                width: 22px;
+                background-image: url(../imgs/hlll-icon.png);
+                vertical-align: middle;
+            }
+
+            .text {
+                margin-left: 16px;
+                font-size: 17px;
+                color: #FFFFFF;
+                vertical-align: middle;
+            }
+        }
+    }
+}

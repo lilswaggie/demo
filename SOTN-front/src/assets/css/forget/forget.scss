@@ -1,0 +1,205 @@
+.forget-container {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    padding-top: 78px;
+    padding-bottom: 36px;
+    text-align: center;
+    background-color: rgb(241, 244, 249);
+}
+
+.forget-header {
+    .china-mobile-icon {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background-image: url("../../image/login/china-mobile-logo.svg");
+        background-size: cover;
+    }
+
+    .system-name {
+        display: inline-block;
+        margin-left: 16px;
+        height: 42px;
+        width: 468px;
+        background: url("../../image/forget/system-name-black.png") no-repeat;
+    }
+}
+
+.forget-body {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 42px;
+    padding: 0 43px;
+    height: 480px;
+    width: 1080px;
+    background-color: #fff;
+
+    .header {
+        padding-top: 52px;
+        padding-left: 16px;
+        text-align: left;
+
+        span {
+            vertical-align: middle;
+        }
+
+        .password-icon {
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            background-image: url("../../image/forget/password-icon.svg");
+        }
+
+        .text {
+            margin-left: 8px;
+            font-weight: 600;
+            color: rgba(60,62,74,1);
+            line-height: 25px;
+            font-size: 18px;
+            font-family: PingFangSC-Medium;
+        }
+
+    }
+    .line {
+        margin-top: 12px;
+        border: none;
+        height: 1px;
+        background-color: #CCCCCC;
+    }
+    .tip-message {
+        padding-left: 16px;
+        padding-top: 16px;
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+        color: rgba(60,62,74,1);
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .form-box {
+        margin: 0 auto;
+        padding-top: 24px;
+        width: 500px;
+        text-align: left;
+
+        .form-item {
+            margin-top: 24px;
+            * {
+                vertical-align: middle;
+            }
+
+            p {
+                margin-bottom: 10px;
+                height: 20px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular;
+                color: rgba(60,62,74,1);
+                line-height: 20px;
+            }
+        }
+
+        .ant-input {
+            height: 48px;
+            line-height: 20px;
+            border-radius: 0;
+            padding: 14px 15px;
+            font-size: 14px;
+            color: rgba(114,117,140,1);
+            outline: none;
+        }
+
+        .captcha {
+            width: 250px;
+        }
+
+        .captcha-img {
+            display: inline-block;
+            margin-left: 18px;
+            height: 48px;
+            line-height: 44px;
+            width: 232px;
+            border: 1px solid #CCCCCC;
+            box-sizing: border-box;
+            text-align: center;
+
+            img {
+                width: 130px;
+                height: 44px;
+            }
+        }
+
+        .submit-btn {
+            margin-top: 40px;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            font-size: 18px;
+            background-color: #2C9CFA;
+            font-family: PingFangSC-Medium;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(43, 90, 172, 1);
+            }
+        }
+
+        .to-login {
+            margin-top: 12px;
+            color: #2C9CFA;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+            &:focus {
+                text-decoration: underline;
+                color: rgba(43, 90, 172, 1);
+            }
+        }
+    }
+}
+
+.forget-footer {
+    margin-top: 62px;
+    color: #72758C;
+    font-size: 14px;
+}
+
+.success-container {
+    padding-top: 76px;
+    padding-left: 404px;
+    text-align: left;
+
+    .success-tips {
+        height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(60,62,74,1);
+        line-height: 22px;
+    }
+
+    .email {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .to-login-right {
+        margin-top: 25px;
+        cursor: pointer;
+    }
+
+    .email,
+    .to-login-right {
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(44,156,250,1);
+        line-height: 20px;
+    }
+}

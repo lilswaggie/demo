@@ -1,0 +1,209 @@
+.main-container-header {
+    height: 48px;
+    line-height: 48px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background: rgba(29,29,89,1);
+    text-align: left;
+
+    .system-logo {
+        position: relative;
+        display: inline-block;
+        top: 9px;
+        height: 30px;
+        width: 30px;
+        background-image: url("../../image/header/cmss-logo.svg");
+        background-size: cover;
+    }
+
+    .system-name {
+        margin-left: 9px;
+        height: 48px;
+        line-height: 1;
+        font-size: 16px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(255,255,255,1);
+        cursor: pointer;
+    }
+
+    .business-name {
+        margin-left: 12px;
+        padding: 0 8px;
+        font-size: 14px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .nav {
+        display: inline-block;
+        height: 46px;
+        width: 116px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+
+        background-color: #1d1d59;
+
+        &.home {
+            margin-left: 80px;
+        }
+
+        &.active, &:hover {
+            color: #2C9CFA;
+            box-shadow: 0px 3px 0px 0px rgba(68, 128, 247, 1) inset;
+            .anticon-caret-down {
+                color: #2C9CFA;
+            }
+        }
+
+        .anticon-caret-down {
+            color: #fff;
+        }
+    }
+
+    .right-btns {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        height: 48px;
+        line-height: 48px;
+
+        .ant-divider-vertical {
+            margin: 0 16px;
+            top: 0;
+        }
+
+        .icon {
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            background-size: cover;
+            vertical-align: middle;
+            cursor: pointer;
+
+            @each $cls, $suffix in (big-screen, svg), (workbench, svg), (menu, png), (setting, png) {
+                &.#{$cls} {
+                    background-image: url("../../image/header/#{$cls}.#{$suffix}");
+                    &:hover {
+                        background-image: url("../../image/header/#{$cls}-hover.#{$suffix}");
+                    }
+                }
+            }
+        }
+
+        .user-name {
+            font-size:14px;
+            font-family:PingFangSC-Light;
+            font-weight:300;
+            color: #fff;
+            line-height:20px;
+            cursor: pointer;
+        }
+    }
+}
+
+.popup-link {
+    margin-top: -3px;
+    padding: 10px 0;
+    border-radius: 0;
+    background-color: #1D1D59;
+
+    li {
+        padding: 0;
+
+        &:hover {
+            background-color: #1D1D59;
+        }
+
+        a {
+            padding: 0;
+            margin: 0;
+            padding-left: 12px;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+
+            &:hover {
+                color: #2C9CFA;
+            }
+
+            &.active {
+                background-color: #2C9CFA;
+                color: #fff;
+            }
+        }
+    }
+
+}
+
+.notice-dropdown {
+    margin-top: 10px;
+    min-width: 86px;
+}
+.user-dropdown {
+    margin-top: 10px;
+    // min-width: 86px;
+}
+
+.main-header-tooltip {
+    margin-top: 6px;
+}
+
+
+.sub-system-popover {
+
+    margin-top: 11px;
+    border-radius: 0;
+
+    .ant-popover-arrow {
+        display: none;
+    }
+
+    .ant-popover-content {
+        margin-top: 1px;
+        .ant-popover-inner-content {
+            padding: 0;
+        }
+    }
+
+    .sub-system {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 10px;
+        height: 80px;
+        width: 260px;
+        background-color: #1D1D59;
+    }
+
+    .system {
+        height: 58px;
+        width: 36px;
+        color: #FFFFFF;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(66, 133, 244);
+        }
+
+        .icon {
+            display: block;
+            height: 36px;
+            width: 36px;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @each $cls in info, fault, eoms, property {
+                &.#{$cls} {
+                    background-image: url("../../image/header/system-icon-#{$cls}.png");
+                }
+            }
+        }
+        .text {
+            margin-top: 5px;
+        }
+    }
+}

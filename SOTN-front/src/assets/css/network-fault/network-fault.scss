@@ -1,0 +1,129 @@
+@import "../../css/busifault/busifault";
+.network-fault-wrap {
+    .content {
+        .block2 {
+            .left {
+                position: relative;
+                width: 62%;//876px
+                float: left;
+                background-color: white;
+                height: 100%;
+            }
+            .right {
+                width: 37%;//414px
+                float: right;
+                height: 100%;
+                padding: 0;
+                background-color: #F1F4F9;
+                .total-count {
+                    padding: px2rem(18) px2rem(22);
+                    height: px2rem(87);
+                    width: 100%;
+                    background-color: #fff;
+
+                    .item {
+                        display: inline-block;
+                        width: 33.3%;
+                        height: 100%;
+                        font-size:14px;
+                        text-align: left;
+                        color: #72758C;
+
+                        .name {
+                            height: px2rem(20);
+                            line-height: px2rem(20);
+                            font-family:PingFangSC-Regular;
+                        }
+
+                        .count {
+                            height: px2rem(42);
+                            line-height: px2rem(42);
+                            font-size: 30px;
+                            font-weight:600;
+                            font-family:PingFangSC-Semibold;
+                            color: #2C9CFA;
+
+                            &.red {
+                                color: #F35B5B;
+                            }
+                        }
+                    }
+                }
+                .warn-effected-lines {
+                    margin-top: px2rem(12);
+                    height: px2rem(397);
+                    background-color: #fff;
+
+                    .cutover-line {
+                        margin-right: 0.625rem;
+                    }
+
+                    .bscutover-list {
+                        height: px2rem(224);
+                    }
+                }
+            }
+        }
+
+        .block3 {
+            margin-bottom: px2rem(38);
+            height: px2rem(528);
+            background-color: #F1F4F9;
+
+            .header {
+                height: px2rem(20);
+                line-height: px2rem(20);
+                font-size: 14px;
+                font-family: PingFangSC-Regular;
+                color: #3C3E4A;
+                text-align: left;
+            }
+
+            .left-content {
+                width: 62%; //876px
+                float: left;
+                background-color: white;
+                height: 100%;
+                // padding: px2rem(15) px2rem(19);
+
+                .header {
+                    padding-left: 1rem;
+                }
+
+                table {
+                    width: 100%;
+                }
+            }
+
+            .right-content {
+                float: right;
+                padding: px2rem(14);
+                width: 37%; //414px
+                background-color: #fff;
+                height: 100%;
+
+                .line-trend-container {
+                    margin-top: px2rem(14);
+                    padding: px2rem(10);
+                    height: px2rem(227);
+                    border: px2rem(1) solid #F4F4F4;
+
+                    .line-title {
+                        height: px2rem(20);
+                        line-height: px2rem(20);
+                        font-size: 14px;
+                        color: #72758C;
+                        text-align: left;
+                    }
+
+                    .warn-line-chart {
+                        height: px2rem(187) !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
