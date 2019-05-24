@@ -19,6 +19,7 @@ import BigScreenPage from './container/BigScreenPage';
 import SelectBusinessPopupPage from './container/SelectBusinessPopupPage';
 import SelectBusinessPage from './container/SelectBusinessPage';
 import LineCustomerModal from './component/pub/LineCustomerModal';
+import KeySearch from './container/KeySearch';
 
 import { getToken } from './util/ReduxUtil';
 
@@ -117,6 +118,7 @@ class App extends Component {
         <Route path="/business" component={SelectBusinessPage} />
         <Route path="/main" component={MainPage} />
         <Route path="/big-screen" component={BigScreenPage} />
+        <Route path="/search" component = {KeySearch} />
       </div>
     );
   }

@@ -30,7 +30,8 @@ import SourceAnalysis from './analysis/SourceAnalysis';
 import NetworkQualityPage from './analysis/NetworkQualityPage';
 import BusinessQualityPage from './analysis/BusinessQualityPage';
 import ServiceQualityPage from './analysis/ServiceQualityPage';
-
+import KeySearchPage from './KeySearch';
+import GisContainer from './GisContainer';
 import '../assets/css/main.scss';
 
 const { Content, Footer } = Layout;
@@ -49,6 +50,7 @@ class MainPage extends Component {
               path="/main/overview"
               component={OverviewPage}
             />
+            <Route path="/main/gis/test" compoment={NoticeManagerPage} />
 
             <Route
               exact={true}
@@ -115,7 +117,6 @@ class MainPage extends Component {
               path="/main/fault/business/influence"
               component={InflucenAnalysis}
             />
-
             <Route
               exact={true}
               path="/main/source/network"
@@ -157,9 +158,11 @@ class MainPage extends Component {
               path="/main/analysis/service-quality"
               component={ServiceQualityPage}
             />
-
             <Route path="/main/notice" component={NoticeManagerPage} />
             <Route path="/main/data-check" component={DataCheckPage} />
+            <Route path="/main/key-search" compoment={KeySearchPage} />
+
+
           </Content>
           <Footer className="main-content-footer">
             Copyright &copyright; 20xx-20xx 中国移动通信集团有限公司 版权所有

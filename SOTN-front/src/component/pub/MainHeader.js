@@ -34,7 +34,8 @@ class MainHeader extends Component {
     fault: [
       { path: 'network', name: '网络故障' },
       { path: 'business', name: '业务故障' },
-      { path: 'cutover', name: '割接概览' }
+      { path: 'cutover', name: '割接概览' },
+      { path: 'key-search', name: '一键搜索' }
     ],
     analysis: [
       { path: 'source', name: '资源统计' },
@@ -51,8 +52,8 @@ class MainHeader extends Component {
     source: '资源管理',
     business: '业务管理',
     fault: '故障管理',
-    analysis: '统计分析'
-    // search: '一键搜索',
+    analysis: '统计分析',
+    search: '一键搜索',
   };
 
   getPopMenu = type => (
