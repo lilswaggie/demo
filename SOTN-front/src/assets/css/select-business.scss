@@ -1,0 +1,83 @@
+.business-select-wrap {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.business-select-box {
+    position: absolute;
+    padding: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -241px;
+    margin-left: -442px;
+    height: 483px;
+    width: 884px;
+    background-color: #fff;
+    box-shadow:0px 1px 2px 0px rgba(217,215,215,1);
+    border-radius:3px;
+    border:1px solid rgba(204,204,204,1);
+
+    .close {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .wrap {
+        display: inline-block;
+        padding: 0 20px;
+        width: 250px;
+        height: 294px;
+        background-color: #fff;
+        border:1px solid rgba(204,204,204,1);
+        border-radius:3px;
+        box-shadow:0px 1px 2px 0px rgba(217,215,215,1);
+        cursor: pointer;
+
+        &:hover, &.active {
+            box-shadow:0px 1px 2px 0px rgba(91,149,244,1);
+            border:1px solid rgba(66,133,244,1);
+        }
+
+        .ant-divider-horizontal {
+            margin-top: 57px;
+            margin-bottom: 18px;
+        }
+
+        .text {
+            font-size:20px;
+            line-height:28px;
+            color:rgba(114,117,140,1);
+        }
+
+        .icon {
+            display: block;
+            margin-top: 55px;
+            margin-left: 51px;
+            height: 108px;
+            width: 108px;
+        }
+
+        &.word-wrap {
+            .icon {
+                background-image: url("../image/business/word.png");
+            }
+        }
+
+        &.china-wrap {
+            margin-left: 100px;
+
+            .icon {
+                background-image: url("../image/business/china.png");
+            }
+        }
+    }
+
+}

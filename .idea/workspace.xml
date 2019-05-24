@@ -1,8 +1,1435 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2cc4469-f523-4b7a-847f-5b8c8f2ed8d4" name="Default" comment="">
+    <list default="true" id="bdef76e1-08a9-4b80-ae96-d60c7407100b" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/.editorconfig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/.eslintignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/.eslintrc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/.gitlab-ci.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/.prettierrc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/env.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/jest/cssTransform.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/jest/fileTransform.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/paths.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/webpack.config.dev.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/webpack.config.prod.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/config/webpackDevServer.config.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/favicon.ico" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/config/global.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/S3_POINT_DATA.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/aa.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/airline.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/china.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/china2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/flights.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/queryOTN.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/servicelines.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/wang.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/world.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/world.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/world11.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldLines0114.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/world_service.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldcity.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldolines(仿作数据).js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldolines(真实数据).js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldolines.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldolines2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldolinescolor.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/geodata/worldsite.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/3d/3d.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/3d/3d.htmlbak" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/3d/geoData.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/3d/indoor.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/3d/outdoor.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/3d/threeMapInstance.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/businessFault/china.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/businessFault/e_china.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/businessFault/e_world.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/businessFault/world.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/businessFault/业务故障" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine/MapManager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine/china.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine/map.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine/客户专线" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine_3d/GeoUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine_3d/e_world.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine_3d/world.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine_3d/world_service.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/consumerLine_3d/客户专线" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/cutOver/MapManager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/cutOver/china.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/cutOver/map.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/cutOver/割接概览" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/index/china.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/index/e_world.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/index/world.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/index/world_bak.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/index/首页" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/networkFault/MapManager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/networkFault/china.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/networkFault/e_world.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/networkFault/map.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/networkFault/world.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/networkFault/网络故障" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/data.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/bigtrans.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/database.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/database.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/inroute.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/room.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/route.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/sideroute.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/sideroute.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/images/transne.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/Main.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/ParseData.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/ParseTopoData.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/image.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/obj/CirLine.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/obj/RoomObj.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/obj/RouteLine.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/obj/TransNe.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/obj/dataBaseObj.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/obj/toponetwork.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/js/topo.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/lib/jquery-3.2.1.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/lib/twaver.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/main.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/gis3/topo/topo.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/0.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/123.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/456.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OA.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OA_B.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OA_H.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTM.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTM_B.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTM_H.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTM_LIGHT.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTN_F_B.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTN_F_S.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTN_LIGHT.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTN_N_B.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/OTN_N_S.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/background.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/ceshi.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/ceshi2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/clock.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/earth.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/full_screen.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/gen.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/gis_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/lizi.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/lizi.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/night.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/ring.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/images/starfield.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/GeoUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/SplineUtil.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/frame/dojoConfig.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/frame/gis.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/frame/mapConfig.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/map/map.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/map/myModules/MapManager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/map/utils/GeometryUtil.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/inspur/map/utils/SymbolUtil.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/changelog.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/accordion/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/accordion/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/accordion/header.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/animation/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/animation/fade.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/animation/pop.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/animation/slide.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/badge/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/badge/button.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/badge/list.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/badge/tabs.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/button/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/button/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/button/style.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/button/switch.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/datagrid/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/datagrid/rowediting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/datalist/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/datalist/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/datalist/selection.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/dialog/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/dialog/message.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/form/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/images/login1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/images/modem.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/images/more.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/images/pda.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/images/scanner.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/images/tablet.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/input/numberspinner.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/input/textbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/layout/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/menu/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/menu/menubar.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/panel/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/panel/ajax.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/panel/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/panel/nav.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/simplelist/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/simplelist/button.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/simplelist/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/simplelist/image.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/simplelist/link.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/tabs/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/tabs/nav.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/tabs/pill.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/toolbar/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/toolbar/button.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/toolbar/menu.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/tree/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo-mobile/tree/dnd.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/ajax.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/datagrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/expandable.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/horizontal.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/multiple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/accordion/tools.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/calendar/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/calendar/custom.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/calendar/disabledate.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/calendar/firstday.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/calendar/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/calendar/weeknumber.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/checkbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combo/animation.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combo/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/combobox_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/combobox_data2.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/customformat.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/dynamicdata.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/icons.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/itemicon.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/multiline.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/multiple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/navigation.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/remotedata.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combobox/remotejsonp.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/datagrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/initvalue.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/multiple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/navigation.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combogrid/setvalue.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotree/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotree/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotree/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotree/initvalue.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotree/multiple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotree/tree_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotreegrid/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotreegrid/multiple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/combotreegrid/treegrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/aligncolumns.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/cacheeditor.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/cellediting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/cellstyle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/clientpagination.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/columngroup.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/complextoolbar.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/contextmenu.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/custompager.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/datagrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/datagrid_data2.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/footer.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/formatcolumns.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/frozencolumns.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/frozenrows.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/mergecells.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/multisorting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/products.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/rowborder.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/rowediting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/rowstyle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/selection.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/simpletoolbar.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datagrid/transform.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datalist/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datalist/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datalist/datalist_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datalist/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datalist/multiselect.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datalist/remotedata.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/buttons.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/clone.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/dateformat.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/events.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/restrict.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/sharedcalendar.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datebox/validate.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimebox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimebox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimebox/initvalue.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimebox/showseconds.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimespinner/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimespinner/clearicon.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimespinner/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/datetimespinner/format.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/demo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/dialog/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/dialog/complextoolbar.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/dialog/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/dialog/toolbarbuttons.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/draggable/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/draggable/constrain.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/draggable/snap.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/droppable/accept.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/droppable/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/droppable/sort.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/easyloader/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/filebox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/filebox/buttonalign.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/filebox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/form/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/form/form_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/form/load.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/form/validateonsubmit.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/addremove.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/autoheight.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/collapsetitle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/complex.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/customcollapsetitle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/datagrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/full.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/nestedlayout.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/nocollapsible.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/propertygrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/layout/tree_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/iconalign.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/plain.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/size.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/style.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/linkbutton/toggle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/maskedbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menu/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menu/customitem.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menu/events.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menu/inline.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menu/nav.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menubutton/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menubutton/alignment.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menubutton/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/menubutton/nav.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/messager/alert.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/messager/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/messager/interactive.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/messager/position.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberbox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberbox/format.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberbox/range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberspinner/align.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberspinner/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberspinner/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberspinner/increment.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/numberspinner/range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/pagination/attaching.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/pagination/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/pagination/custombuttons.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/pagination/layout.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/pagination/links.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/pagination/simple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/customtools.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/footer.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/halign.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/loadcontent.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/nestedpanel.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/panel/paneltools.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/passwordbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/passwordbox/flash.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/passwordbox/validatepassword.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/progressbar/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/progressbar/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/propertygrid/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/propertygrid/customcolumns.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/propertygrid/groupformat.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/propertygrid/propertygrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/radiobutton/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/resizable/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/searchbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/searchbox/category.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/searchbox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/sidemenu/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/sidemenu/sidemenu_style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/sidemenu/style.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/formattip.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/nonlinear.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/rule.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/slider/vertical.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/splitbutton/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/splitbutton/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/switchbutton/action.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/switchbutton/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/autoheight.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/dropdown.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/fixedwidth.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/hover.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/images/modem.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/images/pda.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/images/scanner.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/images/tablet.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/nestedtabs.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/striptools.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/style.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/tabimage.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/tabposition.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/tabstools.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tabs/tree_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/autocomplete.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/button.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/format.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/style.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/tagbox_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tagbox/validate.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/button.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/clearicon.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/custom.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/icons.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/multiline.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/textbox/size.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/timespinner/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/timespinner/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/timespinner/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/timespinner/range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/_content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/_dialog.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/ajax.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/customcontent.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/customstyle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/position.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/toolbar.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tooltip/tooltipdialog.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/animation.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/contextmenu.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/customcheckbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/dnd.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/editable.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/formatting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/icons.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/lazyload.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/lines.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/tree_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/tree/tree_data2.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/actions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/clientpagination.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/contextmenu.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/customcheckbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/editable.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/footer.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/lines.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/reports.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/treegrid_data1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/treegrid_data2.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/treegrid/treegrid_data3.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/validatebox/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/validatebox/customtooltip.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/validatebox/errorplacement.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/validatebox/validateonblur.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/basic.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/borderstyle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/customtools.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/fluid.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/footer.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/inlinewindow.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/modalwindow.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/demo/window/windowlayout.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/easyloader.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/jquery.easyui.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/jquery.easyui.mobile.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/license_freeware.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-af.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-am.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-ar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-bg.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-ca.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-cs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-cz.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-da.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-de.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-el.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-es.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-fa.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-fr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-it.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-jp.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-ko.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-nl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-pl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-pt_BR.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-ru.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-sv_SE.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-tr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-ua.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-zh_CN.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/locale/easyui-lang-zh_TW.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.accordion.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.calendar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.checkbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.combo.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.combobox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.combogrid.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.combotree.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.combotreegrid.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.datagrid.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.datalist.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.datebox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.datetimebox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.datetimespinner.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.dialog.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.draggable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.droppable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.filebox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.form.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.layout.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.linkbutton.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.maskedbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.menu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.menubutton.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.messager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.mobile.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.numberbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.numberspinner.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.pagination.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.panel.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.parser.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.passwordbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.progressbar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.propertygrid.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.radiobutton.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.resizable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.searchbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.sidemenu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.slider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.spinner.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.splitbutton.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.switchbutton.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.tabs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.tagbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.textbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.timespinner.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.tooltip.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.tree.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.treegrid.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.validatebox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/plugins/jquery.window.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/readme.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/easyloader.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.accordion.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.calendar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.combobox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.datebox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.draggable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.droppable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.form.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.linkbutton.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.menu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.parser.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.progressbar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.propertygrid.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.resizable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.slider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.tabs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/src/jquery.window.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/angular.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/black/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/bootstrap/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/color.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/default/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/gray/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icon.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/back.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/cancel.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/clear.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/cut.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/edit_add.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/edit_remove.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/filesave.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/filter.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/help.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/large_chart.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/large_clipart.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/large_picture.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/large_shapes.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/large_smartart.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/lock.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/man.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/mini_add.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/mini_edit.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/mini_refresh.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/more.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/no.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/ok.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/pencil.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/print.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/redo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/reload.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/search.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/sum.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/tip.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/icons/undo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material-teal/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/material/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/accordion.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/calendar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/checkbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/combo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/combobox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/datagrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/datalist.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/datebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/dialog.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/easyui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/filebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/accordion_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/calendar_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/combo_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/datagrid_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/datebox_arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/layout_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/linkbutton_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/menu_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/messager_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/pagination_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/panel_tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/passwordbox_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/passwordbox_open.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/searchbox_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/slider_handle.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/spinner_arrows.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/tabs_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/tagbox_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/tree_icons.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/images/validatebox_warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/layout.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/linkbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/menu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/menubutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/messager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/numberbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/pagination.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/panel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/passwordbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/progressbar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/propertygrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/radiobutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/searchbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/sidemenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/slider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/spinner.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/splitbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/switchbutton.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/tabs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/tagbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/textbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/tooltip.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/tree.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/validatebox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/metro/window.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/mobile.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/react.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/easyui-1.6.9/themes/vue.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/echarts-gl/echarts_gl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/echarts4/echarts.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/gis/lib/jquery-1.12.4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/manifest.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/mp4/wlgm.mp4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/mp4/wlzl.mp4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/mp4/ywgm.mp4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/mp4/ywzl.mp4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/public/mp4/zlzb.mp4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/scripts/build.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/scripts/start.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/scripts/test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/App.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/App.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/alarmdetail/alarmdetail.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/analysis/bussiness-support/businesssupport.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/analysis/source-analysis.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/busifault/busifault.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/busimanage/busimange.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/business.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/busiresoure/busiresource.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/check/data-check.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/echarts.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/font.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/forget/forget.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/home/home.1.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/home/home.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/iframe.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/linedetail/linedetail.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/login/login.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/main.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/modal.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/network-fault/network-fault.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/network-quality/network-quality.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/notice/notice-detail.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/notice/notice-edit.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/notice/notice.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/overview/custom-view-modal.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/overview/module-wrap.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/overview/overview.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/overview/work-order-wrap.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/bar-chart.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/chart-example-home-china.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/chart-example-home.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/chart-example.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/header.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/line-customer.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/region-select.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/slider-hover.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/pub/table-pagination.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/select-business.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/util.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/work-platform/todo.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/css/workorder/workorder.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/font/Let_s_go_Digital_Regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/font/Let_s_go_Digital_Regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/font/Let_s_go_Digital_Regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/font/Let_s_go_Digital_Regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/alarm/topped-disabled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/alarm/topped.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/ddpd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/pdsb.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/rgzzpd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/sgpdcg.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/wbz.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/wbzh.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/wglgj.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/wpd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/wqrgj.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/xtyzpd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/ybz.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/ybzh.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/ypd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/yqrgj.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/ysgl.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-fault/zdpdcg.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-manage/bg.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-manage/jp.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-manage/tp.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business-manage/yp.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business/china.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/business/word.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/forget/password-icon.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/forget/system-name-black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/big-screen-1.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/big-screen-hover.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/big-screen.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/cmss-logo.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/menu-hover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/menu.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/setting-hover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/setting.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/system-icon-eoms.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/system-icon-fault.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/system-icon-info.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/system-icon-property.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/workbench-1.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/workbench-hover.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/header/workbench.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/home/eoms.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/home/fault.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/home/fault.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/home/info.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/home/property.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/login/china-mobile-logo.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/login/login-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/login/login-bg.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/login/system-name.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/login/system-name.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/main/bench-icon.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/main/big-screen-icon.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/main/china-mobile-logo.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/overview/add.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/overview/icon-detail.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/overview/icon-down-green.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/overview/icon-down-red.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/overview/remove.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/pub/error-oa.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/pub/error-otm.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/pub/normal-cpe.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/pub/normal-oa.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/pub/normal-otm.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/work-platform/Group.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/assets/image/work-platform/Group@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/axios/axiosAction.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/axios/mainAxios.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/business-support/SupportContent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/network-quality/DeviceFault.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/network-quality/UnqualifiedPort.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/Channel.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/LightSection.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/MultiplexSection.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/OpticalCable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/Port.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/Site.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/TransmissionNe.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/component/FuyongUsage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/component/StatisticInfo.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/component/TimeAndRegionFilter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/stylesheets/multiplexSection.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/analysis/source-analysis/stylesheets/site.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/VIP.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/alarm.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/area.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/important-client.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/quality-quota.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/special-line.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/VIP/topo.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/css/big-screen.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/css/network-total.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/css/special-network-overview.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/css/vip.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/big-screen-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/chart-example-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/copper@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ddpd@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/dltpzb_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/gcsszt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ghzt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/gjzs@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/gold@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/gzzx@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/hlll-icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/jiansheyinhang@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/otn-icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/pdsb@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/rgzzpd@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/sgpdcg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/silver@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/standard@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/szfpq.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/szfpq_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/szfpq_bg.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/szfpq_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/title_decoration@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/twdsczt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/twzt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wbz@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wbzh@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlgm_DE@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlgm_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlgm_content_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlgm_content_selected_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlzl_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlzl_content_below_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlzl_content_below_selected_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlzl_content_up_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlzl_content_up_selected_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wlzl_title_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wpd@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wpp@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wqrgj@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/wzzt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/xtyzpd@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/xwgczt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/xwrzbfzt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/xwzt@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ybz@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ybzh@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ypp@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/yqrgj@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywgm_DE@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywgm_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywgm_content_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywgm_content_selected_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywzl-content_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywzl-content_bg_selected@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywzl_DE@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/ywzl_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zbke_zlzb_content_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zbkezb_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zbkh_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zdpdcg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zlzb-bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zlzb_DE@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zxgz-xz.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/zxlb_bg@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/金牌.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/imgs/银牌.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/network-overview/business-quality.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/network-overview/business-scale.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/network-overview/network-quality.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/network-overview/network-scale.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/network-overview/special-network-overview.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/big-screen/network-total/network-total.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-fault/LineDetailList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/ClientListTab.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/LineListTab.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/card/LineEchart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/card/lineChart.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/ActivityAlarm.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/AlarmList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/ClientDetail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/FunctionIndex.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/LineDetail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/client-detail.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/constant.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/kaitong-time.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/business-manage/components/line-detail.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/components/CoutoverPorgress.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/components/CutoverLine.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/components/Detail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/components/PieEchart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/components/SearchInput.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/cutover-line.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/cutover-progress.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/detail.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/bronze.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/field.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/gold.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/progressing.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/sliver.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/standard.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/image/success.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/index.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/piechart.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/cutover-overview/stylesheets/table-pagination.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/echart/ChinaAreaMap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/forget/ApplyResetPwd.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/forget/ApplyResetPwdSuccess.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/home/HomeTab1.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/home/HomeTab2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/home/HomeTab3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/home/HomeTab4.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/home/HomeTab5.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/home/HomeTab6.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/network-fault/PercentLine.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/network-fault/WarnLineArea.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/notice/NoticeDetailModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/notice/NoticeEditModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/BusinessQualityContent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/BusinessScalaContent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/CustomViewModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/ModuleWrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/NetworkQualityContent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/NetworkScalaContent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/ProvinceModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/WorkOrderContent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/business-quality/LineTrend.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/business-quality/LineTrendChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/business-scala/RadiusPieChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/business-scala/Top5Industry.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-quality/PerformanceBarChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-quality/PerformanceLineChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-quality/WarnChartWrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-quality/WarnCount.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-quality/WarnFirstTop5Province.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-quality/WarnTrendLineChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/network-scala/PortUsedTooltip.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/NestPie.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/PercentChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/Performance.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/PerformanceRingRatio.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/PerformanceTitle.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/PerformanceValue.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/PieExample.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/PieExampleItem.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/QuestionIconTooltip.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/Title.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/overview/work-order/Type.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/AnalysisBarChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/AnalysisLineChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/AnalysisPieChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/BarChart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/ChartExample.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/ChartExampleCutover.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/ChartExampleHome.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/ChartExampleHomeChina.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/ChartExampleHomeDark.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/CodeBlock.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/DateSelect.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/LineCustomerModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/MainHeader.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/RegionSelect.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/TablePagination.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/pub/WarnModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/NetResource.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/bay-type.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/inner-resource.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/lineChart.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/lineEchart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/room-type.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/site-type.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/site-type.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/space-resource.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/statistic-indicator.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/components/trans-network.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/resource-manage/net-resource.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/statistic-analysis/InfluenceAnalysis.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/statistic-analysis/influence-analysis.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-order/WorkOrderTab.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-platform/CategoryModal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-platform/Default.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-platform/Platform.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-platform/Public.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-platform/Todo.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/component/work-platform/css/work-plateform.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/AlarmDetail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/ApplyResetPwdPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/BigScreenPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/BusinessFault.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/BusinessManage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/BusinessResource.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/DataCheckPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/DevTools.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/HomePage.1.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/HomePage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/Iframe.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/LineDetail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/LoginPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/MainPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/NetworkFault.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/NoticeManagerPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/OverviewPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/ResetPwdPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/SelectBusinessPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/SelectBusinessPopupPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/WorkOrder.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/WorkPlatformPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/analysis/BusinessQualityPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/analysis/BusinessSupport.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/analysis/NetworkQualityPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/analysis/ServiceQualityPage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/analysis/SourceAnalysis.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/container/modal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/index.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/logo.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/reducer/mainReducer.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/redux/businessRedux.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/redux/dictRedux.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/redux/lineCustomerRedux.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/redux/loginRedux.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/redux/regionRedux.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/route/AuthRoute.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/saga/mainSaga.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/selector/mainSelector.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/serviceWorker.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/setupProxy.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/store/configureStore.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/AnalysisUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/ArrayUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/BrowserUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/CommonUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/DataCheckUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/DataUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/IframeUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/MessageUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/ModalUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/PerformanceUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/ReduxUtil.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/StyleUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/src/util/TimeUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/tools/deploy-sotn-webapp.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN-front/yarn.lock" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SOTN/gis3/search/reactSearch.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/SOTN/.idea/workspace.xml" afterPath="$PROJECT_DIR$/SOTN/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/SOTN/demo2.html" afterPath="$PROJECT_DIR$/SOTN/demo2.html" />
       <change beforePath="$PROJECT_DIR$/SOTN/gis3/index/e_world.js" afterPath="$PROJECT_DIR$/SOTN/gis3/index/e_world.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,19 +1444,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="china.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SOTN/charts/china.html">
+      <file leaf-file-name="NoticeDetailModal.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SOTN-front/src/component/notice/NoticeDetailModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            <state relative-caret-position="-394">
+              <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <dirStrings>
+      <dir>D:\项目\苏研SOTN项目\demo</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,13 +1472,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/SOTN-front/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-7" />
     <option name="y" value="2" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="width" value="1378" />
+    <option name="height" value="733" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -62,8 +1496,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -74,39 +1506,63 @@
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
-              <item name="charts" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="gis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="SOTN_CONFUSE" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="gis" type="462c0819:PsiDirectoryNode" />
+              <item name="gis3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="SOTN-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="notice" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SOTN" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -128,36 +1584,37 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f2cc4469-f523-4b7a-847f-5b8c8f2ed8d4" name="Default" comment="" />
-      <created>1558578235703</created>
+      <changelist id="bdef76e1-08a9-4b80-ae96-d60c7407100b" name="Default" comment="" />
+      <created>1558672068954</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1558578235703</updated>
-      <workItem from="1558578241372" duration="1266000" />
+      <updated>1558672068954</updated>
+      <workItem from="1558672074974" duration="1617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1266000" />
+    <option name="totallyTimeSpent" value="1617000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="2" width="1378" height="733" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -173,37 +1630,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SOTN/images/0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SOTN/images/123.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SOTN/images/background.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SOTN/images/ceshi.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SOTN/images/clock.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SOTN/charts/china.html">
+    <entry file="file://$PROJECT_DIR$/SOTN-front/src/component/notice/NoticeDetailModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="-394">
+          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

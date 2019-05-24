@@ -1,0 +1,11 @@
+table{
+    table-layout: fixed;
+}
+td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#public .ant-table-thead > tr, .ant-table-tbody > tr{
+    cursor: pointer;
+}

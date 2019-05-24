@@ -20,7 +20,10 @@
                 });
                 echarts.registerMap('world', mapJson);
                 var e_map = echarts.init(document.getElementById("g_map"));
+
                 var pointSer = $.fn.WorldModule.methods.getSiteSer();
+
+
                 var links = $.fn.WorldModule.methods.getLinkSers();
                 var categoryA = {
                     name: 'categoryA',
@@ -33,12 +36,14 @@
 
                 //var series = [pointSer, categoryA].concat(links);
                 var series = [categoryA].concat(links);
+
                 //  画出国内的点
                 series.push(pointSer);
                 console.error('pointer', pointSer);
                 //  画出国内的线
                 var chinaLinks = $.fn.WorldModule.methods.getChinaLinks();
                 var newseries = series.concat(chinaLinks);
+
 
                 e_map.setOption({
                     tooltip: {},
