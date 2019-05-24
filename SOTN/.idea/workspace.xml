@@ -12,19 +12,100 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="china.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
+      <file leaf-file-name="world.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="58" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worldolines.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geodata/worldolines.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="73858" column="27" lean-forward="false" selection-start-line="73858" selection-start-column="27" selection-end-line="73858" selection-end-column="27" />
+              <folding>
+                <element signature="e#28854#29601#0" expanded="false" />
+                <element signature="e#28891#29421#0" expanded="false" />
+                <element signature="e#29439#29598#0" expanded="false" />
+                <element signature="e#29603#38351#0" expanded="false" />
+                <element signature="e#29640#38171#0" expanded="false" />
+                <element signature="e#29685#38167#0" expanded="false" />
+                <element signature="e#38189#38348#0" expanded="false" />
+                <element signature="e#38353#49631#0" expanded="false" />
+                <element signature="e#38390#49451#0" expanded="false" />
+                <element signature="e#38435#49447#0" expanded="false" />
+                <element signature="e#49469#49628#0" expanded="false" />
+                <element signature="e#49633#80448#0" expanded="false" />
+                <element signature="e#49670#80268#0" expanded="false" />
+                <element signature="e#80286#80445#0" expanded="false" />
+                <element signature="e#80487#87691#0" expanded="false" />
+                <element signature="e#87709#87868#0" expanded="false" />
+                <element signature="e#87910#104334#0" expanded="false" />
+                <element signature="e#104352#104511#0" expanded="false" />
+                <element signature="e#104553#111488#0" expanded="false" />
+                <element signature="e#111752#122493#0" expanded="false" />
+                <element signature="e#122761#149234#0" expanded="false" />
+                <element signature="e#149502#170492#0" expanded="false" />
+                <element signature="e#170760#181795#0" expanded="false" />
+                <element signature="e#182063#204148#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeoUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inspur/GeoUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1039">
+              <caret line="392" column="28" lean-forward="false" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
+              <folding>
+                <element signature="e#14097#57655#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="e_world.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gis3/index/e_world.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="152">
+              <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+=======
             <state relative-caret-position="216">
               <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gis3/search/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="world.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geodata/world.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4980">
+              <caret line="0" column="714020" lean-forward="false" selection-start-line="0" selection-start-column="714020" selection-end-line="0" selection-end-column="714020" />
+              <folding />
+=======
       <file leaf-file-name="world.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,20 +132,36 @@
                 <marker date="1558592754644" expanded="true" signature="8020:8099" ph="..." />
                 <marker date="1558592754644" expanded="true" signature="8119:8133" ph="..." />
               </folding>
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="echarts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/echarts3/echarts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6402">
+              <caret line="74750" column="19" lean-forward="false" selection-start-line="74750" selection-start-column="8" selection-end-line="74750" selection-end-column="19" />
+=======
       <file leaf-file-name="aaa.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aaa.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-324">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="worldsite.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geodata/worldsite.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+=======
       <file leaf-file-name="demo2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo2.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,6 +183,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
               <caret line="165" column="29" lean-forward="false" selection-start-line="165" selection-start-column="22" selection-end-line="165" selection-end-column="29" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
               <folding />
             </state>
           </provider>
@@ -93,18 +191,65 @@
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>阿拉山口</find>
+      <find>中国满洲</find>
+      <find>coordinates</find>
+      <find>ERA</find>
+      <find>NAME</find>
+      <find>getLine</find>
+      <find>getOption</find>
+      <find>Z_NAME</find>
+      <find>reg</find>
+      <find>SWM6</find>
+      <find>links</find>
+      <find>isAnimation</find>
+      <find>SWM5</find>
+      <find>getChinaLinks</find>
+      <find>worldLines</find>
+      <find>features</find>
+      <find>getLinkSers</find>
+      <find>search-bd</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>SWM6</replace>
+      <replace>SWM5</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\项目\苏研SOTN项目\demo\SOTN</dir>
+    </dirStrings>
+=======
   <component name="FindInProjectRecents">
     <findStrings>
       <find>getScatter</find>
       <find>pointSer</find>
     </findStrings>
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/demo.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/geodata/worldsite.js" />
+        <option value="$PROJECT_DIR$/geodata/worldolines(真实数据).js" />
+        <option value="$PROJECT_DIR$/geodata/worldolines.js" />
+        <option value="$PROJECT_DIR$/gis3/index/world.html" />
+        <option value="$PROJECT_DIR$/gis3/index/e_world.js" />
+        <option value="$PROJECT_DIR$/gis3/search/search.html" />
+=======
         <option value="$PROJECT_DIR$/gis3/index/e_world.js" />
         <option value="$PROJECT_DIR$/demo2.html" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
       </list>
     </option>
   </component>
@@ -114,11 +259,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="y" value="2" />
-    <option name="width" value="1932" />
-    <option name="height" value="1045" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -135,6 +280,43 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SOTN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SOTN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
+              <item name="gis3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SOTN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
+              <item name="gis3" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SOTN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
+              <item name="gis3" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SOTN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SOTN" type="462c0819:PsiDirectoryNode" />
+              <item name="inspur" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+=======
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -179,12 +361,19 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="world.json&#9;FILE&#9;file://D:/项目/苏研SOTN项目/demo/SOTN/geodata/world.json" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+=======
     <property name="last_opened_file_path" value="E:/xxx/SOTN-front" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -236,15 +425,6 @@
       <option name="filePath" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -265,12 +445,20 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>C:\Users\wang.ning\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\lisuhao\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="TaskManager">
@@ -284,48 +472,112 @@
       <workItem from="1554775275340" duration="43000" />
       <workItem from="1556441593046" duration="1000000" />
       <workItem from="1557304752541" duration="48000" />
+<<<<<<< HEAD
+      <workItem from="1558573862460" duration="102000" />
+      <workItem from="1558579340866" duration="6303000" />
+      <workItem from="1558594739240" duration="9280000" />
+=======
       <workItem from="1558573862460" duration="700000" />
       <workItem from="1558575390588" duration="602000" />
       <workItem from="1558591806118" duration="10629000" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="18393000" />
+=======
     <option name="totallyTimeSpent" value="14639000" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25074404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldolines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412851">
+          <caret line="21729" column="25" lean-forward="false" selection-start-line="21729" selection-start-column="25" selection-end-line="21729" selection-end-column="25" />
+          <folding>
+            <element signature="e#28854#29601#0" expanded="false" />
+            <element signature="e#28891#29421#0" expanded="false" />
+            <element signature="e#29439#29598#0" expanded="false" />
+            <element signature="e#29603#38351#0" expanded="false" />
+            <element signature="e#29640#38171#0" expanded="false" />
+            <element signature="e#29685#38167#0" expanded="false" />
+            <element signature="e#38189#38348#0" expanded="false" />
+            <element signature="e#38353#49631#0" expanded="false" />
+            <element signature="e#38390#49451#0" expanded="false" />
+            <element signature="e#38435#49447#0" expanded="false" />
+            <element signature="e#49469#49628#0" expanded="false" />
+            <element signature="e#49633#80448#0" expanded="false" />
+            <element signature="e#49670#80268#0" expanded="false" />
+            <element signature="e#80286#80445#0" expanded="false" />
+            <element signature="e#80487#87691#0" expanded="false" />
+            <element signature="e#87709#87868#0" expanded="false" />
+            <element signature="e#87910#104334#0" expanded="false" />
+            <element signature="e#104352#104511#0" expanded="false" />
+            <element signature="e#104553#111488#0" expanded="false" />
+            <element signature="e#111752#122493#0" expanded="false" />
+            <element signature="e#122761#149234#0" expanded="false" />
+            <element signature="e#149502#170492#0" expanded="false" />
+            <element signature="e#170760#181795#0" expanded="false" />
+            <element signature="e#182063#204148#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inspur/GeoUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7448">
+          <caret line="392" column="28" lean-forward="false" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
+          <folding>
+            <element signature="e#14097#57655#0" expanded="false" />
+=======
     <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -340,21 +592,57 @@
           <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
           </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/geodata/worldolines(真实数据).js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353172">
+          <caret line="18588" column="21" lean-forward="false" selection-start-line="18588" selection-start-column="21" selection-end-line="18588" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldsite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4104">
+          <caret line="216" column="13" lean-forward="false" selection-start-line="213" selection-start-column="7" selection-end-line="216" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+=======
+    <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
           <folding />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="152">
+=======
         <state relative-caret-position="216">
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
           <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -373,6 +661,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+<<<<<<< HEAD
+          <folding>
+            <element signature="e#14097#57655#0" expanded="false" />
+          </folding>
+=======
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
         </state>
       </provider>
     </entry>
@@ -394,6 +688,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+<<<<<<< HEAD
+          <folding>
+            <element signature="e#14097#57655#0" expanded="false" />
+          </folding>
+=======
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
         </state>
       </provider>
     </entry>
@@ -422,6 +722,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+<<<<<<< HEAD
+          <folding>
+            <element signature="e#14097#57655#0" expanded="false" />
+          </folding>
+=======
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
         </state>
       </provider>
     </entry>
@@ -441,6 +747,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
         </state>
@@ -448,30 +762,138 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/consumerLine_3d/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldsite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldolines(真实数据).js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18686" column="25" lean-forward="false" selection-start-line="18686" selection-start-column="21" selection-end-line="18686" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/worldolines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="73858" column="27" lean-forward="false" selection-start-line="73858" selection-start-column="27" selection-end-line="73858" selection-end-column="27" />
+          <folding>
+            <element signature="e#28854#29601#0" expanded="false" />
+            <element signature="e#28891#29421#0" expanded="false" />
+            <element signature="e#29439#29598#0" expanded="false" />
+            <element signature="e#29603#38351#0" expanded="false" />
+            <element signature="e#29640#38171#0" expanded="false" />
+            <element signature="e#29685#38167#0" expanded="false" />
+            <element signature="e#38189#38348#0" expanded="false" />
+            <element signature="e#38353#49631#0" expanded="false" />
+            <element signature="e#38390#49451#0" expanded="false" />
+            <element signature="e#38435#49447#0" expanded="false" />
+            <element signature="e#49469#49628#0" expanded="false" />
+            <element signature="e#49633#80448#0" expanded="false" />
+            <element signature="e#49670#80268#0" expanded="false" />
+            <element signature="e#80286#80445#0" expanded="false" />
+            <element signature="e#80487#87691#0" expanded="false" />
+            <element signature="e#87709#87868#0" expanded="false" />
+            <element signature="e#87910#104334#0" expanded="false" />
+            <element signature="e#104352#104511#0" expanded="false" />
+            <element signature="e#104553#111488#0" expanded="false" />
+            <element signature="e#111752#122493#0" expanded="false" />
+            <element signature="e#122761#149234#0" expanded="false" />
+            <element signature="e#149502#170492#0" expanded="false" />
+            <element signature="e#170760#181795#0" expanded="false" />
+            <element signature="e#182063#204148#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodata/world.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4980">
+          <caret line="0" column="714020" lean-forward="false" selection-start-line="0" selection-start-column="714020" selection-end-line="0" selection-end-column="714020" />
+          <folding />
+=======
+        <state relative-caret-position="444">
+          <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/china.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1039">
+          <caret line="392" column="28" lean-forward="false" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
+          <folding>
+            <element signature="e#14097#57655#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gis3/index/e_world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+=======
         <state relative-caret-position="216">
           <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gis3/index/world.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="95">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="58" />
+=======
         <state relative-caret-position="162">
           <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/lib/echarts3/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6402">
+          <caret line="74750" column="19" lean-forward="false" selection-start-line="74750" selection-start-column="8" selection-end-line="74750" selection-end-column="19" />
+=======
     <entry file="file://$PROJECT_DIR$/inspur/GeoUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="165" column="29" lean-forward="false" selection-start-line="165" selection-start-column="22" selection-end-line="165" selection-end-column="29" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/gis3/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+=======
     <entry file="file://$PROJECT_DIR$/gis3/index/e_world.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -492,6 +914,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 54d0a23f6cf3a4039e3142455c6d478e3821984b
           <folding />
         </state>
       </provider>

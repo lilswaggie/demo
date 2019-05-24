@@ -11911,6 +11911,11 @@ yargs@^7.0.0:
     y18n "^3.2.1"
     yargs-parser "^5.0.0"
 
+yarn@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.npm.taobao.org/yarn/download/yarn-1.16.0.tgz#5701b58ac555ff91f7b889b7d791b3dc86f8f999"
+  integrity sha1-VwG1isVV/5H3uIm315Gz3Ib4+Zk=
+
 yup@^0.27.0:
   version "0.27.0"
   resolved "https://registry.npm.taobao.org/yup/download/yup-0.27.0.tgz#f8cb198c8e7dd2124beddc2457571329096b06e7"

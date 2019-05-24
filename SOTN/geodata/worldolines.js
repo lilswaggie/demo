@@ -73762,5 +73762,102 @@ var worldLines = {
 			"A_NAME": '厦门马巷',
 			"Z_NAME": '台湾金门'
 		}
-	}]
+	}],
+    "chinaFeatures":[{
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-3059987.9154000003, 2747144.6202],
+                [-3066759.4382000007, 2726650.7019]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "厦门陆缆",
+            "TYPE": "已建陆缆",
+            "PROPERTY": "共建",
+            "REMARK": "",
+            "SHAPE_Leng": 49970.44936,
+            "A_NAME": '厦门马巷',
+            "Z_NAME": '厦门观音山'
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-3066759.4382000007, 2726650.7019],
+                [-3055960.0933, 2733643.7923]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "厦门陆缆",
+            "TYPE": "已建陆缆",
+            "PROPERTY": "共建",
+            "REMARK": "",
+            "SHAPE_Leng": 49970.44936,
+            "A_NAME": '厦门观音山',
+            "Z_NAME": '厦门大嶝'
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-3055960.0933, 2733643.7923],
+                [-3140822.6894000005, 5509431.3071]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "中国陆缆",
+            "TYPE": "已建陆缆",
+            "PROPERTY": "共建",
+            "REMARK": "",
+            "SHAPE_Leng": 49970.44936,
+            "A_NAME": '厦门大嶝',
+            "Z_NAME": '中国满洲里'
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-3140822.6894000005, 5509431.3071],
+                [-3728247.087200001, 4829206.167]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "中国陆缆",
+            "TYPE": "已建陆缆",
+            "PROPERTY": "共建",
+            "REMARK": "",
+            "SHAPE_Leng": 49970.44936,
+            "A_NAME": '中国满洲里',
+            "Z_NAME": '扎门乌德-二连浩特廉租楼'
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-3728247.087200001, 4829206.167],
+                [-6223283.972100001, 4778422.8721]
+            ]
+        },
+        "properties": {
+            "ID": "",
+            "NAME": "中国陆缆",
+            "TYPE": "已建陆缆",
+            "PROPERTY": "共建",
+            "REMARK": "",
+            "SHAPE_Leng": 49970.44936,
+            "A_NAME": '扎门乌德-二连浩特廉租楼',
+            "Z_NAME": '阿拉山口'
+        }
+    }]
+    
 }

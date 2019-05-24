@@ -20,8 +20,10 @@
                 });
                 echarts.registerMap('world', mapJson);
                 var e_map = echarts.init(document.getElementById("g_map"));
-                var pointSer = $.fn.WorldModule.methods.getSiteSer()
-                console.error('point',pointSer)
+
+                var pointSer = $.fn.WorldModule.methods.getSiteSer();
+
+
                 var links = $.fn.WorldModule.methods.getLinkSers();
                 var categoryA = {
                     name: 'categoryA',
@@ -34,13 +36,19 @@
 
                 //var series = [pointSer, categoryA].concat(links);
                 var series = [categoryA].concat(links);
-                //series.push(pointSer);
-               // console.error('series',series)
+
+                //  画出国内的点
+                series.push(pointSer);
+                console.error('pointer', pointSer);
+                //  画出国内的线
+                var chinaLinks = $.fn.WorldModule.methods.getChinaLinks();
+                var newseries = series.concat(chinaLinks);
+
 
                 e_map.setOption({
                     tooltip: {},
                     geo: $.fn.WorldModule.methods.getGeo(),
-                    series: series
+                    series: newseries
                 });
 
                 $.fn.WorldModule.methods.getPorts(e_map);
@@ -61,17 +69,17 @@
             geo.emphasis = null;
             geo.itemStyle = {
                 normal: {
-                    color: '#ABC7EF',
+                    color: '#1B2769',
                     borderWidth: 1,
-                    borderColor: '#ABC7EF'
+                    borderColor: '#1B2769'
                 },
                 emphasis: {
-                    areaColor: '#3F7FDB',
+                    areaColor: '#2866C7',
                     shadowOffsetX: 0,
                     shadowOffsetY: 0,
-                    shadowBlur: 20,
+                    // shadowBlur: 20,
                     borderWidth: 0,
-                    shadowColor: '#fff'
+                    shadowColor: '#2866C7'
                 }
             };
             geo.regions = [
@@ -209,6 +217,99 @@
                 }
             };
             return pointSer;
+        },
+        getChinaLinks: function () {
+            var links = [];
+            var isAnimation = false;
+            var linefeatures = worldLines.chinaFeatures;
+            // 创建正则表达式
+            var reg = /(海缆)|(陆缆)$/;
+            //// + linkCfg.properties.TYPE // '12345' // linkCfg.name // '{b}<br/>{c}'
+            $.each(linefeatures, function (index, linkCfg) {
+                var link = {
+                    tooltip: {
+                        textStyle: {
+                            color: '#3C3E4AFF',
+                        },
+                        backgroundColor: '#FFFFFFFF',
+                        extraCssText: 'box-shadow: 0px 2px 4px 0px #00000033',
+                        formatter: '<span style="font-size: 16px;font-weight: bold;padding:5px;height:28px;line-height: 28px;"><span style="display: inline-block;width:6px;height:6px;background:rgba(246,178,81,1);margin-right:5px;"></span>'+linkCfg.properties.NAME+'</span>' + '<span style="display: block;padding:5px;font-size: 14px;font-weight: bold;">端点：<span style="color:#2C9CFA;">'+linkCfg.properties.A_NAME+'</span>—<span  style="color:#2C9CFA;">'+linkCfg.properties.Z_NAME+ '</span></span><span style="display: block;line-height: 28px;padding:5px;font-size: 14px;font-weight: bold;">使用状态：<span style="color:#2C9CFA;">' + linkCfg.properties.TYPE.replace(reg,'')+'</span></span>',
+                        /* formatter: `<div style={backgroundColor:'red'}><span style={width:'20px',height:'20px',backgroundColor:'red'}></span>${linkCfg.properties.NAME}</div>
+                        <br/>端点：<em style={color: 'blue'}>${linkCfg.properties.A_NAME}-${linkCfg.properties.Z_NAME}</em>
+                        <br/>使用状态：${linkCfg.properties.TYPE.replace(reg,'')}` */
+
+                    },
+                    type: 'lines',
+                    name: linkCfg.properties.NAME,
+                    link_type: linkCfg.properties.TYPE,
+                    shape_line: linkCfg.properties.SHAPE_LEN,
+                    coordinateSystem: 'geo',
+                    data: [{ coords: linkCfg.geometry.coordinates }],
+                    polyline: true,
+                    // silent: true
+                    lineStyle: {
+                        normal: {
+                            // 线条颜色的设置
+                            color: '#fff', // '#000', // linkCfg.color,
+                            width: 2.5,
+                            opacity: 0.9
+
+                        },
+                        emphasis: {
+                            width: 5,
+                            shadowBlur: 200,
+                            shadowColor: $.fn.WorldModule.methods.getLinkColor(linkCfg)
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            width: 5,
+                            shadowBlur: 200,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                    // progressiveThreshold: 500,
+                    // progressive: 200
+                }
+                if (linkCfg.geometry.type === 'MultiLineString') {
+                    var linkdataT = [];
+                    $.each(linkCfg.geometry.coordinates, function (index, linkCfgCoor) {
+                        var corrdT = { coords: linkCfgCoor }
+                        linkdataT.push(corrdT);
+                    });
+
+                    link.data = linkdataT
+                }
+                links.push(link)
+                if (isAnimation) {
+                    var link1 = {
+                        tooltip: {
+                            formatter: linkCfg.name // '{b}<br/>{c}'
+                        },
+                        type: 'lines',
+                        coordinateSystem: 'geo',
+                        data: linkCfg.lines,
+                        polyline: true,
+                        lineStyle: {
+                            normal: {
+                                color: '#fff',
+                                width: 0
+                            }
+                        },
+                        effect: {
+                            constantSpeed: 20,
+                            show: true,
+                            // trailLength: 0.1,
+                            symbolSize: 1.5
+                        },
+                        zlevel: 1,
+                        progressiveThreshold: 500,
+                        progressive: 200
+                    }
+                    links.push(link1);
+                }
+            });
+            return links;
         },
         getLinkSers: function () {
             var links = [];
