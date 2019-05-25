@@ -26,6 +26,9 @@ function(Point,Polyline,Graphic,graphicsUtils){
             paths.push([zPoint.x, zPoint.y]);
             var polyline = new Polyline(paths);
             return polyline;
-        }
+        },
+        locationAndBigger: function(pointer) {
+            Global.mapGlobal.map.centerAndZoom(pointer.geometry,10);
+        },
     }
 });
