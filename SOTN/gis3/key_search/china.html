@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-国内</title>
+    <script src="../../lib/jquery-1.12.4.min.js"></script>
+    <!--配置文件-->
+    <script src="../../config/global.js"></script>
+    <script src="../../inspur/frame/dojoConfig.js"></script>
+    <script src="../../inspur/frame/gis.js"></script>
+    <script src="../../inspur/frame/mapConfig.js"></script>
+
+    <link rel="stylesheet" href="../../lib/3.17/esri/css/esri.css">
+    <script src="../../lib/3.17/init.js"></script>
+    <!--easyui-->
+    <link rel="stylesheet" href="../../lib/easyui-1.6.9/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" href="../../lib/easyui-1.6.9/themes/icon.css">
+    <script src="../../lib/easyui-1.6.9/jquery.easyui.min.js"></script>
+
+
+    <style>
+        html, body, #map {
+            background: url("../../images/gis_bg.png") no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .full_container{
+            cursor: pointer;
+            z-index:10;
+        }
+        .circle{
+            cursor: pointer;
+            position: absolute;
+            right:20px;
+            top:10px;
+            background: url("../../images/full_screen.png") no-repeat;
+            background-position:center;
+            background-color: #2C9CFA;
+            width:32px;
+            height:32px;
+            border-radius: 50%;
+            z-index:10;
+        }
+
+        /* .triangle-up {
+             display: inline-block;
+             width: 0;
+             height: 0;
+             border-left: 3px solid transparent;
+             border-right: 3px solid transparent;
+             border-bottom:5px solid #333333;
+
+         }
+         .rect{
+             width:40px;
+             height:20px;
+             background:rgba(51,51,51,0.8);
+             border-radius:3px;
+         }
+         .text{
+             cursor: pointer;
+             width:24px;
+             height:17px;
+             line-height:17px;
+             font-size:12px;
+             font-family:PingFangSC-Regular;
+             font-weight:400;
+             color:rgba(255,255,255,0.7);
+             margin: 0px auto;
+         }*/
+
+        .rect{
+            margin-top: 20px;
+            width: 40px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            text-align: center;
+            background: rgba(51,51,51,0.8);
+            border-radius: 3px;
+            position: absolute;
+            right:14px;
+            top:29px;
+            color: rgba(255,255,255,1);
+        }
+        .rect:before {
+            position: absolute;
+            content: "";
+            top: -8px;
+            left: 14px;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border: 4px solid transparent;
+            border-bottom: 4px solid rgba(51,51,51,0.8);
+        }
+        #elasticFrame{
+            position: absolute;
+            top: 300px;
+            right: 235px;
+            z-index: 200;
+            box-sizing: border-box;
+            box-shadow: 0px 1px 5px 0px #0000004D;
+            font-size: 12px;
+            display: none;
+        }
+        .framehead{
+            background-color: #66A4EAFF;
+            padding: 9px 8px 10px 10px;
+            color: #FFFFFFFF;
+            line-height: 17px;
+        }
+        ul li{
+            list-style: none;
+        }
+        .framehead .title{
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+            padding-left: 0px;
+            line-height: 20px;
+            font-size: 14px;
+        }
+        .framehead .title>li:first-child{
+            margin-right: 58px;
+        }
+        .framehead .content{
+            margin: 13px 0px 0px;
+            padding-left: 0px;
+            line-height: 17px;
+        }
+        .framehead .content>li,.frameContent>li{
+            display: inline-block;
+        }
+        .framehead .content>li:first-child{
+            color: #2C9CFAFF;
+            background: #FFFFFFFF;
+            border-radius: 2px;
+            padding: 1px 4px;
+            margin-right: 7px;
+        }
+        .framehead .content>li:last-child{
+            margin-right: 25px;
+        }
+        .framehead .content>span{
+            margin: 0px 7px;
+        }
+        .frameContent{
+            margin: 0px;
+            padding: 19px 0px 21px 10px;
+            color: #3C3E4AFF;
+            background-color: #FFFFFFFF;
+        }
+        .frameContent>li:not(:first-child){
+            margin-top: 15px;
+        }
+        .frameContent>span{
+            color: #72758CFF;
+        }
+        #clearFrame:hover{
+            cursor: pointer;
+        }
+        #clearFrame{
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+<div id="elasticFrame">
+    <div class="framehead">
+        <ul class="title">
+            <li><span id="neName"></span></li>
+            <img id="clearFrame" src="../../images/close.png" alt="">
+        </ul>
+        <ul class="content">
+            <li><span id="state"></span></li>
+            <li><span id="vender"></span></li><span>|</span>
+            <li><span id="serviceLevel"></span></li><span>|</span>
+            <li><span id="modelName"></span></li>
+        </ul>
+    </div>
+    <ul class="frameContent">
+        <li>区域：</li><span id="location"></span><br/>
+        <li>所属站点：</li><span id="siteName"></span><br/>
+        <li>所属机房：</li><span id="roomName"></span><br/>
+    </ul>
+</div>
+<div id="map" style="position: relative;">
+    <div class="full_container">
+        <div class="circle"></div>
+        <div>
+            <div class="rect">全屏</div>
+        </div>
+    </div>
+</div>
+<script src="./map.js"></script>
+
+</body>
+</html>
