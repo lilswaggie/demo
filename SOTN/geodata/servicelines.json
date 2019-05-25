@@ -2,8 +2,8 @@
   "nodes": [{
       "oid": 10,
       "oname": "北京",
-      "longitude": 116.4551,
-      "lantitude": 40.2539,
+      "longitude":116.53892543520398,
+      "lantitude":39.76445054564099,
       "aggr": [{
         "oid": "网元ID",
         "oname": "网元名称"

@@ -104,17 +104,20 @@
         //获取中国map实例
         getChinaMapInstance:function(){
             var geo = {
+                zoom:1.5,
                 map:'china',
                 itemStyle:{
                     borderColor:'#4DA7F5',
                     borderWidth:5,
-                    areaColor:'#F9FBFF'
+                    areaColor:'#131348'
                 },
                 emphasis:{
+                    label:{show:false},
                     itemStyle:{
-                        areaColor:'#F9FBFF'
+                         areaColor:'#131348',
+                         opacity:0
                     }
-                },
+                 },
                 // regions:$("body").GeoUtils('getChinaRegions')
             }
             return geo;
@@ -388,6 +391,49 @@
                 }
             }
             return res;
+        },
+        wgs84ToBD:function(obj){
+            var lng = obj.lng;
+            var lat = obj.lat;
+            const xPI = 3.14159265358979324 * 3000.0 / 180.0
+            const PI = 3.1415926535897932384626
+            const a = 6378245.0
+            const ee = 0.00669342162296594323
+            // WGS84转GCj02
+            var dlat = this.transformlat(lng - 105.0, lat - 35.0)
+            var dlng = this.transformlng(lng - 105.0, lat - 35.0)
+            var radlat = lat / 180.0 * PI
+            var magic = Math.sin(radlat)
+            magic = 1 - ee * magic * magic
+            var sqrtmagic = Math.sqrt(magic)
+            dlat = (dlat * 180.0) / ((a * (1 - ee)) / (magic * sqrtmagic) * PI)
+            dlng = (dlng * 180.0) / (a / sqrtmagic * Math.cos(radlat) * PI)
+            var mglat = lat + dlat
+            var mglng = lng + dlng
+            // 火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换
+            var z = Math.sqrt(mglng * mglng + mglat * mglat) + 0.00002 * Math.sin(mglat * xPI);
+            var theta = Math.atan2(mglat, mglng) + 0.000003 * Math.cos(mglng * xPI);
+            var bdlng = z * Math.cos(theta) + 0.0065;
+            var bdlat = z * Math.sin(theta) + 0.006;
+            // return [bdlng, bdlat]
+            return {lng: bdlng, lat: bdlat};
+        },
+        transformlat:function(lng, lat) {
+            const PI = 3.1415926535897932384626
+            let ret = -100.0 + 2.0 * lng + 3.0 * lat + 0.2 * lat * lat + 0.1 * lng * lat + 0.2 * Math.sqrt(Math.abs(lng))
+            ret += (20.0 * Math.sin(6.0 * lng * PI) + 20.0 * Math.sin(2.0 * lng * PI)) * 2.0 / 3.0
+            ret += (20.0 * Math.sin(lat * PI) + 40.0 * Math.sin(lat / 3.0 * PI)) * 2.0 / 3.0
+            ret += (160.0 * Math.sin(lat / 12.0 * PI) + 320 * Math.sin(lat * PI / 30.0)) * 2.0 / 3.0
+            return ret;
+        },
+        transformlng:function(lng, lat)
+        {
+            const PI = 3.1415926535897932384626
+            var ret = 300.0 + lng + 2.0 * lat + 0.1 * lng * lng + 0.1 * lng * lat + 0.1 * Math.sqrt(Math.abs(lng));
+            ret += (20.0 * Math.sin(6.0 * lng * PI) + 20.0 * Math.sin(2.0 * lng * PI)) * 2.0 / 3.0;
+            ret += (20.0 * Math.sin(lng * PI) + 40.0 * Math.sin(lng / 3.0 * PI)) * 2.0 / 3.0;
+            ret += (150.0 * Math.sin(lng / 12.0 * PI) + 300.0 * Math.sin(lng / 30.0 * PI)) * 2.0 / 3.0;
+            return ret
         }
     }
     $.fn.GeoUtils.default = {
