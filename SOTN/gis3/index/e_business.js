@@ -1,4 +1,8 @@
 /**
+ * 业务品质高js
+ * Created by wang.ning on 2019/5/26.
+ */
+/**
  * @author wang.ning
  */
 (function ($) {
@@ -114,9 +118,9 @@
                         var p_oa_sery = {
                             type:'scatter',
                             coordinateSystem:'geo',
-                            //symbol:'circle',
-                            symbol:'image://'+Global.mapGlobal.symbolConfig.OA_SYMBOL,
-                            symbolSize:10,
+                            symbol:'circle',
+                            //symbol:'image://'+Global.mapGlobal.symbolConfig.OA_SYMBOL,
+                            symbolSize:2,
                             cursor:'pointer',
                             itemStyle:{
                                 color:'#fff',
@@ -126,9 +130,9 @@
                         var p_otm_sery = {
                             type:'scatter',
                             coordinateSystem:'geo',
-                            //symbol:'circle',
-                            symbol:'image://'+Global.mapGlobal.symbolConfig.OTM_SYMBOL,
-                            symbolSize:20,
+                            symbol:'circle',
+                            //symbol:'image://'+Global.mapGlobal.symbolConfig.OTM_SYMBOL,
+                            symbolSize:2,
                             cursor:'pointer',
                             itemStyle:{
                                 color:'#fff',
@@ -138,9 +142,9 @@
                         var p_otn_sery = {
                             type:'scatter',
                             coordinateSystem:'geo',
-                            //symbol:'circle',
-                            symbol:'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,
-                            symbolSize:20,
+                            symbol:'circle',
+                            //symbol:'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,
+                            symbolSize:2,
                             cursor:'pointer',
                             itemStyle:{
                                 color:'#fff',
@@ -153,7 +157,7 @@
                             type:'lines',
                             coordinateSystem:'geo',
                             lineStyle:{
-                                color:'#4C88E4',
+                                color:'#fff',
                                 width:1,
                                 type:'solid',
                             },
@@ -169,7 +173,7 @@
                         chart.setOption(options);
 
                         //渲染告警数据
-                        $.fn.ChinaModule.methods.renderWarningData(chart);
+                        //$.fn.ChinaModule.methods.renderWarningData(chart);
 
                         //实时渲染开启
                         //$.fn.ChinaModule.methods.realRenderWarningData(chart);
@@ -180,56 +184,56 @@
             });
             //$.get(Global.mapGlobal.queryPOI.queryServiceLines, function (datas) {
             /*$.get('../../geodata/servicelines.json', function (datas) {
-                if (datas && datas.nodes) {
-                    var ps = [];
-                    datas.nodes.map(function (nodeItem, nodeIndex) {
-                        var point = {
-                            name: nodeItem.oname,
-                            value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
-                            data: nodeItem
-                        }
-                        ps.push(point);
-                    });
+             if (datas && datas.nodes) {
+             var ps = [];
+             datas.nodes.map(function (nodeItem, nodeIndex) {
+             var point = {
+             name: nodeItem.oname,
+             value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
+             data: nodeItem
+             }
+             ps.push(point);
+             });
 
-                    var ls = [];
-                    datas.edges.map(function (edgeItem, edgeIndex) {
-                        var line = {
-                            oname: edgeItem.oname,
-                            coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
-                            data: edgeItem
-                        }
-                        ls.push(line);
-                    });
-                    points.data = ps;
-                    lines.data = ls;
-                    console.error('points',points.data)
-                    var options = chart.getOption();
-                    var p_test = {
-                        type:'scatter',
-                        coordinateSystem:'geo',
-                        symbol:'circle',
-                        symbolSize:10,
-                        cursor:'pointer',
-                        itemStyle:{
-                            color:'#fff',
-                        },
-                        data:points.data
-                    }
-                    options.series.push(p_test);
-                    //options.series.push(points);
-                    //options.series.push(lines);
-                    console.error('options',options)
-                    chart.setOption(options);
+             var ls = [];
+             datas.edges.map(function (edgeItem, edgeIndex) {
+             var line = {
+             oname: edgeItem.oname,
+             coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
+             data: edgeItem
+             }
+             ls.push(line);
+             });
+             points.data = ps;
+             lines.data = ls;
+             console.error('points',points.data)
+             var options = chart.getOption();
+             var p_test = {
+             type:'scatter',
+             coordinateSystem:'geo',
+             symbol:'circle',
+             symbolSize:10,
+             cursor:'pointer',
+             itemStyle:{
+             color:'#fff',
+             },
+             data:points.data
+             }
+             options.series.push(p_test);
+             //options.series.push(points);
+             //options.series.push(lines);
+             console.error('options',options)
+             chart.setOption(options);
 
-                    //渲染告警数据
-                    //$.fn.ChinaModule.methods.renderWarningData(chart);
+             //渲染告警数据
+             //$.fn.ChinaModule.methods.renderWarningData(chart);
 
-                    //实时渲染开启
-                    //$.fn.ChinaModule.methods.realRenderWarningData(chart);
+             //实时渲染开启
+             //$.fn.ChinaModule.methods.realRenderWarningData(chart);
 
 
-                }
-            });*/
+             }
+             });*/
 
 
         },
@@ -260,13 +264,13 @@
                                             flag = true;
                                         }
                                         if(flag){
-                                           if(seryItemData.data.type == 'OA'){
-                                               seryItemData.symbol = 'image://'+Global.mapGlobal.symbolConfig.OA_WARNING_SYMBOL
-                                           }else if(seryItemData.data.type == 'OTM'){
-                                               seryItemData.symbol = 'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL
-                                           }else if(seryItemData.data.type == 'OTN'){
-                                               seryItemData.symbol = 'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL
-                                           }
+                                            if(seryItemData.data.type == 'OA'){
+                                                seryItemData.symbol = 'image://'+Global.mapGlobal.symbolConfig.OA_WARNING_SYMBOL
+                                            }else if(seryItemData.data.type == 'OTM'){
+                                                seryItemData.symbol = 'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL
+                                            }else if(seryItemData.data.type == 'OTN'){
+                                                seryItemData.symbol = 'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL
+                                            }
 
                                         }
                                     });
@@ -278,11 +282,11 @@
                                 if (serieItem.type == 'lines') {
                                     serieItem.data.map(function (serieItemData, s_index) {
                                         var flag = false; //标识 是否告警
-                                     /*   serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
-                                            if (aggrItem.oid == warningItem) {
-                                                flag = true;
-                                            }
-                                        });*/
+                                        /*   serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+                                         if (aggrItem.oid == warningItem) {
+                                         flag = true;
+                                         }
+                                         });*/
                                         for(var i = 0; i < serieItemData.data.aggr.length - 1; i++ ){
                                             if(serieItemData.data.aggr[i].oid == warningItem){
                                                 flag = true;
@@ -306,32 +310,32 @@
             });
             //$.get(Global.mapGlobal.queryPOI.queryWarningOTN, function (datas) {
             /*$.get('../../geodata/queryWarnings.json', function (datas) {
-                if (datas && datas.serviceline) {
-                    datas.serviceline.map(function (warningItem, warningIndex) {
-                        var options = chart.getOption();
-                        options.series.map(function (serieItem, nodeIndex) {
-                            if (serieItem.type == 'lines') {
-                                serieItem.data.map(function (serieItemData, s_index) {
-                                    var flag = false; //标识 是否告警
-                                    serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
-                                        if (aggrItem.oid == warningItem) {
-                                            flag = true;
-                                        }
-                                    });
-                                    if (flag) {
-                                        serieItemData.lineStyle = {
-                                            color: Global.mapGlobal.echartsConfig.lineColor.fault
-                                        };
-                                    }
-                                });
-                            }
-                        });
-                        chart.setOption(options);
-                    });
+             if (datas && datas.serviceline) {
+             datas.serviceline.map(function (warningItem, warningIndex) {
+             var options = chart.getOption();
+             options.series.map(function (serieItem, nodeIndex) {
+             if (serieItem.type == 'lines') {
+             serieItem.data.map(function (serieItemData, s_index) {
+             var flag = false; //标识 是否告警
+             serieItemData.data.aggr.map(function (aggrItem, aggrIndex) {
+             if (aggrItem.oid == warningItem) {
+             flag = true;
+             }
+             });
+             if (flag) {
+             serieItemData.lineStyle = {
+             color: Global.mapGlobal.echartsConfig.lineColor.fault
+             };
+             }
+             });
+             }
+             });
+             chart.setOption(options);
+             });
 
-                };
-                $.fn.ChinaModule.defaults.oldOption = chart.getOption();
-            });*/
+             };
+             $.fn.ChinaModule.defaults.oldOption = chart.getOption();
+             });*/
         },
         //实时渲染功能
         realRenderWarningData: function (chart) {
