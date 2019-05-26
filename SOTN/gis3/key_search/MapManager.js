@@ -13,8 +13,9 @@ define([
     "esri/dijit/BasemapGallery",
     "esri/dijit/Basemap",
     "esri/layers/ArcGISDynamicMapServiceLayer",
+    "esri/graphicsUtils",
     "dojo/_base/declare"
-],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,BasemapGallery,Basemap,ArcGISDynamicMapServiceLayer,declare){
+],function(Map,WebTiledLayer,GeometryUtil,GraphicsLayer,Graphic,SymbolUtil,webMercatorUtils,Draw,BasemapGallery,Basemap,ArcGISDynamicMapServiceLayer,graphicsUtils,declare){
     return declare(null,{
         map:null,
         constructor:function(){
@@ -29,7 +30,7 @@ define([
             map.addLayer(layer);
             map.setZoom(Global.mapGlobal.mapInstance.mapOptions.zoom)
             map.centerAt(GeometryUtil.getPoint(Global.mapGlobal.mapInstance.mapOptions.center[0],Global.mapGlobal.mapInstance.mapOptions.center[1]));
-
+            // console.error('centerPointer', GeometryUtil.getPoint(Global.mapGlobal.mapInstance.mapOptions.center[0],Global.mapGlobal.mapInstance.mapOptions.center[1]));
 
             var mouseGraphTextLayer = new GraphicsLayer();
             map.addLayer(mouseGraphTextLayer);
@@ -57,6 +58,7 @@ define([
 
             //站点点击呈现站点下网元设备
             Global.mapGlobal.otnLayer.on('click',function(params){
+                console.error('params', params);
                 if(Global.mapGlobal.clickGraphic.gra && Global.mapGlobal.clickGraphic.sym)
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
                 Global.mapGlobal.clickGraphic.gra = params.graphic;
@@ -155,6 +157,7 @@ define([
                     Global.mapGlobal.clickGraphic.gra.setSymbol(Global.mapGlobal.clickGraphic.sym);
                 }
             })
+            //gis.location = this.searchPoint();
 
         },
         /**
@@ -188,6 +191,8 @@ define([
                         if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                         this_instance._drawingPoints(datas.nodes);                  //绘制点数据
                         this_instance.queryWarningOTN(this_instance);               //接入告警数据
+                        // 测试找点
+                        //this_instance.searchPoint();
                     }
                 },
                 error:function(data){
@@ -195,6 +200,23 @@ define([
                 }
             });
 
+        },
+        /**
+         * 测试找点
+         */
+        searchPoint:function(){
+            var sitePointer = Global.mapGlobal.otnLayer.graphics;
+            var searchPointerID = '112010102130848501';
+            for (var i = 0; i < sitePointer.length; i++) {
+                if(searchPointerID === sitePointer[i].attributes.oid) {
+                    console.error('找到的站点', sitePointer[i]);
+                    Global.mapGlobal.clickGraphic.gra = sitePointer[i];
+                    Global.mapGlobal.clickGraphic.sym = sitePointer[i].symbol;
+
+                    sitePointer[i].setSymbol(SymbolUtil.getHightPointSymbol(sitePointer[i].attributes.type));
+                    GeometryUtil.locationAndBigger(sitePointer[i]);
+                }
+            }
         },
         /**
          * 实时查询告警数据
