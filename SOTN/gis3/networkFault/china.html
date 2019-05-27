@@ -34,7 +34,27 @@
 
 </head>
 <body>
-    <div id="map"></div>
+    <div id="map">
+        <div style="width: 330px;height: 120px;background-color: white;position: absolute;top: 10px;z-index: 1000;box-shadow: 5px 5px 10px #888888;border-radius: 5px">
+            <div style="margin-top: 10px;margin-left: 20px">
+                <b style="font-size: 20px">这里是设备名称</b>
+            </div>
+            <div style="display: flex;width: 330px;margin-top: 20px">
+                <div style="flex: 1 1 33.33%;padding-left: 10px;text-align: center;">
+                    <div style="color: #72758C">受影响专线</div>
+                    <div style="color: #3059AC;font-weight: 600;font-size: 21px;">5</div>
+                </div>
+                <div style="flex: 1 1 33.33%;padding-left: 10px;text-align: center;">
+                    <div style="color: #72758C">一级告警数量</div>
+                    <div style="color: #EE606E;font-weight: 600;font-size: 21px;">56</div>
+                </div>
+                <div style="flex: 1 1 33.33%;padding-left: 10px;text-align: center;">
+                    <div style="color: #72758C">告警总数</div>
+                    <div style="color: #3059AC;font-weight: 600;font-size: 21px;">245</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="map.js"></script>
 </body>
 </html>

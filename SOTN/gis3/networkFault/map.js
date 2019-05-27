@@ -10,6 +10,8 @@ require(["./MapManager.js"],function(MapManager){
 
     Global.mapGlobal.instance = {};     //instances
     Global.mapGlobal.instance.mapManager = new MapManager();
+    console.error('mapManager', Global.mapGlobal.instance.mapManager);
+    gis.aa = Global.mapGlobal.instance.mapManager.searchPoint; // 搜索点并且定位
 
     Global.datas = {};
     Global.datas.warningDatas = null;    //存放告警数据

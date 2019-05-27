@@ -1,5 +1,5 @@
 /**
- * @author wang.ning
+ * @author li.suhao
  */
 define([
     "esri/map",
@@ -202,13 +202,13 @@ define([
 
         },
         /**
-         * 测试找点
+         * 在gis地图上找点
          */
-        searchPoint:function(){
+        searchPoint:function(pointerID){
             var sitePointer = Global.mapGlobal.otnLayer.graphics;
-            var searchPointerID = '112010102130848501';
+            // var searchPointerID = '112010102130848501';
             for (var i = 0; i < sitePointer.length; i++) {
-                if(searchPointerID === sitePointer[i].attributes.oid) {
+                if(pointerID === sitePointer[i].attributes.oid) {
                     console.error('找到的站点', sitePointer[i]);
                     Global.mapGlobal.clickGraphic.gra = sitePointer[i];
                     Global.mapGlobal.clickGraphic.sym = sitePointer[i].symbol;
