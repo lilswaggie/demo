@@ -188,6 +188,23 @@ define([
             });
         },
         /**
+         * 在gis地图上找点
+         */
+        searchPoint:function(pointerID){
+            var sitePointer = Global.mapGlobal.otnLayer.graphics;
+            // var searchPointerID = '112010102130848501';
+            for (var i = 0; i < sitePointer.length; i++) {
+                if(pointerID === sitePointer[i].attributes.oid) {
+                    console.error('找到的站点', sitePointer[i]);
+                    Global.mapGlobal.clickGraphic.gra = sitePointer[i];
+                    Global.mapGlobal.clickGraphic.sym = sitePointer[i].symbol;
+
+                    sitePointer[i].setSymbol(SymbolUtil.getHightPointSymbol(sitePointer[i].attributes.type));
+                    GeometryUtil.locationAndBigger(sitePointer[i]);
+                }
+            }
+        },
+        /**
          * 告警数据查询
          */
         queryWarningOTN:function(this_instance){

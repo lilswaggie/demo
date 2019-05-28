@@ -5,11 +5,13 @@ import React,{ Component } from 'react';
 import esriLoader from 'esri-loader';
 import Iframe from './Iframe';
 import { formatNumber, baseStaticUrl, msToHour } from '../util/CommonUtils';
-import { Select, Button } from 'antd';
+import { Select, Button, Modal, Table, Divider, Tag, List, Checkbox, Row, Col } from 'antd';
 import '../assets/css/search/search.scss';
 import { postAxios,getAxios, postAxiosBodyAndQuery } from '../axios/mainAxios';
+import IModal from '../component/IModal';
 
 const Option = Select.Option;
+const { Column, ColumnGroup } = Table;
 
 export default class KeySearch extends Component {
   constructor(props){
@@ -18,7 +20,51 @@ export default class KeySearch extends Component {
       resultData: [],
       value: undefined,
       checkedFlag: 0,
-      placeholder:'请输入站点..'
+      placeholder:'请输入站点..',
+      visible:false,//控制卡片呈现flag
+      lineVisible: false, // 控制专线列表弹窗flag
+      modalTitle: '', // 卡片标题名称
+      data: [
+        {
+          key: '1',
+          name: '【AAA】聊城移动办公楼',
+          ANe: '',
+          ZNe: '',
+          width: '10G',
+        },
+        {
+          key: '2',
+          name: '【AAA】聊城移动办公楼',
+          ANe: '',
+          ZNe: '',
+          width: '10G',
+        },
+        {
+          key: '3',
+          name: '【AAA】聊城移动办公楼',
+          ANe: '',
+          ZNe: '',
+          width: '10G',
+        }
+      ],
+      infoData: [
+        {
+          title: 'AAA',
+          number: 5321,
+        },
+        {
+          title: 'AA',
+          number: 4321,
+        },
+        {
+          title: 'A',
+          number: 2321,
+        },
+        {
+          title: '普通',
+          number: 9321,
+        }
+      ]
     };
   }
   handleSearch = value => {
@@ -45,9 +91,38 @@ export default class KeySearch extends Component {
     }
 
   };
-  handleChange = value => {
+  handleChange = (value, option) => {
     this.setState({ value });
+    console.error('value:', value);
+    console.error('option:', option);
+    this.setState({
+      visible: true,
+      modalTitle: option.props.children,
+    });
   };
+  handleClose = () => {
+    this.setState({
+      visible:false,
+    });
+  };
+  handleOk = e => {
+    this.setState({
+      lineVisible: false,
+    });
+  };
+  handleCancel = e => {
+    this.setState({
+      lineVisible: false,
+    });
+  };
+  showLineModal = () => {
+    this.setState({
+      lineVisible: true,
+    });
+  }
+  onChange = (e) => {
+    console.log(`checked = ${e.target.checked}`);
+  }
   componentDidMount(){
     this.handleSearchXX();
   }
@@ -107,7 +182,8 @@ export default class KeySearch extends Component {
     this.handleSearchXX();
     this.setState({
       checkedFlag: param,
-      resultData: []
+      resultData: [],
+      visible:false,
     });
     // this.setState({ resultData: [] });
     switch(param) {
@@ -172,7 +248,213 @@ export default class KeySearch extends Component {
             {options}
           </Select>
           <Button type="primary" icon="search"/>
+          {this.state.visible &&
+            <IModal
+              title={this.state.modalTitle}
+              handleClose={this.handleClose}
+              myStyle={{ display: true, width: '432px', top: '100px', left: '2px' }}>
+              {this.state.checkedFlag === 0 &&
+                <Col
+                  span={24}
+                  style={{ backgroundColor: '#69A5E7', paddingBottom: '5px' }}>
+                  <div>
+                    <Tag
+                      color="white"
+                      style={{ border: '1px solid #2C9CFA',borderRadius: '5px',fontSize: '11px',color: '#2C9CFA',float: 'left',marginLeft: '5px' }}>在网</Tag>
+                    <span style={{float: 'left',color: 'white'}}>产权性质</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>骨干局站</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>省际</span>
+                  </div>
+                </Col>
+              }
+              {this.state.checkedFlag === 0 &&
+                <div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px', marginTop: '35px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>经纬度：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>入网时间：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>包含传输网元数：</span>
+                  </div>
+                </div>
+              }
+              {this.state.checkedFlag === 1 &&
+                <Col
+                  span={24}
+                  style={{ backgroundColor: '#69A5E7', paddingBottom: '5px' }}>
+                  <div>
+                    <Tag
+                      color="white"
+                      style={{ border: '1px solid #2C9CFA',borderRadius: '5px',fontSize: '11px',color: '#2C9CFA',float: 'left',marginLeft: '5px' }}>在网</Tag>
+                    <span style={{float: 'left',color: 'white'}}>华为</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>设备级别</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>设备型号</span>
+                  </div>
+                </Col>
+              }
+              {this.state.checkedFlag === 1 &&
+                <div>
+                  <div style={{ marginLeft: '5px', marginBottom:'5px',height: '65px' }}>
+                    <div style={{ backgroundColor: '#FC6568', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>1</div>
+                    <div style={{ backgroundColor: '#FDA761', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>2</div>
+                    <div style={{ backgroundColor: '#FEEB78', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>70</div>
+                    <div style={{ backgroundColor: '#8DBDFC', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>200</div>
+                    <Button
+                      style={{ border: 'none', float: 'right' }}
+                      size="large"
+                    >影响分析</Button>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>所属站点：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>所属EMS：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>所属传输子网：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>支路端口数：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>IRDI端口数：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>包含办卡数：</span>
+                  </div>
+                </div>
+              }
+              {this.state.checkedFlag === 2 &&
+                <Col
+                  span={24}
+                  style={{ backgroundColor: '#69A5E7', paddingBottom: '5px' }}>
+                  <div>
+                    <span style={{float: 'left',color: 'white',marginLeft: '5px'}}>金牌客户</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>金融行业</span>
+                  </div>
+                </Col>
+              }
+              {this.state.checkedFlag === 2 &&
+                <div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px', marginTop: '35px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>拥有专线数：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>较上月：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>故障专线数：</span>
+                  </div>
+                  <div style={{ borderTop: '1px #CCCCCC solid'}}>
+                    <Button
+                      style={{ border: 'none', float: 'left' }}
+                      size="large"
+                    >客户详情</Button>
+                    <Button
+                      style={{ border: 'none', float: 'left' }}
+                      size="large"
+                      onClick={this.showLineModal}
+                    >专线列表</Button>
+                  </div>
+                </div>
+              }
+              {this.state.checkedFlag === 3 &&
+                <Col
+                  span={24}
+                  style={{ backgroundColor: '#69A5E7', paddingBottom: '5px' }}>
+                  <div>
+                    <span style={{float: 'left',color: 'white',marginLeft: '5px'}}>AAA专线</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>所属客户名称</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>10G</span>
+                  </div>
+                </Col>
+              }
+              {this.state.checkedFlag === 3 &&
+                <div>
+                  <div style={{ marginLeft: '5px', marginBottom:'5px',height: '65px' }}>
+                    <div style={{ backgroundColor: '#FC6568', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>1</div>
+                    <div style={{ backgroundColor: '#FDA761', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>2</div>
+                    <div style={{ backgroundColor: '#FEEB78', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>70</div>
+                    <div style={{ backgroundColor: '#8DBDFC', color: '#000', width: '65px', float: 'left', marginTop: '10px'}}>200</div>
+                    <Button
+                      style={{ border: 'none', float: 'right' }}
+                      size="large"
+                    >专线故障</Button>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>电路名称：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>电路级别：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>A端传输设备：</span>
+                  </div>
+                  <div style={{ textAlign: 'left', margin: '5px 0px'}}>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>Z端传输设备：</span>
+                  </div>
+                  <div style={{ borderTop: '1px #CCCCCC solid'}}>
+                    <Button
+                      style={{ border: 'none', float: 'left' }}
+                      size="large"
+                    >专线详情</Button>
+                  </div>
+                </div>
+              }
+            </IModal>
+          }
         </div>
+        <Modal
+          title="专线列表"
+          width="800px"
+          visible={this.state.lineVisible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        >
+          <Row>
+            <Col span={19}>
+              <List
+                grid={{ gutter: 16, column: 4 }}
+                dataSource={this.state.infoData}
+                renderItem={item => (
+                  <List.Item>
+                    <span>{item.title}({item.number})</span>
+                  </List.Item>
+                )}
+              />
+            </Col>
+            <Col span={5}>
+              <Checkbox onChange={this.onChange}>仅显示故障专线</Checkbox>
+            </Col>
+          </Row>
+          <Table dataSource={this.state.data}>
+            <Column title="专线名称" dataIndex="name" key="name" width="250px" />
+            <Column title="A端" dataIndex="ANe" key="ANe" />
+            <Column title="Z端" dataIndex="ZNe" key="ZNe" />
+            <Column title="带宽" dataIndex="width" key="width" width="70px"/>
+            <Column
+              title="操作"
+              key="action"
+              width="70px"
+              render={(text, record) => (
+                <span>
+                  <a href="javascript:;">详情</a>
+                </span>
+              )}
+            />
+          </Table>,
+        </Modal>
       </div>
     );
   }
