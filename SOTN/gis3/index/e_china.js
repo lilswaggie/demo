@@ -8,12 +8,31 @@
         if (typeof options == 'string') return $.fn.ChinaModule.methods[options](params);
         $.fn.ChinaModule.methods.init();
         $.fn.ChinaModule.methods.exportMethod();     //对外提供接口
+
+        $("#ceshi").on('click',function () {
+            var options = $.fn.ChinaModule.defaults.chart.getOption();
+            console.error('options',options)
+            var series = options.series;
+            var mapSery = null;
+            if(series){
+                series.map(function (sery,seyIndex) {
+                    if(sery.type == 'map'){
+                        mapSery = sery;
+                    }
+                });
+            }
+            console.error('mapSery',mapSery)
+            mapSery.zoom = 5;
+            mapSery.center = [112.3352,37.9413];
+            console.error('修改后的',options)
+            $.fn.ChinaModule.defaults.chart.setOption(options);
+        });
     }
     $.fn.ChinaModule.methods = {
         init: function () {
             $.fn.ChinaModule.defaults.chart = echarts.init(document.getElementById('g_map'));
             $.fn.ChinaModule.defaults.chart.setOption({
-                backgroundColor:'#131348',
+                backgroundColor:'#050513',
                 geo: $("body").GeoUtils('getChinaMapInstance'),
                 series: [{
                     zoom:1.5,
@@ -25,11 +44,11 @@
                         borderWidth: 1,
                         areaColor: '#131348'
                     },
-                    emphasis: {
-                        itemStyle: {
-                            areaColor: '#F9FBFF'
-                        }
-                    },
+                    // emphasis: {
+                    //     itemStyle: {
+                    //         areaColor: '#F9FBFF'
+                    //     }
+                    // },
                     data: $("body").GeoUtils('getChinaRegions')
                 }]
             });

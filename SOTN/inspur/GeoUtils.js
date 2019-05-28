@@ -107,7 +107,7 @@
                 zoom:1.5,
                 map:'china',
                 itemStyle:{
-                    borderColor:'#4DA7F5',
+                    borderColor:'#050513',
                     borderWidth:5,
                     areaColor:'#131348'
                 },
