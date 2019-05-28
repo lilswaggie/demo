@@ -21,10 +21,36 @@
                     }
                 });
             }
+            var newSeries = [];
+
             console.error('mapSery',mapSery)
+            options.geo[0].zoom = 5;
+            options.geo[0].center = [112.3352,37.9413];
             mapSery.zoom = 5;
             mapSery.center = [112.3352,37.9413];
+            newSeries.push(mapSery);
+            newSeries.push({
+                type:'scatter',
+                coordinateSystem:'geo',
+                symbol:'circle',
+                symbolSize:20,
+                itemStyle:{
+                    color:'#fff'
+                },
+                data:[
+                    {value:[105.0468615290,37.2623659616],name:'中卫'},
+                    {value:[109.6171830999,38.0798033595],name:'榆林'},
+                    {value:[111.3857935211,39.7049361529],name:'鄂尔多斯'},
+                    {value:[114.3412478635,40.7282243025],name:'张家口'},
+                    {value:[116.4396162794,39.7386319934],name:'北京'},
+                    {value:[114.5828868018,39.0508916954],name:'大同'},
+                    {value:[109.9355564159,36.3479752696],name:'延安'},
+                    {value:[113.6489603436,36.9650010408],name:'邢台'}
+                ]
+            });
+            options.series = newSeries;
             console.error('修改后的',options)
+            $.fn.ChinaModule.defaults.chart.clear();
             $.fn.ChinaModule.defaults.chart.setOption(options);
         });
     }
