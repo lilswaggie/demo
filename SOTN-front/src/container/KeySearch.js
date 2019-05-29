@@ -21,13 +21,15 @@ export default class KeySearch extends Component {
       value: undefined,
       checkedFlag: 0,
       placeholder:'请输入站点..',
-      visible: true,//控制卡片呈现flag
+      visible: false,//控制卡片呈现flag
       lineVisible: false, // 控制专线列表弹窗flag
       modalTitle: '', // 卡片标题名称
       info: [], // 消息信息
       currentPage: 1,
-      totalPage: 1,
       pagesize: 5,
+      total: 1,
+      reaserchPageSize: 10,
+      reaserchCurrentPage: 1,
       data: [
         {
           // key: '1',
@@ -71,31 +73,31 @@ export default class KeySearch extends Component {
       ]
     };
   }
-  handleSearch = value => {
+  handleSearch = value => { //  搜索选择框搜索事件
     // var data = [];
     var param = {
       nameLike: value
     };
     if (this.state.checkedFlag === 0) {
-      postAxios('/api/network/sites?pageSize=10&currentPage=1', param, data =>{
+      postAxios('/api/network/sites?pageSize=' + this.state.reaserchPageSize + '&currentPage=' + this.state.reaserchCurrentPage, param, data =>{
         this.setState({ resultData: data.results });
       });
     } else if (this.state.checkedFlag === 1) {
-      postAxios('/api/network/elements?pageSize=10&currentPage=1', param, data =>{
+      postAxios('/api/network/elements?pageSize=' + this.state.reaserchPageSize + '&currentPage=' + this.state.reaserchCurrentPage, param, data =>{
         this.setState({ resultData: data.results });
       });
     } else if (this.state.checkedFlag === 2) {
-      getAxios('/api/customers?pageSize=10&currentPage=1&nameLike='+ param.nameLike, data =>{
+      getAxios('/api/customers?pageSize=' + this.state.reaserchPageSize + '&currentPage=' + this.state.reaserchCurrentPage + '&nameLike='+ param.nameLike, data =>{
         this.setState({ resultData: data.results });
       });
     } else if (this.state.checkedFlag === 3) {
-      getAxios('/api/leased_lines?pageSize=10&currentPage=1&nameLike='+ param.nameLike, data =>{
+      getAxios('/api/leased_lines?pageSize=' + this.state.reaserchPageSize + '&currentPage=' + this.state.reaserchCurrentPage + '&nameLike='+ param.nameLike, data =>{
         this.setState({ resultData: data.results });
       });
     }
 
   };
-  handleChange = (value, option) => {
+  handleChange = (value, option) => { //  搜索选择框选择某一项后事件
     this.setState({ value });
     console.error('value:', value);
     console.error('option:', option);
@@ -107,60 +109,72 @@ export default class KeySearch extends Component {
     });
     console.error('data:', this.state.info);
   };
-  handleClose = () => {
+  handleClose = () => { //  信息卡片关闭按钮
     this.setState({
       visible:false,
     });
   };
-  handleOk = e => {
+  handleOk = e => { //  专线列表弹窗确认按钮
     this.setState({
       lineVisible: false,
     });
   };
-  handleCancel = e => {
+  handleCancel = e => { //  专线列表弹窗取消按钮
     this.setState({
       lineVisible: false,
     });
   };
-  handlePage = (page, pageSize) => {
+  handlePage = (page, pageSize) => { // 修改分页页数
     this.setState({
       currentPage: page,
       pagesize: pageSize
     });
-    getAxios('/api/leased_lines?pageSize=' + pageSize + '&currentPage=' + page + '&customer='+ this.state.info.id, data =>{
-      this.setState({ data: data.results });
+    getAxios('/api/leased_lines?pageSize=' + this.state.pagesize + '&currentPage=' + this.state.currentPage + '&customer='+ this.state.info.id, data =>{
+      this.setState({
+        data: data.results,
+        currentPage: data.currentPage
+      });
     });
   };
-  showLineModal = () => {
+  showLineModal = () => { // 显示专线列表弹窗
     this.setState({
       lineVisible: true,
     });
-    getAxios('/api/leased_lines?pageSize=10&currentPage=1&customer='+ this.state.info.id, data =>{
-      this.setState({ data: data.results });
+    getAxios('/api/leased_lines?pageSize=' + this.state.pagesize + '&currentPage=' + this.state.currentPage + '&customer='+ this.state.info.id, data =>{
+      this.setState({
+        data: data.results,
+        currentPage: data.currentPage
+      });
     });
+    getAxios('/api/leased_lines/stats/security_level?customer='+ this.state.info.id, data =>{
+      this.setState({
+        infoData: [
+          {
+            title: 'AAA',
+            number: data.values.additionalProp1,
+          },
+          {
+            title: 'AA',
+            number: data.values.additionalProp2,
+          },
+          {
+            title: 'A',
+            number: data.values.additionalProp3,
+          },
+          {
+            title: '普通',
+            number: 9321,
+          }
+        ]
+      });
+      console.error('securityLevel', data.values);
+    });
+
   }
-  onChange = (e) => {
+  onChange = (e) => { // 客户卡片中专线列表弹窗  仅显示故障专线checkbox控制
     console.log(`checked = ${e.target.checked}`);
   }
   componentDidMount(){
-    this.handleSearchXX();
-  }
-  // getType = () => {
-  //   postAxios('api/network/stats/site/type', this.getFilterParams(), data =>
-  //     this.setState({ siteTypeArr: objectEchartsArray(data.values) })
-  //   );
-  // };
-  handleSearchXX =()=>{
-    // getAxios('api/leased_lines?nameLike="专线"', data =>{
-    //   alert(123);
-    //   console.error('dataxxxx',data);
-    // });
-    var param = {
-      nameLike: '测试'
-    };
-    postAxios('/api/network/sites', param, data =>
-      console.error('site', data)
-    );
   }
   initMap(){
 
@@ -197,12 +211,11 @@ export default class KeySearch extends Component {
       map.centerAt(point);
     });
   }
-  handleTabChecked =(param)=>{
-    this.handleSearchXX();
+  handleTabChecked =(param)=>{  // 切换信息卡片tab页
     this.setState({
       checkedFlag: param,
       resultData: [],
-      // visible:false,
+      visible:false,
     });
     // this.setState({ resultData: [] });
     switch(param) {
@@ -457,7 +470,9 @@ export default class KeySearch extends Component {
               <Checkbox onChange={this.onChange}>仅显示故障专线</Checkbox>
             </Col>
           </Row>
-          <Table dataSource={this.state.data}>
+          <Table
+            pagination={false}
+            dataSource={this.state.data}>
             <Column title="专线名称" dataIndex="name" key="name" width="250px" />
             <Column title="A端" dataIndex="aNe.name" key="aNe.name" />
             <Column title="Z端" dataIndex="zNe.name" key="zNe.name" />
@@ -474,10 +489,11 @@ export default class KeySearch extends Component {
             />
           </Table>
           <Pagination
+            style={{textAlign: 'right', marginTop: '10px'}}
             current={this.state.currentPage}
-            total={this.state.totalPage}
             pageSize={this.state.pagesize}
-            onChange={this.handlePage}/>
+            onChange={this.handlePage}
+            total={this.state.total}/>
         </Modal>
       </div>
     );
