@@ -12,6 +12,21 @@
         if (typeof options == 'string') return $.fn.ChinaModule.methods[options](params);
         $.fn.ChinaModule.methods.init();
         $.fn.ChinaModule.methods.exportMethod();     //对外提供接口
+        $("#ceshi").on('click',function(){
+            $.fn.ChinaModule.methods.locationAndZoomA();
+        });
+        $("#tab1").on('click',function(){
+            $.fn.ChinaModule.methods.draw4Line('1');
+        });
+        $("#tab2").on('click',function(){
+            $.fn.ChinaModule.methods.draw4Line('2');
+        });
+        $("#tab3").on('click',function(){
+            $.fn.ChinaModule.methods.draw4Line('3');
+        });
+        $("#tab4").on('click',function(){
+            $.fn.ChinaModule.methods.draw4Line('3');
+        });
     }
     $.fn.ChinaModule.methods = {
         init: function () {
@@ -65,6 +80,253 @@
             //     gis.renderLine({ id: "123" });
             // });
 
+        },
+        locationAndZoomA: function () {
+            var options = $.fn.ChinaModule.defaults.chart.getOption();
+            $.fn.ChinaModule.defaults.lastOption = options;
+            console.error('oldOptions', $.fn.ChinaModule.defaults.lastOption)
+            console.error('options',options)
+            // for (var i = 0; i < options.series.length; i++) {
+            //     if(options.series[i].type !== 'map') {
+            //         options.series[i] = {};
+            //     }
+            // }
+            var series = options.series;
+            var mapSery = null;
+            if(series){
+                series.map(function (sery,seyIndex) {
+                    if(sery.type == 'map'){
+                        mapSery = sery;
+                    }
+                });
+            }
+            var newSeries = [];
+            console.error('mapSery',mapSery)
+            options.geo[0].zoom = 5;
+            options.geo[0].center = [112.3352,37.9413];
+            mapSery.zoom = 5;
+            mapSery.center = [112.3352,37.9413];
+            newSeries.push(mapSery);
+            newSeries.push({
+                type:'scatter',
+                coordinateSystem:'geo',
+                symbol:'circle',
+                symbolSize:20,
+                itemStyle:{
+                    color:'#fff'
+                },
+                data:[
+                    // {value:[105.0468615290,37.2623659616],name:'中卫'},
+                    {value:[109.6171830999,38.0798033595],name:'榆林'},
+                    {value:[111.3857935211,39.7049361529],name:'鄂尔多斯'},
+                    {value:[114.3412478635,40.7282243025],name:'张家口'},
+                    // {value:[116.4396162794,39.7386319934],name:'北京'},
+                    {value:[114.5828868018,39.0508916954],name:'大同'},
+                    {value:[109.9355564159,36.3479752696],name:'延安'},
+                    {value:[113.6489603436,36.9650010408],name:'邢台'}
+                ]
+            });
+            newSeries.push({
+                type:'scatter',
+                coordinateSystem:'geo',
+                symbol:'circle',
+                symbolSize:20,
+                itemStyle:{
+                    color:'#71CA41'
+                },
+                data:[
+                    {value:[105.0468615290,37.2623659616],name:'中卫'}
+                ]
+            });
+            newSeries.push({
+                type:'scatter',
+                coordinateSystem:'geo',
+                symbol:'circle',
+                symbolSize:20,
+                itemStyle:{
+                    color:'#F2327E'
+                },
+                data:[
+                    {value:[116.4396162794,39.7386319934],name:'北京'}
+                ]
+            });
+            newSeries.push({
+                id: '1',
+                type:'lines',
+                coordinateSystem:'geo',
+                symbol:[
+                    'none',
+                    'none'
+                ],
+                symbolSize:[
+                    10,
+                    10
+                ],
+                lineStyle: {
+                    color: '#4C88E4',
+                    opacity: 0.5,
+                    type: 'solid',
+                    width: 5
+                },
+                data: [
+                    {coords:[[109.6171830999, 38.0798033595],[111.3857935211, 39.7049361529]],onname:'榆林-鄂尔多斯',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '230us';
+                                return str;
+                            }}},
+                    {coords:[[111.3857935211, 39.7049361529],[114.3412478635, 40.7282243025]],onname:'鄂尔多斯-张家口',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '230us';
+                                return str;
+                            }}}
+                ]
+            })
+            newSeries.push({
+                id: '2',
+                type:'lines',
+                coordinateSystem:'geo',
+                symbol:[
+                    'none',
+                    'none'
+                ],
+                symbolSize:[
+                    10,
+                    10
+                ],
+                lineStyle: {
+                    color: '#4C88E4',
+                    opacity: 0.5,
+                    type: 'solid',
+                    width: 5
+                },
+                data: [
+                    {coords:[[109.6171830999, 38.0798033595],[114.5828868018, 39.0508916954]],onname:'榆林-大同',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '400us';
+                                return str;
+                            }}},
+                    {coords:[[114.5828868018, 39.0508916954],[114.3412478635, 40.7282243025]],onname:'大同-张家口',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '200us';
+                                return str;
+                            }}}
+                ]
+            })
+            newSeries.push({
+                id: '3',
+                type:'lines',
+                coordinateSystem:'geo',
+                symbol:[
+                    'none',
+                    'none'
+                ],
+                symbolSize:[
+                    10,
+                    10
+                ],
+                lineStyle: {
+                    color: '#4C88E4',
+                    opacity: 0.5,
+                    type: 'solid',
+                    width: 5
+                },
+                data: [
+                    {coords:[[105.046861529, 37.2623659616],[109.9355564159, 36.3479752696]],onname:'中卫-延安',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '460us';
+                                return str;
+                            }}},
+                    {coords:[[109.9355564159, 36.3479752696],[113.6489603436, 36.9650010408]],onname:'延安-邢台',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '380us';
+                                return str;
+                            }}},
+                    {coords:[[113.6489603436, 36.9650010408],[116.4396162794, 39.7386319934]],onname:'邢台-北京',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '450us';
+                                return str;
+                            }}}
+                ]
+            })
+            newSeries.push({
+                id: '4',
+                type:'lines',
+                coordinateSystem:'geo',
+                symbol:[
+                    'none',
+                    'none'
+                ],
+                symbolSize:[
+                    10,
+                    10
+                ],
+                lineStyle: {
+                    color: '#4C88E4',
+                    opacity: 0.5,
+                    type: 'solid',
+                    width: 5
+                },
+                data: [
+                    {coords:[[105.046861529, 37.2623659616],[109.6171830999, 38.0798033595]],onname:'中卫-榆林',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '450us';
+                                return str;
+                            }}},
+                    {coords:[[114.3412478635, 40.7282243025],[116.4396162794, 39.7386319934]],onname:'张家口-北京',
+                        label:{show: true, position: 'middle', color:'#4C88E4', formatter: function (params) {
+                                str = '180us';
+                                return str;
+                            }}}
+                ]
+            })
+            options.series = newSeries;
+            console.error('修改后的',options)
+            $.fn.ChinaModule.defaults.chart.clear();
+            $.fn.ChinaModule.defaults.chart.setOption(options);
+
+        },
+        draw4Line: function (number) {
+            var options = $.fn.ChinaModule.defaults.chart.getOption();
+            var newSeries = options.series;
+            for (var i = 0; i < newSeries.length; i++) {
+                if (newSeries[i].type === 'lines') {
+                    newSeries[i].lineStyle.color = '#4C88E4';
+                    for (var j = 0; j < newSeries[i].data.length; j++) {
+                        newSeries[i].data[j].label.color = '#4C88E4';
+                    }
+                }
+            };
+            if (number === '1') {
+                for (var i = 0; i < newSeries.length; i++) {
+                    if (newSeries[i].id === '4' || newSeries[i].id === '1') {
+                        newSeries[i].lineStyle.color = '#fff';
+                        for (var j = 0; j < newSeries[i].data.length; j++) {
+                            newSeries[i].data[j].label.color = '#fff';
+                        }
+                    }
+                }
+            } else if (number === '2') {
+                for (var i = 0; i < newSeries.length; i++) {
+                    if (newSeries[i].id === '4' || newSeries[i].id === '2') {
+                        newSeries[i].lineStyle.color = '#fff';
+                        for (var j = 0; j < newSeries[i].data.length; j++) {
+                            newSeries[i].data[j].label.color = '#fff';
+                        }
+                    }
+                };
+            } else if (number === '3') {
+                for (var i = 0; i < newSeries.length; i++) {
+                    if (newSeries[i].id === '3') {
+                        newSeries[i].lineStyle.color = '#fff';
+                        for (var j = 0; j < newSeries[i].data.length; j++) {
+                            newSeries[i].data[j].label.color = '#fff';
+                        }
+                    }
+                };
+            }
+            options.series = newSeries;
+            $.fn.ChinaModule.defaults.chart.clear();
+            $.fn.ChinaModule.defaults.chart.setOption(options);
         },
         renderData: function (chart) {
             var points = $("body").GeoUtils('getEffectScatters');
@@ -482,6 +744,7 @@
         $.fn.ChinaModule.defaults = {
             chart: null,
             oldOption: null,
+            lastOption: null,
             count: 0
         }
 })(jQuery);

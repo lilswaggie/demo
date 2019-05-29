@@ -5,7 +5,7 @@ import React,{ Component } from 'react';
 import esriLoader from 'esri-loader';
 import Iframe from './Iframe';
 import { formatNumber, baseStaticUrl, msToHour } from '../util/CommonUtils';
-import { Select, Button, Modal, Table, Divider, Tag, List, Checkbox, Row, Col } from 'antd';
+import { Select, Button, Modal, Table, Divider, Tag, List, Checkbox, Row, Col, Pagination } from 'antd';
 import '../assets/css/search/search.scss';
 import { postAxios,getAxios, postAxiosBodyAndQuery } from '../axios/mainAxios';
 import IModal from '../component/IModal';
@@ -21,30 +21,34 @@ export default class KeySearch extends Component {
       value: undefined,
       checkedFlag: 0,
       placeholder:'请输入站点..',
-      visible:false,//控制卡片呈现flag
+      visible: true,//控制卡片呈现flag
       lineVisible: false, // 控制专线列表弹窗flag
       modalTitle: '', // 卡片标题名称
+      info: [], // 消息信息
+      currentPage: 1,
+      totalPage: 1,
+      pagesize: 5,
       data: [
         {
-          key: '1',
+          // key: '1',
           name: '【AAA】聊城移动办公楼',
-          ANe: '',
-          ZNe: '',
-          width: '10G',
+          aNe: {name: 123},
+          zNe: {name: 123},
+          businessBandwidth: '10G',
         },
         {
-          key: '2',
+          // key: '2',
           name: '【AAA】聊城移动办公楼',
-          ANe: '',
-          ZNe: '',
-          width: '10G',
+          aNe: {name: 123},
+          zNe: {name: 123},
+          businessBandwidth: '10G',
         },
         {
-          key: '3',
+          // key: '3',
           name: '【AAA】聊城移动办公楼',
-          ANe: '',
-          ZNe: '',
-          width: '10G',
+          aNe: {name: 123},
+          zNe: {name: 123},
+          businessBandwidth: '10G',
         }
       ],
       infoData: [
@@ -95,10 +99,13 @@ export default class KeySearch extends Component {
     this.setState({ value });
     console.error('value:', value);
     console.error('option:', option);
+    console.error('option:', option.props.data);
     this.setState({
       visible: true,
       modalTitle: option.props.children,
+      info: option.props.data
     });
+    console.error('data:', this.state.info);
   };
   handleClose = () => {
     this.setState({
@@ -115,9 +122,21 @@ export default class KeySearch extends Component {
       lineVisible: false,
     });
   };
+  handlePage = (page, pageSize) => {
+    this.setState({
+      currentPage: page,
+      pagesize: pageSize
+    });
+    getAxios('/api/leased_lines?pageSize=' + pageSize + '&currentPage=' + page + '&customer='+ this.state.info.id, data =>{
+      this.setState({ data: data.results });
+    });
+  };
   showLineModal = () => {
     this.setState({
       lineVisible: true,
+    });
+    getAxios('/api/leased_lines?pageSize=10&currentPage=1&customer='+ this.state.info.id, data =>{
+      this.setState({ data: data.results });
     });
   }
   onChange = (e) => {
@@ -183,7 +202,7 @@ export default class KeySearch extends Component {
     this.setState({
       checkedFlag: param,
       resultData: [],
-      visible:false,
+      // visible:false,
     });
     // this.setState({ resultData: [] });
     switch(param) {
@@ -212,7 +231,7 @@ export default class KeySearch extends Component {
     }
   }
   render() {
-    const options = this.state.resultData.map(d => <Option key={d.id}>{d.name}</Option>);
+    const options = this.state.resultData.map(d => <Option data={d} key={d.id}>{d.name}</Option>);
     return (
       <div style={{width:'100%',height:800}}>
         <Iframe
@@ -260,7 +279,7 @@ export default class KeySearch extends Component {
                   <div>
                     <Tag
                       color="white"
-                      style={{ border: '1px solid #2C9CFA',borderRadius: '5px',fontSize: '11px',color: '#2C9CFA',float: 'left',marginLeft: '5px' }}>在网</Tag>
+                      style={{ border: '1px solid #2C9CFA',borderRadius: '5px',fontSize: '11px',color: '#2C9CFA',float: 'left',marginLeft: '5px' }}>{this.state.info.state}</Tag>
                     <span style={{float: 'left',color: 'white'}}>产权性质</span>
                     <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>骨干局站</span>
                     <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>省际</span>
@@ -270,16 +289,16 @@ export default class KeySearch extends Component {
               {this.state.checkedFlag === 0 &&
                 <div>
                   <div style={{ textAlign: 'left', margin: '5px 0px', marginTop: '35px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：{this.state.info.location}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>经纬度：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>经纬度：{this.state.info.longitude}-{this.state.info.latitude}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>入网时间：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>入网时间：没有</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>包含传输网元数：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>包含传输网元数：{this.state.info.elementNum}</span>
                   </div>
                 </div>
               }
@@ -290,10 +309,10 @@ export default class KeySearch extends Component {
                   <div>
                     <Tag
                       color="white"
-                      style={{ border: '1px solid #2C9CFA',borderRadius: '5px',fontSize: '11px',color: '#2C9CFA',float: 'left',marginLeft: '5px' }}>在网</Tag>
-                    <span style={{float: 'left',color: 'white'}}>华为</span>
-                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>设备级别</span>
-                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>设备型号</span>
+                      style={{ border: '1px solid #2C9CFA',borderRadius: '5px',fontSize: '11px',color: '#2C9CFA',float: 'left',marginLeft: '5px' }}>{this.state.info.state}</Tag>
+                    <span style={{float: 'left',color: 'white'}}>{this.state.info.vendor}</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>{this.state.info.serviceLevel}</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>{this.state.info.signalType}</span>
                   </div>
                 </Col>
               }
@@ -310,16 +329,16 @@ export default class KeySearch extends Component {
                     >影响分析</Button>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>区域：{this.state.info.location}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>所属站点：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>所属站点：{this.state.info.siteName}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>所属EMS：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>所属EMS：{this.state.info.emsName}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>所属传输子网：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>所属传输子网：{this.state.info.transSubnet}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
                     <span style={{ color: '#000', marginLeft: '5px'}}>支路端口数：</span>
@@ -328,7 +347,7 @@ export default class KeySearch extends Component {
                     <span style={{ color: '#000', marginLeft: '5px'}}>IRDI端口数：</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>包含办卡数：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>包含办卡数：{this.state.info.cardNum}</span>
                   </div>
                 </div>
               }
@@ -374,9 +393,9 @@ export default class KeySearch extends Component {
                   span={24}
                   style={{ backgroundColor: '#69A5E7', paddingBottom: '5px' }}>
                   <div>
-                    <span style={{float: 'left',color: 'white',marginLeft: '5px'}}>AAA专线</span>
-                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>所属客户名称</span>
-                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>10G</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '5px'}}>{this.state.info.securityLevel}</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>{this.state.info.customerName}</span>
+                    <span style={{float: 'left',color: 'white',marginLeft: '10px',paddingLeft: '5px',borderLeft: '1px solid white'}}>{this.state.info.businessBandwidth}</span>
                   </div>
                 </Col>
               }
@@ -393,16 +412,16 @@ export default class KeySearch extends Component {
                     >专线故障</Button>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>电路名称：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>电路名称：{this.state.info.circuitName}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>电路级别：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>电路级别：{this.state.info.circuitName}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>A端传输设备：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>A端传输设备：{this.state.info.aNe.name}</span>
                   </div>
                   <div style={{ textAlign: 'left', margin: '5px 0px'}}>
-                    <span style={{ color: '#000', marginLeft: '5px'}}>Z端传输设备：</span>
+                    <span style={{ color: '#000', marginLeft: '5px'}}>Z端传输设备：{this.state.info.zNe.name}</span>
                   </div>
                   <div style={{ borderTop: '1px #CCCCCC solid'}}>
                     <Button
@@ -440,9 +459,9 @@ export default class KeySearch extends Component {
           </Row>
           <Table dataSource={this.state.data}>
             <Column title="专线名称" dataIndex="name" key="name" width="250px" />
-            <Column title="A端" dataIndex="ANe" key="ANe" />
-            <Column title="Z端" dataIndex="ZNe" key="ZNe" />
-            <Column title="带宽" dataIndex="width" key="width" width="70px"/>
+            <Column title="A端" dataIndex="aNe.name" key="aNe.name" />
+            <Column title="Z端" dataIndex="zNe.name" key="zNe.name" />
+            <Column title="带宽" dataIndex="businessBandwidth" key="businessBandwidth" width="70px"/>
             <Column
               title="操作"
               key="action"
@@ -453,7 +472,12 @@ export default class KeySearch extends Component {
                 </span>
               )}
             />
-          </Table>,
+          </Table>
+          <Pagination
+            current={this.state.currentPage}
+            total={this.state.totalPage}
+            pageSize={this.state.pagesize}
+            onChange={this.handlePage}/>
         </Modal>
       </div>
     );
