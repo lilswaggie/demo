@@ -14,32 +14,32 @@
     <style>
         *{margin: 0;padding: 0}
         .container {
-            width: 1000px;
+            width: 92%;
             height: 30px;
             margin: 20px auto;
             position: absolute;
-            left:400px;
-            bottom:0px;
+            left:85px;
+            bottom: 10px;
             display: flex;
             align-items: center;
         }
 
         .line1 {
-            width: 700px;
+            width: 70%;
             height: 1px;
             background: #999;
             overflow: hidden;
         }
 
         .line2 {
-            width: 200px;
+            width: 20%;
             height: 0;
             overflow: hidden;
             border-top: 1px dashed #999;
         }
 
         .line3 {
-            width: 100px;
+            width: 10%;
             height: 1px;
             background: #999;
             overflow: hidden;
@@ -67,19 +67,19 @@
         }
 
         .dot1 {
-            left: 100px;
+            left: 10%;
         }
 
         .dot2 {
-            left: 300px;
+            left: 30%;
         }
 
         .dot3 {
-            left: 700px;
+            left: 70%;
         }
 
         .dot4 {
-            left: 900px;
+            left: 90%;
         }
 
         .move {
@@ -110,6 +110,7 @@
     <div id="g_map" style="width:100%;height:800px;"></div>
     <!--<div class="port" style="width: 100px;height:30px;line-height:30px;text-align: center;font-size: 13px;color:#fff;position: absolute;top:40px;right:50px;background:blue;border-radius: 10px;">专线A-Z</div>-->
     <div class="container">
+
         <button id="start"></button>
         <div class="line1"></div>
         <div class="line2"></div>
@@ -127,7 +128,7 @@
             <img src="images/dotsBgB.png" alt="">
             <p>2019-05-09</p>
         </div>
-        <div class="dots dot4">
+        <div class="dots dot4" id="dot4">
             <img src="images/dotsBgB.png" alt="">
             <p>未来...</p>
         </div>
@@ -136,41 +137,44 @@
       $("body").ChinaModule({});
       $(function () {
           $('#start').click(() => {
-              $('#start').css('background-image', 'url(images/stop.png)');
-          var left = -44;
-          var move = setInterval(function () {
-              $('.move').css('left', left += 1).show()
-              if ($('.move').offset().left + 22 > $('.container').offset().left + 1000) {
-                  left = 0;
-                  clearInterval(move);
-                  $('.move').css('left', '671px');
-                  $('#start').css('background-image', 'url(images/play.png)');
+                  $('#start').css('background-image', 'url(images/stop.png)');
+              var x=document.getElementById("dot4");
+              var containerLedt=x.offsetLeft+100;
+              var left = -44;
+              var move = setInterval(function () {
 
-              }
+                  $('.move').css('left', left += 1).show()
+                  if ($('.move').offset().left + 22 > $('.container').offset().left + containerLedt) {
+                      left = 0;
+                      clearInterval(move);
+                      $('.move').css('left', 'calc(70% - 29px)');
+                      $('#start').css('background-image', 'url(images/play.png)');
+                      console.error('结束')
+                  }
 
-              if ($('.dot1').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot1').offset().left - 26.5) {
-                  gis.renderFirst();
-              } else if ($('.dot2').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot2').offset().left - 26.5) {
-                  gis.renderThird();
-              } else if ($('.dot3').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot3').offset().left - 26.5) {
-                    gis.renderAlldata();
-              } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot4').offset().left - 26.5) {
-                 console.error(4)
-              };
+                  if ($('.dot1').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot1').offset().left - 26.5) {
+                      gis.renderFirst();
+                  } else if ($('.dot2').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot2').offset().left - 26.5) {
+                      gis.renderThird();
+                  } else if ($('.dot3').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot3').offset().left - 26.5) {
+                      gis.renderAlldata();
+                  } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot4').offset().left - 26.5) {
 
-              $('.move').offset().left > $('.container').offset().left ? $('#start').attr(
-                  'disabled', true) : $('#start').attr('disabled', false);
+                  };
 
-              if ($('.dot3').offset().left - 30 <= $('.move').offset().left <= $('.dot3')
-                      .offset().left - 20) {
-                  $('#start').attr('disabled', false)
-              }
-          }, 15)
-      })
+                  $('.move').offset().left > $('.container').offset().left ? $('#start').attr(
+                      'disabled', true) : $('#start').attr('disabled', false);
+
+                  if ($('.dot3').offset().left - 30 <= $('.move').offset().left <= $('.dot3')
+                          .offset().left - 20) {
+                      $('#start').attr('disabled', false)
+                  }
+              }, 5)
+          });
       })
     </script>
 </body>

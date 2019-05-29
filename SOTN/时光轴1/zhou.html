@@ -8,37 +8,37 @@
     <title>Document</title>
 
     <style>
-        html,body {
-            padding:0px;
-            margin:0px;
-            /*background: #141348;*/
+        body {
+            background: #141348;
         }
 
         .container {
-            width: 1000px;
+            width: 92%;
             height: 30px;
             margin: 20px auto;
-            position: relative;
+            position: absolute;
+            left:85px;
+            bottom: 10px;
             display: flex;
             align-items: center;
         }
 
         .line1 {
-            width: 700px;
+            width: 70%;
             height: 1px;
             background: #999;
             overflow: hidden;
         }
 
         .line2 {
-            width: 200px;
+            width: 20%;
             height: 0;
             overflow: hidden;
             border-top: 1px dashed #999;
         }
 
         .line3 {
-            width: 100px;
+            width: 10%;
             height: 1px;
             background: #999;
             overflow: hidden;
@@ -47,7 +47,7 @@
         .dots {
             width: 20px;
             height: 20px;
-            background: url(images/dotsBgA.png) no-repeat center center;
+            background: url(dotsBgA.png) no-repeat center center;
             border-radius: 10px;
             position: absolute;
             display: flex;
@@ -66,25 +66,25 @@
         }
 
         .dot1 {
-            left: 100px;
+            left: 10%;
         }
 
         .dot2 {
-            left: 300px;
+            left: 30%;
         }
 
         .dot3 {
-            left: 700px;
+            left: 70%;
         }
 
         .dot4 {
-            left: 900px;
+            left: 90%;
         }
 
         .move {
             width: 44px;
             height: 20px;
-            background: url(images/dot.png) no-repeat center right;
+            background: url(dot.png) no-repeat center right;
             border-radius: 10px;
             position: absolute;
             left: -44px;
@@ -95,7 +95,7 @@
         #start {
             width: 30px;
             height: 30px;
-            background: url(images/play.png) no-repeat center center;
+            background: url(play.png) no-repeat center center;
             position: absolute;
             left: -50px;
             outline: none;
@@ -107,25 +107,26 @@
 
 <body>
     <div class="container">
+
         <button id="start"></button>
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
         <div class="move"></div>
         <div class="dots dot1">
-            <img src="images/dotsBgB.png" alt="">
+            <img src="dotsBgB.png" alt="">
             <p>2018-10-15</p>
         </div>
         <div class="dots dot2">
-            <img src="images/dotsBgB.png" alt="">
+            <img src="dotsBgB.png" alt="">
             <p>2018-12-17</p>
         </div>
         <div class="dots dot3">
-            <img src="images/dotsBgB.png" alt="">
+            <img src="dotsBgB.png" alt="">
             <p>2019-05-09</p>
         </div>
-        <div class="dots dot4">
-            <img src="images/dotsBgB.png" alt="">
+        <div class="dots dot4" id="dot4">
+            <img src="dotsBgB.png" alt="">
             <p>未来...</p>
         </div>
     </div>
@@ -133,15 +134,18 @@
     <script>
         $(function () {
             $('#start').click(() => {
-                $('#start').css('background-image', 'url(images/stop.png)');
+                $('#start').css('background-image', 'url(stop.png)');
+                var x=document.getElementById("dot4");
+                var containerLedt=x.offsetLeft+100;
                 var left = -44;
                 var move = setInterval(function () {
+
                     $('.move').css('left', left += 1).show()
-                    if ($('.move').offset().left + 22 > $('.container').offset().left + 1000) {
+                    if ($('.move').offset().left + 22 > $('.container').offset().left + containerLedt) {
                         left = 0;
                         clearInterval(move);
-                        $('.move').css('left', '671px');
-                        $('#start').css('background-image', 'url(images/play.png)');
+                        $('.move').css('left', 'calc(70% - 29px)');
+                        $('#start').css('background-image', 'url(play.png)');
                         alert(3)
                     }
 

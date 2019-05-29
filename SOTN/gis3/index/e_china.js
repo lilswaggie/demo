@@ -80,8 +80,6 @@
                     console.log('国内拓扑数据',data)
                     var datas = data.data;
                     $.fn.ChinaModule.defaults.allData = datas;
-
-
                 }
             });
             //$.get(Global.mapGlobal.queryPOI.queryServiceLines, function (datas) {
@@ -312,14 +310,40 @@
             $.fn.ChinaModule.defaults.chart.setOption(chartOption);
         },
         renderFirst:function(){
-            var v_datas = $.fn.ChinaModule.defaults.allData;
-            var datas = {edges:[],nodes:[]};
-            for(var i = 0; i < 100;i++){
-                datas.nodes.push(v_datas.nodes[i]);
-                datas.edges.push(v_datas.edges[i]);
+            if($.fn.ChinaModule.defaults.allData){
+                var v_datas = $.fn.ChinaModule.defaults.allData;
+                var datas = {edges:[],nodes:[]};
+                for(var i = 0; i < 100;i++){
+                    datas.nodes.push(v_datas.nodes[i]);
+                    datas.edges.push(v_datas.edges[i]);
+                }
+                console.error('datas',datas)
+                $.fn.ChinaModule.methods._renderDataCore(datas);
+            }else{
+                $.ajax({
+                    url:'http://10.154.8.22:8088/sotn/api/resource/topolinks?scene=indoor',
+                    dataType:'json',
+                    type:'get',
+                    headers:{
+                        Accept:'application/json;charset=utf-8',
+                        Authorization:Global.Authorization
+                    },
+                    success:function(data){
+                        console.log('国内拓扑数据',data)
+                        var datas = data.data;
+                        $.fn.ChinaModule.defaults.allData = datas;
+                        var v_datas = $.fn.ChinaModule.defaults.allData;
+                        var datas = {edges:[],nodes:[]};
+                        for(var i = 0; i < 100;i++){
+                            datas.nodes.push(v_datas.nodes[i]);
+                            datas.edges.push(v_datas.edges[i]);
+                        }
+                        console.error('datas',datas)
+                        $.fn.ChinaModule.methods._renderDataCore(datas);
+                    }
+                });
             }
-            console.error('datas',datas)
-            $.fn.ChinaModule.methods._renderDataCore(datas);
+
         },
         renderSecond:function(){
             var v_datas = $.fn.ChinaModule.defaults.allData;
@@ -343,6 +367,9 @@
          * 绘制全部数据
          */
         renderAllData:function(){
+            if(!$.fn.ChinaModule.defaults.allData){
+                $.fn.ChinaModule.methods.renderData();
+            }
             var datas = $.fn.ChinaModule.defaults.allData;
             if (datas && datas.nodes) {
                 var ps = [];
