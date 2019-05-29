@@ -9,50 +9,7 @@
         $.fn.ChinaModule.methods.init();
         $.fn.ChinaModule.methods.exportMethod();     //对外提供接口
 
-        $("#ceshi").on('click',function () {
-            var options = $.fn.ChinaModule.defaults.chart.getOption();
-            console.error('options',options)
-            var series = options.series;
-            var mapSery = null;
-            if(series){
-                series.map(function (sery,seyIndex) {
-                    if(sery.type == 'map'){
-                        mapSery = sery;
-                    }
-                });
-            }
-            var newSeries = [];
 
-            console.error('mapSery',mapSery)
-            options.geo[0].zoom = 5;
-            options.geo[0].center = [112.3352,37.9413];
-            mapSery.zoom = 5;
-            mapSery.center = [112.3352,37.9413];
-            newSeries.push(mapSery);
-            newSeries.push({
-                type:'scatter',
-                coordinateSystem:'geo',
-                symbol:'circle',
-                symbolSize:20,
-                itemStyle:{
-                    color:'#fff'
-                },
-                data:[
-                    {value:[105.0468615290,37.2623659616],name:'中卫'},
-                    {value:[109.6171830999,38.0798033595],name:'榆林'},
-                    {value:[111.3857935211,39.7049361529],name:'鄂尔多斯'},
-                    {value:[114.3412478635,40.7282243025],name:'张家口'},
-                    {value:[116.4396162794,39.7386319934],name:'北京'},
-                    {value:[114.5828868018,39.0508916954],name:'大同'},
-                    {value:[109.9355564159,36.3479752696],name:'延安'},
-                    {value:[113.6489603436,36.9650010408],name:'邢台'}
-                ]
-            });
-            options.series = newSeries;
-            console.error('修改后的',options)
-            $.fn.ChinaModule.defaults.chart.clear();
-            $.fn.ChinaModule.defaults.chart.setOption(options);
-        });
     }
     $.fn.ChinaModule.methods = {
         init: function () {
@@ -122,104 +79,8 @@
                 success:function(data){
                     console.log('国内拓扑数据',data)
                     var datas = data.data;
-                    if (datas && datas.nodes) {
-                        var ps = [];
-                        //数据分类:
-                        var p_oa = [];
-                        var p_otm = [];
-                        var p_otn = [];
-                        datas.nodes.map(function (nodeItem, nodeIndex) {
-                            var point = {
-                                name: nodeItem.oname,
-                                value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
-                                data: nodeItem
-                            }
+                    $.fn.ChinaModule.defaults.allData = datas;
 
-                            if(nodeItem.type == 'OA'){
-                                p_oa.push(point);
-                            }else if(nodeItem.type == 'OTM'){
-                                p_otm.push(point);
-                            }else if(nodeItem.type == 'OTN'){
-                                p_otn.push(point);
-                            }
-                            //ps.push(point);
-                        });
-
-                        var ls = [];
-                        datas.edges.map(function (edgeItem, edgeIndex) {
-                            var line = {
-                                oname: edgeItem.oname,
-                                coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
-                                data: edgeItem
-                            }
-                            ls.push(line);
-                        });
-                        points.data = ps;
-                        lines.data = ls;
-                        var p_oa_sery = {
-                            type:'scatter',
-                            coordinateSystem:'geo',
-                            //symbol:'circle',
-                            symbol:'image://'+Global.mapGlobal.symbolConfig.OA_SYMBOL,
-                            symbolSize:10,
-                            cursor:'pointer',
-                            itemStyle:{
-                                color:'#fff',
-                            },
-                            data: p_oa
-                        };
-                        var p_otm_sery = {
-                            type:'scatter',
-                            coordinateSystem:'geo',
-                            //symbol:'circle',
-                            symbol:'image://'+Global.mapGlobal.symbolConfig.OTM_SYMBOL,
-                            symbolSize:20,
-                            cursor:'pointer',
-                            itemStyle:{
-                                color:'#fff',
-                            },
-                            data: p_otm
-                        };
-                        var p_otn_sery = {
-                            type:'scatter',
-                            coordinateSystem:'geo',
-                            //symbol:'circle',
-                            symbol:'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,
-                            symbolSize:20,
-                            cursor:'pointer',
-                            itemStyle:{
-                                color:'#fff',
-                            },
-                            data: p_otn
-                        };
-
-                        //创建线的样式:
-                        var l_sery = {
-                            type:'lines',
-                            coordinateSystem:'geo',
-                            lineStyle:{
-                                color:'#4C88E4',
-                                width:1,
-                                type:'solid',
-                            },
-                            data:ls
-                        }
-                        var options = chart.getOption();
-                        //options.series.push(points);
-                        //options.series.push(lines);
-                        options.series.push(p_oa_sery);
-                        options.series.push(p_otm_sery);
-                        options.series.push(p_otn_sery);
-                        options.series.push(l_sery);
-                        chart.setOption(options);
-
-                        //渲染告警数据
-                        $.fn.ChinaModule.methods.renderWarningData(chart);
-
-                        //实时渲染开启
-                        //$.fn.ChinaModule.methods.realRenderWarningData(chart);
-
-                    }
 
                 }
             });
@@ -450,6 +311,239 @@
             chartOption.series = chartOption.series.concat(lightLineSeri)
             $.fn.ChinaModule.defaults.chart.setOption(chartOption);
         },
+        renderFirst:function(){
+            var v_datas = $.fn.ChinaModule.defaults.allData;
+            var datas = {edges:[],nodes:[]};
+            for(var i = 0; i < 100;i++){
+                datas.nodes.push(v_datas.nodes[i]);
+                datas.edges.push(v_datas.edges[i]);
+            }
+            console.error('datas',datas)
+            $.fn.ChinaModule.methods._renderDataCore(datas);
+        },
+        renderSecond:function(){
+            var v_datas = $.fn.ChinaModule.defaults.allData;
+            var datas = {edges:[],nodes:[]};
+            for(var i = 0; i < 200;i++){
+                datas.nodes.push(v_datas.nodes[i]);
+                datas.edges.push(v_datas.edges[i]);
+            }
+            $.fn.ChinaModule.methods._renderDataCore(datas);
+        },
+        renderThird:function(){
+            var v_datas = $.fn.ChinaModule.defaults.allData;
+            var datas = {edges:[],nodes:[]};
+            for(var i = 0; i < 300;i++){
+                datas.nodes.push(v_datas.nodes[i]);
+                datas.edges.push(v_datas.edges[i]);
+            }
+            $.fn.ChinaModule.methods._renderDataCore(datas);
+        },
+        /**
+         * 绘制全部数据
+         */
+        renderAllData:function(){
+            var datas = $.fn.ChinaModule.defaults.allData;
+            if (datas && datas.nodes) {
+                var ps = [];
+                //数据分类:
+                var p_oa = [];
+                var p_otm = [];
+                var p_otn = [];
+                datas.nodes.map(function (nodeItem, nodeIndex) {
+                    var point = {
+                        name: nodeItem.oname,
+                        value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
+                        data: nodeItem
+                    }
+
+                    if(nodeItem.type == 'OA'){
+                        p_oa.push(point);
+                    }else if(nodeItem.type == 'OTM'){
+                        p_otm.push(point);
+                    }else if(nodeItem.type == 'OTN'){
+                        p_otn.push(point);
+                    }
+                    //ps.push(point);
+                });
+
+                var ls = [];
+                datas.edges.map(function (edgeItem, edgeIndex) {
+                    var line = {
+                        oname: edgeItem.oname,
+                        coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
+                        data: edgeItem
+                    }
+                    ls.push(line);
+                });
+                //points.data = ps;
+                //lines.data = ls;
+                var p_oa_sery = {
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    //symbol:'circle',
+                    symbol:'image://'+Global.mapGlobal.symbolConfig.OA_SYMBOL,
+                    symbolSize:10,
+                    cursor:'pointer',
+                    itemStyle:{
+                        color:'#fff',
+                    },
+                    data: p_oa
+                };
+                var p_otm_sery = {
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    //symbol:'circle',
+                    symbol:'image://'+Global.mapGlobal.symbolConfig.OTM_SYMBOL,
+                    symbolSize:20,
+                    cursor:'pointer',
+                    itemStyle:{
+                        color:'#fff',
+                    },
+                    data: p_otm
+                };
+                var p_otn_sery = {
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    //symbol:'circle',
+                    symbol:'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,
+                    symbolSize:20,
+                    cursor:'pointer',
+                    itemStyle:{
+                        color:'#fff',
+                    },
+                    data: p_otn
+                };
+
+                //创建线的样式:
+                var l_sery = {
+                    type:'lines',
+                    coordinateSystem:'geo',
+                    lineStyle:{
+                        color:'#4C88E4',
+                        width:1,
+                        type:'solid',
+                    },
+                    data:ls
+                }
+                var options = $.fn.ChinaModule.defaults.chart.getOption();
+                //options.series.push(points);
+                //options.series.push(lines);
+                options.series.push(p_oa_sery);
+                options.series.push(p_otm_sery);
+                options.series.push(p_otn_sery);
+                options.series.push(l_sery);
+                $.fn.ChinaModule.defaults.chart.setOption(options);
+
+                //渲染告警数据
+                $.fn.ChinaModule.methods.renderWarningData($.fn.ChinaModule.defaults.chart);
+
+                //实时渲染开启
+                //$.fn.ChinaModule.methods.realRenderWarningData(chart);
+
+            }
+        },
+        _renderDataCore:function(datas,warningflag){
+            if (datas && datas.nodes) {
+                var ps = [];
+                //数据分类:
+                var p_oa = [];
+                var p_otm = [];
+                var p_otn = [];
+                datas.nodes.map(function (nodeItem, nodeIndex) {
+                    var point = {
+                        name: nodeItem.oname,
+                        value: [nodeItem.longitude, nodeItem.lantitude].concat(30),
+                        data: nodeItem
+                    }
+
+                    if(nodeItem.type == 'OA'){
+                        p_oa.push(point);
+                    }else if(nodeItem.type == 'OTM'){
+                        p_otm.push(point);
+                    }else if(nodeItem.type == 'OTN'){
+                        p_otn.push(point);
+                    }
+                    //ps.push(point);
+                });
+
+                var ls = [];
+                datas.edges.map(function (edgeItem, edgeIndex) {
+                    var line = {
+                        oname: edgeItem.oname,
+                        coords: [[edgeItem.a_longitude, edgeItem.a_lantitude], [edgeItem.z_longitude, edgeItem.z_lantitude]],
+                        data: edgeItem
+                    }
+                    ls.push(line);
+                });
+                //points.data = ps;
+                //lines.data = ls;
+                var p_oa_sery = {
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    //symbol:'circle',
+                    symbol:'image://'+Global.mapGlobal.symbolConfig.OA_SYMBOL,
+                    symbolSize:10,
+                    cursor:'pointer',
+                    itemStyle:{
+                        color:'#fff',
+                    },
+                    data: p_oa
+                };
+                var p_otm_sery = {
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    //symbol:'circle',
+                    symbol:'image://'+Global.mapGlobal.symbolConfig.OTM_SYMBOL,
+                    symbolSize:20,
+                    cursor:'pointer',
+                    itemStyle:{
+                        color:'#fff',
+                    },
+                    data: p_otm
+                };
+                var p_otn_sery = {
+                    type:'scatter',
+                    coordinateSystem:'geo',
+                    //symbol:'circle',
+                    symbol:'image://'+Global.mapGlobal.symbolConfig.OTN_DEFAULT_SYMBOL,
+                    symbolSize:20,
+                    cursor:'pointer',
+                    itemStyle:{
+                        color:'#fff',
+                    },
+                    data: p_otn
+                };
+
+                //创建线的样式:
+                var l_sery = {
+                    type:'lines',
+                    coordinateSystem:'geo',
+                    lineStyle:{
+                        color:'#4C88E4',
+                        width:1,
+                        type:'solid',
+                    },
+                    data:ls
+                }
+                var options = $.fn.ChinaModule.defaults.chart.getOption();
+                //options.series.push(points);
+                //options.series.push(lines);
+                options.series.push(p_oa_sery);
+                options.series.push(p_otm_sery);
+                options.series.push(p_otn_sery);
+                options.series.push(l_sery);
+                $.fn.ChinaModule.defaults.chart.setOption(options);
+
+                //渲染告警数据
+                if(warningflag)
+                    $.fn.ChinaModule.methods.renderWarningData($.fn.ChinaModule.defaults.chart);
+
+                //实时渲染开启
+                //$.fn.ChinaModule.methods.realRenderWarningData(chart);
+
+            }
+        },
         /**
          * @author: 小皮
          * @param {color:'String',dataLines:[],dataPorts:[]}
@@ -507,6 +601,10 @@
         // 对外暴露的方法
         exportMethod: function () {
             gis.renderLine = $.fn.ChinaModule.methods.renderLightLine;
+            gis.renderAlldata = $.fn.ChinaModule.methods.renderAllData;
+            gis.renderFirst = $.fn.ChinaModule.methods.renderFirst;
+            gis.renderSecond = $.fn.ChinaModule.methods.renderSecond;
+            gis.renderThird = $.fn.ChinaModule.methods.renderThird;
         },
         // 地图点击事件清除chart上的现有特效
         clearEventTrigger: function () {
@@ -523,6 +621,7 @@
         $.fn.ChinaModule.defaults = {
             chart: null,
             oldOption: null,
-            count: 0
+            count: 0,
+            allData:null,   //全部数据存放变量
         }
 })(jQuery);
