@@ -24,4 +24,16 @@
   .search-select {
     width: 300px;
   }
+  .ant-select-selection {
+    border: 1px solid transparent;
+    border-radius: 0px;
+  }
+  .ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active {
+    border-color: #fff;
+    border-right-width: none;
+    box-shadow: none;
+  }
+  .ant-btn {
+    border-radius: 0px 4px 4px 0px;
+  }
 }
