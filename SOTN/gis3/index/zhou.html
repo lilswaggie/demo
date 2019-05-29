@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>首页-覆盖范围广</title>
-    <script src="../../lib/jquery-1.12.4.min.js"></script>
-    <script src="../../lib/echarts4/echarts.js"></script>
-    <script src="../../geodata/china.js"></script>
-    <script src="../../config/global.js"></script>
-    <script src="../../inspur/frame/gis.js"></script>
-    <script src="../../inspur/frame/mapConfig.js"></script>
-    <script src="../../inspur/GeoUtils.js"></script>
-    <script src="e_china.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
     <style>
-        *{margin: 0;padding: 0}
+        html,body {
+            padding:0px;
+            margin:0px;
+            /*background: #141348;*/
+        }
+
         .container {
             width: 1000px;
             height: 30px;
             margin: 20px auto;
-            position: absolute;
-            left:400px;
-            bottom:0px;
+            position: relative;
             display: flex;
             align-items: center;
         }
@@ -105,10 +104,8 @@
         }
     </style>
 </head>
-<body>
 
-    <div id="g_map" style="width:100%;height:800px;"></div>
-    <!--<div class="port" style="width: 100px;height:30px;line-height:30px;text-align: center;font-size: 13px;color:#fff;position: absolute;top:40px;right:50px;background:blue;border-radius: 10px;">专线A-Z</div>-->
+<body>
     <div class="container">
         <button id="start"></button>
         <div class="line1"></div>
@@ -132,46 +129,47 @@
             <p>未来...</p>
         </div>
     </div>
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
     <script>
-      $("body").ChinaModule({});
-      $(function () {
-          $('#start').click(() => {
-              $('#start').css('background-image', 'url(images/stop.png)');
-          var left = -44;
-          var move = setInterval(function () {
-              $('.move').css('left', left += 1).show()
-              if ($('.move').offset().left + 22 > $('.container').offset().left + 1000) {
-                  left = 0;
-                  clearInterval(move);
-                  $('.move').css('left', '671px');
-                  $('#start').css('background-image', 'url(images/play.png)');
+        $(function () {
+            $('#start').click(() => {
+                $('#start').css('background-image', 'url(images/stop.png)');
+                var left = -44;
+                var move = setInterval(function () {
+                    $('.move').css('left', left += 1).show()
+                    if ($('.move').offset().left + 22 > $('.container').offset().left + 1000) {
+                        left = 0;
+                        clearInterval(move);
+                        $('.move').css('left', '671px');
+                        $('#start').css('background-image', 'url(images/play.png)');
+                        alert(3)
+                    }
 
-              }
+                    if ($('.dot1').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                        .offset().left < $('.dot1').offset().left - 26.5) {
+                        alert(1)
+                    } else if ($('.dot2').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                        .offset().left < $('.dot2').offset().left - 26.5) {
+                        alert(2)
+                    } else if ($('.dot3').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                        .offset().left < $('.dot3').offset().left - 26.5) {
+                        alert(3)
+                    } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                        .offset().left < $('.dot4').offset().left - 26.5) {
+                        alert(4)
+                    };
 
-              if ($('.dot1').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot1').offset().left - 26.5) {
-                  gis.renderFirst();
-              } else if ($('.dot2').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot2').offset().left - 26.5) {
-                  gis.renderThird();
-              } else if ($('.dot3').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot3').offset().left - 26.5) {
-                    gis.renderAlldata();
-              } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
-                      .offset().left < $('.dot4').offset().left - 26.5) {
-                 console.error(4)
-              };
+                    $('.move').offset().left > $('.container').offset().left ? $('#start').attr(
+                        'disabled', true) : $('#start').attr('disabled', false);
 
-              $('.move').offset().left > $('.container').offset().left ? $('#start').attr(
-                  'disabled', true) : $('#start').attr('disabled', false);
-
-              if ($('.dot3').offset().left - 30 <= $('.move').offset().left <= $('.dot3')
-                      .offset().left - 20) {
-                  $('#start').attr('disabled', false)
-              }
-          }, 15)
-      })
-      })
+                    if ($('.dot3').offset().left - 30 <= $('.move').offset().left <= $('.dot3')
+                        .offset().left - 20) {
+                        $('#start').attr('disabled', false)
+                    }
+                }, 5)
+            })
+        })
     </script>
 </body>
+
 </html>
