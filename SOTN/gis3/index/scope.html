@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页-覆盖范围广</title>
+    <title>首页-嵌套iframe页面</title>
     <script src="../../lib/jquery-1.12.4.min.js"></script>
     <script src="../../lib/echarts4/echarts.js"></script>
     <script src="../../geodata/china.js"></script>
@@ -91,6 +91,7 @@
             left: -44px;
             z-index: 9999;
             display: none;
+            cursor: pointer;
         }
 
         #start {
@@ -103,39 +104,94 @@
             border: none;
             top: 0;
         }
+
+        /***********信息框*************/
+        .rectangle{
+            font-size:12px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(108,165,255,1);
+            position: absolute;
+            left: 180px;
+            bottom: 76px;
+            width: 144px;
+            height: 67px;
+            border:1px solid rgba(40,53,147,1);
+            background:rgba(4,18,55,0.8);
+        }
+        .triangle{
+            margin: 0px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: #468FE5 transparent transparent;
+            border-radius: 1px;
+            padding: 0px;
+            width: 0px;
+            height: 0px;
+            left: 243px;
+            bottom: 60px;
+            position: absolute;
+        }
+        .triangle_inner{
+            margin: 0px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: red transparent transparent;
+            padding: 0px;
+            width: 0px;
+            height: 0px;
+            left: 40px;
+            bottom:75px;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
-
-    <div id="g_map" style="width:100%;height:800px;"></div>
+    <iframe id="iframe1" src="index.html" width="99.5%" height="840"></iframe>
+    <!--<div id="g_map" style="width:100%;height:800px;"></div>-->
     <!--<div class="port" style="width: 100px;height:30px;line-height:30px;text-align: center;font-size: 13px;color:#fff;position: absolute;top:40px;right:50px;background:blue;border-radius: 10px;">专线A-Z</div>-->
     <div class="container">
-
         <button id="start"></button>
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
         <div class="move"></div>
-        <div class="dots dot1">
+        <div id="dot1" class="dots dot1" style="cursor: pointer">
             <img src="images/dotsBgB.png" alt="">
             <p>2018-10-15</p>
         </div>
-        <div class="dots dot2">
+        <div id="dot2" class="dots dot2" style="cursor: pointer">
             <img src="images/dotsBgB.png" alt="">
             <p>2018-12-17</p>
         </div>
-        <div class="dots dot3">
+        <div id="dot3" class="dots dot3" style="cursor: pointer">
             <img src="images/dotsBgB.png" alt="">
             <p>2019-05-09</p>
         </div>
-        <div class="dots dot4" id="dot4">
+        <div id="dot4" class="dots dot4" id="dot4" style="cursor: pointer;">
             <img src="images/dotsBgB.png" alt="">
             <p>未来...</p>
         </div>
     </div>
+    <div class="tipComponent">
+        <div class="rectangle">
+            <span></span>
+        </div>
+        <div class="triangle">
+            <!--<div class="triangle_inner"></div>-->
+        </div>
+    </div>
     <script>
-      $("body").ChinaModule({});
+     // $("body").ChinaModule({});
       $(function () {
+          var iframe = document.getElementById("iframe1");
+          var iwindow = iframe.contentWindow;
+          $("#dot3").click(function(){
+              iwindow.location.href = "index.html";
+          });
+          $(".move").click(function () {
+              iwindow.location.href = "index.html";
+          });
           $('#start').click(() => {
               $('#start').css('background-image', 'url(images/stop.png)');
               var x=document.getElementById("dot4");
@@ -154,17 +210,18 @@
 
                   if ($('.dot1').offset().left - 27.5 < $('.move').offset().left && $('.move')
                           .offset().left < $('.dot1').offset().left - 26.5) {
-                      gis.renderFirst();
+                      //iwindow.location.href="business.html";
+                      iwindow.gis.renderFirst();
                   } else if ($('.dot2').offset().left - 27.5 < $('.move').offset().left && $('.move')
                           .offset().left < $('.dot2').offset().left - 26.5) {
-                      gis.renderThird();
+                      iwindow.gis.renderThird();
                   } else if ($('.dot3').offset().left - 27.5 < $('.move').offset().left && $('.move')
                           .offset().left < $('.dot3').offset().left - 26.5) {
-                      gis.renderAlldata();
+                      iwindow.gis.renderAlldata();
                   } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
                           .offset().left < $('.dot4').offset().left - 26.5) {
                         //跳转未来页面
-                      window.location.href="world.html";
+                      iwindow.location.href="world.html";
                   };
 
                   $('.move').offset().left > $('.container').offset().left ? $('#start').attr(

@@ -5,14 +5,45 @@
     <title>时间轴</title>
     <script src="lib/jquery-1.12.4.min.js"></script>
     <style>
-        html,body{
-            margin:0px;
-            padding:0px;
+        .rectangle{
+            width: 400px;
+            height: 100px;
+            border: 1px solid black;
+            background: red;
         }
-
+        .triangle{
+            margin: 0px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: black transparent transparent;
+            padding: 0px;
+            width: 0px;
+            height: 0px;
+            left: 195px;
+            position: absolute;
+        }
+        .triangle_inner{
+            margin: 0px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: red transparent transparent;
+            padding: 0px;
+            width: 0px;
+            height: 0px;
+            left: -10px;
+            top:-11px;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
-
+<div class="tipComponent">
+    <div class="rectangle">
+        css实现边上带小三角的提示框
+    </div>
+    <div class="triangle">
+        <div class="triangle_inner"></div>
+    </div>
+</div>
 </body>
 </html>
