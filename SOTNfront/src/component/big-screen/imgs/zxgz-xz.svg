@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="85px" viewBox="0 0 96 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>zxgz-xz</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="58.5031037 17.0276482 96.1752087 38.7776482 96.1752087 82.2776482 58.5031037 104.027648 20.8309986 82.2776482 20.8309986 38.7776482"></polygon>
+        <filter x="-13.1%" y="-11.6%" width="126.1%" height="122.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="9" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.30694984   0 0 0 0 0.765306122   0 0 0 0 0.712760183  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="大屏_20181126" transform="translate(-1096.000000, -755.000000)">
+            <g id="Group-36" transform="translate(900.000000, 603.000000)">
+                <g id="Group-24" transform="translate(163.000000, 134.000000)">
+                    <g id="zxgz-xz" transform="translate(22.000000, 0.000000)">
+                        <g id="Polygon" transform="translate(58.572908, 60.708349) rotate(-30.000000) translate(-58.572908, -60.708349) ">
+                            <use fill="#224C5D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use stroke="#227D85" stroke-width="1" xlink:href="#path-1"></use>
+                        </g>
+                        <path d="M60.1172647,15.0648871 L98.8204587,37.4101866 C99.4392609,37.7674522 99.8204587,38.4277062 99.8204587,39.1422374 L99.8204587,83.8328363 C99.8204587,84.5473675 99.4392609,85.2076215 98.8204587,85.5648871 L60.1172647,107.910187 C59.4984626,108.267452 58.7360669,108.267452 58.1172647,107.910187 L19.4140708,85.5648871 C18.7952686,85.2076215 18.4140708,84.5473675 18.4140708,83.8328363 L18.4140708,39.1422374 C18.4140708,38.4277062 18.7952686,37.7674522 19.4140708,37.4101866 L58.1172647,15.0648871 C58.7360669,14.7076215 59.4984626,14.7076215 60.1172647,15.0648871 Z" id="Polygon-Copy" stroke="#0D2933" transform="translate(58.968339, 61.275774) rotate(-30.000000) translate(-58.968339, -61.275774) "></path>
+                        <path d="M94.7892532,34.9901734 L98.4126801,37.1024213 C99.2645065,37.5989867 99.7892532,38.5166775 99.7892532,39.5098084 L99.7892532,43.9901734 M99.8156975,78.9443706 L99.8156975,82.6181447 C99.8156975,83.5558776 99.3019097,84.4223784 98.4678729,84.8912449 L94.8156975,86.9443706 M64.0590327,105.545174 L60.4410551,107.238662 C59.5912695,107.636426 58.5442905,107.636426 57.6945049,107.238662 L54.0590327,105.536985 M22.6840412,87.5403182 L18.9247527,85.1117092 C18.1569978,84.6157174 17.6840412,83.6990866 17.6840412,82.7071028 L17.6840412,78.5403182 M18.1223448,42.7811541 L18.1223448,38.6823696 C18.1223448,37.6809313 18.5921412,36.7555642 19.3547663,36.254845 L23.1223448,33.7811541 M54.8613388,16.1473498 L57.9818274,14.4901632 C58.8425195,14.0330786 59.9029358,14.0330786 60.7636279,14.4901632 L63.8613388,16.1352534" id="Polygon-Copy-2" stroke="#40C6CC" stroke-width="2" transform="translate(58.759830, 60.914625) rotate(-30.000000) translate(-58.759830, -60.914625) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

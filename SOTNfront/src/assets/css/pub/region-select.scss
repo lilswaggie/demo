@@ -1,0 +1,82 @@
+@import "../../css/util";
+
+.region-select {
+
+    .select {
+        display: inline-block;
+        position: relative;
+        padding-left: 8px;
+        height: 32px;
+        line-height: 32px;
+        width: 180px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        background-color: #fff;
+        // 设置select垂直居中的样式
+        vertical-align: top; // middle bottom都可以
+        cursor: pointer;
+
+        &.active {
+            box-shadow: rgba(24, 144, 255, .2) 0px 0px 6px;
+            border-color: #40a9ff;
+        }
+    }
+    .icon {
+        position: relative;
+        margin-left: -20px;
+        color: rgba(0, 0, 0, 0.25);
+        font-size: 12px;
+        transform-origin: 50% 50%;
+        cursor: pointer;
+
+        svg {
+            transition: transform .3s;
+        }
+
+        &.active {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+.region-select-popover {
+    .ant-popover-arrow {
+        display: none;
+    }
+    .ant-popover-content {
+        margin-top: -4px;
+        // box-shadow: rgb(229, 229, 229) 0px 0px 4px;
+        // border: 1px solid rgb(188, 188, 188);
+
+        .ant-popover-inner-content {
+            padding: 4px 8px;
+            // width: 368px;
+            // height: 300px;
+        }
+
+        .option-line {
+            height: 32px;
+            line-height: 32px;
+        }
+
+        .option-item {
+            display: inline-block;
+            padding-left: 8px;
+            height: 28px;
+            line-height: 28px;
+            width: 88px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                color: rgb(92, 185, 255);
+            }
+
+            &.active {
+                color: #fff;
+                background-color: #2C9CFA;
+            }
+        }
+    }
+}

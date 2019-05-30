@@ -1,0 +1,48 @@
+@import "../../css/util";
+.line-customer {
+    .ant-modal-body {
+        padding-top: 0;
+    }
+
+    .ant-tabs-bar {
+        margin-bottom: 0;
+    }
+
+    .ant-tabs-nav {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .control-line > div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .line-name{
+
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        span:first-child{
+            display: inline-block;
+            width: px2rem(10);
+            height: px2rem(10);
+            border-radius: 50%;
+            margin-right: px2rem(7);
+        }
+        span:nth-child(2){
+            display: inline-block;
+            margin-right: px2rem(7);
+        }
+    }
+
+    .client{
+        img{
+            margin-right: px2rem(7);
+            margin-bottom: px2rem(3);
+        }
+    }
+}

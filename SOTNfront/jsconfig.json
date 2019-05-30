@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ES6"
+    },
+    "exclude": [
+        "build",
+        "config",
+        "public",
+        "script"
+    ]
+}

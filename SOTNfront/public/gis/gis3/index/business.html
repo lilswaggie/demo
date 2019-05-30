@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>业务品质高</title>
+    <script src="../../lib/jquery-1.12.4.min.js"></script>
+    <script src="../../lib/echarts4/echarts.js"></script>
+    <script src="../../geodata/china.js"></script>
+    <script src="../../config/global.js"></script>
+    <script src="../../inspur/frame/gis.js"></script>
+    <script src="../../inspur/frame/mapConfig.js"></script>
+    <script src="../../inspur/GeoUtils.js"></script>
+    <script src="e_business.js"></script>
+    <script type="text/javascript">
+        var perDiv=null;
+        function chgColor(_this)
+        {
+            if(perDiv){
+                perDiv.style.color='#fff';
+                perDiv.style.borderLeft='';
+            }
+            _this.style.color='#6ADBFF';
+            _this.style.borderLeft='5px solid #6ADBFF';
+            perDiv=_this;
+        }
+    </script>
+    <style>
+        *{margin: 0;padding: 0}
+        ul li {
+            list-style: none;
+        }
+        .track-rcol {
+            width: 100%;
+        }
+        .track-list {
+            margin: 20px;
+            padding-left: 5px;
+            position: relative;
+        }
+        .track-list li {
+            position: relative;
+            padding: 9px 0 0 25px;
+            line-height: 18px;
+            border-left: 1px dashed #d9d9d9;
+            color: #999;
+        }
+        .track-list li.first {
+            color: white;
+            padding-top: 0;
+            border-left-color: #fff;
+            padding-bottom: 15px;
+        }
+        .track-list li.second {
+            left: 1px;
+            color: white;
+            padding-top: 0;
+            border-left: none;
+        }
+        .track-list li .node-icon {
+            position: absolute;
+            left: -6px;
+            width: 11px;
+            height: 11px;
+            background: #579447;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+        }
+        .track-list li.first .node-icon {
+            background-position: 0 -72px;
+        }
+        .track-list li.second .node-icon {
+            background: #B12B71;
+            background-position: 0 -72px;
+        }
+        .track-list li .time {
+            position: relative;
+            top: -5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="g_map" style="width:100%;height:800px;">
+
+</div>
+<div style="width: 300px;height: 150px;background-color: #201D56;position: absolute;top: 10px;border-radius: 5px;font-size: 12px;">
+    <div style="display: flex;text-align: center;border-bottom: white 1px solid;height: 25px;">
+        <div style="flex: 1 1 33.33%;color: #fff;line-height: 25px;">按网元</div>
+        <div style="flex: 1 1 33.33%;color: #fff;line-height: 25px;">按端口</div>
+        <div style="flex: 1 1 33.33%;color: #fff;line-height: 25px;">按时隙</div>
+    </div>
+    <div class="track-rcol">
+        <div class="track-list">
+            <ul>
+                <li class="first">
+                    <i class="node-icon"></i>
+                    <span class="time">ZW-17338-NX中卫云基地-N-HW-EXC-1</span>
+                </li>
+                <li class="second">
+                    <i class="node-icon"></i>
+                    <span class="time">ZW-17367-BJ北京大白楼-N-HW-EXC-1</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        id="ceshi"
+        style="text-align: center">
+        <button style="width: 250px;border: #2C9CFA 1px solid;border-radius: 4px;color: #2C9CFA;background-color: #222450;cursor: pointer;">查询路由</button>
+    </div>
+</div>
+<div style="position: absolute;top: 180px;">
+    <div
+        id="tab1"
+        style="background: linear-gradient(to right, #2C9CFA, rgba(255,0,0,0));width: 200px;height: 80px;cursor: pointer;color:white;border-left: 5px solid #2C9CFA;"
+        onclick="chgColor(this)">
+        <div style="margin-left: 10px;padding-top: 10px;">最小时延</div>
+        <div style="margin-left: 10px;">
+            <span style="font-size: 25px;">1090us</span>
+            <span style="font-size: 12px;">1234皮长公里</span>
+            <span style="font-size: 12px;">3</span>
+        </div>
+    </div>
+    <div
+        id="tab2"
+        style="background: linear-gradient(to right, #2C9CFA, rgba(255,0,0,0));width: 200px;height: 80px;cursor: pointer;color:white;border-left: 5px solid #2C9CFA;"
+        onclick="chgColor(this)">
+        <div style="margin-left: 10px;padding-top: 10px;margin-top: 10px;">最小跳数</div>
+        <div style="margin-left: 10px;">
+            <span style="font-size: 25px;">1290us</span>
+            <span style="font-size: 12px;">1390皮长公里</span>
+            <span style="font-size: 12px;">2</span>
+        </div>
+    </div>
+    <div
+        id="tab3"
+        style="background: linear-gradient(to right, #2C9CFA, rgba(255,0,0,0));width: 200px;height: 80px;cursor: pointer;color:white;border-left: 5px solid #2C9CFA;"
+        onclick="chgColor(this)">
+        <div style="margin-left: 10px;padding-top: 10px;margin-top: 10px;">流量均衡</div>
+        <div style="margin-left: 10px;">
+            <span style="font-size: 25px;">1230us</span>
+            <span style="font-size: 12px;">1234皮长公里</span>
+            <span style="font-size: 12px;">2</span>
+        </div>
+    </div>
+    <div
+        id="tab4"
+        style="background: linear-gradient(to right, #2C9CFA, rgba(255,0,0,0));width: 200px;height: 80px;cursor: pointer;color:white;border-left: 5px solid #2C9CFA;"
+        onclick="chgColor(this)">
+        <div style="margin-left: 10px;padding-top: 10px;margin-top: 10px;">最稳定路由</div>
+        <div style="margin-left: 10px;">
+            <span style="font-size: 25px;">1090us</span>
+            <span style="font-size: 12px;">1234皮长公里</span>
+            <span style="font-size: 12px;">2</span>
+        </div>
+    </div>
+</div>
+<!--<div class="port" style="width: 100px;height:30px;line-height:30px;text-align: center;font-size: 13px;color:#fff;position: absolute;top:40px;right:50px;background:blue;border-radius: 10px;">专线A-Z</div>-->
+<script>
+    $("body").ChinaModule({});
+</script>
+</body>
+</html>

@@ -41,7 +41,10 @@
                 // }]
             });
             // 数据渲染
-            $.fn.ChinaModule.methods.renderData($.fn.ChinaModule.defaults.chart);
+           /* if($.fn.ChinaModule.defaults.allData)
+                $.fn.ChinaModule.methods._renderDataCore($.fn.ChinaModule.defaults.allData,true)
+            else*/
+                $.fn.ChinaModule.methods.renderData($.fn.ChinaModule.defaults.chart);
 
 
             // $.fn.ChinaModule.methods.chartEventsTrigger($.fn.ChinaModule.defaults.chart);

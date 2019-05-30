@@ -1,0 +1,89 @@
+@import '../../css/busifault/busifault';
+
+.network-fault-wrap {
+  .content {
+    .block2 {
+      height: px2rem(520);
+      .left {
+        margin-top: px2rem(12);
+        position: relative;
+        width: 99%; //876px
+        float: left;
+        background-color: white;
+        height: 100%;
+
+        .warn-effected-lines {
+          position: absolute;
+          width: 420px; //414px
+          top: 10px;
+          right: 10px;
+          background-color: #fff;
+
+          .cutover-line {
+            margin-top: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .block3 {
+      margin-bottom: px2rem(38);
+      height: px2rem(528);
+      background-color: #f1f4f9;
+
+      .header {
+        height: px2rem(20);
+        line-height: px2rem(20);
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+        color: #3c3e4a;
+        text-align: left;
+      }
+
+      .left-content {
+        width: 62%; //876px
+        float: left;
+        background-color: white;
+        height: 100%;
+        // padding: px2rem(15) px2rem(19);
+
+        .header {
+          padding-left: 1rem;
+        }
+
+        table {
+          width: 100%;
+        }
+      }
+
+      .right-content {
+        float: right;
+        padding: px2rem(14);
+        width: 37%; //414px
+        background-color: #fff;
+        height: 100%;
+
+        .line-trend-container {
+          margin-top: px2rem(14);
+          padding: px2rem(10);
+          height: px2rem(227);
+          border: px2rem(1) solid #f4f4f4;
+
+          .line-title {
+            height: px2rem(20);
+            line-height: px2rem(20);
+            font-size: 14px;
+            color: #72758c;
+            text-align: left;
+          }
+
+          .warn-line-chart {
+            height: px2rem(187) !important;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

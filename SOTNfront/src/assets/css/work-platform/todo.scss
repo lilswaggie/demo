@@ -1,0 +1,112 @@
+@import '../util.scss';
+.header {
+    color: #2C9CFA;
+    font-size: 14px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header span{
+    line-height: 32px;
+}
+.todoOptions {
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 13px;
+}
+.divider {
+    width: 3px;
+    background-color: #2C9CFA;
+}
+.ant-radio-button-wrapper{
+    height: 26px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #3C3E4A;
+}
+.ant-radio-button-wrapper .num{
+    color: #F35B5B;
+}
+.ant-radio-button-wrapper:first-child,
+.ant-radio-button-wrapper:last-child{
+    border-radius: 0;
+}
+.ant-radio-button-wrapper-checked,
+.ant-radio-button-wrapper-checked .num{
+    background-color: #C0E0FA;
+    color: #2C9CFA;
+    border-color: #2C9CFA;
+}
+section{
+    position: relative;
+    margin-bottom: 15px;
+}
+#todo, #public{
+    margin: 12px 32px 0;
+    padding: 22px 18px 0;
+    background-color: #fff;
+}
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td{
+    padding: 0 16px;
+    height: 48px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.ant-table-thead > tr > th{
+    background-color: #F0F3F7;
+    color: #72758C;
+    font-size: 14px;
+}
+.footer{
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    font-size: 14px;
+    color: #3C3E4A;
+}
+.footer span{
+    color: #2C9CFA;
+}
+body{
+    background-color: #F1F4F9;
+}
+.ant-tag {
+    background-color: #fff;
+    border: 1px solid #F5A623;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #72758C;
+}
+.category-btn{
+    height: 37px;
+    width: 90px;
+    border: 1px solid #f4f4f4;
+    border-radius: 0;
+    margin: 10px 8px 10px 0;
+    color: #72758C;
+}
+.category-btn.active,
+.category-btn.active:focus{
+    color: #2C9CFA;
+    border: 1px solid #f4f4f4;
+}
+.category-btn:hover{
+    border: 1px solid #2C9CFA;
+    color: #72758C;
+}
+.category-btn:focus{
+    border: 1px solid #f4f4f4;
+    color: #72758C;
+}
+
+#default{
+    height: 326px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3C3E4A;
+    font-size: 12px;
+}
