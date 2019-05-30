@@ -51,6 +51,9 @@ twaver.Util.ext(toponetwork, twaver.vector.Network, {
             var name = data.getClient('zh_label');
             if (name) {
                 if (name.length > 10) {
+                    if(name.length>25){
+                        return name.substr(0,11)+'\n'+name.substr(11,15)+'...';
+                    }
                    return name.substr(0,11)+'\n'+name.substr(11);
                 }
                 return name;
