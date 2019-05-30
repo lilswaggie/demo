@@ -137,7 +137,7 @@
       $("body").ChinaModule({});
       $(function () {
           $('#start').click(() => {
-                  $('#start').css('background-image', 'url(images/stop.png)');
+              $('#start').css('background-image', 'url(images/stop.png)');
               var x=document.getElementById("dot4");
               var containerLedt=x.offsetLeft+100;
               var left = -44;
@@ -163,7 +163,8 @@
                       gis.renderAlldata();
                   } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
                           .offset().left < $('.dot4').offset().left - 26.5) {
-
+                        //跳转未来页面
+                      window.location.href="world.html";
                   };
 
                   $('.move').offset().left > $('.container').offset().left ? $('#start').attr(
