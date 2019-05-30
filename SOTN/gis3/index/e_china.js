@@ -8,7 +8,11 @@
         if (typeof options == 'string') return $.fn.ChinaModule.methods[options](params);
         $.fn.ChinaModule.methods.init();
         $.fn.ChinaModule.methods.exportMethod();     //对外提供接口
-
+        $.fn.ChinaModule.defaults.chart.on('mouseover',function(params){
+            $.fn.ChinaModule.defaults.chart.dispatchAction({
+                type: 'downplay'
+            });
+        });
 
     }
     $.fn.ChinaModule.methods = {
@@ -17,23 +21,24 @@
             $.fn.ChinaModule.defaults.chart.setOption({
                 backgroundColor:'#050513',
                 geo: $("body").GeoUtils('getChinaMapInstance'),
-                series: [{
-                    zoom:1.5,
-                    type: 'map',
-                    map: 'china',
-                    silent: true,
-                    itemStyle: {
-                        borderColor: '#050513',
-                        borderWidth: 1,
-                        areaColor: '#131348'
-                    },
-                    // emphasis: {
-                    //     itemStyle: {
-                    //         areaColor: '#F9FBFF'
-                    //     }
-                    // },
-                    data: $("body").GeoUtils('getChinaRegions')
-                }]
+                series:[],
+                // series: [{
+                //     zoom:1.5,
+                //     type: 'map',
+                //     map: 'china',
+                //     silent: true,
+                //     itemStyle: {
+                //         borderColor: '#050513',
+                //         borderWidth: 1,
+                //         areaColor: '#131348'
+                //     },
+                //     // emphasis: {
+                //     //     itemStyle: {
+                //     //         areaColor: '#F9FBFF'
+                //     //     }
+                //     // },
+                //     data: $("body").GeoUtils('getChinaRegions')
+                // }]
             });
             // 数据渲染
             $.fn.ChinaModule.methods.renderData($.fn.ChinaModule.defaults.chart);
@@ -80,8 +85,7 @@
                     console.log('国内拓扑数据',data)
                     var datas = data.data;
                     $.fn.ChinaModule.defaults.allData = datas;
-
-
+                    $.fn.ChinaModule.methods._renderDataCore(datas,true);
                 }
             });
             //$.get(Global.mapGlobal.queryPOI.queryServiceLines, function (datas) {
@@ -312,14 +316,47 @@
             $.fn.ChinaModule.defaults.chart.setOption(chartOption);
         },
         renderFirst:function(){
-            var v_datas = $.fn.ChinaModule.defaults.allData;
-            var datas = {edges:[],nodes:[]};
-            for(var i = 0; i < 100;i++){
-                datas.nodes.push(v_datas.nodes[i]);
-                datas.edges.push(v_datas.edges[i]);
+
+            if($.fn.ChinaModule.defaults.allData){
+                //$.fn.ChinaModule.defaults.chart.clear();
+                var options = $.fn.ChinaModule.defaults.chart.getOption();
+                console.error('options:',options)
+                options.series = [];
+                $.fn.ChinaModule.defaults.chart.clear();
+                $.fn.ChinaModule.defaults.chart.setOption(options);
+                var v_datas = $.fn.ChinaModule.defaults.allData;
+                var datas = {edges:[],nodes:[]};
+                for(var i = 0; i < 100;i++){
+                    datas.nodes.push(v_datas.nodes[i]);
+                    datas.edges.push(v_datas.edges[i]);
+                }
+                console.error('datas',datas)
+                $.fn.ChinaModule.methods._renderDataCore(datas);
+            }else{
+                $.ajax({
+                    url:'http://10.154.8.22:8088/sotn/api/resource/topolinks?scene=indoor',
+                    dataType:'json',
+                    type:'get',
+                    headers:{
+                        Accept:'application/json;charset=utf-8',
+                        Authorization:Global.Authorization
+                    },
+                    success:function(data){
+                        console.log('国内拓扑数据',data)
+                        var datas = data.data;
+                        $.fn.ChinaModule.defaults.allData = datas;
+                        var v_datas = $.fn.ChinaModule.defaults.allData;
+                        var datas = {edges:[],nodes:[]};
+                        for(var i = 0; i < 100;i++){
+                            datas.nodes.push(v_datas.nodes[i]);
+                            datas.edges.push(v_datas.edges[i]);
+                        }
+                        console.error('datas',datas)
+                        $.fn.ChinaModule.methods._renderDataCore(datas);
+                    }
+                });
             }
-            console.error('datas',datas)
-            $.fn.ChinaModule.methods._renderDataCore(datas);
+
         },
         renderSecond:function(){
             var v_datas = $.fn.ChinaModule.defaults.allData;
@@ -343,6 +380,9 @@
          * 绘制全部数据
          */
         renderAllData:function(){
+            if(!$.fn.ChinaModule.defaults.allData){
+                $.fn.ChinaModule.methods.renderData();
+            }
             var datas = $.fn.ChinaModule.defaults.allData;
             if (datas && datas.nodes) {
                 var ps = [];
@@ -479,6 +519,7 @@
                 //points.data = ps;
                 //lines.data = ls;
                 var p_oa_sery = {
+                    z:2,
                     type:'scatter',
                     coordinateSystem:'geo',
                     //symbol:'circle',

@@ -104,21 +104,29 @@
         //获取中国map实例
         getChinaMapInstance:function(){
             var geo = {
+                z:0,
                 zoom:1.5,
+                //zoom:2.2,
                 map:'china',
+                hoverAnimation:false,
+                avoidLabelOverlap: false,
                 itemStyle:{
                     borderColor:'#050513',
-                    borderWidth:5,
+                    borderWidth:1,
                     areaColor:'#131348'
                 },
                 emphasis:{
-                    label:{show:false},
+                    label:{
+                        show:false
+                    },
                     itemStyle:{
                          areaColor:'#131348',
+                         color:'#fff',
                          opacity:0
                     }
                  },
-                // regions:$("body").GeoUtils('getChinaRegions')
+                 regions:$("body").GeoUtils('getChinaRegions'),
+                 silent:false
             }
             return geo;
         },

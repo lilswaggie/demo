@@ -184,6 +184,16 @@ define([
                     // var datas = JSON.parse(data.data.message)
                     // console.error('datas',datas)
                     var datas = data.data;
+                    var edges = datas.edges;
+                    var count = 0;
+                    for(var i = 0; i < edges.length-1; i++){
+                        //console.error(edges[i].a_province_id+'———'+edges[i].z_province_id)
+                        if(edges[i].a_province_id != edges[i].z_province_id){
+                            count ++;
+                        }
+                    }
+                    console.error('两端省份不一致的数据:'+count)
+
                     if(datas && datas.nodes){
                         if(datas.edges) this_instance._drawingLines(datas.edges);   //绘制逻辑线
                         this_instance._drawingPoints(datas.nodes);                  //绘制点数据
