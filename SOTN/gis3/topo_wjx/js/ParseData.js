@@ -133,7 +133,7 @@ var ParseData = {
         link.s('link.color', '#5dd0dc');
         link.s('link.width', 1);
         if (i != 0) {
-            link.s('link.pattern', [5,5]);
+            link.s('link.pattern', [5, 5]);
         }
         this.box.add(link);
     },
@@ -148,15 +148,15 @@ var ParseData = {
         var parentNode = this.parentIdMap[parent_id];
         if (!parentNode) {
             parentNode = new twaver.Group(parent_id)
-            parentNode.setClient('zh_label',parent_name);
+            parentNode.setClient('zh_label', parent_name);
             parentNode.setExpanded(true);
             parentNode.s('group.fill.color', '#eef5fe');
             parentNode.s('group.deep', 0);
             // parentNode.expanded=true;
             this.parentIdMap[parent_id] = parentNode;
-            // this.box.add(parentNode);
+            this.box.add(parentNode);
         }
-        // port.setParent(parentNode);
+        port.setParent(parentNode);
         port.setClient('parent', parentNode);
         this.box.add(port);
         return port;
@@ -164,19 +164,52 @@ var ParseData = {
     doLayout() {
         var self = this
         var autoLayouter = new twaver.layout.AutoLayouter(this.box)
-        autoLayouter.setRepulsion(7)
-        autoLayouter.isMovable = function (ele) {
-            return true;
-            // return !(ele instanceof twaver.Group);
-        }
-        autoLayouter.doLayout('hierarchic', function () {
-            self.box.forEach(data => {
-                if (data instanceof twaver.Node) {
-                    data.setLocation(data.getY(), data.getX())
+        // autoLayouter.setRepulsion(3)
+        // autoLayouter.isMovable = function (ele) {
+        //     return true;
+        //     // return !(ele instanceof twaver.Group);
+        // }
+        var hGap = 80;
+        var nodeGap = 130;
+        autoLayouter.getDimension = function (node) {
+            if (node instanceof twaver.Group && node.getChildrenSize() > 0) {
+                var rect = null;
+                for (var i = 0, n = node.getChildrenSize(); i < n; i++) {
+                    var child = node.getChildAt(i);
+                    if (child instanceof twaver.Node) {
+                        if (rect) {
+                            var newRect = child.getRect();
+                            // newRect.width+=nodeGap;
+                            newRect.height+=nodeGap;
+                            rect = _twaver.math.unionRect(rect, newRect);
+                        } else {
+                            // rect = child.getRect();
+                            rect=child.getRect();
+                            // rect.width+=nodeGap;
+                            rect.height+=nodeGap;
+                            // console.log(child.getRect());
+                            // rect = {width: child.getRect().width + nodeGap, height: child.getRect().height};
+                        }
+                    }
                 }
+                if (rect) {
+                    return {width: rect.width + hGap, height: rect.height};
+                } else {
+                    return null;
+                }
+            } else {
+                return {width: node.getWidth() + hGap, height: node.getHeight()+110};
+            }
+        },
+            autoLayouter.doLayout('hierarchic', function () {
+                self.box.forEach(data => {
+                    if (data instanceof TransNe||data instanceof dataBaseObj) {
+                        console.log("x:" + data.getX() + ",y:" + data.getY());
+                        data.setLocation(data.getY(), data.getX())
+                    }
+                })
+                // self.addGroup();
             })
-            self.addGroup();
-        })
 
         // autoLayouter.doLayout('leftright', function () {
         //     self.box.forEach(data => {
