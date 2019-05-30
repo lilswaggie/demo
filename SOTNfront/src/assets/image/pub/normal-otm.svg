@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="18px" viewBox="0 0 23 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>OTM</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-80.0%" y="-120.0%" width="260.0%" height="340.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="门户v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页--国内修改地图底图全屏" transform="translate(-1231.000000, -648.000000)">
+            <g id="图例" transform="translate(1227.000000, 638.000000)">
+                <g id="OTM" filter="url(#filter-1)" transform="translate(8.000000, 12.000000)">
+                    <rect id="Rectangle-19" fill="#6CA5FF" x="0" y="0" width="14.7307866" height="9.97974969" rx="2.12765957"></rect>
+                    <path d="M1.26481808,7.98379975 L13.7089506,7.98379975 C14.1223253,7.98379975 14.4574318,8.31890621 14.4574318,8.73228098 L14.4574318,8.73228098 C14.4574318,9.14565575 14.1223253,9.48076221 13.7089506,9.48076221 L1.26481808,9.48076221 C0.851443309,9.48076221 0.516336849,9.14565575 0.516336849,8.73228098 L0.516336849,8.73228098 C0.516336849,8.31890621 0.851443309,7.98379975 1.26481808,7.98379975 Z" id="Rectangle" fill="#4180F3"></path>
+                    <path d="M3.93,2.36 C4.47,2.36 4.9,2.535 5.215,2.89 C5.515,3.225 5.665,3.67 5.665,4.22 C5.665,4.765 5.515,5.205 5.215,5.545 C4.9,5.895 4.47,6.07 3.93,6.07 C3.385,6.07 2.955,5.89 2.645,5.54 C2.345,5.2 2.2,4.76 2.2,4.22 C2.2,3.675 2.345,3.235 2.645,2.895 C2.955,2.535 3.385,2.36 3.93,2.36 Z M3.93,2.84 C3.55,2.84 3.255,2.965 3.045,3.225 C2.845,3.47 2.745,3.8 2.745,4.22 C2.745,4.635 2.845,4.965 3.045,5.21 C3.255,5.46 3.55,5.59 3.93,5.59 C4.31,5.59 4.605,5.465 4.81,5.22 C5.01,4.98 5.115,4.645 5.115,4.22 C5.115,3.79 5.01,3.455 4.81,3.21 C4.605,2.96 4.31,2.84 3.93,2.84 Z M5.63999999,2.43 L8.56499999,2.43 L8.56499999,2.895 L7.37499999,2.895 L7.37499999,6 L6.83499999,6 L6.83499999,2.895 L5.63999999,2.895 L5.63999999,2.43 Z M8.69499998,2.43 L9.33999998,2.43 L10.585,5.29 L10.6,5.29 L11.84,2.43 L12.485,2.43 L12.485,6 L11.94,6 L11.94,3.45 L11.92,3.45 L10.825,6 L10.355,6 L9.25999998,3.45 L9.23999998,3.45 L9.23999998,6 L8.69499998,6 L8.69499998,2.43 Z" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

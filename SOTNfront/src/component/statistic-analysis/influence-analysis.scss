@@ -1,0 +1,256 @@
+@import '../../assets/css/util.scss';
+
+.influence-analysis {
+  background: $tcolor-white;
+  font-size: $font-size-basic;
+  font-weight:400;
+  text-align: left;
+  font-family: "PingFang SC Regular", "Microsoft YaHei", serif;
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  ::-webkit-scrollbar
+  {
+    width: 0.5rem;
+    height: 0.3rem;
+  }
+  /*定义滚动条轨道 圆角*/
+  ::-webkit-scrollbar-track
+  {
+    border-radius: 10px;
+    background-color: $tcolor-white;
+  }
+
+  /*定义滑块 圆角*/
+  ::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    background-color: rgba(209,216,227,1);
+  }
+  .influence-header {
+    height: $space * 2.5;
+    margin-left: $space * 1.875;
+    // background: $tcolor-white;
+    span {
+      float: left;
+      font-weight: 600;
+      height: $space * 1;
+    //   line-height: $space * 1;
+      margin-top: $space * 0.7;
+    //   margin-left: $space * 0.5;
+    //   padding-left: $space * 0.5;
+    }
+    .back {
+        font-size: 14px;
+        font-weight: normal;
+        color: #2C9CFA;
+        cursor: pointer;
+    }
+  }
+  .influence-content {
+    background: #F1F4F9;
+    text-align: left;
+    .cutover-topic, .cutover-analysis {
+      background: $tcolor-white;
+      width: 95%;
+      margin: px2rem(10) auto;
+      // margin-bottom: 0;
+    }
+    // .cutover-topic {
+    //   height: px2rem(93);
+    //   .alarm-title {
+    //     background: rgba(240,243,247,0.39);
+    //     width: 98%;
+    //     margin: 0 auto;
+    //     height: 80%;
+    //     span {
+    //       display: block;
+    //     }
+    //   }
+    // }
+    .cutover-analysis {
+      // height:774px;
+      // height: 100%;
+      margin-bottom: $space * 1.875;
+      margin-top: px2rem(10);
+      .space {
+        height: px2rem(6);
+      }
+      .alarm-title {
+        height: px2rem(93);
+        background: rgba(240,243,247,0.39);
+        // width: 95%;
+        // margin: px2rem(10) auto;
+        // height: 80%;
+        // padding: px2rem(15);
+        margin-left: $space;
+        margin-right: $space;
+        margin-top: px2rem(10);
+        span {
+          display: block;
+          padding-top: px2rem(15);
+          padding-left: px2rem(15);
+        }
+      }
+      .title {
+        // margin-top: 10px;
+        span {
+          border-left: 3px solid $color-btnwrap-checked;
+          height: $space * 2.5;
+          line-height: $space * 2.5;
+          padding-left: $space;
+        }
+      }
+      .cutover-client {
+        height: px2rem(220);
+        margin-left: $space;
+        margin-right: $space;
+        background:rgba(240,243,247,0.39);
+        .cilent-number, .line-number {
+          height: 100%;
+          width: 50%;
+        }
+        .cilent-number {
+          float: left;
+        }
+        .line-number {
+          float: right;
+        }
+      }
+      .table-wrap {
+        margin-top: $space;
+        margin-left: $space;
+        margin-right: $space;
+        .link {
+          color: $color-blue;
+          font-size: $font-size-basic;
+          // text-align: right;
+          &:hover {
+            text-decoration: underline;
+            color: #C2D6FC
+          }
+        }
+        table {
+          width: 100%;
+          table-layout: fixed;
+          border-collapse: collapse;
+        }
+        thead {
+          tr {
+            width: 100%;
+            border-bottom: 2px solid $border-color;
+            background: $table-header;
+          }
+        }
+        td, th {
+          font-size: $font-size-basic;
+          font-weight: 400;
+          border-bottom: 1px solid $border-color;
+          padding: px2rem(8);
+          text-align: center;
+          height: px2rem(40);
+          word-break: keep-all;
+          overflow: auto;
+          // .show-abstract;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          // white-space: nowrap;
+          white-space: normal;
+        }
+        th {
+          word-break: keep-all;
+        }
+        tbody tr{
+          td {
+            word-break: keep-all;
+          }
+          &:hover {
+            background: $hover-color;
+            cursor: pointer;
+          }
+        }
+        .show-abstract {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          // white-space: nowrap;
+          white-space: normal;
+        }
+        .status-tag-gold, .status-tag-sliver, .status-tag-bronze, .status-tag-standard {
+          // color: $tcolor-dark-light;
+          display: inline-block;
+          // border-radius: 11px;
+          padding: 2px 18px;
+          width: px2rem(75);
+        }
+        .status-tag-gold {
+          background: url(../cutover-overview/stylesheets/image/gold.svg) no-repeat left 50%;
+        }
+        .status-tag-sliver {
+          background: url(../cutover-overview/stylesheets/image/sliver.svg) no-repeat left 50%;
+        }
+        .status-tag-bronze {
+          background: url(../cutover-overview/stylesheets/image/bronze.svg) no-repeat left 50%;
+        }
+        .status-tag-standard {
+          background: url(../cutover-overview/stylesheets/image/standard.svg) no-repeat left 50%;
+        }
+        th {
+          width: px2rem(50);
+          text-align: left;
+          &:nth-of-type(1) {
+            width: px2rem(80);
+            text-align: left;
+          }
+          &:nth-of-type(2) {
+            width: px2rem(100);
+          }
+          &:nth-of-type(3) {
+            width: px2rem(50);
+            text-align: left;
+          }
+          &:nth-of-type(4) {
+            width: px2rem(100);
+          }
+          &:nth-of-type(5) {
+            width: px2rem(50);
+            // text-align: left;
+          }
+          &:nth-of-type(6) {
+            width: px2rem(50);
+            // text-align: left;
+          }
+          &:nth-of-type(7) {
+            width: px2rem(50);
+            // text-align: left;
+          }
+          &:nth-of-type(8) {
+            width: px2rem(80);
+            // text-align: center;
+          }
+        }
+        td {
+          // text-align: left;
+          &:nth-of-type(1) {
+            text-align: left;
+          }
+          &:nth-of-type(2) {
+            text-align: left;
+          }
+          &:nth-of-type(3) {
+            text-align: left;
+          }
+          &:nth-of-type(4) {
+            text-align: left;
+          }
+          &:nth-of-type(6) {
+            text-align: left;
+          }
+          &:nth-of-type(7) {
+            text-align: left;
+          }
+          &:nth-of-type(8) {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.chart-example {
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+    padding: 0 12px;
+    background-color: #fff;
+    text-align: left;
+    font-size: 12px;
+
+    .item {
+        height: 22px;
+        line-height: 22px;
+
+        .color-icon {
+            display: inline-block;
+            width: 10px;
+            height: 6px;
+            vertical-align: middle;
+
+            &.normal {
+                background-color: #4D8CF4;
+            }
+            &.finish {
+                background-color: #71CA41;
+            }
+            &.error {
+                background-color: #FD6360;
+            }
+        }
+
+        .color-description {
+            margin-left: 16px;
+            vertical-align: middle;
+        }
+    }
+}

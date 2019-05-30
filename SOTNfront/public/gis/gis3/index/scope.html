@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-覆盖范围广</title>
+    <script src="../../lib/jquery-1.12.4.min.js"></script>
+    <script src="../../lib/echarts4/echarts.js"></script>
+    <script src="../../geodata/china.js"></script>
+    <script src="../../config/global.js"></script>
+    <script src="../../inspur/frame/gis.js"></script>
+    <script src="../../inspur/frame/mapConfig.js"></script>
+    <script src="../../inspur/GeoUtils.js"></script>
+    <script src="e_china.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        .container {
+            width: 92%;
+            height: 30px;
+            margin: 20px auto;
+            position: absolute;
+            left:85px;
+            bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .line1 {
+            width: 70%;
+            height: 1px;
+            background: #999;
+            overflow: hidden;
+        }
+
+        .line2 {
+            width: 20%;
+            height: 0;
+            overflow: hidden;
+            border-top: 1px dashed #999;
+        }
+
+        .line3 {
+            width: 10%;
+            height: 1px;
+            background: #999;
+            overflow: hidden;
+        }
+
+        .dots {
+            width: 20px;
+            height: 20px;
+            background: url(images/dotsBgA.png) no-repeat center center;
+            border-radius: 10px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dots p {
+            width: 80px;
+            height: 20px;
+            position: absolute;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            top: 20px;
+        }
+
+        .dot1 {
+            left: 10%;
+        }
+
+        .dot2 {
+            left: 30%;
+        }
+
+        .dot3 {
+            left: 70%;
+        }
+
+        .dot4 {
+            left: 90%;
+        }
+
+        .move {
+            width: 44px;
+            height: 20px;
+            background: url(images/dot.png) no-repeat center right;
+            border-radius: 10px;
+            position: absolute;
+            left: -44px;
+            z-index: 9999;
+            display: none;
+        }
+
+        #start {
+            width: 30px;
+            height: 30px;
+            background: url(images/play.png) no-repeat center center;
+            position: absolute;
+            left: -50px;
+            outline: none;
+            border: none;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="g_map" style="width:100%;height:800px;"></div>
+    <!--<div class="port" style="width: 100px;height:30px;line-height:30px;text-align: center;font-size: 13px;color:#fff;position: absolute;top:40px;right:50px;background:blue;border-radius: 10px;">专线A-Z</div>-->
+    <div class="container">
+
+        <button id="start"></button>
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="move"></div>
+        <div class="dots dot1">
+            <img src="images/dotsBgB.png" alt="">
+            <p>2018-10-15</p>
+        </div>
+        <div class="dots dot2">
+            <img src="images/dotsBgB.png" alt="">
+            <p>2018-12-17</p>
+        </div>
+        <div class="dots dot3">
+            <img src="images/dotsBgB.png" alt="">
+            <p>2019-05-09</p>
+        </div>
+        <div class="dots dot4" id="dot4">
+            <img src="images/dotsBgB.png" alt="">
+            <p>未来...</p>
+        </div>
+    </div>
+    <script>
+      $("body").ChinaModule({});
+      $(function () {
+          $('#start').click(() => {
+                  $('#start').css('background-image', 'url(images/stop.png)');
+              var x=document.getElementById("dot4");
+              var containerLedt=x.offsetLeft+100;
+              var left = -44;
+              var move = setInterval(function () {
+
+                  $('.move').css('left', left += 1).show()
+                  if ($('.move').offset().left + 22 > $('.container').offset().left + containerLedt) {
+                      left = 0;
+                      clearInterval(move);
+                      $('.move').css('left', 'calc(70% - 29px)');
+                      $('#start').css('background-image', 'url(images/play.png)');
+                      console.error('结束')
+                  }
+
+                  if ($('.dot1').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot1').offset().left - 26.5) {
+                      gis.renderFirst();
+                  } else if ($('.dot2').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot2').offset().left - 26.5) {
+                      gis.renderThird();
+                  } else if ($('.dot3').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot3').offset().left - 26.5) {
+                      gis.renderAlldata();
+                  } else if ($('.dot4').offset().left - 27.5 < $('.move').offset().left && $('.move')
+                          .offset().left < $('.dot4').offset().left - 26.5) {
+
+                  };
+
+                  $('.move').offset().left > $('.container').offset().left ? $('#start').attr(
+                      'disabled', true) : $('#start').attr('disabled', false);
+
+                  if ($('.dot3').offset().left - 30 <= $('.move').offset().left <= $('.dot3')
+                          .offset().left - 20) {
+                      $('#start').attr('disabled', false)
+                  }
+              }, 5)
+          });
+      })
+    </script>
+</body>
+</html>

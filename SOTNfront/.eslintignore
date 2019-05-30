@@ -1,0 +1,6 @@
+/build/*
+/config/*
+/public/*
+/scripts/*
+/tools/*
+/node_modules/*

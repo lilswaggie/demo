@@ -1,0 +1,46 @@
+@import '../util.scss';
+.custom-view-wrap {
+
+    .title {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #3C3E4A;
+    }
+
+    .module-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -4px;
+
+        .module-item {
+            margin: 4px;
+            padding: 0 8px;
+            @include height-line-height(32px);
+            width: 120px;
+            color: #333;
+            background-color: rgba(243, 247, 252, 1);
+            cursor: pointer;
+
+            > span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .name {
+                width: 80px;
+            }
+
+            .icon {
+                height: 20px;
+                width: 20px;
+                background-size: cover;
+
+                @each $class in remove, add {
+                    &.#{$class} {
+                        background-image: url("../../image/overview/#{$class}.png");
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.business-container {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  padding-top: 78px;
+  padding-bottom: 36px;
+  text-align: center;
+  background-color: rgb(241, 244, 249);
+}
+
+.business-header {
+  .china-mobile-icon {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url('../image/login/china-mobile-logo.svg');
+    background-size: cover;
+  }
+
+  .system-name {
+    display: inline-block;
+    margin-left: 16px;
+    height: 42px;
+    width: 468px;
+    background: url('../image/forget/system-name-black.png') no-repeat;
+  }
+}
+
+.business-body {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 142px;
+  height: 294px;
+  width: 600px;
+  // background-color: #fff;
+
+  .wrap {
+    display: inline-block;
+    padding: 0 20px;
+    width: 250px;
+    height: 294px;
+    background-color: #fff;
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(217, 215, 215, 1);
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1px 2px 0 rgba(91, 149, 244, 1);
+      border: 1px solid rgba(66, 133, 244, 1);
+    }
+
+    .ant-divider-horizontal {
+      margin-top: 57px;
+      margin-bottom: 18px;
+    }
+
+    .text {
+      font-size: 20px;
+      line-height: 28px;
+      color: rgba(114, 117, 140, 1);
+    }
+
+    .icon {
+      display: block;
+      margin-top: 55px;
+      margin-left: 51px;
+      height: 108px;
+      width: 108px;
+    }
+
+    &.word-wrap {
+      .icon {
+        background-image: url('../image/business/word.png');
+      }
+    }
+
+    &.china-wrap {
+      .icon {
+        background-image: url('../image/business/china.png');
+      }
+    }
+
+    &:nth-child(n + 2) {
+      margin-left: 100px;
+    }
+  }
+}
+
+.business-footer {
+  margin-top: 148px;
+  color: #72758c;
+  font-size: 14px;
+}
